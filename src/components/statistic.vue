@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     GetCount(){
-          fetch("http://120.77.76.166/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
             var features = result.features;
             var ALLPATIENT = 0
             var ALLDEATH = 0

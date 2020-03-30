@@ -4,10 +4,18 @@ import Router from "vue-router";
 Vue.use(Router);
 
 const router = new Router({
-    mode: "history",
+    mode: "hash",
     routes: [{
             path: "/",
-            redirect: "/JXQ"
+            redirect: "/HK"
+        },
+        {
+            path: "/HK",
+            component: () => import("../views/HanKou"),
+            meta: {
+                keepAlive: true,
+                title: "汉口招商地图"
+            }
         },
         {
             path: "/HBS",

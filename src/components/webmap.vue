@@ -47,7 +47,7 @@ export default {
           Vue.mapInstance.getLayer('cluster').show()
         }
         else {
-          fetch("http://120.77.76.166/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
             let markers = []
             var features = result.features;
             for (var i = 0; i < features.length; i++) {
@@ -111,7 +111,7 @@ export default {
     },
     //江夏聚点图
     markInfo2() {
-      fetch("http://120.77.76.166/coronavius/assets/points.json").then(result => result.json()).then(result => {
+      fetch("https://ncp.gsafety.com/coronavius/assets/points.json").then(result => result.json()).then(result => {
         let markers = []
         const testpoints = result.points;
         for (var i = 0; i < testpoints.length; i++) {
@@ -170,7 +170,7 @@ export default {
         if (Vue.mapInstance.getLayer('heat') != null) {
           Vue.mapInstance.getLayer('heat').show()
         } else {
-          fetch("http://120.77.76.166/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
             let patient = []
             var features = result.features;
             for (var i = 0; i < features.length; i++) {
@@ -205,7 +205,7 @@ export default {
           Vue.mapInstance.getLayer('v').show()
         }
         else {
-          fetch("http://120.77.76.166/coronavius/assets/county.json").then(result => result.json()).then(county => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/county.json").then(result => result.json()).then(county => {
             Vue.mapInstance.addLayer(new maptalks.VectorLayer('v'))
             const geometries = maptalks.GeoJSON.toGeometry(county);
             const vectorLayer = Vue.mapInstance.getLayer('v').addGeometry(geometries);
@@ -262,7 +262,7 @@ export default {
             // Vue.mapInstance.getLayer('patient').getGeometryById(8).openInfoWindow();
           }
         } else {
-          fetch("http://120.77.76.166/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
             Vue.Patientfeatures = result.features;
             //var layer=Vue.mapInstance.getLayer('v');
             var patientLayer = new maptalks.VectorLayer('patient');
@@ -359,7 +359,7 @@ export default {
             //Vue.mapInstance.getLayer('heal').getGeometryById(4).openInfoWindow();
           }
         } else {
-          fetch("http://120.77.76.166/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
+          fetch("https://ncp.gsafety.com/coronavius/assets/hbqx.json").then(result => result.json()).then(result => {
             Vue.features = result.features;
             var healLayer = new maptalks.VectorLayer('heal');
             for (var i = 0; i < Vue.features.length; i++) {
@@ -436,7 +436,7 @@ export default {
         Vue.mapInstance.getLayer('boundary').show()
       }
       else {
-        fetch("http://120.77.76.166/coronavius/assets/county.json").then(result => result.json()).then(county => {
+        fetch("https://ncp.gsafety.com/coronavius/assets/county.json").then(result => result.json()).then(county => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer('boundary'))
           const geometries = maptalks.GeoJSON.toGeometry(county);
           const vectorLayer = Vue.mapInstance.getLayer('boundary').addGeometry(geometries);
@@ -460,7 +460,7 @@ export default {
       Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
         'urlTemplate': `https://maponline0.bdimg.com/starpic/?qt=satepc&u=x={x};y={y};z={z};v=009;type=sate&fm=46&app=webearth2&v=009&udt=20200225`,
         'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        'attribution': '&copy; <a target="_blank" href="http://map.baidu.com">Baidu</a>'
+        'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
       }));
       // this.$options.methods.boundary();
     },
@@ -471,9 +471,9 @@ export default {
       const dpr = Vue.mapInstance.getDevicePixelRatio();
       const scaler = dpr > 1 ? 2 : 1;
       Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
-        'urlTemplate': `http://online2.map.bdimg.com/tile/?qt=vtile&x={x}&y={y}&z={z}&styles=pl&scaler=${scaler}&udt=20190704`,
+        'urlTemplate': `https://online2.map.bdimg.com/tile/?qt=vtile&x={x}&y={y}&z={z}&styles=pl&scaler=${scaler}&udt=20190704`,
         'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        'attribution': '&copy; <a target="_blank" href="http://map.baidu.com">Baidu</a>'
+        'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
       }));
     },
 
@@ -484,7 +484,7 @@ export default {
       Vue.mapInstance.addLayer(patient_3Layer);
       const circle = new maptalks.Circle([lon, lat], 3000);
       patient_3Layer.addGeometry(circle);
-      fetch("http://120.77.76.166/coronavius/assets/jxpoints.json").then(result => result.json()).then(result => {
+      fetch("https://ncp.gsafety.com/coronavius/assets/jxpoints.json").then(result => result.json()).then(result => {
         const jxpatients = result.features;
         var jxmultiponits=[];
         for (var i = 0; i < jxpatients.length; i++) {
@@ -513,7 +513,7 @@ export default {
   mounted() {
     //构建map
     Vue.mapInstance = new maptalks.Map("WebMap", {
-      center: [112.5, 31.1],
+      center: [113.5, 31.1],
       // zoom: 7,
       zoom: 17,
       spatialReference: {
@@ -529,7 +529,7 @@ export default {
     Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
       'urlTemplate': `http://online2.map.bdimg.com/tile/?qt=vtile&x={x}&y={y}&z={z}&styles=pl&scaler=${scaler}&udt=20190704`,
       'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      'attribution': '&copy; <a target="_blank" href="http://map.baidu.com">Baidu</a>'
+      'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
     }));
     this.markInfo2();
     this.polygon(true);

@@ -47,6 +47,7 @@
   import Vue from "vue";
   import * as maptalks from "maptalks";
   import "maptalks/dist/maptalks.css";
+  import echarts from 'echarts';
   import Drawer from "./../components/Drawer";
   import webmap from "./../components/webmap";
   import info from "./../components/info";
@@ -153,54 +154,88 @@
           Vue.mapInstance.removeLayer('patient_3');
         });
       },
+      //绘制汉口招商引资图表
+      investmentChart() {
+        const chartDom = document.createElement('div');
+        chartDom.style.cssText = 'width:650px; height:300px;';
+        var myChart = echarts.init(chartDom);
+        var option = {
+          title: {
+            x: 'center'
+          },
+          tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+          },
+          legend: {
+            x: 'center',
+            y: 'bottom',
+            data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
+          },
+          toolbox: {
+            show: true,
+            feature: {
+              mark: {
+                show: true
+              },
+              dataView: {
+                show: true,
+                readOnly: false
+              },
+              magicType: {
+                show: true,
+                type: ['pie', 'funnel']
+              },
+              restore: {
+                show: true
+              },
+              saveAsImage: {
+                show: true
+              }
+            }
+          },
+          calculable: true,
+          series: [{
+            name: 'Area mode',
+            type: 'pie',
+            radius: [30, 110],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            data: [{
+              value: 10,
+              name: '一类服务'
+            }, {
+              value: 5,
+              name: '二类服务'
+            }, {
+              value: 15,
+              name: '三类服务'
+            }, {
+              value: 25,
+              name: '四类服务'
+            }, {
+              value: 20,
+              name: '五类服务'
+            }, {
+              value: 35,
+              name: '六类服务'
+            }]
+          }]
+        };
+        myChart.setOption(option);
+        //添加进地图
+        var echartsUI = new maptalks.ui.UIMarker([113.5, 31.1], {
+          'draggable': true,
+          'content': chartDom,
+          pitchWithMap: true,
+          rotateWithMap: true
+        }).addTo(Vue.mapInstance).show();
+      }
     },
 
     mounted() {
-      const _this = this;
-      MP(_this.ak).then(BMap => {
-        var geolocation = new BMap.Geolocation();
-        var gc = new BMap.Geocoder();
-        geolocation.enableSDKLocation();
-        geolocation.getCurrentPosition(function (r) {
-          if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-            var lng = r.point.lng;
-            var lat = r.point.lat;
-            console.log('地理信息', r);
-            _this.patient_3(lng, lat);
-            //获取地址信息
-            gc.getLocation(r.point, function (rs) {
-              var addComp = rs.addressComponents;
-              Vue.Address = addComp.street + addComp.streetNumber;
-              console.log(Vue.Address);
-            });
-            Vue.mapInstance.setCenter([lng, lat]);
-            // Vue.mapInstance.setCenter([114.319815,30.360594])
-            var point = new maptalks.Marker([lng, lat], {
-              visible: true,
-              editable: true,
-              cursor: "pointer",
-              shadowBlur: 0,
-              shadowColor: "black",
-              draggable: false,
-              dragShadow: false, // display a shadow during dragging
-              drawOnAxis: null, // force dragging stick on a axis, can be: x, y
-              symbol: {
-                markerType: "ellipse",
-                markerWidth: 20,
-                markerHeight: 20,
-                markerFill: "#00CCFF",
-                markOpacity: 0.3,
-                lineColor: "#000",
-                lineWidth: 0.1
-              }
-            });
-            new maptalks.VectorLayer("jx", point).addTo(Vue.mapInstance);
-          } else {
-            alert("failed" + this.getStatus());
-          }
-        });
-      });
-
+      //增加统计图表
+      this.investmentChart();
     }
   };
 </script>

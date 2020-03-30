@@ -10,7 +10,8 @@ import store from "./store";
 import router from "./router";
 import vueJsonp from 'vue-jsonp'
 import BaiduMap from 'vue-baidu-map'
-
+import Mint from 'mint-ui';
+Vue.use(Mint);
 Vue.use(vueJsonp)
 Vue.use(ElementUI)
 Vue.use(BaiduMap, {
