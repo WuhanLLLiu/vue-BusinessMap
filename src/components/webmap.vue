@@ -17,7 +17,8 @@ import {
 
 import imgURL_patient from '../assets/patient_marker.png';
 import imgURL_heal from '../assets/heal_marker.png';
-
+import imgURL_loc from '../assets/loc.png'
+import marker_Self from '../assets/marker.js'
 //引入百度api,需要安装npm i vue-baidu-map --save
 // import BaiduMap from 'vue-baidu-map'
 // Vue.use(BaiduMap, {
@@ -508,7 +509,7 @@ export default {
         return patient_3;
       });
     },
-
+    //汉阳地块
     parcel(i){
       if (i) {
         if (Vue.mapInstance.getLayer('parcel') != null) {
@@ -547,6 +548,43 @@ export default {
         Vue.mapInstance.getLayer('parcel').hide()
       }
     },
+    //汉阳地块marker
+    HYmarker(){
+     // console.log(marker_Self.marker_Self)
+      Vue.marker_Self = marker_Self;
+      var marker_SelfLayer = new maptalks.VectorLayer('marker_Self');
+      for (var i = 0; i < 7; i++) {
+        var a = marker_Self.marker_Self[i];
+        var marker = new maptalks.Marker(
+          a.coordinates,
+          {
+            'id': i,
+            'properties': {
+              'name': '地块名称：' + a.name + '\n' + '详细信息：' + a.content
+            },
+            symbol: [
+              {
+                // markerType: 'ellipse',
+                'markerFile': imgURL_loc,
+                // 'markerWidth': { stops: [[6, 0], [14, 60]] },
+                // 'markerHeight': { stops: [[6, 0], [14, 60]] }
+              },
+            ]
+          }
+        );
+        marker_SelfLayer.addGeometry(marker);j
+      }
+      Vue.mapInstance.addLayer(marker_SelfLayer);
+      //信息框显示marker_self.
+      for (var j = 0; j < 7; j++) {
+        Vue.mapInstance.getLayer('marker_Self').getGeometryById(j).setInfoWindow({
+          'title': '地块信息',
+          'content': '地块名称：' + marker_Self.marker_Self[j].name + '<br/>' +'<br/>' + '详细信息：' + marker_Self.marker_Self[j].content,
+          'autoCloseOn': 'click'
+        });
+        // marker.openInfoWindow();
+      }
+    }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() { },
@@ -555,8 +593,10 @@ export default {
     //构建map
     Vue.mapInstance = new maptalks.Map("WebMap", {
      // center: [113.5, 31.1],
-     center: [114.12,30.47],
-      zoom: 11,
+    //  center: [114.12,30.47],
+    //   zoom: 11,
+      center: [114.219809,30.559104],
+      zoom: 13,
       // zoom: 17,
       spatialReference: {
         projection: 'baidu'
@@ -573,11 +613,11 @@ export default {
       'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
     }));
-    //this.markInfo2();
-    //this.polygon(true);
-    //this.boundary();
-    // this.patient_3(114.319815, 30.360594);
+    // this.markInfo2();
+    // this.polygon(true);
+    // this.boundary();
     this.parcel(true);
+    this.HYmarker();
 
   },
 

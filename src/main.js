@@ -28,6 +28,7 @@ Vue.prototype.Allcount = {};
 Vue.prototype.Flag = 0;
 Vue.prototype.Address = '';
 Vue.prototype.Result = {};
+Vue.prototype.marker_Self = [];
 
 
 const app = new Vue({
