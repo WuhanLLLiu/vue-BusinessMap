@@ -580,7 +580,9 @@ export default {
         Vue.mapInstance.getLayer('marker_Self').getGeometryById(j).setInfoWindow({
           'title': '地块信息',
           'content': '地块名称：' + marker_Self.marker_Self[j].name + '<br/>' +'<br/>' + '详细信息：' + marker_Self.marker_Self[j].content,
-          'autoCloseOn': 'click'
+          'autoCloseOn': 'click',
+            // 'autoPan': true,
+          'width': 430
         });
         // marker.openInfoWindow();
       }
@@ -593,8 +595,6 @@ export default {
     //构建map
     Vue.mapInstance = new maptalks.Map("WebMap", {
      // center: [113.5, 31.1],
-    //  center: [114.12,30.47],
-    //   zoom: 11,
       center: [114.219809,30.559104],
       zoom: 13,
       // zoom: 17,
