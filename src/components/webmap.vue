@@ -6,6 +6,9 @@
 <script>
 import Vue from 'vue';
 import * as maptalks from 'maptalks';
+import {
+  ThreeLayer
+} from 'maptalks.three'
 import 'maptalks/dist/maptalks.css';
 import {
   ClusterLayer
@@ -13,11 +16,14 @@ import {
 import {
   HeatLayer
 } from 'maptalks.heatmap';
+import {THREE} from 'three';
 
 
 import imgURL_patient from '../assets/patient_marker.png';
 import imgURL_heal from '../assets/heal_marker.png';
 import imgURL_loc from '../assets/loc.png'
+
+
 import marker_Self from '../assets/marker.js'
 //引入百度api,需要安装npm i vue-baidu-map --save
 // import BaiduMap from 'vue-baidu-map'
@@ -582,7 +588,7 @@ export default {
           'content': '地块名称：' + marker_Self.marker_Self[j].name + '<br/>' +'<br/>' + '详细信息：' + marker_Self.marker_Self[j].content,
           'autoCloseOn': 'click',
             // 'autoPan': true,
-          'width': 430
+          // 'width': 430,
         });
         // marker.openInfoWindow();
       }
@@ -597,6 +603,7 @@ export default {
      // center: [113.5, 31.1],
       center: [114.219809,30.559104],
       zoom: 13,
+      pitch: 70,
       // zoom: 17,
       spatialReference: {
         projection: 'baidu'
@@ -613,6 +620,60 @@ export default {
       'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
     }));
+    
+    var threeLayer = new maptalks.ThreeLayer('t', {
+      forceRenderOnMoving: true,
+      forceRenderOnRotating: true
+      // animation: true
+    });
+    var material = new THREE.MeshBasicMaterial({ color: '#fff', transparent: true });
+    var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow', transparent: true });
+    threeLayer.prepareToDraw = function (gl, scene, camera) {
+        var light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(0, -10, 10).normalize();
+        scene.add(light);
+        // addBars(scene);
+        var bar = threeLayer.toBar([114.260809,30.543156], {
+            height: 400,
+            radius: 15000,
+            topColor: '#fff',
+        }, material);
+
+        // tooltip test
+        bar.setToolTip( 400, {
+            showTimeout: 0,
+            eventsPropagation: true,
+            dx: 10
+        });
+
+
+        //infowindow test
+        bar.setInfoWindow({
+            content: 'hello world,height:' + 400,
+            title: 'message',
+            animationDuration: 0,
+            autoOpenOn: false
+        });
+
+
+        //event test
+        ['click', 'mouseout', 'mouseover', 'mousedown', 'mouseup', 'dblclick', 'contextmenu'].forEach(function (eventType) {
+            bar.on(eventType, function (e) {
+                console.log(e.type, e);
+                // console.log(this);
+                if (e.type === 'mouseout') {
+                    this.setSymbol(material);
+                }
+                if (e.type === 'mouseover') {
+                    this.setSymbol(highlightmaterial);
+                }
+            });
+        });
+        threeLayer.addMesh(bar);
+        threeLayer.config('animation', true);
+
+    };
+    threeLayer.addTo(Vue.mapInstance);
     // this.markInfo2();
     // this.polygon(true);
     // this.boundary();
