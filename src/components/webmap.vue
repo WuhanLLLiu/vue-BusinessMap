@@ -509,6 +509,44 @@ export default {
       });
     },
 
+    parcel(i){
+      if (i) {
+        if (Vue.mapInstance.getLayer('parcel') != null) {
+          Vue.mapInstance.getLayer('parcel').show()
+        } else {
+          var parcelLayer=new maptalks.VectorLayer('parcel')
+          var polygon = new maptalks.Polygon([
+            [
+              [114.280435,30.554898],
+              [114.260435,30.555898],
+              [114.260435,30.550898],
+              [114.265435,30.546898],
+              [114.277435,30.549898],
+              [114.280435,30.554898],
+            ]
+          ], {
+            visible : true,
+            editable : true,
+            cursor : 'pointer',
+            shadowBlur : 0,
+            shadowColor : 'black',
+            draggable : false,
+            dragShadow : false, // display a shadow during dragging
+            drawOnAxis : null,  // force dragging stick on a axis, can be: x, y
+            symbol: {
+              'lineColor' : '#34495e',
+              'lineWidth' : 2,
+              'polygonFill' : 'rgb(135,196,240)',
+              'polygonOpacity' : 0.6
+            }
+          });
+          parcelLayer.addGeometry(polygon);
+          Vue.mapInstance.addLayer(parcelLayer);
+        }
+      } else {
+        Vue.mapInstance.getLayer('parcel').hide()
+      }
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() { },
@@ -516,8 +554,9 @@ export default {
   mounted() {
     //构建map
     Vue.mapInstance = new maptalks.Map("WebMap", {
-      center: [113.5, 31.1],
-      zoom: 9,
+     // center: [113.5, 31.1],
+     center: [114.12,30.47],
+      zoom: 11,
       // zoom: 17,
       spatialReference: {
         projection: 'baidu'
@@ -534,10 +573,11 @@ export default {
       'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
     }));
-    this.markInfo2();
-    this.polygon(true);
-    this.boundary();
+    //this.markInfo2();
+    //this.polygon(true);
+    //this.boundary();
     // this.patient_3(114.319815, 30.360594);
+    this.parcel(true);
 
   },
 
