@@ -1,11 +1,27 @@
 <template>
   <div id="jiangxia" class="layout">
-    <div class="head">江夏区疫情综合风险分析系统</div>
+    <!-- <div class="head">江夏区疫情综合风险分析系统</div> -->
+    <!-- <div class="select">
+    <el-dropdown>
+      <span class="el-dropdown-link">
+        用地总览<i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item>用地总览</el-dropdown-item>
+        <el-dropdown-item>商业用地</el-dropdown-item>
+        <el-dropdown-item>商服用地</el-dropdown-item>
+        <el-dropdown-item>居住用地</el-dropdown-item>
+        <el-dropdown-item>工业用地</el-dropdown-item>
+        <el-dropdown-item>其他类型</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+    </div> -->
 
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
-    <div class="bottom" :class="{full:isFull}">
+
+    <!-- <div class="bottom" :class="{full:isFull}">
 
       <div class="bottom-btn-top">
         <div class="fengxian" v-if="num <= 2">低风险</div>
@@ -39,7 +55,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -123,37 +139,6 @@
     },
 
     methods: {
-      // 3公里确诊人数
-      patient_3(lon, lat) {
-        var that = this;
-        var n = 0;
-        var patient_3 = [];
-        var patient_3Layer = new maptalks.VectorLayer('patient_3');
-        Vue.mapInstance.addLayer(patient_3Layer);
-        const circle = new maptalks.Circle([lon, lat], 3000);
-        patient_3Layer.addGeometry(circle);
-        fetch("https://ncp.gsafety.com/coronavius/assets/jxpoints.json").then(result => result.json()).then(result => {
-          const jxpatients = result.features;
-          var jxmultiponits = [];
-          for (var i = 0; i < jxpatients.length; i++) {
-            jxmultiponits.push(jxpatients[i].geometry.coordinates);
-          }
-          var r = new maptalks.MultiPoint(jxmultiponits);
-          patient_3Layer.addGeometry(r);
-          var jxpoints2 = patient_3Layer.getGeometries();
-          //console.log(jxpoints2[1]._geometries.length);
-          for (var j = 0; j < jxpoints2[1]._geometries.length; j++) {
-            var contains_3 = circle.containsPoint(jxpoints2[1]._geometries[j]._coordinates);
-            if (contains_3) {
-              patient_3.push(jxpatients[j].properties);
-              that.viewArr.push(jxpatients[j].properties);
-              n++
-            }
-          }
-          that.num = n;
-          Vue.mapInstance.removeLayer('patient_3');
-        });
-      },
       //绘制汉口招商引资图表
       investmentChart() {
         const chartDom = document.createElement('div');
@@ -194,7 +179,7 @@
               }
             }
           },
-          calculable: true,
+          calculable: false,
           series: [{
             name: 'Area mode',
             type: 'pie',
@@ -225,17 +210,18 @@
         myChart.setOption(option);
         //添加进地图
         var echartsUI = new maptalks.ui.UIMarker([113.5, 31.1], {
-          'draggable': true,
+          'draggable': false,
           'content': chartDom,
           pitchWithMap: true,
           rotateWithMap: true
         }).addTo(Vue.mapInstance).show();
-      }
+      },
+
     },
 
     mounted() {
       //增加统计图表
-      this.investmentChart();
+      // this.investmentChart();
     }
   };
 </script>
@@ -259,14 +245,25 @@
   }
 
   .layout .head {
-    background: url(./../assets/Banner.png) no-repeat center;
-    background-size: 100% 100%;
+    /* background: url(./../assets/Banner.png) no-repeat center;
+    background-size: 100% 100%; */
     height: 98px;
     width: 100%;
     font-size: 40px;
     text-align: center;
     line-height: 98px;
     color: #fff;
+  }
+
+  .layout .select{
+      position: absolute;
+      z-index: 102;
+      height: 36px;
+      background: rgba(255,255,255,1);
+      box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.08),0px 0px 1px 0px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      margin: 0.3rem 0.3rem 0px 0.3rem;
+      width: 20%;
   }
 
   .layout .bottom {
@@ -391,7 +388,8 @@
   }
 
   .map {
-    height: calc(100% - 431px);
+    /* height: calc(100% - 431px); */
+    height: calc(100%);
     overflow: hidden;
     position: relative;
   }
@@ -549,5 +547,28 @@
 
   .monad {
     font-size: 16px;
+  }
+
+  .el-dropdown-link {
+    cursor: pointer;
+    font-size: 16px;
+    font-family: PingFangSC-Regular,PingFang SC;
+    color: rgba(10,36,99,1);
+    position:relative; 
+    padding-top: 50%;
+    left:50%
+  }
+  .el-icon-arrow-down {
+    font-size: 14px;
+    /* height: 36px;
+    line-height: 36px;
+    width: 5.2rem;
+    margin-left: 0.3rem;
+    font-size: 14px;
+    font-family: PingFangSC-Regular,PingFang SC;
+    font-weight: 400;
+    color: rgba(10,36,99,1);
+    line-height: 20px;
+    position: absolute; */
   }
 </style>

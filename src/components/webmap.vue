@@ -214,7 +214,8 @@ export default {
               'filter': ['==', 'RISK', '低风险'],
               'symbol': {
                 'polygonFill': 'rgb(0,255,0)',
-                'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                // 'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                'polygonOpacity': 0.5,
                 'lineColor': '#fff',
                 'lineWidth': 0.3
               }
@@ -223,7 +224,8 @@ export default {
               'filter': ['==', 'RISK', '中风险'],
               'symbol': {
                 'polygonFill': 'rgb(255,255,0)',
-                'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                // 'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                'polygonOpacity': 0.5,
                 'lineColor': '#fff',
                 'lineWidth': 0.3
               }
@@ -232,7 +234,8 @@ export default {
               'filter': ['==', 'RISK', '高风险'],
               'symbol': {
                 'polygonFill': 'rgb(255,0,0)',
-                'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                // 'polygonOpacity': { stops: [[6, 0.5], [10, 0]] },
+                'polygonOpacity': 0.5,
                 'lineColor': '#fff',
                 'lineWidth': 0.3
               }
@@ -514,8 +517,8 @@ export default {
     //构建map
     Vue.mapInstance = new maptalks.Map("WebMap", {
       center: [113.5, 31.1],
-      // zoom: 7,
-      zoom: 17,
+      zoom: 9,
+      // zoom: 17,
       spatialReference: {
         projection: 'baidu'
       },
