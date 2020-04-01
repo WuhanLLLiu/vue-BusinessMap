@@ -1,11 +1,11 @@
 <template>
-  <div id="jiangxia" class="layout">
+  <div id="HanKou" class="layout">
     <div class="head">汉阳区产业招商可视化系统</div>
 
     <div class="map">
       <webmap ref="webmap"></webmap>
-    </div>
-
+    </div>   
+    <Dialog></Dialog>
     <div class="bottom" :class="{full:isFull}">
         <el-row id="row1">
             <el-col :span='4'>
@@ -77,14 +77,16 @@
   import Drawer from "./../components/Drawer";
   import webmap from "./../components/webmap";
   import info from "./../components/info";
+  import Dialog from "./../components/Dialog";
 
   export default {
-    name: "jiangxia",
+    name: "HanKou",
 
     components: {
       Drawer: Drawer,
       webmap: webmap,
-      info: info
+      info: info,
+      Dialog:Dialog
     },
 
     data() {
