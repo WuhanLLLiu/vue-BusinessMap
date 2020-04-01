@@ -1,23 +1,31 @@
 <template>
   <div id="Dialog">
-      <el-button id='button1' type="primary"  @click="dialogVisible = true" icon="el-icon-reading" round style="font-size: 1.0em">相关政策</el-button>
+      <el-button id='button1' type="primary"  @click="centerDialogVisible = true" icon="el-icon-reading" round style="font-size: 1.0em">相关政策</el-button>
         
         <el-dialog
-        title="汉阳区产业扶持政策"
-        :visible.sync="dialogVisible"
+        id='dialog1'
+        title="相关政策"
+        :visible.sync="centerDialogVisible"
         width="50%"
+        center
         >
-        <span>
+        <span id='policy'>
+          <li>
+            <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
+          </li>
           <li>
             <a href="'./../assets/汉阳区大健康产业扶持政策.html'" >汉阳区大健康产业扶持政策</a>
           </li>
           <li>
-            <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
+            <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
           </li>
+          <!--<li>
+            <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
+          </li>-->
         </span>
         <span slot="footer" class="dialog-footer">
-            <el-button @click="dialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            <el-button @click="centerDialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
         </span>
         </el-dialog>
   </div>
@@ -29,7 +37,7 @@
   export default {
     data() {
       return {
-        dialogVisible: false
+        centerDialogVisible: false
       };
     },
     methods: {
@@ -61,4 +69,14 @@
     right: 2%;
     /*bottom: 3%;  */
   }
+  #policy{
+    font-size: 28px
+  }
+  #dialog1{
+    width:30em
+  }
+  /*.el-dialog__title{
+    font-size: 30px
+  }*/
+
 </style>
