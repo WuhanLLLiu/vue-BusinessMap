@@ -600,31 +600,32 @@ export default {
         forceRenderOnMoving: true,
         forceRenderOnRotating: true
       });
-      var material = new THREE.MeshBasicMaterial({ color: 'black' });
+      var material = new THREE.MeshBasicMaterial({ color: 'white' });
       var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow' });
       threeLayer.prepareToDraw = function (gl, scene, camera) {
           var light = new THREE.DirectionalLight(0xffffff);
           light.position.set(0, -10, 10).normalize();
           scene.add(light);
-          for (var i = 0; i < 7; i++) {
-          var bar = threeLayer.toBar([114.260809,30.543156], {
-              height: 1000,
+          for (var i = 0; i < 5; i++) {
+          var bar = threeLayer.toBar(bar_Self.bar_Self[i].coordinates, {
+              height: 1000*bar_Self.bar_Self[i].height,
               radius: 150,
-              topColor: 'black',
+              topColor: 'white',
           }, material);
           // tooltip test
-          bar.setToolTip( '汉阳华美达酒店', {
+          bar.setToolTip( bar_Self.bar_Self[i].name, {
               showTimeout: 0,
               eventsPropagation: true,
               dx: 10
           });
           //infowindow test
           bar.setInfoWindow({
-              content: '详细信息：位于江堤街马鹦路101号，开发商为武汉江腾经贸集团有限公司，2017年12月22日竣工，楼宇等级为甲级。总建筑面积15300.71平方米，标准层高3.9米，单层面积787.96平方米，楼高85.52。物业公司为武汉江腾商业管理有限公司，为集团自制管理，无相关物业费。电梯品牌为上海三菱，共有客梯3台、货梯1台，车位161个。酒店目前为集团公司自持所有，周边交通便利，配套齐全。'
-              +'<br/>'+'<br/>'+'联系人：万辉，联系电话：18627861115'+'<br/>'+'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>',
-              title: '汉阳华美达酒店',
+              content: bar_Self.bar_Self[i].content
+              +'<br/>'+'<br/>'+bar_Self.bar_Self[i].contact+'<br/>'+bar_Self.bar_Self[i].img,
+              title: bar_Self.bar_Self[i].name,
               animationDuration: 0,
-              autoOpenOn: false
+              autoOpenOn: false,
+              'autoCloseOn': 'click',
           });
           
           //event test
@@ -657,8 +658,8 @@ export default {
     Vue.mapInstance = new maptalks.Map("WebMap", {
      // center: [113.5, 31.1],
       center: [114.219809,30.559104],
-      zoom: 13,
-      pitch: 70,
+      zoom: 14,
+      pitch: 50,
       // zoom: 17,
       spatialReference: {
         projection: 'baidu'

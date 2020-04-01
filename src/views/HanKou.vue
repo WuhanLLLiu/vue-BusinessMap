@@ -1,42 +1,52 @@
 <template>
   <div id="jiangxia" class="layout">
-    <!-- <div class="head">江夏区疫情综合风险分析系统</div> -->
-    <!-- <div class="select">
-    <el-dropdown>
-      <span class="el-dropdown-link">
-        用地总览<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>用地总览</el-dropdown-item>
-        <el-dropdown-item>商业用地</el-dropdown-item>
-        <el-dropdown-item>商服用地</el-dropdown-item>
-        <el-dropdown-item>居住用地</el-dropdown-item>
-        <el-dropdown-item>工业用地</el-dropdown-item>
-        <el-dropdown-item>其他类型</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-    </div> -->
+    <div class="head">汉阳区产业招商可视化系统</div>
 
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
 
-    <!-- <div class="bottom" :class="{full:isFull}">
-
-      <div class="bottom-btn-top">
+    <div class="bottom" :class="{full:isFull}">
+        <el-row id="row1">
+            <el-col :span='4'>
+                <ul type="none">
+                <li id="img"><img src="./../assets/商务用地.png" width="90%"/></li>
+                <li id='type'>商务用地</li>
+                </ul>  
+            </el-col>
+            <el-col :span='4'>
+                <ul type="none">
+                <li id="img"><img src="./../assets/居住用地.png" width="90%"/></li>
+                <li id='type'>居住用地</li>
+                </ul>  
+            </el-col>
+            <el-col :span='4'>
+                <ul type="none">
+                <li id="img"><img src="./../assets/工业用地.png" width="90%"/></li>
+                <li id='type'>工业用地</li>
+                </ul>  
+            </el-col>
+            <el-col :span='4'>
+                <ul type="none">
+                <li id="img"><img src="./../assets/其他用地.png" width="90%"/></li>
+                <li id='type'>其他用地</li>
+                </ul>  
+            </el-col>
+        </el-row>
+      <!-- <div class="bottom-btn-top">
         <div class="fengxian" v-if="num <= 2">低风险</div>
         <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
         <div class="fengxian" style="background:#ff5722;" v-else>高风险</div>
-      </div>
+      </div> -->
 
-      <div class="center">
+      <!-- <div class="center">
         <div class="definite">附近累计确诊:<span class="people">{{num}}</span><span class="monad">人</span></div>
         <div class="alert" v-if="num <= 2">您当前附近3公里范围内疫情风险较低，也请注意防护。</div>
         <div class="alert" v-else-if="num <= 5">您当前附近3公里范围内存在一定的风险，请注意防护，减少外出。</div>
         <div class="alert" v-else>您当前附近3公里范围内疫情风险高，请务必做好防护，做好自我隔离。</div>
       </div>
-      <div class="bottom-footer"></div>
-      <div class="out-list">
+      <div class="bottom-footer"></div> -->
+      <!-- <div class="out-list">
         <ul class="filter-list">
           <li class="filter-list-item" @click="currentItem = item" :class="{active:item === currentItem}"
             v-for="(item,index) in filterList" :key="index">{{item}}</li>
@@ -54,8 +64,8 @@
             </li>
           </ul>
         </div>
-      </div>
-    </div> -->
+      </div> -->
+    </div>
   </div>
 </template>
 
@@ -245,14 +255,16 @@
   }
 
   .layout .head {
-    /* background: url(./../assets/Banner.png) no-repeat center;
-    background-size: 100% 100%; */
+    background: url(./../assets/banner2.jpg) no-repeat center;
+    background-size: 100% 100%;
     height: 98px;
     width: 100%;
-    font-size: 40px;
-    text-align: center;
+    font-size: 50px;
+    font:bolder;
+    text-align:left;
+    padding-left: 3%;
     line-height: 98px;
-    color: #fff;
+    color:	#000080;
   }
 
   .layout .select{
@@ -549,26 +561,28 @@
     font-size: 16px;
   }
 
-  .el-dropdown-link {
-    cursor: pointer;
-    font-size: 16px;
-    font-family: PingFangSC-Regular,PingFang SC;
-    color: rgba(10,36,99,1);
-    position:relative; 
-    padding-top: 50%;
-    left:50%
+
+  .ul{
+      display:table;
+      list-style-type: none;
+      text-align: center;
   }
-  .el-icon-arrow-down {
-    font-size: 14px;
-    /* height: 36px;
-    line-height: 36px;
-    width: 5.2rem;
-    margin-left: 0.3rem;
-    font-size: 14px;
-    font-family: PingFangSC-Regular,PingFang SC;
-    font-weight: 400;
-    color: rgba(10,36,99,1);
-    line-height: 20px;
-    position: absolute; */
+  #row1 {
+    padding-top: 1.5em;
+    padding-left: 1.0em;
+    text-align:center
+  }
+  .el-col {
+    border-radius: 4px;
+    width: 23%;
+    text-align:center
+  }
+  #img{
+      text-align:center
+  }
+  #type{
+      font-weight: bolder;
+      font-size: 1.0em;
+      text-align:center
   }
 </style>

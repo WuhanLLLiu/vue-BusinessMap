@@ -15,7 +15,7 @@ var bar_Self = [
         "contact":"联系人：陈江，联系电话：18071508008",
         "height":1.5,
         "width":4,
-        "img":'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>'
+        "img":'<p align="center"><img src="https://s3.ifengimg.com/2019/08/16/3e72a96a63920dfb48a9d8745e507e02.jpg" width=250 /></p>'
     },
     {
         "coordinates":[114.229719,30.524147],
@@ -24,7 +24,7 @@ var bar_Self = [
         "contact":"暂无",
         "height":2,
         "width":1.5,
-        "img":'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>'   
+        "img":'<p align="center"><img src="http://y0.ifengimg.com/cmpp/2015/05/14/08/8079afa5-4251-4436-8301-f9edd9a52dcb_size91_w400_h313.jpg" width=250 /></p>'   
     },
     {
         "coordinates":[114.226113,30.520804],
@@ -33,7 +33,7 @@ var bar_Self = [
         "contact":"联系人：刘远营，联系电话：17771888966",
         "height":0.8,
         "width":2.5,
-        "img":'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>'   
+        "img":'<p align="center"><img src="http://img.mp.itc.cn/upload/20160323/1a9a9a17ee1a47e9aeb009f1f598261c_th.jpg" width=250 /></p>'   
     },
     {
         "coordinates":[114.225352,30.518463],
@@ -42,7 +42,7 @@ var bar_Self = [
         "contact":"联系人：翁方圆，联系电话：13036169050",
         "height":2,
         "width":5,
-        "img":'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>'   
+        "img":'<p align="center"><img src="http://src.leju.com/imp/imp/deal/1e/06/1/c2678aab3d049ffd8e5bdff9dff_p24_mk24.png" width=250 /></p>'   
     },
 ]
 
