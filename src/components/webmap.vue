@@ -25,6 +25,7 @@ import imgURL_loc from '../assets/loc.png'
 import imgURL_jd from '../assets/jd.png'
 
 import marker_Self from '../assets/marker.js'
+import bar_Self from '../assets/bar.js'
 //引入百度api,需要安装npm i vue-baidu-map --save
 // import BaiduMap from 'vue-baidu-map'
 // Vue.use(BaiduMap, {
@@ -592,6 +593,58 @@ export default {
         });
         // marker.openInfoWindow();
       }
+    },
+    //three.js
+    buildings(){
+      var threeLayer = new ThreeLayer('t', {
+        forceRenderOnMoving: true,
+        forceRenderOnRotating: true
+      });
+      var material = new THREE.MeshBasicMaterial({ color: 'black' });
+      var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow' });
+      threeLayer.prepareToDraw = function (gl, scene, camera) {
+          var light = new THREE.DirectionalLight(0xffffff);
+          light.position.set(0, -10, 10).normalize();
+          scene.add(light);
+          for (var i = 0; i < 7; i++) {
+          var bar = threeLayer.toBar([114.260809,30.543156], {
+              height: 1000,
+              radius: 150,
+              topColor: 'black',
+          }, material);
+          // tooltip test
+          bar.setToolTip( '汉阳华美达酒店', {
+              showTimeout: 0,
+              eventsPropagation: true,
+              dx: 10
+          });
+          //infowindow test
+          bar.setInfoWindow({
+              content: '详细信息：位于江堤街马鹦路101号，开发商为武汉江腾经贸集团有限公司，2017年12月22日竣工，楼宇等级为甲级。总建筑面积15300.71平方米，标准层高3.9米，单层面积787.96平方米，楼高85.52。物业公司为武汉江腾商业管理有限公司，为集团自制管理，无相关物业费。电梯品牌为上海三菱，共有客梯3台、货梯1台，车位161个。酒店目前为集团公司自持所有，周边交通便利，配套齐全。'
+              +'<br/>'+'<br/>'+'联系人：万辉，联系电话：18627861115'+'<br/>'+'<p align="center"><img src="http://p1.meituan.net/tdchotel/a3aafbe62b2f76a961c1826caac6a394927317.png" width=250 /></p>',
+              title: '汉阳华美达酒店',
+              animationDuration: 0,
+              autoOpenOn: false
+          });
+          
+          //event test
+          ['click', 'mouseout', 'mouseover', 'mousedown', 'mouseup', 'dblclick', 'contextmenu'].forEach(function (eventType) {
+              bar.on(eventType, function (e) {
+                  console.log(e.type, e);
+                  // console.log(this);
+                  if (e.type === 'mouseout') {
+                      this.setSymbol(material);
+                  }
+                  if (e.type === 'mouseover') {
+                      this.setSymbol(highlightmaterial);
+                  }
+              });
+          });
+          threeLayer.addMesh(bar);
+          threeLayer.config('animation', true);
+          }
+      };
+      threeLayer.addTo(Vue.mapInstance);
     }
   },
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -622,59 +675,61 @@ export default {
       'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
     }));
-    var threeLayer = new ThreeLayer('t', {
-      forceRenderOnMoving: true,
-      forceRenderOnRotating: true
-    });
-    var material = new THREE.MeshBasicMaterial({ color: 'black' });
-    var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow' });
-    threeLayer.prepareToDraw = function (gl, scene, camera) {
-        var light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(0, -10, 10).normalize();
-        scene.add(light);
+    
+    // var threeLayer = new ThreeLayer('t', {
+    //   forceRenderOnMoving: true,
+    //   forceRenderOnRotating: true
+    // });
+    // var material = new THREE.MeshBasicMaterial({ color: 'black' });
+    // var highlightmaterial = new THREE.MeshBasicMaterial({ color: 'yellow' });
+    // threeLayer.prepareToDraw = function (gl, scene, camera) {
+    //     var light = new THREE.DirectionalLight(0xffffff);
+    //     light.position.set(0, -10, 10).normalize();
+    //     scene.add(light);
 
-        var bar = threeLayer.toBar([114.260809,30.543156], {
-            height: 1000,
-            radius: 150,
-            topColor: 'black',
-        }, material);
-        // tooltip test
-        bar.setToolTip( '汉阳华美达酒店', {
-            showTimeout: 0,
-            eventsPropagation: true,
-            dx: 10
-        });
-        //infowindow test
-        bar.setInfoWindow({
-            content: '详细信息：位于江堤街马鹦路101号，开发商为武汉江腾经贸集团有限公司，2017年12月22日竣工，楼宇等级为甲级。总建筑面积15300.71平方米，标准层高3.9米，单层面积787.96平方米，楼高85.52。物业公司为武汉江腾商业管理有限公司，为集团自制管理，无相关物业费。电梯品牌为上海三菱，共有客梯3台、货梯1台，车位161个。酒店目前为集团公司自持所有，周边交通便利，配套齐全。'
-            +'<br/>'+'<br/>'+'联系人：万辉，联系电话：18627861115'+'<br/>'+'<br/>'+'照片：'+'<img source="../assets/jd.png"/>',
-            title: '汉阳华美达酒店',
-            animationDuration: 0,
-            autoOpenOn: false
-        });
+    //     var bar = threeLayer.toBar([114.260809,30.543156], {
+    //         height: 1000,
+    //         radius: 150,
+    //         topColor: 'black',
+    //     }, material);
+    //     // tooltip test
+    //     bar.setToolTip( '汉阳华美达酒店', {
+    //         showTimeout: 0,
+    //         eventsPropagation: true,
+    //         dx: 10
+    //     });
+    //     //infowindow test
+    //     bar.setInfoWindow({
+    //         content: '详细信息：位于江堤街马鹦路101号，开发商为武汉江腾经贸集团有限公司，2017年12月22日竣工，楼宇等级为甲级。总建筑面积15300.71平方米，标准层高3.9米，单层面积787.96平方米，楼高85.52。物业公司为武汉江腾商业管理有限公司，为集团自制管理，无相关物业费。电梯品牌为上海三菱，共有客梯3台、货梯1台，车位161个。酒店目前为集团公司自持所有，周边交通便利，配套齐全。'
+    //         +'<br/>'+'<br/>'+'联系人：万辉，联系电话：18627861115'+'<br/>'+'<br/>'+'照片：'+'<img source="../assets/jd.png"/>',
+    //         title: '汉阳华美达酒店',
+    //         animationDuration: 0,
+    //         autoOpenOn: false
+    //     });
         
-        //event test
-        ['click', 'mouseout', 'mouseover', 'mousedown', 'mouseup', 'dblclick', 'contextmenu'].forEach(function (eventType) {
-            bar.on(eventType, function (e) {
-                console.log(e.type, e);
-                // console.log(this);
-                if (e.type === 'mouseout') {
-                    this.setSymbol(material);
-                }
-                if (e.type === 'mouseover') {
-                    this.setSymbol(highlightmaterial);
-                }
-            });
-        });
-        threeLayer.addMesh(bar);
-        threeLayer.config('animation', true);
-    };
-    threeLayer.addTo(Vue.mapInstance);
+    //     //event test
+    //     ['click', 'mouseout', 'mouseover', 'mousedown', 'mouseup', 'dblclick', 'contextmenu'].forEach(function (eventType) {
+    //         bar.on(eventType, function (e) {
+    //             console.log(e.type, e);
+    //             // console.log(this);
+    //             if (e.type === 'mouseout') {
+    //                 this.setSymbol(material);
+    //             }
+    //             if (e.type === 'mouseover') {
+    //                 this.setSymbol(highlightmaterial);
+    //             }
+    //         });
+    //     });
+    //     threeLayer.addMesh(bar);
+    //     threeLayer.config('animation', true);
+    // };
+    // threeLayer.addTo(Vue.mapInstance);
     // this.markInfo2();
     // this.polygon(true);
     // this.boundary();
     this.parcel(true);
     this.HYmarker();
+    this.buildings();
 
   },
 
