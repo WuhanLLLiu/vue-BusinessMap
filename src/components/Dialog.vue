@@ -1,15 +1,19 @@
 <template>
   <div id="Dialog">
-      <el-button id='button1' type="primary"  @click="dialogVisible = true" icon="el-icon-reading" round>相关政策</el-button>
-
+      <el-button id='button1' type="primary"  @click="dialogVisible = true" icon="el-icon-reading" round style="font-size: 1.0em">相关政策</el-button>
+        
         <el-dialog
-        title="汉阳区大健康产业扶持政策"
+        title="汉阳区产业扶持政策"
         :visible.sync="dialogVisible"
         width="50%"
-        :before-close="handleClose">
+        >
         <span>
-        <iframe src ='./../assets/汉阳区大健康产业扶持政策.html'>
-        </iframe>
+          <li>
+            <a href="'./../assets/汉阳区大健康产业扶持政策.html'" >汉阳区大健康产业扶持政策</a>
+          </li>
+          <li>
+            <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
+          </li>
         </span>
         <span slot="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">取 消</el-button>
@@ -29,13 +33,13 @@
       };
     },
     methods: {
-      handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
-      }
+      // handleClose(done) {
+      //   this.$confirm('确认关闭？')
+      //     .then(_ => {
+      //       done();
+      //     })
+      //     .catch(_ => {});
+      // }
     }
   }
 </script>
@@ -51,8 +55,8 @@
   }
   #button1 {
     position: fixed;
-    padding: 1%;
-    /*size : 5em;*/
+    padding: 2%;
+    size : 5em;
     z-index:2;
     right: 2%;
     /*bottom: 3%;  */
