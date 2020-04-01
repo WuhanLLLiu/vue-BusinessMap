@@ -607,42 +607,28 @@ export default {
           light.position.set(0, -10, 10).normalize();
           scene.add(light);
           for (var i = 0; i < 5; i++) {
-          var bar = threeLayer.toBar(bar_Self.bar_Self[i].coordinates, {
-              height: 1000*bar_Self.bar_Self[i].height,
-              radius: 150,
-              topColor: 'white',
-          }, material);
-          // tooltip test
-          bar.setToolTip( bar_Self.bar_Self[i].name, {
-              showTimeout: 0,
-              eventsPropagation: true,
-              dx: 10
-          });
-          //infowindow test
-          bar.setInfoWindow({
-              content: bar_Self.bar_Self[i].content
-              +'<br/>'+'<br/>'+bar_Self.bar_Self[i].contact+'<br/>'+bar_Self.bar_Self[i].img,
-              title: bar_Self.bar_Self[i].name,
-              animationDuration: 0,
-              autoOpenOn: false,
-              'autoCloseOn': 'click',
-          });
-          
-          //event test
-          ['click', 'mouseout', 'mouseover', 'mousedown', 'mouseup', 'dblclick', 'contextmenu'].forEach(function (eventType) {
-              bar.on(eventType, function (e) {
-                  console.log(e.type, e);
-                  // console.log(this);
-                  if (e.type === 'mouseout') {
-                      this.setSymbol(material);
-                  }
-                  if (e.type === 'mouseover') {
-                      this.setSymbol(highlightmaterial);
-                  }
-              });
-          });
-          threeLayer.addMesh(bar);
-          threeLayer.config('animation', true);
+            var bar = threeLayer.toBar(bar_Self.bar_Self[i].coordinates, {
+                height: 1000*bar_Self.bar_Self[i].height,
+                radius: 150,
+                topColor: 'white',
+            }, material);
+            // tooltip test
+            bar.setToolTip( bar_Self.bar_Self[i].name, {
+                showTimeout: 0,
+                eventsPropagation: true,
+                dx: 10
+            });
+            //infowindow test
+            bar.setInfoWindow({
+                content: bar_Self.bar_Self[i].content
+                +'<br/>'+'<br/>'+bar_Self.bar_Self[i].contact+'<br/>'+bar_Self.bar_Self[i].img,
+                title: bar_Self.bar_Self[i].name,
+                animationDuration: 0,
+                // autoOpenOn: false,
+                'autoCloseOn': 'click',
+            });
+            threeLayer.addMesh(bar);
+            threeLayer.config('animation', true);
           }
       };
       threeLayer.addTo(Vue.mapInstance);
@@ -657,7 +643,7 @@ export default {
     image = imgURL_jd;
     Vue.mapInstance = new maptalks.Map("WebMap", {
      // center: [113.5, 31.1],
-      center: [114.219809,30.559104],
+      center: [114.241649,30.530374],
       zoom: 14,
       pitch: 50,
       // zoom: 17,
