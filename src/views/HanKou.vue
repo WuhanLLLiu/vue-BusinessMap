@@ -1,6 +1,6 @@
 <template>
   <div id="HanKou" class="layout">
-    <div class="head">汉阳区招商云地图</div>
+    <div class="head">汉阳招商云地图</div>
 
     <div class="map">
       <webmap ref="webmap"></webmap>

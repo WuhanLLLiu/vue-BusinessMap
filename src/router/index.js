@@ -14,7 +14,7 @@ const router = new Router({
             component: () => import("../views/HanKou"),
             meta: {
                 keepAlive: true,
-                title: "汉阳招商地图"
+                title: "汉阳招商云地图"
             }
         },
         {
