@@ -25,7 +25,7 @@
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="centerDialogVisible = true"/></li>
+            <li id="img"><img src="./../assets/相关政策.png" width="50%" @click="outerVisible = true"/></li>
             <li id='type'>相关政策</li>
           </ul>
         </el-col>
@@ -36,7 +36,40 @@
           </ul>
         </el-col>
       </el-row>
-      </div>
+
+      <el-dialog
+        id='dialog1'
+        title="相关政策"
+        :visible.sync="outerVisible"
+        center
+        >
+            <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区大健康产业扶持政策</el-button>
+            <br/>
+            <el-button id='button11' type="primary"  @click="innerVisible_1 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区楼宇扶持政策</el-button>
+            <el-dialog
+              width="100%"
+              title="汉阳区大健康产业扶持政策"
+              :visible.sync="innerVisible_0"
+              append-to-body>
+              <span>
+                <iframe id="policy_0" src="./../assets/汉阳区大健康产业扶持政策.html"  style="width:100%;height:100%"> </iframe>
+              </span>
+            </el-dialog>
+            <el-dialog
+              width="100%"
+              title="汉阳区楼宇扶持政策"
+              :visible.sync="innerVisible_1"
+              append-to-body>
+              <span>
+                <iframe id="policy_1" src="./../assets/楼宇扶持政策.html"  style="width:100%;height:100%"> </iframe>
+              </span>
+            </el-dialog>
+        </el-dialog>
+      <!-- <div class="bottom-btn-top">
+        <div class="fengxian" v-if="num <= 2">低风险</div>
+        <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
+        <div class="fengxian" style="background:#ff5722;" v-else>高风险</div>
+      </div> -->
 
       <!-- <div class="center">
         <div class="definite">附近累计确诊:<span class="people">{{num}}</span><span class="monad">人</span></div>
@@ -79,7 +112,9 @@
           confirm: 17,
           new: 0
         },
-        centerDialogVisible: false,
+        outerVisible: false,
+        innerVisible_0: false,
+        innerVisible_1:false,
         modalvisible:false,
         alertText: '',
       };
