@@ -1,9 +1,9 @@
 <template>
-  <div id="HanKou" class="layout">
+  <div id="ShouYe" class="layout">
     <div class="head">汉阳招商云地图</div>
-
-    <div class="map">
-      <webmap ref="webmap"></webmap>
+   
+    <div class='logo'>
+        <img src="./../assets/logo.jpg" width="50%"/>
     </div>
     <!-- <Dialog></Dialog> -->
     <div class="bottom" :class="{full:isFull}">
@@ -33,35 +33,6 @@
           </ul>
         </el-col>
       </el-row>
-
-        <el-dialog
-        id='dialog1'
-        title="相关政策"
-        :visible.sync="centerDialogVisible"
-        :modal = "modalvisible"
-        center
-        >
-        <span id='policy'>
-          <li>
-            <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
-          </li>
-          <br/>
-          <li>
-            <a href="../assets/汉阳区大健康产业扶持政策.html" >汉阳区大健康产业扶持政策</a>
-          </li>
-          <br/>
-          <li>
-            <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
-          </li>
-          <!--<li>
-            <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
-          </li>-->
-        </span>
-        <!-- <span slot="footer" class="dialog-footer">
-            <el-button @click="centerDialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
-        </span> -->
-        </el-dialog>
       <!-- <div class="bottom-btn-top">
         <div class="fengxian" v-if="num <= 2">低风险</div>
         <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
@@ -75,25 +46,6 @@
         <div class="alert" v-else>您当前附近3公里范围内疫情风险高，请务必做好防护，做好自我隔离。</div>
       </div>
       <div class="bottom-footer"></div> -->
-      <!-- <div class="out-list">
-        <ul class="filter-list">
-          <li class="filter-list-item" @click="currentItem = item" :class="{active:item === currentItem}"
-            v-for="(item,index) in filterList" :key="index">{{item}}</li>
-        </ul>
-        <div class="out-list-body">
-          <ul class="out-list-body-ul" :style="'heigth:' + (228 * listData.length) + 'px'">
-            <li class="out-list-item" v-for="(item,index) in listData" :key="index">
-              <div class="out-list-item-title">
-                <div class="out-list-item-text">{{item.title}}</div>
-                <div class="out-list-item-type">{{item.type}}</div>
-              </div>
-              <p class="out-list-item-p icon-location">{{item.location}}</p>
-              <p class="out-list-item-p icon-phone">{{item.phone}}</p>
-              <p class="out-list-item-p icon-time">{{item.time}}</p>
-            </li>
-          </ul>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -109,7 +61,7 @@
   import Dialog from "./../components/Dialog";
 
   export default {
-    name: "HanKou",
+    name: "ShouYe",
 
     components: {
       Drawer: Drawer,
@@ -128,143 +80,16 @@
         },
         centerDialogVisible: false,
         modalvisible:false,
-        num: 0,
-        viewArr: [],
-        filterList: ["全部", "药店", "商超", "酒店"],
-        currentItem: "全部",
-        listData: [{
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          },
-          {
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          },
-          {
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          },
-          {
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          },
-          {
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          },
-          {
-            title: "如家商旅酒店(人民路店)",
-            type: "酒店",
-            phone: "110",
-            time: "营业时间8:00 - 19:00",
-            location: "枣阳路"
-          }
-        ],
-        dangerous: ['低风险', '中风险', '高风险', ''],
-        dangerousText: '',
         alertText: '',
       };
     },
 
     methods: {
       //绘制汉口招商引资图表
-      investmentChart() {
-        const chartDom = document.createElement('div');
-        chartDom.style.cssText = 'width:650px; height:300px;';
-        var myChart = echarts.init(chartDom);
-        var option = {
-          title: {
-            x: 'center'
-          },
-          tooltip: {
-            trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)'
-          },
-          legend: {
-            x: 'center',
-            y: 'bottom',
-            data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
-          },
-          toolbox: {
-            show: true,
-            feature: {
-              mark: {
-                show: true
-              },
-              dataView: {
-                show: true,
-                readOnly: false
-              },
-              magicType: {
-                show: true,
-                type: ['pie', 'funnel']
-              },
-              restore: {
-                show: true
-              },
-              saveAsImage: {
-                show: true
-              }
-            }
-          },
-          calculable: false,
-          series: [{
-            name: 'Area mode',
-            type: 'pie',
-            radius: [30, 110],
-            center: ['50%', '50%'],
-            roseType: 'area',
-            data: [{
-              value: 10,
-              name: '一类服务'
-            }, {
-              value: 5,
-              name: '二类服务'
-            }, {
-              value: 15,
-              name: '三类服务'
-            }, {
-              value: 25,
-              name: '四类服务'
-            }, {
-              value: 20,
-              name: '五类服务'
-            }, {
-              value: 35,
-              name: '六类服务'
-            }]
-          }]
-        };
-        myChart.setOption(option);
-        //添加进地图
-        var echartsUI = new maptalks.ui.UIMarker([113.5, 31.1], {
-          'draggable': false,
-          'content': chartDom,
-          pitchWithMap: true,
-          rotateWithMap: true
-        }).addTo(Vue.mapInstance).show();
-      },
-
     },
 
     mounted() {
       //增加统计图表
-      // this.investmentChart();
     }
   };
 </script>
@@ -296,7 +121,7 @@
 
   .layout .head {
     background: url(./../assets/banner2.jpg) no-repeat center;
-    background-size: 100% 100%;
+    background-size: 50% 50%;
     height: 98px;
     width: 100%;
     font-size: 50px;
@@ -305,6 +130,11 @@
     padding-left: 3%;
     line-height: 98px;
     color: #000080;
+  }
+
+ .layout .logo {
+    left:40%;
+    top: 40%;
   }
 
   .layout .select {

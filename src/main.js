@@ -33,7 +33,6 @@ Vue.prototype.marker_Self = [];
 
 const app = new Vue({
     router,
-    store,
     render: h => h(App)
 }).$mount("#app");
 

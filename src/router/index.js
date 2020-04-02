@@ -7,7 +7,15 @@ const router = new Router({
     mode: "hash",
     routes: [{
             path: "/",
-            redirect: "/HK"
+            redirect: "/SY"
+        },
+        {
+            path: "/SY",
+            component: () => import("../views/ShouYe"),
+            meta: {
+                keepAlive: true,
+                title: "汉阳招商云地图"
+            }
         },
         {
             path: "/HK",
