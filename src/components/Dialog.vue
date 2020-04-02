@@ -14,7 +14,7 @@
             <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
           </li>
           <li>
-            <a href="'./../assets/汉阳区大健康产业扶持政策.html'" >汉阳区大健康产业扶持政策</a>
+            <a href="../assets/汉阳区大健康产业扶持政策.html" >汉阳区大健康产业扶持政策</a>
           </li>
           <li>
             <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
