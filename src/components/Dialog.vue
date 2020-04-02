@@ -6,6 +6,7 @@
         id='dialog1'
         title="相关政策"
         :visible.sync="centerDialogVisible"
+        :modal = "modalvisible"
         center
         >
         <span id='policy'>
@@ -38,7 +39,8 @@
   export default {
     data() {
       return {
-        centerDialogVisible: false
+        centerDialogVisible: false,
+        modalvisible:false
       };
     },
     methods: {
