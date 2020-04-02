@@ -37,7 +37,7 @@
             </el-col>
         </el-row>
         <div class="bottom-footer">
-            版权所有@汉阳区商务局    技术支持:武汉大学测绘学院
+            版权所有©汉阳区商务局    技术支持:武汉大学测绘学院
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@
   }
   .layout {
     width: 100%;
-    height: 100%;
+    height: 98%;
     position: relative;
     overflow: hidden;
     background:-webkit-linear-gradient(
