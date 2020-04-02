@@ -6,16 +6,17 @@
         id='dialog1'
         title="相关政策"
         :visible.sync="centerDialogVisible"
-        width="50%"
         center
         >
         <span id='policy'>
           <li>
             <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
           </li>
+          <br/>
           <li>
             <a href="../assets/汉阳区大健康产业扶持政策.html" >汉阳区大健康产业扶持政策</a>
           </li>
+          <br/>
           <li>
             <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
           </li>
@@ -23,10 +24,10 @@
             <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
           </li>-->
         </span>
-        <span slot="footer" class="dialog-footer">
+        <!-- <span slot="footer" class="dialog-footer">
             <el-button @click="centerDialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
-        </span>
+        </span> -->
         </el-dialog>
   </div>
 </template>
@@ -70,13 +71,20 @@
     /*bottom: 3%;  */
   }
   #policy{
-    font-size: 28px
+    font-size: 27px
   }
   #dialog1{
-    width:30em
+    width:100%
+    /* right:50% */
   }
   /*.el-dialog__title{
     font-size: 30px
   }*/
-
+  #header-title{
+    font-size: 18px;
+    font:bolder;
+  }
+  .el-dialog.el-dialog__header{
+    font-size: 18px
+  }
 </style>
