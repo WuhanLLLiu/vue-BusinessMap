@@ -31,13 +31,13 @@
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><a href="http://www.baidu.com"><img src="./../assets/招商推介.png" width="60%" /></a></li>
+                <li id="img"><a @click="RouteZSTJ"><img src="./../assets/招商推介.png" width="60%" /></a></li>
                 <li id='type'>招商推介</li>
             </ul>
             </el-col>
         </el-row>
         <div class="bottom-footer">
-            汉阳招商云地图    武汉大学测绘学院
+            版权所有@汉阳区商务局    技术支持:武汉大学测绘学院
         </div>
       </div>
     </div>
@@ -100,6 +100,7 @@
   import info from "./../components/info";
   import Dialog from "./../components/Dialog";
 
+
   export default {
     name: "ShouYe",
 
@@ -129,6 +130,9 @@
 
     methods: {
       //绘制汉口招商引资图表
+      RouteZSTJ(){
+        this.$router.push({path:'/ZSTJ'})
+      }
     },
 
     mounted() {
