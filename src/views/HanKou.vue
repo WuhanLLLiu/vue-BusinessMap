@@ -10,13 +10,13 @@
       <el-row id="row1">
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><img src="./../assets/土地信息.png" width="50%" /></li>
+            <li id="img"><img src="./../assets/土地信息.png" width="50%" @click="alertdialog"/></li>
             <li id='type'>土地信息</li>
           </ul>
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><img src="./../assets/楼宇信息.png" width="50%" /></li>
+            <li id="img"><img src="./../assets/楼宇信息.png" width="50%" @click="alertdialog"/></li>
             <li id='type'>楼宇信息</li>
           </ul>
         </el-col>
@@ -28,7 +28,7 @@
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><a href="http://www.baidu.com"><img src="./../assets/招商推介.png" width="50%" /></a></li>
+            <li id="img"><a @click="RouteZSTJ"><img src="./../assets/招商推介.png" width="50%" /></a></li>
             <li id='type'>招商推介</li>
           </ul>
         </el-col>
@@ -47,11 +47,11 @@
           </li>
           <br/>
           <li>
-            <a href="../assets/汉阳区大健康产业扶持政策.html" >汉阳区大健康产业扶持政策</a>
+            <a href="http://139.129.7.130/file/%E6%A5%BC%E5%AE%87%E6%89%B6%E6%8C%81%E6%94%BF%E7%AD%96.html" >汉阳区大健康产业扶持政策</a>
           </li>
           <br/>
           <li>
-            <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
+            <a href="http://139.129.7.130/file/楼宇扶持政策.html" >汉阳区楼宇扶持政策</a>
           </li>
           <!--<li>
             <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
@@ -259,7 +259,12 @@
           rotateWithMap: true
         }).addTo(Vue.mapInstance).show();
       },
-
+      RouteZSTJ(){
+        this.$router.push({path:'/ZSTJ'})
+      },
+      alertdialog(){
+        alert('未完全开放，功能仍在开发...')
+      }
     },
 
     mounted() {

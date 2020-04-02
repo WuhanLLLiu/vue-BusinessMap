@@ -13,13 +13,13 @@
         <el-row id="row1">
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/土地信息.png" width="60%" /></li>
+                <li id="img"><img src="./../assets/土地信息.png" width="60%" @click="RouteDT"/></li>
                 <li id='type'>土地信息</li>
             </ul>
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" /></li>
+                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" @click="RouteDT"/></li>
                 <li id='type'>楼宇信息</li>
             </ul>
             </el-col>
@@ -45,27 +45,44 @@
         id='dialog1'
         title="相关政策"
         :visible.sync="outerVisible"
+        :fullscreen = "fullscreen1"
+        :modal="modalvisible"
         center
         >
-        <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区大健康产业扶持政策</el-button>
-            <br/>
-        <el-button id='button11' type="primary"  @click="innerVisible_1 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区楼宇扶持政策</el-button>
+        <span id='policy'>
+          <li>
+            <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
+          </li>
+          <br/>
+          <li>
+            <a href="http://139.129.7.130/file/%E6%A5%BC%E5%AE%87%E6%89%B6%E6%8C%81%E6%94%BF%E7%AD%96.html">汉阳区大健康产业扶持政策</a>
+          </li>
+          <br/>
+          <li>
+            <a href="http://139.129.7.130/file/楼宇扶持政策.html" >汉阳区楼宇扶持政策</a>
+          </li>
+        </span>
+        <!-- <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区大健康产业扶持政策</el-button>
+            <br/>a
+        <el-button id='button11' type="primary"  @click="innerVisible_1 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区楼宇扶持政策</el-button> -->
             <el-dialog
                 width="100%"
                 title="汉阳区大健康产业扶持政策"
                 :visible.sync="innerVisible_0"
+                :fullscreen = "fullscreen1"
                 append-to-body>
                 <span>
-                <iframe id="policy_0" src="./../assets/汉阳区大健康产业扶持政策.html"  style="width:100%;height:100%"> </iframe>
+                <iframe id="policy_0" src="http://139.129.7.130/file/%E6%A5%BC%E5%AE%87%E6%89%B6%E6%8C%81%E6%94%BF%E7%AD%96.html"  style="width:100%;height:100%"> </iframe>
                 </span>
             </el-dialog>
             <el-dialog
                 width="100%"
                 title="汉阳区楼宇扶持政策"
                 :visible.sync="innerVisible_1"
+                :fullscreen = "fullscreen1"
                 append-to-body>
                 <span>
-                <iframe id="policy_1" src="./../assets/楼宇扶持政策.html"  style="width:100%;height:100%"> </iframe>
+                <iframe id="policy_1" src="http://139.129.7.130/file/楼宇扶持政策.html"  style="width:100%;height:100%"> </iframe>
                 </span>
             </el-dialog>
     </el-dialog>
@@ -107,6 +124,7 @@
         innerVisible_1:false,
         modalvisible:false,
         alertText: '',
+        fullscreen1:true
       };
     },
 
@@ -114,6 +132,9 @@
       //绘制汉口招商引资图表
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
+      },
+      RouteDT(){
+        this.$router.push({path:'/HK'})
       }
     },
 
@@ -135,7 +156,8 @@
   }
   
   #policy{
-    font-size: 27px
+    font-size: 27px;
+    top:40%
   }
   #dialog1{
     width:100%
