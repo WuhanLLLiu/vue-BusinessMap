@@ -28,7 +28,8 @@
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><a href="http://www.baidu.com"><img src="./../assets/招商推介.png" width="50%" /></a></li>
+            <!-- <img src="./../assets/招商推介.png" width="50%" /> -->
+            <li id="img"><button @click="RouteZSTJ"></button> </li>
             <li id='type'>招商推介</li>
           </ul>
         </el-col>
@@ -60,6 +61,7 @@
   import info from "./../components/info";
   import Dialog from "./../components/Dialog";
 
+
   export default {
     name: "ShouYe",
 
@@ -86,6 +88,9 @@
 
     methods: {
       //绘制汉口招商引资图表
+      RouteZSTJ(){
+        this.$router.push({path:'/ZSTJ'})
+      }
     },
 
     mounted() {
