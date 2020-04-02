@@ -13,13 +13,13 @@
         <el-row id="row1">
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/土地信息.png" width="60%" /></li>
+                <li id="img"><img src="./../assets/土地信息.png" width="60%" @click="RouteDT"/></li>
                 <li id='type'>土地信息</li>
             </ul>
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" /></li>
+                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" @click="RouteDT"/></li>
                 <li id='type'>楼宇信息</li>
             </ul>
             </el-col>
@@ -132,6 +132,9 @@
       //绘制汉口招商引资图表
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
+      },
+      RouteDT(){
+        this.$router.push({path:'/HK'})
       }
     },
 
