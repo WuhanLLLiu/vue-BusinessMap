@@ -4,35 +4,35 @@
 
     <div class="map">
       <webmap ref="webmap"></webmap>
-    </div>   
+    </div>
     <Dialog></Dialog>
     <div class="bottom" :class="{full:isFull}">
-        <el-row id="row1">
-            <el-col :span='4'>
-                <ul type="none">
-                <li id="img"><img src="./../assets/商务用地.png" width="90%"/></li>
-                <li id='type'>商务用地</li>
-                </ul>  
-            </el-col>
-            <el-col :span='4'>
-                <ul type="none">
-                <li id="img"><img src="./../assets/居住用地.png" width="90%"/></li>
-                <li id='type'>居住用地</li>
-                </ul>  
-            </el-col>
-            <el-col :span='4'>
-                <ul type="none">
-                <li id="img"><img src="./../assets/工业用地.png" width="90%"/></li>
-                <li id='type'>工业用地</li>
-                </ul>  
-            </el-col>
-            <el-col :span='4'>
-                <ul type="none">
-                <li id="img"><img src="./../assets/其他用地.png" width="90%"/></li>
-                <li id='type'>其他用地</li>
-                </ul>  
-            </el-col>
-        </el-row>
+      <el-row id="row1">
+        <el-col :span='4'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/商务用地.png" width="50%" /></li>
+            <li id='type'>商务用地</li>
+          </ul>
+        </el-col>
+        <el-col :span='4'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/居住用地.png" width="50%" /></li>
+            <li id='type'>居住用地</li>
+          </ul>
+        </el-col>
+        <el-col :span='4'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/工业用地.png" width="50%" /></li>
+            <li id='type'>工业用地</li>
+          </ul>
+        </el-col>
+        <el-col :span='4'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/其他用地.png" width="50%" /></li>
+            <li id='type'>其他用地</li>
+          </ul>
+        </el-col>
+      </el-row>
       <!-- <div class="bottom-btn-top">
         <div class="fengxian" v-if="num <= 2">低风险</div>
         <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
@@ -86,7 +86,7 @@
       Drawer: Drawer,
       webmap: webmap,
       info: info,
-      Dialog:Dialog
+      Dialog: Dialog
     },
 
     data() {
@@ -262,32 +262,33 @@
     height: 98px;
     width: 100%;
     font-size: 50px;
-    font:bolder;
-    text-align:left;
+    font: bolder;
+    text-align: left;
     padding-left: 3%;
     line-height: 98px;
-    color:	#000080;
+    color: #000080;
   }
 
-  .layout .select{
-      position: absolute;
-      z-index: 102;
-      height: 36px;
-      background: rgba(255,255,255,1);
-      box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.08),0px 0px 1px 0px rgba(0,0,0,0.08);
-      border-radius: 6px;
-      margin: 0.3rem 0.3rem 0px 0.3rem;
-      width: 20%;
+  .layout .select {
+    position: absolute;
+    z-index: 102;
+    height: 36px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    margin: 0.3rem 0.3rem 0px 0.3rem;
+    width: 20%;
   }
 
   .layout .bottom {
-    height: 333px;
+    height: 200px;
     width: 100%;
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
     z-index: 4;
     background: #fff;
+    /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
   .bottom.full {
@@ -564,27 +565,32 @@
   }
 
 
-  .ul{
-      display:table;
-      list-style-type: none;
-      text-align: center;
+  .ul {
+    display: table;
+    list-style-type: none;
+    text-align: center;
   }
+
   #row1 {
     padding-top: 1.5em;
     padding-left: 1.0em;
-    text-align:center
+    text-align: center;
+    /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
+
   .el-col {
     border-radius: 4px;
     width: 23%;
-    text-align:center
+    text-align: center
   }
-  #img{
-      text-align:center
+
+  #img {
+    text-align: center
   }
-  #type{
-      font-weight: bolder;
-      font-size: 1.0em;
-      text-align:center
+
+  #type {
+    font-weight: bolder;
+    font-size: 1.0em;
+    text-align: center
   }
 </style>
