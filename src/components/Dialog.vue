@@ -1,15 +1,14 @@
 <template>
   <div id="Dialog">
-      <el-button id='button1' type="primary"  @click="centerDialogVisible = true" icon="el-icon-reading" round style="font-size: 1.0em">相关政策</el-button>
-        
+      <el-button id='button1' type="primary"  @click="outerVisible = true" icon="el-icon-reading" round style="font-size: 1.0em">相关政策</el-button>
+
         <el-dialog
         id='dialog1'
         title="相关政策"
-        :visible.sync="centerDialogVisible"
-        :modal = "modalvisible"
+        :visible.sync="outerVisible"
         center
         >
-        <span id='policy'>
+               <!--<span id='policy'>
           <li>
             <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
           </li>
@@ -21,14 +20,34 @@
           <li>
             <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
           </li>
-          <!--<li>
+          <li>
             <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
-          </li>-->
-        </span>
+          </li>
+        </span>-->
         <!-- <span slot="footer" class="dialog-footer">
             <el-button @click="centerDialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
         </span> -->
+            <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:20px">汉阳区大健康产业扶持政策</el-button>
+            <el-button id='button11' type="primary"  @click="innerVisible_1 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:20px">汉阳区楼宇扶持政策</el-button>
+            <el-dialog
+              width="100%"
+              title="汉阳区大健康产业扶持政策"
+              :visible.sync="innerVisible_0"
+              append-to-body>
+              <span>
+                <iframe id="policy_0" src="./../assets/汉阳区大健康产业扶持政策.html"  style="width:100%;height:100%"> </iframe>
+              </span>
+            </el-dialog>
+            <el-dialog
+              width="100%"
+              title="汉阳区楼宇扶持政策"
+              :visible.sync="innerVisible_1"
+              append-to-body>
+              <span>
+                <iframe id="policy_1" src="./../assets/楼宇扶持政策.html"  style="width:100%;height:100%"> </iframe>
+              </span>
+            </el-dialog>
         </el-dialog>
   </div>
 </template>
@@ -39,8 +58,11 @@
   export default {
     data() {
       return {
-        centerDialogVisible: false,
-        modalvisible:false
+        // centerDialogVisible: false,
+        // modalvisible:false,
+        outerVisible: false,
+        innerVisible_0: false,
+        innerVisible_1:false,
       };
     },
     methods: {
