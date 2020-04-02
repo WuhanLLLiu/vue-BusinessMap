@@ -171,7 +171,7 @@
   }
   .layout {
     width: 100%;
-    height: 98%;
+    height: 100%;
     position: relative;
     overflow: hidden;
     background:-webkit-linear-gradient(
