@@ -5,34 +5,63 @@
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
-    <Dialog></Dialog>
+    <!-- <Dialog></Dialog> -->
     <div class="bottom" :class="{full:isFull}">
       <el-row id="row1">
         <el-col :span='4'>
           <ul type="none">
             <li id="img"><img src="./../assets/商务用地.png" width="50%" /></li>
-            <li id='type'>商务用地</li>
+            <li id='type'>土地资源</li>
           </ul>
         </el-col>
         <el-col :span='4'>
           <ul type="none">
             <li id="img"><img src="./../assets/居住用地.png" width="50%" /></li>
-            <li id='type'>居住用地</li>
+            <li id='type'>楼宇资源</li>
           </ul>
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><img src="./../assets/工业用地.png" width="50%" /></li>
-            <li id='type'>工业用地</li>
+            <li id="img"><img src="./../assets/工业用地.png" width="50%" @click="centerDialogVisible = true"/></li>
+            <li id='type'>相关政策</li>
           </ul>
         </el-col>
         <el-col :span='4'>
           <ul type="none">
-            <li id="img"><img src="./../assets/其他用地.png" width="50%" /></li>
-            <li id='type'>其他用地</li>
+            <li id="img"><a href="http://www.baidu.com"><img src="./../assets/其他用地.png" width="50%" /></a></li>
+            <li id='type'>招商推介</li>
           </ul>
         </el-col>
       </el-row>
+
+        <el-dialog
+        id='dialog1'
+        title="相关政策"
+        :visible.sync="centerDialogVisible"
+        :modal = "modalvisible"
+        center
+        >
+        <span id='policy'>
+          <li>
+            <a href="http://www.hanyang.gov.cn/ZWGK/XXGKML/ZFWJ/GFXWJ/detail-85141.html" >汉阳区营商留商奖励政策</a>
+          </li>
+          <br/>
+          <li>
+            <a href="../assets/汉阳区大健康产业扶持政策.html" >汉阳区大健康产业扶持政策</a>
+          </li>
+          <br/>
+          <li>
+            <a href="http://www.huaxia.com/whtb/stzc/2013/07/3429108.html" >汉阳区楼宇扶持政策</a>
+          </li>
+          <!--<li>
+            <a href="'./../assets/楼宇扶持政策.html'" >汉阳区楼宇扶持政策</a>
+          </li>-->
+        </span>
+        <!-- <span slot="footer" class="dialog-footer">
+            <el-button @click="centerDialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+        </span> -->
+        </el-dialog>
       <!-- <div class="bottom-btn-top">
         <div class="fengxian" v-if="num <= 2">低风险</div>
         <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
@@ -97,6 +126,8 @@
           confirm: 17,
           new: 0
         },
+        centerDialogVisible: false,
+        modalvisible:false,
         num: 0,
         viewArr: [],
         filterList: ["全部", "药店", "商超", "酒店"],
@@ -248,7 +279,14 @@
   body {
     overflow: hidden;
   }
-
+  
+  #policy{
+    font-size: 27px
+  }
+  #dialog1{
+    width:100%
+    /* right:50% */
+  }
   .layout {
     width: 100%;
     height: 100%;

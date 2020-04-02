@@ -64,6 +64,13 @@
     position: absolute;
     z-index: 2;
   }
+  #Dialog.el-dialog.el-dialog__header{
+  font-size: 18px !important;
+  /* background-color: rgba(140, 142, 189, 0.6)!important;
+  color: #fff !important;
+  margin-bottom: 20px; */
+}
+
   #button1 {
     position: fixed;
     padding: 2%;
