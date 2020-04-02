@@ -1,54 +1,76 @@
 <template>
   <div id="ShouYe" class="layout">
-    <div class="head">汉阳招商云地图</div>
+    <div class="head">
+        <img id='imghead' src="./../assets/z.png" width='100%'/>
+    </div>
    
-    <div class='logo'>
-        <img src="./../assets/logo.jpg" width="50%"/>
+    <div class="logo">
+        <img id='logo' src="./../assets/logo.jpg" width="50%"/>
     </div>
-    <!-- <Dialog></Dialog> -->
-    <div class="bottom" :class="{full:isFull}">
-      <el-row id="row1">
-        <el-col :span='4'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/土地信息.png" width="50%" /></li>
-            <li id='type'>土地信息</li>
-          </ul>
-        </el-col>
-        <el-col :span='4'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/楼宇信息.png" width="50%" /></li>
-            <li id='type'>楼宇信息</li>
-          </ul>
-        </el-col>
-        <el-col :span='4'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/相关政策.png" width="50%" @click="centerDialogVisible = true"/></li>
-            <li id='type'>相关政策</li>
-          </ul>
-        </el-col>
-        <el-col :span='4'>
-          <ul type="none">
-            <!-- <img src="./../assets/招商推介.png" width="50%" /> -->
-            <li id="img"><button @click="RouteZSTJ"></button> </li>
-            <li id='type'>招商推介</li>
-          </ul>
-        </el-col>
-      </el-row>
-      <!-- <div class="bottom-btn-top">
-        <div class="fengxian" v-if="num <= 2">低风险</div>
-        <div class="fengxian" style="background:#ffc107;" v-else-if="num <= 5">中风险</div>
-        <div class="fengxian" style="background:#ff5722;" v-else>高风险</div>
-      </div> -->
 
-      <!-- <div class="center">
-        <div class="definite">附近累计确诊:<span class="people">{{num}}</span><span class="monad">人</span></div>
-        <div class="alert" v-if="num <= 2">您当前附近3公里范围内疫情风险较低，也请注意防护。</div>
-        <div class="alert" v-else-if="num <= 5">您当前附近3公里范围内存在一定的风险，请注意防护，减少外出。</div>
-        <div class="alert" v-else>您当前附近3公里范围内疫情风险高，请务必做好防护，做好自我隔离。</div>
+    <div class="bottom" :class="{full:isFull}">
+      <div class="bottom-btn-top">
+        <el-row id="row1">
+            <el-col :span='4'>
+            <ul type="none">
+                <li id="img"><img src="./../assets/土地信息.png" width="60%" /></li>
+                <li id='type'>土地信息</li>
+            </ul>
+            </el-col>
+            <el-col :span='4'>
+            <ul type="none">
+                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" /></li>
+                <li id='type'>楼宇信息</li>
+            </ul>
+            </el-col>
+            <el-col :span='4'>
+            <ul type="none">
+                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="outerVisible = true"/></li>
+                <li id='type'>相关政策</li>
+            </ul>
+            </el-col>
+            <el-col :span='4'>
+            <ul type="none">
+                <li id="img"><a @click="RouteZSTJ"><img src="./../assets/招商推介.png" width="60%" /></a></li>
+                <li id='type'>招商推介</li>
+            </ul>
+            </el-col>
+        </el-row>
+        <div class="bottom-footer">
+            版权所有@汉阳区商务局    技术支持:武汉大学测绘学院
+        </div>
       </div>
-      <div class="bottom-footer"></div> -->
     </div>
+    <el-dialog
+        id='dialog1'
+        title="相关政策"
+        :visible.sync="outerVisible"
+        center
+        >
+        <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区大健康产业扶持政策</el-button>
+            <br/>
+        <el-button id='button11' type="primary"  @click="innerVisible_1 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区楼宇扶持政策</el-button>
+            <el-dialog
+                width="100%"
+                title="汉阳区大健康产业扶持政策"
+                :visible.sync="innerVisible_0"
+                append-to-body>
+                <span>
+                <iframe id="policy_0" src="./../assets/汉阳区大健康产业扶持政策.html"  style="width:100%;height:100%"> </iframe>
+                </span>
+            </el-dialog>
+            <el-dialog
+                width="100%"
+                title="汉阳区楼宇扶持政策"
+                :visible.sync="innerVisible_1"
+                append-to-body>
+                <span>
+                <iframe id="policy_1" src="./../assets/楼宇扶持政策.html"  style="width:100%;height:100%"> </iframe>
+                </span>
+            </el-dialog>
+    </el-dialog>
   </div>
+
 </template>
 
 <script>
@@ -80,7 +102,9 @@
           confirm: 17,
           new: 0
         },
-        centerDialogVisible: false,
+        outerVisible: false,
+        innerVisible_0: false,
+        innerVisible_1:false,
         modalvisible:false,
         alertText: '',
       };
@@ -122,25 +146,51 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    background:-webkit-linear-gradient(
+        top,rgb(226, 17, 17),rgb(230, 36, 36),rgb(236, 105, 105),rgb(112, 91, 228),rgb(29, 63, 214),rgb(49, 84, 241)
+    )
   }
 
-  .layout .head {
-    background: url(./../assets/banner2.jpg) no-repeat center;
-    background-size: 50% 50%;
-    height: 98px;
-    width: 100%;
-    font-size: 50px;
-    font: bolder;
-    text-align: left;
-    padding-left: 3%;
-    line-height: 98px;
-    color: #000080;
-  }
+    .layout .head {
+        background-size: 50% 50%;
+        height: 20%;
+        width: 100%;
+        font-size: 50px;
+        font: bolder;
+        padding-left: 3%;
+        line-height: 98px;
+        color: #000080;
+    }
 
- .layout .logo {
-    left:40%;
-    top: 40%;
-  }
+    .layout .logo {
+            /*position: absolute;*/
+            margin: 3% 10% 0% 10%;
+            top: 45%;
+            border-radius:50% 50%; 
+            border-width: 5px;
+    }
+
+    #logo {
+        width: 50%;
+        height: auto;
+        max-width: 80%;
+        max-height: 80%;
+        border-radius:50% 50%; 
+        border-width: 5px;
+        border-color: white;
+        box-shadow:white 0.1px 0.1px 0.2px 0.6px;
+        position: absolute!important;
+        left: 50%;
+        top: 45%;
+        transform: translateY(-50%,-50%);
+        -webkit-transform:translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        display: block;
+    }
+
+  
 
   .layout .select {
     position: absolute;
@@ -154,30 +204,18 @@
   }
 
   .layout .bottom {
-    height: 200px;
+    height: 23%;
     width: 100%;
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
     z-index: 4;
-    background: #fff;
+    opacity: 100%;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
   .bottom.full {
     transform: translateY(-897px);
-  }
-
-  .bottom-btn-top {
-    height: 79px;
-    border-bottom: 2px solid #ccc;
-    font-size: 30px;
-    line-height: 79px;
-    padding-left: 39px;
-    box-sizing: border-box;
-    font-weight: bold;
-    position: relative;
-    background: #fff;
   }
 
   .bottom-btn-title {
@@ -271,8 +309,10 @@
     height: 71px;
     text-align: center;
     line-height: 71px;
-    color: #628dd1;
-    font-size: 18px;
+    color:white;
+    font-size: 0.8em;
+    border-top: 2px solid #dddddd;
+     margin-top: 1.5em;
   }
 
   .map {
@@ -280,121 +320,6 @@
     height: calc(100%);
     overflow: hidden;
     position: relative;
-  }
-
-  .out-list {
-    height: 967px;
-    background: #f4f4f4;
-    box-sizing: border-box;
-    padding-top: 18px;
-  }
-
-  .out-list .filter-list {
-    background: #fff;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-left: 0;
-    border-right: 0;
-    padding-top: 18px;
-    padding-left: 41px;
-    box-sizing: border-box;
-  }
-
-  .filter-list-item {
-    width: 90px;
-    height: 41px;
-    background: #a4a4a4;
-    border-radius: 4px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    line-height: 41px;
-    float: left;
-    margin-right: 17px;
-  }
-
-  .filter-list-item.active {
-    background: #0049cc;
-  }
-
-  .out-list-body {
-    height: calc(100% - 134px);
-    margin: 34px auto 0;
-    width: 707px;
-    overflow: auto;
-  }
-
-  .out-list-body-ul {
-    width: 100%;
-  }
-
-  .out-list-body-ul>li.out-list-item {
-    height: 207px;
-    width: 100%;
-    border-radius: 9px;
-    background: #fff;
-    margin-bottom: 21px;
-    position: relative;
-    padding-left: 23px;
-    box-sizing: border-box;
-    padding-top: 18px;
-    padding-bottom: 23px;
-  }
-
-  .out-list-item .out-list-item-title {
-    height: 42px;
-    font-size: 30px;
-    line-height: 42px;
-  }
-
-  .out-list-item-p {
-    margin-top: 11px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
-    padding-left: 44px;
-    position: relative;
-  }
-
-  .out-list-item-p::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: url(./../assets/location.jpg) no-repeat center;
-    background-size: 100% 100%;
-  }
-
-  .out-list-item-p.icon-location::after {
-    background-image: url(./../assets/location.jpg);
-  }
-
-  .out-list-item-p.icon-phone::after {
-    background-image: url(./../assets/phone.jpg);
-  }
-
-  .out-list-item-p.icon-time::after {
-    background-image: url(./../assets/time.jpg);
-  }
-
-  .out-list-item-text {
-    float: left;
-  }
-
-  .out-list-item-type {
-    width: 90px;
-    height: 41px;
-    background: #0049cc;
-    border-radius: 4px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    line-height: 41px;
-    float: left;
-    margin-left: 27px;
   }
 
   .center {
@@ -464,6 +389,7 @@
   #type {
     font-weight: bolder;
     font-size: 1.0em;
-    text-align: center
+    text-align: center;
+    color:white;
   }
 </style>
