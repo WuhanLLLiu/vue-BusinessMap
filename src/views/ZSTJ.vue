@@ -1,10 +1,9 @@
 <template>
-    <el-carousel :interval="4000" type="card" :height="carouselHeight">
-        <el-carousel-item v-for="(item, idx) in dataimg" :key="item">
-            <div>
-                <img :src="item" class="imgbox">
-                <p class="italictext">{{idx+1}}</p>
-            </div>
+    <!-- indicator-position="inline" -->
+    <el-carousel :interval="4000" arrow="always" indicator-position="none" :height="height">
+        <el-carousel-item v-for="(item) in dataimg" :key="item">
+            <img :src="item" class="imgbox">
+            <!-- <p class="italictext">{{idx+1}}</p> -->
         </el-carousel-item>
     </el-carousel>
 </template>
@@ -13,7 +12,6 @@
     export default {
         data() {
             return {
-                carouselHeight: "700px",
                 dataimg: [
                     require('./../assets/zstj/1.png'),
                     require('./../assets/zstj/2.png'),
@@ -58,40 +56,90 @@
             }
         },
 
+        methods: {
+            resize() {
+                let width = document.documentElement.clientWidth
+                let height = document.documentElement.clientHeight
+                if (width > height) {
+                    this.height = document.documentElement.clientHeight + 'px';
+                    this.$forceUpdate();
+                } else {
+                    this.height = document.documentElement.clientHeight + 'px';
+                    this.$forceUpdate();
+                }
+            }
+        },
+
         beforeMount() {
-            this.carouselHeight = (window.innerHeight - 21) + 'px';
+            let width = document.documentElement.clientWidth
+            let height = document.documentElement.clientHeight
+            if (width < height) {
+                this.$alert('为了更好的浏览体验，建议您使用手机横屏观看', '提示', {
+                    confirmButtonText: '确定',
+                });
+                this.height = document.documentElement.clientWidth + 'px';
+                this.$forceUpdate();
+            } else {
+                this.height = document.documentElement.clientHeight + 'px';
+                this.$forceUpdate();
+            }
+        },
+
+        mounted() {
+            window.addEventListener("resize", this.resize, false);
+            // const that = this;
+            // window.onresize = () => {
+            //     that.carouselHeight = (window.innerHeight) + 'px';
+            // }
         }
     }
 </script>
 
 <style>
+    .container0 {
+        /* display: flex; */
+        align-items: center;
+        vertical-align: middle;
+        /* top: 50%; */
+        /* margin-top: 50%; */
+    }
+
     .italictext {
-        color: white;
+        color: black;
+        margin-left: 12px;
         position: fixed;
-        transform: rotate(-90deg);
-        padding: 25px;
-        padding-top: 0px;
+        /* transform: rotate(-90deg); */
+        /* padding: 5px; */
+        /* padding-top: 0px; */
     }
 
     .imgbox {
-        width: 100%;
+        /* margin: auto; */
+        height: 100%;
+        /* width: 100%; */
         background-size: cover;
         /* 使图片平铺满整个浏览器（从宽和高的最大需求方面来满足，会使某些部分无法显示在区域中） */
         position: absolute;
-        top:50%;
-        margin-top: -85%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         /* 不可缺少 */
         /* overflow: hidden; */
-        /* overflow: auto; */
+        overflow: auto;
         z-index: -1;
         background-repeat: no-repeat;
     }
 
+    /* .el-carousel__item {
+        align
+        align: center;
+    } */
+
     .el-carousel__item h3 {
         color: #475669;
-        font-size: 14px;
+        font-size: 18px;
         opacity: 0.75;
-        line-height: 200px;
+        line-height: 300px;
         margin: 0;
     }
 

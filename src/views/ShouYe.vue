@@ -25,7 +25,7 @@
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="outerVisible = true"/></li>
+                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="RouteDT"/></li>
                 <li id='type'>相关政策</li>
             </ul>
             </el-col>
@@ -243,7 +243,7 @@
     height: 23%;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 35px;
     transition: all 0.5s;
     z-index: 4;
     opacity: 100%;
@@ -348,7 +348,8 @@
     color:white;
     font-size: 0.8em;
     border-top: 2px solid #dddddd;
-     margin-top: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 12px;
   }
 
   .map {
