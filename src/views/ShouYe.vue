@@ -88,6 +88,8 @@
                 </span>
             </el-dialog>
     </el-dialog>
+
+
   </div>
 
 </template>
@@ -142,9 +144,12 @@
       // RouteDT(){
       //   this.$router.push({path:'/HK'})
       // },
-      RouteDT(){
-          alert('正在开发，敬请期待！')
-      },
+
+      RouteDT() {
+        this.$alert('正在开发，敬请期待！','提示', {
+          confirmButtonText: '确定',
+        });
+      }
     },
 
     mounted() {
