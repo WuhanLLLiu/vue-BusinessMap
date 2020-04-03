@@ -1,7 +1,7 @@
 <template>
   <div id="ShouYe" class="layout">
     <div class="head">
-        <img id='imghead' src="./../assets/z.png" width='100%'/>
+        <img id='imghead' src="./../assets/zzz.png" width='100%'/>
     </div>
    
     <div class="logo">
@@ -139,8 +139,11 @@
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
       },
+      // RouteDT(){
+      //   this.$router.push({path:'/HK'})
+      // },
       RouteDT(){
-        this.$router.push({path:'/HK'})
+          alert('正在开发，敬请期待！')
       },
     },
 
