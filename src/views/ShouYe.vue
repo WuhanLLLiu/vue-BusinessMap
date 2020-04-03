@@ -183,7 +183,7 @@
     position: relative;
     overflow: hidden;
     background:-webkit-linear-gradient(
-        top,rgb(226, 17, 17),rgb(230, 36, 36),rgb(236, 105, 105),rgb(112, 91, 228),rgb(29, 63, 214),rgb(49, 84, 241)
+        top,rgb(29, 63, 214),rgb(49, 84, 241)
     )
   }
 
