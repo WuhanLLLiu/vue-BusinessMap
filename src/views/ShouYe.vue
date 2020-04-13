@@ -141,15 +141,15 @@
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
       },
-      // RouteDT(){
-      //   this.$router.push({path:'/HK'})
-      // },
+      RouteDT(){
+        this.$router.push({path:'/TDXX'})
+      },
 
-      RouteDT() {
-        this.$alert('正在开发，敬请期待！','提示', {
-          confirmButtonText: '确定',
-        });
-      }
+      // RouteDT() {
+      //   this.$alert('正在开发，敬请期待！','提示', {
+      //     confirmButtonText: '确定',
+      //   });
+      // }
     },
 
     mounted() {

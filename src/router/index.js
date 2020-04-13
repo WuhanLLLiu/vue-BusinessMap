@@ -34,6 +34,14 @@ const router = new Router({
             }
         },
         {
+            path: "/TDXX",
+            component: () => import("../views/TDXX"),
+            meta: {
+                keepAlive: true,
+                title: "汉阳招商云地图"
+            }
+        },
+        {
             path: "/HBS",
             component: () => import("../views/Hubei"),
             meta: {

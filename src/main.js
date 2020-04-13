@@ -11,6 +11,10 @@ import router from "./router";
 import vueJsonp from 'vue-jsonp'
 import BaiduMap from 'vue-baidu-map'
 import Mint from 'mint-ui';
+import Vant from 'vant'
+import 'vant/lib/index.css';
+
+Vue.use(Vant)
 Vue.use(Mint);
 Vue.use(vueJsonp)
 Vue.use(ElementUI)
