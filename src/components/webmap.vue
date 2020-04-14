@@ -701,20 +701,33 @@
         Vue.mapInstance.addLayer(new maptalks.VectorLayer('v1'))
         var county = tdxx.tdxx[0]
         const geometries = maptalks.GeoJSON.toGeometry(county);
-        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries).addTo(Vue.mapInstance);
+        for (var i = 0; i < geometries.length; i++) {
+          var a = geometries[i];
+          a._id = i
+        }
+        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries);
         //设置style
         vectorLayer.setStyle([{
             'symbol': {
                 'lineColor': '#34495e',
                 'lineWidth': 2,
-                'polygonFill': 'rgb(255,0,0)',
-                'polygonOpacity': 1
+                'polygonFill': 'rgb(135,196,240)',
+                'polygonOpacity': 0.6
             }
           }]);
-          
-          console.log(Vue.mapInstance.getLayer('v1'))
         // Vue.mapInstance.addLayer(vectorLayer);
         Vue.mapInstance.getLayer('v1').bringToBack()
+       //信息框显示marker_self.
+        for (var j = 0; j < geometries.length; j++) {
+          Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
+            'title': '地块信息',
+            'content': '<div style="font-size:14px;">' + '地块名称：' + geometries[j].properties.name + '<br/>' +
+              '<br/>' + '详细信息：' + geometries[j].properties.around + '</div>',
+            'autoCloseOn': 'click',
+            // 'autoPan': true,
+            // 'width': 430,
+          });
+        }
         }
     },
     //生命周期 - 创建完成（可以访问当前this实例）
@@ -746,12 +759,8 @@
         'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
       }));
 
-      // this.parcel(true);
-      this.HYmarker();
       // this.buildings();
       this.HYparcel()
- 
-
     },
 
     beforeCreate() {}, //生命周期 - 创建之前rk
