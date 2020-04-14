@@ -11,9 +11,9 @@
     <div class="dropmenu">
         <van-dropdown-menu
             :overlay = false>
-            <van-dropdown-item v-model="value1" :options="option1" @change="func" />
+            <van-dropdown-item v-model="value1" :options="option1"  />
             <van-dropdown-item v-model="value2" :options="option2" />
-            <van-dropdown-item v-model="value3" :options="option3" />
+            <van-dropdown-item v-model="value3" :options="option3" @change="func"/>
         </van-dropdown-menu>
     </div>
 
@@ -49,14 +49,20 @@
         modalvisible:false,
         num: 0,
         viewArr: [],
-        
+    
         value1: 0,
         value2: 0,
         value3: 0,
         option1: [
             { text: '街道', value: 0 },
-            { text: '新款商品', value: 1 },
-            { text: '活动商品', value: 2 }
+            { text: '江堤街', value: 1 },
+            { text: '永丰街', value: 2 },
+            { text: '洲头街', value: 3 },
+            { text: '建桥街', value: 4 },
+            { text: '四新街', value: 5 },
+            { text: '晴川街', value: 6 },
+            { text: '五里墩街', value: 7 },
+            { text: '琴断口街', value: 8 },
         ],
         option2: [
             { text: '用地类型', value: 0 },
@@ -87,7 +93,7 @@
         alert('未完全开放，功能仍在开发...')
       },
       func(){  
-        var value = this.value1  
+        var value = this.value3  
         alert(value)
       }  
     },

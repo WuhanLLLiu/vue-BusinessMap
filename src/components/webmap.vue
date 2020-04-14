@@ -26,6 +26,7 @@
 
   import marker_Self from '../assets/marker.js'
   import bar_Self from '../assets/bar.js'
+  import tdxx from '../assets/tdxx.js'
   //引入百度api,需要安装npm i vue-baidu-map --save
   // import BaiduMap from 'vue-baidu-map'
   // Vue.use(BaiduMap, {
@@ -247,6 +248,7 @@
                     }
                   }
                 ]);
+                console.log(Vue.mapInstance)
                 Vue.mapInstance.getLayer('v').bringToBack()
               });
           }
@@ -635,9 +637,9 @@
             }
           );
           marker_SelfLayer.addGeometry(marker);
-          j
         }
         Vue.mapInstance.addLayer(marker_SelfLayer);
+        console.log(Vue.mapInstance)
         //信息框显示marker_self.
         for (var j = 0; j < 7; j++) {
           Vue.mapInstance.getLayer('marker_Self').getGeometryById(j).setInfoWindow({
@@ -649,7 +651,6 @@
             // 'autoPan': true,
             // 'width': 430,
           });
-          // marker.openInfoWindow();
         }
       },
       //three.js
@@ -694,7 +695,27 @@
           }
         };
         threeLayer.addTo(Vue.mapInstance);
-      }
+      },
+      //地块
+      HYparcel(){
+        Vue.mapInstance.addLayer(new maptalks.VectorLayer('v1'))
+        var county = tdxx.tdxx[0]
+        const geometries = maptalks.GeoJSON.toGeometry(county);
+        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries).addTo(Vue.mapInstance);
+        //设置style
+        vectorLayer.setStyle([{
+            'symbol': {
+                'lineColor': '#34495e',
+                'lineWidth': 2,
+                'polygonFill': 'rgb(255,0,0)',
+                'polygonOpacity': 1
+            }
+          }]);
+          
+          console.log(Vue.mapInstance.getLayer('v1'))
+        // Vue.mapInstance.addLayer(vectorLayer);
+        Vue.mapInstance.getLayer('v1').bringToBack()
+        }
     },
     //生命周期 - 创建完成（可以访问当前this实例）
     created() {},
@@ -726,8 +747,10 @@
       }));
 
       // this.parcel(true);
-      // this.HYmarker();
+      this.HYmarker();
       // this.buildings();
+      this.HYparcel()
+ 
 
     },
 
