@@ -730,20 +730,25 @@
         zoom: 14,
         // pitch: 50,
         // zoom: 17,
-        spatialReference: {
-          projection: 'baidu'
-        },
+        // spatialReference: {
+        //   projection: 'baidu'
+        // },
         // layers: [
         //   new maptalks.VectorLayer('v')
         // ]
       });
-      const dpr = Vue.mapInstance.getDevicePixelRatio();
-      const scaler = dpr > 1 ? 2 : 1;
-      //https://maponline0.bdimg.com/starpic/?qt=satepc&u=x=778;y=218;z=12;v=009;type=sate&fm=46&app=webearth2&v=009&udt=20200225
-      Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
-        'urlTemplate': `http://online2.map.bdimg.com/tile/?qt=vtile&x={x}&y={y}&z={z}&styles=pl&scaler=${scaler}&udt=20190704`,
-        'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
+      // const dpr = Vue.mapInstance.getDevicePixelRatio();
+      // const scaler = dpr > 1 ? 2 : 1;
+      // //https://maponline0.bdimg.com/starpic/?qt=satepc&u=x=778;y=218;z=12;v=009;type=sate&fm=46&app=webearth2&v=009&udt=20200225
+      // Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
+      //   'urlTemplate': `http://online2.map.bdimg.com/tile/?qt=vtile&x={x}&y={y}&z={z}&styles=pl&scaler=${scaler}&udt=20190704`,
+      //   'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      //   'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
+      // }));
+
+      Vue.mapInstance.setBaseLayer(new maptalks.TileLayer('base', {
+          urlTemplate: 'http://127.0.0.1:1338/layer/google/{z}/{x}/{y}',
+          attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
       }));
 
       // this.parcel(true);
