@@ -730,6 +730,78 @@
         }
       },
       //根据属性筛选土地
+      TDfilter(value1,value2,value3) {
+        var v1 = String(value1)
+        var v2 = String(value2)
+        var v3 = String(value3)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if(v1 == '0'){
+          if(v2 == '0'){
+            if(v3 == '0'){
+                Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+                  .forEach(function (feature) {
+                    feature.show();
+                });
+            }
+            else{
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'dev_degree', v3])
+                  .forEach(function (feature) {
+                    feature.show();
+                });             
+            }
+          }
+          else{
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+                  .forEach(function (feature) {
+                    feature.show();
+                });   
+            }
+            else{
+                Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+                  .forEach(function (feature) {
+                    if(feature.properties.dev_degree == v3){feature.show();}
+                });   
+            }
+          }
+        }
+        else{
+          if(v2 == '0'){
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    feature.show();
+                });          
+            }
+            else{
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.dev_degree == v3){feature.show();}
+                });   
+            }
+          }
+          else{
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.use == v2){feature.show();}
+                });   
+            }
+            else{
+                Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.use == v2)
+                      if(feature.properties.dev_degree == v3)
+                        {feature.show();}
+                });   
+            }
+          }
+        }
+      },     
+
       TDfilter1(value1) {
         var v1 = String(value1)
         Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])

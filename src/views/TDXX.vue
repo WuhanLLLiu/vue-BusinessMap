@@ -11,9 +11,9 @@
     <div class="dropmenu">
         <van-dropdown-menu
             :overlay = false>
-            <van-dropdown-item v-model="value1" :options="option1" @change="func1" />
-            <van-dropdown-item v-model="value2" :options="option2" @change="func2"/>
-            <van-dropdown-item v-model="value3" :options="option3" @change="func3"/>
+            <van-dropdown-item v-model="value1" :options="option1" @change="func" />
+            <van-dropdown-item v-model="value2" :options="option2" @change="func"/>
+            <van-dropdown-item v-model="value3" :options="option3" @change="func"/>
         </van-dropdown-menu>
     </div>
 
@@ -109,7 +109,13 @@
         this.$refs.webmap.TDfilter3(value3);
         this.value1 = 0
         this.value2 = 0 
-      }  
+      }, 
+      func(){
+        var value1 = this.value1  
+        var value2 = this.value2  
+        var value3 = this.value3  
+        this.$refs.webmap.TDfilter(value1,value2,value3);
+      }
     },
 
     mounted() {
