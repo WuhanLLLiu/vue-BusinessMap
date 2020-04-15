@@ -728,8 +728,71 @@
             // 'width': 430,
           });
         }
+      },
+      //根据属性筛选土地
+      TDfilter1(value1,value2,value3) {
+        var v1 = String(value1)
+        var v2 = String(value2)
+        var v3 = String(value3)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v1 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
         }
-    },
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+            .forEach(function (feature) {
+              feature.show();
+          });
+        }
+      },
+
+      TDfilter2(value2) {
+        var v2 = String(value2)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v2 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
+        }
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+            .forEach(function (feature) {
+              feature.show();
+            });
+        }
+      },
+
+      TDfilter3(value3) {
+        var v3 = String(value3)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v3 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
+        }
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'dev_degree', v3])
+            .forEach(function (feature) {
+              feature.show();
+            });
+        }
+        },
+
+   },
     //生命周期 - 创建完成（可以访问当前this实例）
     created() {},
     //生命周期 - 挂载完成（可以访问DOM元素）

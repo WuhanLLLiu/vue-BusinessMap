@@ -11,9 +11,9 @@
     <div class="dropmenu">
         <van-dropdown-menu
             :overlay = false>
-            <van-dropdown-item v-model="value1" :options="option1"  />
-            <van-dropdown-item v-model="value2" :options="option2" />
-            <van-dropdown-item v-model="value3" :options="option3" @change="func"/>
+            <van-dropdown-item v-model="value1" :options="option1" @change="func1" />
+            <van-dropdown-item v-model="value2" :options="option2" @change="func2"/>
+            <van-dropdown-item v-model="value3" :options="option3" @change="func3"/>
         </van-dropdown-menu>
     </div>
 
@@ -92,9 +92,19 @@
       alertdialog(){
         alert('未完全开放，功能仍在开发...')
       },
-      func(){  
-        var value = this.value3  
-        alert(value)
+      func1(){  
+        var value1 = this.value1  
+        var value2 = this.value2  
+        var value3 = this.value3  
+        this.$refs.webmap.TDfilter1(value1,value2,value3);
+      },  
+      func2(){  
+        var value2 = this.value2  
+        this.$refs.webmap.TDfilter2(value2);
+      },  
+      func3(){  
+        var value3 = this.value3  
+        this.$refs.webmap.TDfilter3(value3);
       }  
     },
 
