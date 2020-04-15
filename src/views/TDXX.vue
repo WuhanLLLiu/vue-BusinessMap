@@ -94,17 +94,21 @@
       },
       func1(){  
         var value1 = this.value1  
-        var value2 = this.value2  
-        var value3 = this.value3  
-        this.$refs.webmap.TDfilter1(value1,value2,value3);
+        this.$refs.webmap.TDfilter1(value1);
+        this.value2 = 0
+        this.value3 = 0 
       },  
       func2(){  
         var value2 = this.value2  
         this.$refs.webmap.TDfilter2(value2);
+        this.value1 = 0
+        this.value3 = 0 
       },  
       func3(){  
         var value3 = this.value3  
         this.$refs.webmap.TDfilter3(value3);
+        this.value1 = 0
+        this.value2 = 0 
       }  
     },
 

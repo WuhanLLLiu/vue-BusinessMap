@@ -730,10 +730,8 @@
         }
       },
       //根据属性筛选土地
-      TDfilter1(value1,value2,value3) {
+      TDfilter1(value1) {
         var v1 = String(value1)
-        var v2 = String(value2)
-        var v3 = String(value3)
         Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
           .forEach(function (feature) {
             feature.hide();
