@@ -25,7 +25,7 @@
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="RouteDT"/></li>
+                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="outerVisible = true"/></li>
                 <li id='type'>相关政策</li>
             </ul>
             </el-col>
