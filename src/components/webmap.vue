@@ -721,9 +721,12 @@
        //信息框显示marker_self.
         for (var j = 0; j < geometries.length; j++) {
           Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
-            'title': '地块信息',
-            'content': '<div style="font-size:14px;">' + '地块名称：' + geometries[j].properties.name + '<br/>' +
-              '<br/>' + '详细信息：' + geometries[j].properties.around + '</div>',
+            'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+             + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
+             + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
+             + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
+             + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
+             + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
             'autoCloseOn': 'click',
             // 'autoPan': true,
             // 'width': 430,
@@ -751,9 +754,16 @@
        //信息框显示marker_self.
         for (var j = 0; j < geometries.length; j++) {
           Vue.mapInstance.getLayer('ly').getGeometryById(j).setInfoWindow({
-            'title': '楼宇信息',
-            'content': '<div style="font-size:14px;">' + '楼宇名称：' + geometries[j].properties.name + '<br/>' +
-              '<br/>' + '地址：' + geometries[j].properties.address + '</div>',
+            'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+             + '<B>位置：</B>' + geometries[j].properties.address +'<br/><br/>'
+             + '<B>层数：</B>' + geometries[j].properties.floor_num +'<br/><br/>'
+             + '<B>建筑体量（平米）：</B>' + geometries[j].properties.volume +'<br/><br/>'
+             + '<B>已入驻企业数量：</B>' + geometries[j].properties.settled_en +'<br/><br/>'
+             + '<B>客梯数量：</B>' + geometries[j].properties.passenger_ +'<br/><br/>'
+             + '<B>停车位数量：</B>' + geometries[j].properties.parking_nu +'<br/><br/>'
+             + '<B>租金（元/平米每月）：</B>' + geometries[j].properties.monthly_re +'<br/><br/>'
+             + '<B>物业管理费（元/平米每月）：</B>' + geometries[j].properties.property_m + '<br/><br/>'
+             + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
             'autoCloseOn': 'click',
             // 'autoPan': true,
             // 'width': 430,
