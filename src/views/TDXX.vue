@@ -119,6 +119,7 @@
     },
 
     mounted() {
+      this.$refs.webmap.HYparcel();
     }
   };
 </script>

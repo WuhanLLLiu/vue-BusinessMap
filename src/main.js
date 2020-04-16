@@ -33,6 +33,7 @@ Vue.prototype.Flag = 0;
 Vue.prototype.Address = '';
 Vue.prototype.Result = {};
 Vue.prototype.marker_Self = [];
+Vue.prototype.lyxx = [];
 
 
 const app = new Vue({

@@ -10,13 +10,13 @@
       <el-row id="row1">
         <el-col :span='2'>
           <ul type="none">
-            <li id="img"><img src="./../assets/土地信息.png" width="50%" @click="alertdialog"/></li>
+            <li id="img"><img src="./../assets/土地信息.png" width="25%" @click="alertdialog"/></li>
             <li id='type'>汉阳造文化创意产业园</li>
           </ul>
         </el-col>
         <el-col :span='2'>
           <ul type="none">
-            <li id="img"><img src="./../assets/楼宇信息.png" width="50%" @click="alertdialog"/></li>
+            <li id="img"><img src="./../assets/楼宇信息.png" width="25%" @click="alertdialog"/></li>
             <li id='type'>华加科技产业园</li>
           </ul>
         </el-col>
@@ -71,6 +71,7 @@
     },
 
     mounted() {
+        this.$refs.webmap.HYbuildings();
     }
   };
 </script>
@@ -424,7 +425,7 @@
 
   .el-col {
     border-radius: 4px;
-    width: 23%;
+    width: 48%;
     text-align: center
   }
 

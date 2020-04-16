@@ -27,6 +27,7 @@
   import marker_Self from '../assets/marker.js'
   import bar_Self from '../assets/bar.js'
   import tdxx from '../assets/tdxx.js'
+  import lyxx from '../assets/lyxx.js'
   //引入百度api,需要安装npm i vue-baidu-map --save
   // import BaiduMap from 'vue-baidu-map'
   // Vue.use(BaiduMap, {
@@ -729,6 +730,36 @@
           });
         }
       },
+      //楼宇
+      HYbuildings(){
+        Vue.mapInstance.addLayer(new maptalks.VectorLayer('ly'))
+        var county = lyxx.lyxx[0]
+        const geometries = maptalks.GeoJSON.toGeometry(county);
+        for (var i = 0; i < geometries.length; i++) {
+          var a = geometries[i];
+          a._id = i
+        }
+        const vectorLayer = Vue.mapInstance.getLayer('ly').addGeometry(geometries);
+        //设置style
+        vectorLayer.setStyle([{
+            'symbol': {
+                'markerFile': imgURL_loc,
+            }
+          }]);
+        // Vue.mapInstance.addLayer(vectorLayer);
+        Vue.mapInstance.getLayer('ly').bringToBack()
+       //信息框显示marker_self.
+        for (var j = 0; j < geometries.length; j++) {
+          Vue.mapInstance.getLayer('ly').getGeometryById(j).setInfoWindow({
+            'title': '楼宇信息',
+            'content': '<div style="font-size:14px;">' + '楼宇名称：' + geometries[j].properties.name + '<br/>' +
+              '<br/>' + '地址：' + geometries[j].properties.address + '</div>',
+            'autoCloseOn': 'click',
+            // 'autoPan': true,
+            // 'width': 430,
+          });
+        }
+      },
       //根据属性筛选土地
       TDfilter(value1,value2,value3) {
         var v1 = String(value1)
@@ -891,9 +922,6 @@
         'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
         'attribution': '&copy; <a target="_blank" href="https://map.baidu.com">Baidu</a>'
       }));
-
-      // this.buildings();
-      this.HYparcel()
     },
 
     beforeCreate() {}, //生命周期 - 创建之前rk
