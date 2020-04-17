@@ -19,13 +19,13 @@
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" @click="RouteDT"/></li>
+                <li id="img"><img src="./../assets/楼宇信息.png" width="60%" @click="RouteLY"/></li>
                 <li id='type'>楼宇信息</li>
             </ul>
             </el-col>
             <el-col :span='4'>
             <ul type="none">
-                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="RouteDT"/></li>
+                <li id="img"><img src="./../assets/相关政策.png" width="60%" @click="outerVisible = true"/></li>
                 <li id='type'>相关政策</li>
             </ul>
             </el-col>
@@ -137,13 +137,15 @@
     },
 
     methods: {
-      //绘制汉口招商引资图表
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
       },
       RouteDT(){
         this.$router.push({path:'/TDXX'})
       },
+      RouteLY(){
+        this.$router.push({path:'/LYXX'})
+      }
 
       // RouteDT() {
       //   this.$alert('正在开发，敬请期待！','提示', {

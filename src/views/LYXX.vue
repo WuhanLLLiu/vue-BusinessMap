@@ -1,40 +1,49 @@
 <template>
-  <div id="TDXX" class="layout">
-    <!-- <div>
-        <van-nav-bar 
-        title="土地信息" 
-        left-text="返回"   
-        left-arrow 
-        @click-left="onClickLeft" 
-        />
-    </div> -->
-    <div class="dropmenu">
-        <van-dropdown-menu
-            :overlay = false>
-            <van-dropdown-item v-model="value1" :options="option1" @change="func" />
-            <van-dropdown-item v-model="value2" :options="option2" @change="func"/>
-            <van-dropdown-item v-model="value3" :options="option3" @change="func"/>
-        </van-dropdown-menu>
-    </div>
-
+  <div id="HanKou" class="layout">
+    <!-- <div class="head">汉阳招商云地图</div> -->
 
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
-  
+
+    <div class="bottom" :class="{full:isFull}">
+      <el-row id="row1">
+        <el-col :span='2'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/土地信息.png" width="25%" @click="alertdialog"/></li>
+            <li id='type'>汉阳造文化创意产业园</li>
+          </ul>
+        </el-col>
+        <el-col :span='2'>
+          <ul type="none">
+            <li id="img"><img src="./../assets/楼宇信息.png" width="25%" @click="alertdialog"/></li>
+            <li id='type'>华加科技产业园</li>
+          </ul>
+        </el-col>
+      </el-row>
+    </div>
+
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import * as maptalks from "maptalks";
+  import "maptalks/dist/maptalks.css";
+  import echarts from 'echarts';
+  import Drawer from "./../components/Drawer";
   import webmap from "./../components/webmap";
-
+  import info from "./../components/info";
+  import Dialog from "./../components/Dialog";
 
   export default {
-    name: "TDXX",
+    name: "HanKou",
 
     components: {
+      Drawer: Drawer,
       webmap: webmap,
+      info: info,
+      Dialog: Dialog
     },
 
     data() {
@@ -49,77 +58,20 @@
         modalvisible:false,
         num: 0,
         viewArr: [],
-    
-        value1: 0,
-        value2: 0,
-        value3: 0,
-        option1: [
-            { text: '街道', value: 0 },
-            { text: '江堤街', value: 1 },
-            { text: '永丰街', value: 2 },
-            { text: '洲头街', value: 3 },
-            { text: '建桥街', value: 4 },
-            { text: '四新街', value: 5 },
-            { text: '晴川街', value: 6 },
-            { text: '五里墩街', value: 7 },
-            { text: '琴断口街', value: 8 },
-        ],
-        option2: [
-            { text: '用地类型', value: 0 },
-            { text: '城中村', value: 1 },
-            { text: '混合用地', value: 2 },
-            { text: '商服用地', value: 3 },
-            { text: '居住用地', value: 4 },
-            { text: '工业用地', value: 5 },
-            { text: '医疗用地', value: 6 },
-        ],
-        option3: [
-            { text: '开发程度', value: 0 },
-            { text: '已进入挂牌程序', value: 1 },
-            { text: '已办储备证', value: 2 },
-            { text: '已到征收收尾阶段', value: 3 },
-        ],
       };
     },
 
     methods: {
-      onClickLeft() {
-        history.back();
-      },
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
       },
       alertdialog(){
         alert('未完全开放，功能仍在开发...')
-      },
-      func1(){  
-        var value1 = this.value1  
-        this.$refs.webmap.TDfilter1(value1);
-        this.value2 = 0
-        this.value3 = 0 
-      },  
-      func2(){  
-        var value2 = this.value2  
-        this.$refs.webmap.TDfilter2(value2);
-        this.value1 = 0
-        this.value3 = 0 
-      },  
-      func3(){  
-        var value3 = this.value3  
-        this.$refs.webmap.TDfilter3(value3);
-        this.value1 = 0
-        this.value2 = 0 
-      }, 
-      func(){
-        var value1 = this.value1  
-        var value2 = this.value2  
-        var value3 = this.value3  
-        this.$refs.webmap.TDfilter(value1,value2,value3);
       }
     },
 
     mounted() {
-      this.$refs.webmap.HYparcel();
+        this.$refs.webmap.HYbuildings();
     }
   };
 </script>
@@ -148,27 +100,19 @@
     position: relative;
     overflow: hidden;
   }
-    .van-nav-bar{
-        background-size: 100% 100%;
-        width:100%;
-        position: fixed;
-        z-index: 999;
-        top:0;
-        color: #000080;
-        height: 98px;
-    }
-    .van-nav-bar >>> .van-nav-bar__left{
-        font-size: 50px;
-    }
-    .van-nav-bar >>> .van-nav-bar__left >>>.i{
-        font-size: 50px;
-    }
-    .van-nav-bar >>> .van-nav-bar__title{
-        padding-top: 25px;
-        font-size: 50px;
-        font: bolder;
-        /* color: #000080; */
-    }
+
+  .layout .head {
+    background: url(./../assets/banner2.jpg) no-repeat center;
+    background-size: 100% 100%;
+    height: 98px;
+    width: 100%;
+    font-size: 50px;
+    font: bolder;
+    text-align: left;
+    padding-left: 3%;
+    line-height: 98px;
+    color: #000080;
+  }
 
   .layout .select {
     position: absolute;
@@ -190,36 +134,7 @@
     z-index: 4;
     background: #fff;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
-  } 
-    .dropmenu{
-
-    }
-
-   .van-dropdown-menu {
-        font-size: 15px;
-        font: bolder;
-   }
-    .van-hairline--top-bottom{
-        margin: 2%;
-        border: 0;
-    }
-    .van-dropdown-menu >>>.van-dropdown-menu__title{
-        font-size: 26px;
-        font: bolder;
-   }
-  .van-dropdown-menu >>> .van-dropdown-menu__item{
-        padding: 30px;
   }
- .van-dropdown-menu >>> .van-ellipsis{
-      height: 35px;
-  }
-   .van-dropdown-menu >>> .van-dropdown-item__option{
-        font-size: 28px;
-        font: bolder;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        padding-left: 5%;
-   }
 
   .bottom.full {
     transform: translateY(-897px);
@@ -510,7 +425,7 @@
 
   .el-col {
     border-radius: 4px;
-    width: 23%;
+    width: 48%;
     text-align: center
   }
 

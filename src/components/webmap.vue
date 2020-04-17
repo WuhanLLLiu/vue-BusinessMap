@@ -27,6 +27,7 @@
   import marker_Self from '../assets/marker.js'
   import bar_Self from '../assets/bar.js'
   import tdxx from '../assets/tdxx.js'
+  import lyxx from '../assets/lyxx.js'
   //引入百度api,需要安装npm i vue-baidu-map --save
   // import BaiduMap from 'vue-baidu-map'
   // Vue.use(BaiduMap, {
@@ -701,22 +702,208 @@
         Vue.mapInstance.addLayer(new maptalks.VectorLayer('v1'))
         var county = tdxx.tdxx[0]
         const geometries = maptalks.GeoJSON.toGeometry(county);
-        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries).addTo(Vue.mapInstance);
+        for (var i = 0; i < geometries.length; i++) {
+          var a = geometries[i];
+          a._id = i
+        }
+        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries);
         //设置style
         vectorLayer.setStyle([{
             'symbol': {
                 'lineColor': '#34495e',
                 'lineWidth': 2,
-                'polygonFill': 'rgb(255,0,0)',
-                'polygonOpacity': 1
+                'polygonFill': 'rgb(135,196,240)',
+                'polygonOpacity': 0.6
             }
           }]);
-          
-          console.log(Vue.mapInstance.getLayer('v1'))
         // Vue.mapInstance.addLayer(vectorLayer);
         Vue.mapInstance.getLayer('v1').bringToBack()
+       //信息框显示marker_self.
+        for (var j = 0; j < geometries.length; j++) {
+          Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
+            'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+             + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
+             + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
+             + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
+             + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
+             + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
+            'autoCloseOn': 'click',
+            // 'autoPan': true,
+            // 'width': 430,
+          });
         }
-    },
+      },
+      //楼宇
+      HYbuildings(){
+        Vue.mapInstance.addLayer(new maptalks.VectorLayer('ly'))
+        var county = lyxx.lyxx[0]
+        const geometries = maptalks.GeoJSON.toGeometry(county);
+        for (var i = 0; i < geometries.length; i++) {
+          var a = geometries[i];
+          a._id = i
+        }
+        const vectorLayer = Vue.mapInstance.getLayer('ly').addGeometry(geometries);
+        //设置style
+        vectorLayer.setStyle([{
+            'symbol': {
+                'markerFile': imgURL_loc,
+            }
+          }]);
+        // Vue.mapInstance.addLayer(vectorLayer);
+        Vue.mapInstance.getLayer('ly').bringToBack()
+       //信息框显示marker_self.
+        for (var j = 0; j < geometries.length; j++) {
+          Vue.mapInstance.getLayer('ly').getGeometryById(j).setInfoWindow({
+            'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+             + '<B>位置：</B>' + geometries[j].properties.address +'<br/><br/>'
+             + '<B>层数：</B>' + geometries[j].properties.floor_num +'<br/><br/>'
+             + '<B>建筑体量（平米）：</B>' + geometries[j].properties.volume +'<br/><br/>'
+             + '<B>已入驻企业数量：</B>' + geometries[j].properties.settled_en +'<br/><br/>'
+             + '<B>客梯数量：</B>' + geometries[j].properties.passenger_ +'<br/><br/>'
+             + '<B>停车位数量：</B>' + geometries[j].properties.parking_nu +'<br/><br/>'
+             + '<B>租金（元/平米每月）：</B>' + geometries[j].properties.monthly_re +'<br/><br/>'
+             + '<B>物业管理费（元/平米每月）：</B>' + geometries[j].properties.property_m + '<br/><br/>'
+             + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
+            'autoCloseOn': 'click',
+            // 'autoPan': true,
+            // 'width': 430,
+          });
+        }
+      },
+      //根据属性筛选土地
+      TDfilter(value1,value2,value3) {
+        var v1 = String(value1)
+        var v2 = String(value2)
+        var v3 = String(value3)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if(v1 == '0'){
+          if(v2 == '0'){
+            if(v3 == '0'){
+                Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+                  .forEach(function (feature) {
+                    feature.show();
+                });
+            }
+            else{
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'dev_degree', v3])
+                  .forEach(function (feature) {
+                    feature.show();
+                });             
+            }
+          }
+          else{
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+                  .forEach(function (feature) {
+                    feature.show();
+                });   
+            }
+            else{
+                Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+                  .forEach(function (feature) {
+                    if(feature.properties.dev_degree == v3){feature.show();}
+                });   
+            }
+          }
+        }
+        else{
+          if(v2 == '0'){
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    feature.show();
+                });          
+            }
+            else{
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.dev_degree == v3){feature.show();}
+                });   
+            }
+          }
+          else{
+            if(v3 == '0'){
+                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.use == v2){feature.show();}
+                });   
+            }
+            else{
+                Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+                  .forEach(function (feature) {
+                    if(feature.properties.use == v2)
+                      if(feature.properties.dev_degree == v3)
+                        {feature.show();}
+                });   
+            }
+          }
+        }
+      },     
+
+      TDfilter1(value1) {
+        var v1 = String(value1)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v1 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
+        }
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
+            .forEach(function (feature) {
+              feature.show();
+          });
+        }
+      },
+
+      TDfilter2(value2) {
+        var v2 = String(value2)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v2 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
+        }
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
+            .forEach(function (feature) {
+              feature.show();
+            });
+        }
+      },
+
+      TDfilter3(value3) {
+        var v3 = String(value3)
+        Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.hide();
+        });
+        if (v3 == '0' ){
+          Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
+          .forEach(function (feature) {
+            feature.show();
+          });
+        }
+        else{
+          Vue.mapInstance.getLayer('v1').filter(['==', 'dev_degree', v3])
+            .forEach(function (feature) {
+              feature.show();
+            });
+        }
+        },
+
+   },
     //生命周期 - 创建完成（可以访问当前this实例）
     created() {},
     //生命周期 - 挂载完成（可以访问DOM元素）
@@ -750,13 +937,6 @@
           urlTemplate: 'http://121.196.60.135:1338/layer/google/{z}/{x}/{y}',
           attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
       }));
-
-      // this.parcel(true);
-      this.HYmarker();
-      // this.buildings();
-      this.HYparcel()
- 
-
     },
 
     beforeCreate() {}, //生命周期 - 创建之前rk
