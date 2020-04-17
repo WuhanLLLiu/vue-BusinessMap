@@ -747,7 +747,7 @@
       // }));
 
       Vue.mapInstance.setBaseLayer(new maptalks.TileLayer('base', {
-          urlTemplate: 'http://127.0.0.1:1338/layer/google/{z}/{x}/{y}',
+          urlTemplate: 'http://121.196.60.135:1338/layer/google/{z}/{x}/{y}',
           attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
       }));
 
