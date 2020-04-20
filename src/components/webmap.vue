@@ -22,7 +22,6 @@
   import imgURL_patient from '../assets/patient_marker.png';
   import imgURL_heal from '../assets/heal_marker.png';
   import imgURL_loc from '../assets/loc.png'
-  import imgURL_jd from '../assets/jd.png'
 
   import marker_Self from '../assets/marker.js'
   import bar_Self from '../assets/bar.js'
@@ -710,9 +709,9 @@
         //设置style
         vectorLayer.setStyle([{
             'symbol': {
-                'lineColor': '#34495e',
-                'lineWidth': 2,
-                'polygonFill': 'rgb(135,196,240)',
+                'lineColor': '#0066cc',
+                'lineWidth': 4,
+                'polygonFill': '#0080ff',
                 'polygonOpacity': 0.6
             }
           }]);
@@ -910,7 +909,6 @@
     mounted() {
       //构建map
       var image = new Image();
-      image = imgURL_jd;
       Vue.mapInstance = new maptalks.Map("WebMap", {
         // center: [113.5, 31.1],
         center: [114.241649, 30.530374],

@@ -8,6 +8,7 @@
         @click-left="onClickLeft" 
         />
     </div> -->
+    
     <div class="dropmenu">
         <van-dropdown-menu
             :overlay = false>
@@ -198,29 +199,45 @@
    .van-dropdown-menu {
         font-size: 15px;
         font: bolder;
+        height:30%;
+        background:#0080ff
    }
-    .van-hairline--top-bottom{
-        margin: 2%;
+    .van-dropdown-menu >>>.van-hairline--top-bottom{
+        margin: 0%;
         border: 0;
     }
     .van-dropdown-menu >>>.van-dropdown-menu__title{
-        font-size: 26px;
-        font: bolder;
+        font-size: 40px;
+        font-weight: bold;
+        font-family:"Microsoft YaHei";
+        color:#fff;
    }
-  .van-dropdown-menu >>> .van-dropdown-menu__item{
-        padding: 30px;
-  }
- .van-dropdown-menu >>> .van-ellipsis{
-      height: 35px;
-  }
-   .van-dropdown-menu >>> .van-dropdown-item__option{
-        font-size: 28px;
-        font: bolder;
-        margin-top: 3%;
-        margin-bottom: 3%;
-        padding-left: 5%;
+  .van-dropdown-menu >>> .van-dropdown-menu__title::after{
+     border:7px solid;
+     right: -20px;
+     border-color: transparent transparent currentColor currentColor;
    }
 
+  .van-dropdown-menu >>> .van-dropdown-menu__item{
+        padding: 30px;
+        height:35px；
+  }
+ .van-dropdown-menu >>> .van-ellipsis{
+      height: 45px;
+      padding-top: 10%;
+  }
+   .van-dropdown-menu >>> .van-dropdown-item__option{
+        font-size: 35px;
+        font-family:"Microsoft YaHei";
+        font-weight: 600;
+        margin-top: 8%;
+        margin-bottom: 8%;
+        padding-left: 5%;
+        padding-bottom: 20px;
+   }
+  .van-dropdown-menu >>> .van-dropdown-item__option:not(:last-child)::after{
+    border-bottom: 8px solid #ebedf0;
+  }
   .bottom.full {
     transform: translateY(-897px);
   }

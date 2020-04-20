@@ -55,13 +55,13 @@
           </li>
           <br/>
           <li>
-            <!-- <a href="http://139.129.7.130/file/%E6%A5%BC%E5%AE%87%E6%89%B6%E6%8C%81%E6%94%BF%E7%AD%96.html">汉阳区大健康产业扶持政策</a> -->
-            <p @click="innerVisible_0 = true">汉阳区大健康产业扶持政策</p>
+            <a href="http://139.129.7.130/file/汉阳区大健康产业扶持政策.html">汉阳区大健康产业扶持政策</a>
+            <!-- <p @click="innerVisible_0 = true">汉阳区大健康产业扶持政策</p> -->
           </li>
           <br/>
           <li>
-            <!-- <a href="http://139.129.7.130/file/楼宇扶持政策.html" >汉阳区楼宇扶持政策</a> -->
-            <p @click="innerVisible_1 = true">汉阳区楼宇扶持政策</p>
+            <a href="http://139.129.7.130/file/楼宇扶持政策.html" >汉阳区楼宇扶持政策</a>
+            <!-- <p @click="innerVisible_1 = true">汉阳区楼宇扶持政策</p> -->
           </li>
         </span>
         <!-- <el-button id='button10' type="primary"  @click="innerVisible_0 = true" icon="el-icon-reading" round style="font-size: 1.0em; width:500px">汉阳区大健康产业扶持政策</el-button>
