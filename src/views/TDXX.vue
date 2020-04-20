@@ -23,7 +23,7 @@
     </div>
     
     <div class="bottom" id="bottom0" style="display:none">
-        <div id="row_0"  @click="hide">
+        <div id="row0"  @click="hide">
           <span>返回土地信息列表</span>
         </div>
         <el-divider class="el-divider1"></el-divider>
@@ -33,13 +33,14 @@
           </el-row>
           <el-row id="row_2">
               <span id="area">121亩</span>
+              <span id="locimg"><img  src="./../assets/choosed.png" width="3%" style="padding-right:2%"/></span>
               <span id="location">国博以北，西邻鹦鹉大道，东临晴川</span>
           </el-row>
           <el-row id="row_3">
               <span id="proportion">公建比 5：5</span>
           </el-row>
           <el-row id="row_4">
-              <span>招商方向</span>
+              <span id="row_direction">招商方向</span>
               <span id="direction">世界500强</span>
           </el-row>
           <el-row id="row_5">
@@ -315,6 +316,9 @@
     padding-top: 2%;
     padding-bottom: 2%;
     text-align: center;
+    font-size:0.8em;
+    font-family:PingFang SC;
+    color:rgba(51,51,51,1);
   }
   
   #row1 {
@@ -432,6 +436,76 @@
     z-index: 4;
     background: #fff;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
+  }
+
+  #name{
+    padding: 3%;
+    font-size:1.3em;
+    font-family:'微软雅黑';
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+  }
+
+  #area{
+    font-size: 1em;
+    padding: 6px 20px;
+    margin: 0 10px;
+    display: inline-block;
+    border-right: 1px solid grey;
+  }
+
+  /* #location{
+    padding-left: 0%;
+    padding-right: 3%;
+    font-size: 1em;
+    display:block
+  } */
+
+  #row_3{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  #proportion{
+    font-size: 0.9em;
+    padding: 6px 20px;
+    /* margin: 0 10px; */
+    display: inline-block;
+    border-radius: 4px;
+    background: #cfe0ff;
+    border: 1px solid #004acc;
+    color: #004acc;
+  }
+  #row_direction{
+    font-size: 0.9em;
+    padding: 6px 20px;
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 4px;
+    background:white;
+    border: 1px solid #FF654C;
+    color: #FF654C;
+  }
+  #row_2{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  #row_4{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+    #row_5{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-weight: bold;
+  }
+    #row_6{
+    padding-left: 2%;
+    padding-top: 1%;
+    padding-bottom: 3%;
   }
 </style>
 

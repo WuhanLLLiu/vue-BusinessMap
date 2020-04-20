@@ -136,7 +136,7 @@
             document.getElementById('bottom0').style.display="block";
             document.getElementById('name').innerHTML = param.target.properties.name
             document.getElementById('area').innerHTML = param.target.properties.area +'亩'
-            document.getElementById('proportion').innerHTML = param.target.properties.proportion
+            document.getElementById('proportion').innerHTML = '公建比  '+param.target.properties.proportion
             document.getElementById('direction').innerHTML = param.target.properties.direction
             document.getElementById('around').innerHTML = param.target.properties.around
             document.getElementById('location').innerHTML = param.target.properties.location
