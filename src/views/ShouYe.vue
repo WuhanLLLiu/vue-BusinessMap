@@ -273,15 +273,7 @@
     margin-top: 23px;
   }
 
-  .full-btn {
-    width: 39px;
-    height: 37px;
-    position: absolute;
-    top: 20px;
-    right: 36px;
-    background: url(./../assets/full-btn.jpg) no-repeat center;
-    background-size: 100% 100%;
-  }
+
 
   .bottom-center {
     height: 182px;

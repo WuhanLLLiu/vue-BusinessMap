@@ -300,7 +300,6 @@
   }
 
   .layout .head {
-    background: url(./../assets/banner2.jpg) no-repeat center;
     background-size: 100% 100%;
     height: 98px;
     width: 100%;
@@ -366,15 +365,6 @@
     margin-top: 23px;
   }
 
-  .full-btn {
-    width: 39px;
-    height: 37px;
-    position: absolute;
-    top: 20px;
-    right: 36px;
-    background: url(./../assets/full-btn.jpg) no-repeat center;
-    background-size: 100% 100%;
-  }
 
   .bottom-center {
     height: 182px;
@@ -538,17 +528,7 @@
     background-size: 100% 100%;
   }
 
-  .out-list-item-p.icon-location::after {
-    background-image: url(./../assets/location.jpg);
-  }
 
-  .out-list-item-p.icon-phone::after {
-    background-image: url(./../assets/phone.jpg);
-  }
-
-  .out-list-item-p.icon-time::after {
-    background-image: url(./../assets/time.jpg);
-  }
 
   .out-list-item-text {
     float: left;
