@@ -12,7 +12,7 @@
     </div>
     <div id = 'buildings0'>
       <img id='building' src="./../assets/building3.png" width="30%"/>
-      <img id='building' src="./../assets/building4.png" width="30%"/>
+      <img id='building' src="./../assets/building4.png" width="30%" @click="RouteZSTJ"/>
       <img id='building' src="./../assets/building5.png" width="30%"/>
     </div>
 

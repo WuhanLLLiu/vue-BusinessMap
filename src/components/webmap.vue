@@ -8,7 +8,7 @@
   import * as maptalks from 'maptalks';
   import 'maptalks/dist/maptalks.css';
 
-  import imgURL_loc from '../assets/loc.png'
+  import imgURL_loc from '../assets/marker.png'
 
   import tdxx from '../assets/tdxx.js'
   import lyxx from '../assets/lyxx.js'
@@ -95,7 +95,10 @@
                 'lineColor': '#0066cc',
                 'lineWidth': 4,
                 'polygonFill': '#0080ff',
-                'polygonOpacity': 0.6
+                'polygonOpacity': 0.6,
+                'markerFile': imgURL_loc,
+                'markerWidth': { stops: [[6, 0], [14, 30]] },
+                'markerHeight': { stops: [[6, 0], [14, 40]] }
             }
           }]);
         // Vue.mapInstance.addLayer(vectorLayer);
@@ -129,6 +132,8 @@
         vectorLayer.setStyle([{
             'symbol': {
                 'markerFile': imgURL_loc,
+                'markerWidth': { stops: [[6, 0], [14, 30]] },
+                'markerHeight': { stops: [[6, 0], [14, 40]] }
             }
           }]);
         // Vue.mapInstance.addLayer(vectorLayer);

@@ -162,7 +162,7 @@
   };
 </script>
 
-<style scoped>
+<style scoped >
   * {
     margin: 0;
     padding: 0;
@@ -331,10 +331,7 @@
     display: inline-block;
     font-family: "微软雅黑";
   }
-  #el-drawer.btt{
-    overflow: scroll;
-  }
-
+  
   #el-divider1 {
     margin: 2%;
   }
@@ -389,5 +386,11 @@
     font-weight: bolder;
     font-size: 1.0em;
     text-align: center
+  }
+</style>
+
+<style>
+.el-drawer.btt{
+    overflow: scroll;
   }
 </style>
