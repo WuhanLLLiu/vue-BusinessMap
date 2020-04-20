@@ -18,17 +18,49 @@
         </van-dropdown-menu>
     </div>
 
-
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
-
+    
+    <div class="bottom" id="bottom0" style="display:none">
+        <div id="row_0"  @click="hide">
+          <span>返回土地信息列表</span>
+        </div>
+        <el-divider class="el-divider1"></el-divider>
+        <div id='form'>
+          <el-row id="row_1">
+              <span id="name">钢丝厂及扩大片项目</span>
+          </el-row>
+          <el-row id="row_2">
+              <span id="area">121亩</span>
+              <span id="location">国博以北，西邻鹦鹉大道，东临晴川</span>
+          </el-row>
+          <el-row id="row_3">
+              <span id="proportion">公建比 5：5</span>
+          </el-row>
+          <el-row id="row_4">
+              <span>招商方向</span>
+              <span id="direction">世界500强</span>
+          </el-row>
+          <el-row id="row_5">
+              <span>详细信息</span>
+          </el-row>
+          <el-row id="row_6">
+              <span id="around">
+                国博以北，西邻鹦鹉大道，东临晴川
+              </span>
+          </el-row>
+        </div>
+    </div>
+    
     <div class="bottom-footer"  @click="drawer = true">土地信息列表</div>
+    
     <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%" >
       <div id='drawer-content'>
         <div id="row0"  @click="drawer = false">
           <span>返回土地信息列表</span>
         </div>
+        
         <el-divider class="el-divider1"></el-divider>
         
         <div id='Selfform'>
@@ -113,6 +145,9 @@
     methods: {
       onClickLeft() {
         history.back();
+      },
+      hide(){
+        document.getElementById("bottom0").style.display="none";
       },
       RouteZSTJ(){
         this.$router.push({path:'/ZSTJ'})
@@ -254,7 +289,7 @@
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
-    z-index: 10;
+    z-index: 3;
     background: #fff;
   }
 
@@ -386,6 +421,17 @@
     font-weight: bolder;
     font-size: 1.0em;
     text-align: center
+  }
+
+  .layout .bottom {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 4;
+    background: #fff;
+    /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 </style>
 

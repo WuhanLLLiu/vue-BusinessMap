@@ -9,6 +9,7 @@
   import 'maptalks/dist/maptalks.css';
 
   import imgURL_loc from '../assets/marker.png'
+  import imgURL_loc2 from '../assets/choosed.png'
 
   import tdxx from '../assets/tdxx.js'
   import lyxx from '../assets/lyxx.js'
@@ -92,9 +93,9 @@
         //设置style
         vectorLayer.setStyle([{
             'symbol': {
-                'lineColor': '#0066cc',
+                'lineColor': '#2348E5',
                 'lineWidth': 4,
-                'polygonFill': '#0080ff',
+                'polygonFill': '#355BFA',
                 'polygonOpacity': 0.6,
                 'markerFile': imgURL_loc,
                 'markerWidth': { stops: [[6, 0], [14, 30]] },
@@ -104,18 +105,51 @@
         // Vue.mapInstance.addLayer(vectorLayer);
         Vue.mapInstance.getLayer('v1').bringToBack()
        //信息框显示marker_self.
+        // for (var j = 0; j < geometries.length; j++) {
+        //   Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
+        //     'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+        //      + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
+        //      + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
+        //      + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
+        //      + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
+        //      + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
+        //     'autoCloseOn': 'click',
+        //     // 'autoPan': true,
+        //     // 'width': 430,
+        //   });
+        // }
+        //click 事件
         for (var j = 0; j < geometries.length; j++) {
-          Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
-            'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
-             + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
-             + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
-             + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
-             + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
-             + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
-            'autoCloseOn': 'click',
-            // 'autoPan': true,
-            // 'width': 430,
-          });
+          Vue.mapInstance.getLayer('v1').getGeometryById(j).on('click', function (param) {
+            for (var a = 0; a < geometries.length; a++){
+              Vue.mapInstance.getLayer('v1').getGeometryById(a).updateSymbol({
+                'lineColor': '#2348E5',
+                'lineWidth': 4,
+                'polygonFill': '#355BFA',
+                'polygonOpacity': 0.6,
+                'markerFile': imgURL_loc,
+                'markerWidth': { stops: [[6, 0], [14, 30]] },
+                'markerHeight': { stops: [[6, 0], [14, 40]] }
+              })
+            }
+ 
+            document.getElementById('bottom0').style.display="block";
+            document.getElementById('name').innerHTML = param.target.properties.name
+            document.getElementById('area').innerHTML = param.target.properties.area +'亩'
+            document.getElementById('proportion').innerHTML = param.target.properties.proportion
+            document.getElementById('direction').innerHTML = param.target.properties.direction
+            document.getElementById('around').innerHTML = param.target.properties.around
+            document.getElementById('location').innerHTML = param.target.properties.location
+            param.target.updateSymbol({
+                  'lineColor': '#E52323',
+                  'lineWidth': 4,
+                  'polygonFill': '#FA3535',
+                  'polygonOpacity': 0.6,
+                  'markerFile': imgURL_loc2,
+                  'markerWidth': { stops: [[6, 0], [14, 40]] },
+                  'markerHeight': { stops: [[6, 0], [14, 54]] }
+            })
+          })
         }
       },
       //楼宇
