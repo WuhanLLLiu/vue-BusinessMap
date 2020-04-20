@@ -32,21 +32,20 @@
         <el-divider class="el-divider1"></el-divider>
         
         <div id='Selfform'>
-          <!-- <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index"> -->
+          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index">
             <el-card class="box-card">
               <el-row id="row1">
-                <span>钢丝城厂以及扩大项目片区</span>
+                <span>{{item.name}}</span>
               </el-row>
               <el-row id="row2">
-                <span id="row3">面积 121亩</span>
-                <span id="row3">公建比 3：7</span>
+                <span id="row3">面积 {{item.area}} 亩</span>
+                <span id="row3">公建比 {{item.proportion}}</span>
               </el-row>
               <el-row id="row2">
-                <span id="row4">位置</span>
-                <span id="row5">国博以北</span>
+                <span id="row4">{{item.location}}</span>
               </el-row>
             </el-card>
-          <!-- </div> -->
+          </div>
         </div>
       </div>
     </el-drawer>
@@ -148,7 +147,17 @@
     },
 
     mounted() {
+      fetch("http://121.196.60.135:1338/layer/tdxx").then(result => result.json()).then(result => {
+        var that = this;
+        var tdxx = JSON.parse(result.content) 
+        
+        for(var i = 0;i< tdxx.features.length; i++){
+          that.viewArr.push(tdxx.features[i].properties)
+        }
+        console.log(that.viewArr)
+      })
       this.$refs.webmap.HYparcel();
+
     }
   };
 </script>
@@ -280,7 +289,7 @@
     padding: 1%;
     padding-top: 3%;
     padding-bottom: 2%;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: "微软雅黑";
     font: bolder;
     font-weight: bold;

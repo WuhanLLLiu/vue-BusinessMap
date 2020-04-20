@@ -26,7 +26,9 @@
     components: {},
     data() {
       //这里存放数据
-      return {};
+      return {
+        TDitem:[]
+      };
     },
     //监听属性 类似于data概念
     computed: {},
@@ -34,83 +36,6 @@
     watch: {},
     //方法集合
     methods: {
-      //汉阳地块
-      parcel(i) {
-        if (i) {
-          if (Vue.mapInstance.getLayer('parcel') != null) {
-            Vue.mapInstance.getLayer('parcel').show()
-          } else {
-            var parcelLayer = new maptalks.VectorLayer('parcel')
-            var polygon = new maptalks.Polygon([
-              [
-                [114.280435, 30.554898],
-                [114.260435, 30.555898],
-                [114.260435, 30.550898],
-                [114.265435, 30.546898],
-                [114.277435, 30.549898],
-                [114.280435, 30.554898],
-              ]
-            ], {
-              visible: true,
-              editable: true,
-              cursor: 'pointer',
-              shadowBlur: 0,
-              shadowColor: 'black',
-              draggable: false,
-              dragShadow: false, // display a shadow during dragging
-              drawOnAxis: null, // force dragging stick on a axis, can be: x, y
-              symbol: {
-                'lineColor': '#34495e',
-                'lineWidth': 2,
-                'polygonFill': 'rgb(135,196,240)',
-                'polygonOpacity': 0.6
-              }
-            });
-            parcelLayer.addGeometry(polygon);
-            Vue.mapInstance.addLayer(parcelLayer);
-          }
-        } else {
-          Vue.mapInstance.getLayer('parcel').hide()
-        }
-      },
-      //汉阳地块marker
-      HYmarker() {
-        // console.log(marker_Self.marker_Self)
-        Vue.marker_Self = marker_Self;
-        var marker_SelfLayer = new maptalks.VectorLayer('marker_Self');
-        for (var i = 0; i < 7; i++) {
-          var a = marker_Self.marker_Self[i];
-          var marker = new maptalks.Marker(
-            a.coordinates, {
-              'id': i,
-              'properties': {
-                'name': '地块名称：' + a.name + '\n' + '详细信息：' + a.content
-              },
-              symbol: [{
-                // markerType: 'ellipse',
-                'markerFile': imgURL_loc,
-                // 'markerWidth': { stops: [[6, 0], [14, 60]] },
-                // 'markerHeight': { stops: [[6, 0], [14, 60]] }
-              }, ]
-            }
-          );
-          marker_SelfLayer.addGeometry(marker);
-        }
-        Vue.mapInstance.addLayer(marker_SelfLayer);
-        console.log(Vue.mapInstance)
-        //信息框显示marker_self.
-        for (var j = 0; j < 7; j++) {
-          Vue.mapInstance.getLayer('marker_Self').getGeometryById(j).setInfoWindow({
-            'title': '地块信息',
-            'content': '<div style="font-size:14px;">' + '地块名称：' + marker_Self.marker_Self[j].name + '<br/>' +
-              '<br/>' + '详细信息：' + marker_Self
-              .marker_Self[j].content + '</div>',
-            'autoCloseOn': 'click',
-            // 'autoPan': true,
-            // 'width': 430,
-          });
-        }
-      },
       //three.js
       buildings() {
         var threeLayer = new ThreeLayer('t', {
