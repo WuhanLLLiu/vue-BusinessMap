@@ -38,7 +38,7 @@ const router = new Router({
             component: () => import("../views/TDXX"),
             meta: {
                 keepAlive: true,
-                title: "汉阳招商云地图"
+                title: "土地信息"
             }
         },
         {
@@ -46,7 +46,7 @@ const router = new Router({
             component: () => import("../views/LYXX"),
             meta: {
                 keepAlive: true,
-                title: "汉阳招商云地图"
+                title: "楼宇信息"
             }
         },
         {
