@@ -19,7 +19,7 @@ const router = new Router({
         },
         {
             path: "/SY",
-            component: () => import("../views/ShouYe"),
+            component: () => import("../views/SY"),
             meta: {
                 keepAlive: true,
                 title: "汉阳招商云地图"
