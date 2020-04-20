@@ -331,12 +331,16 @@
     display: inline-block;
     font-family: "微软雅黑";
   }
-#el-divider1 {
+  #el-drawer.btt{
+    overflow: scroll;
+  }
+
+  #el-divider1 {
     margin: 2%;
   }
 
   #drawer-content {
-    height: 99.5%;
+    /* height: 99.5%; */
     overflow: auto;
   }
 
