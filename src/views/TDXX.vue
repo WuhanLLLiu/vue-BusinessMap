@@ -186,11 +186,9 @@
       fetch("http://121.196.60.135:1338/data/tdxx").then(result => result.json()).then(result => {
         var that = this;
         var tdxx = JSON.parse(result.content) 
-        
         for(var i = 0;i< tdxx.features.length; i++){
           that.viewArr.push(tdxx.features[i].properties)
         }
-        console.log(that.viewArr)
       })
       this.$refs.webmap.HYparcel();
     }

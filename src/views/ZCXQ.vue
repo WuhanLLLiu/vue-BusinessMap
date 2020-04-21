@@ -17,7 +17,7 @@
   export default {
     data() {
       return {
-        html1:"<p>nihao</p>",
+        html1:"",
       };
     },
     mounted(){
