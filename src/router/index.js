@@ -37,7 +37,7 @@ const router = new Router({
             path: "/TDXX",
             component: () => import("../views/TDXX"),
             meta: {
-                keepAlive: true,
+                keepAlive: false,
                 title: "土地信息"
             }
         },
@@ -45,7 +45,7 @@ const router = new Router({
             path: "/LYXX",
             component: () => import("../views/LYXX"),
             meta: {
-                keepAlive: true,
+                keepAlive: false,
                 title: "楼宇信息"
             }
         },
