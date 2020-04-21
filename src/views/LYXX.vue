@@ -11,7 +11,7 @@
             <i id = 'icon0' class="el-icon-reading"></i>
             <span id='type' @click="RouteHYZ">汉阳造文创产业园</span>
             <i id = 'icon0' class="el-icon-office-building"></i>
-            <span id='type' @click="RouteHJ">华加科技产业园</span>
+            <span id='type' @click="RouteHJ">加华科技产业园</span>
             <i id = 'icon0' class="el-icon-school"></i>
             <span id='type' @click="RouteHJK">黄金口工业园</span>
       </el-row>
@@ -57,7 +57,7 @@
               <span id="lywy">36</span>
           </el-row>
           <el-row id="rowly_4">
-              <span id="lyzp">查看照片</span>
+              <span id="rowly_41" @click="PICAlert">查看照片</span>
           </el-row>
         </div>
     </div>
@@ -112,6 +112,11 @@
       },
       RouteHJ(){
         this.$router.push({path:'/HJ'})
+      },
+      PICAlert() {
+        this.$alert('照片正在收录，敬请期待！','提示', {
+          confirmButtonText: '确定',
+        });
       }
     },
 
