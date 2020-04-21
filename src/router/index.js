@@ -49,6 +49,14 @@ const router = new Router({
                 title: "楼宇信息"
             }
         },
+        {
+            path: "/HYZ",
+            component: () => import("../views/HYZ"),
+            meta: {
+                keepAlive: true,
+                title: "楼宇信息"
+            }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {

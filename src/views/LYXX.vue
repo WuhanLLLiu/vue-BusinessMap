@@ -8,9 +8,12 @@
 
     <div class="top">
       <el-row id="row1">
-            <span id='type'>汉阳造文化创意产业园</span>
-            <span id='type'>华加科技产业园</span>
-            <span id='type'>黄金口工业园</span>
+            <i id = 'icon0' class="el-icon-reading"></i>
+            <span id='type' @click="RouteHYZ">汉阳造文创产业园</span>
+            <i id = 'icon0' class="el-icon-office-building"></i>
+            <span id='type' @click="RouteHJ">华加科技产业园</span>
+            <i id = 'icon0' class="el-icon-school"></i>
+            <span id='type' @click="RouteHJK">黄金口工业园</span>
       </el-row>
     </div>
 
@@ -103,6 +106,9 @@
       },
       alertdialog(){
         alert('未完全开放，功能仍在开发...')
+      },
+      RouteHYZ(){
+         this.$router.push({path:'/HYZ'})
       }
     },
 
@@ -175,6 +181,7 @@
 
   #row1 {
     text-align: center;
+    font-size: 0.9em;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
@@ -191,8 +198,9 @@
   #type {
     font-weight: bolder;
     font-size: 0.8em;
-    text-align: center;
     color: #fff;
+    padding-left: 1%;
+    padding-right: 2%;
   }
 
   #rowly_0 {
@@ -268,5 +276,12 @@
     width: 60%;
     display:-moz-inline-box;
     display:inline-block;
+  }
+  #icon0{
+    background: white;
+    color: #355BFA;
+    border-radius: 50%;     
+    -moz-border-radius: 50%;      
+    -webkit-border-radius: 50%;
   }
 </style>
