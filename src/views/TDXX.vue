@@ -183,7 +183,7 @@
     },
 
     mounted() {
-      fetch("http://121.196.60.135:1338/layer/tdxx").then(result => result.json()).then(result => {
+      fetch("http://121.196.60.135:1338/data/tdxx").then(result => result.json()).then(result => {
         var that = this;
         var tdxx = JSON.parse(result.content) 
         

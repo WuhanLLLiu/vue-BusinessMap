@@ -302,7 +302,7 @@
       var image = new Image();
       Vue.mapInstance = new maptalks.Map("WebMap", {
         // center: [113.5, 31.1],
-        center: [114.241649, 30.530374],
+        center: [114.210649, 30.540374],
         zoom: 14,
         // pitch: 50,
         // zoom: 17,
