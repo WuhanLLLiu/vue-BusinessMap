@@ -6,21 +6,60 @@
       <webmap ref="webmap"></webmap>
     </div>
 
-    <div class="bottom" :class="{full:isFull}">
+    <div class="top">
       <el-row id="row1">
-        <el-col :span='2'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/土地信息.png" width="25%" @click="alertdialog"/></li>
-            <li id='type'>汉阳造文化创意产业园</li>
-          </ul>
-        </el-col>
-        <el-col :span='2'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/楼宇信息.png" width="25%" @click="alertdialog"/></li>
-            <li id='type'>华加科技产业园</li>
-          </ul>
-        </el-col>
+            <i id = 'icon0' class="el-icon-reading"></i>
+            <span id='type' @click="RouteHYZ">汉阳造文创产业园</span>
+            <i id = 'icon0' class="el-icon-office-building"></i>
+            <span id='type' @click="RouteHJ">华加科技产业园</span>
+            <i id = 'icon0' class="el-icon-school"></i>
+            <span id='type' @click="RouteHJK">黄金口工业园</span>
       </el-row>
+    </div>
+
+    <div class="bottom" id="bottomly" style="display:none">
+        <div id="rowly_0"  @click="hide">
+          <span>关闭楼宇信息</span>
+        </div>
+        <el-divider class="el-divider1"></el-divider>
+        <div id='form'>
+          <el-row id="rowly_1">
+              <span id="lyname">钢丝厂及扩大片项目</span>
+          </el-row>
+          <el-row id="rowly_2">
+              <span id="lylocimg"><img  src="./../assets/choosed.png" width="3%" style="padding-right:2%"/></span>
+              <span id="lylocation">国博以北，西邻鹦鹉大道，东临晴川</span>
+          </el-row>
+          <el-row id="rowly_3">
+              <span id="rowly_31">层数</span>
+              <span id="lycs">公建比 5：5</span>
+              <span id="rowly_32">建筑体量（平米）</span>
+              <span id="lytl">公建比 5：5</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="rowly_41">已入住企业数量</span>
+              <span id="lyqy">36</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="rowly_41">客梯数量</span>
+              <span id="lykt">36</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="rowly_41">停车位数量</span>
+              <span id="lytc">36</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="rowly_41">租金（元/平方米每月）</span>
+              <span id="lyzj">36</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="rowly_41">物业管理费（元/平方米每月）</span>
+              <span id="lywy">36</span>
+          </el-row>
+          <el-row id="rowly_4">
+              <span id="lyzp">查看照片</span>
+          </el-row>
+        </div>
     </div>
 
   </div>
@@ -62,11 +101,17 @@
     },
 
     methods: {
-      RouteZSTJ(){
-        this.$router.push({path:'/ZSTJ'})
+      hide(){
+        document.getElementById("bottomly").style.display="none";
       },
-      alertdialog(){
-        alert('未完全开放，功能仍在开发...')
+      RouteHYZ(){
+        this.$router.push({path:'/HYZ'})
+      },
+      RouteHJK(){
+        this.$router.push({path:'/HJK'})
+      },
+      RouteHJ(){
+        this.$router.push({path:'/HJ'})
       }
     },
 
@@ -87,9 +132,6 @@
     overflow: hidden;
   }
   
-  #policy{
-    font-size: 27px
-  }
   #dialog1{
     width:100%
     /* right:50% */
@@ -101,31 +143,21 @@
     overflow: hidden;
   }
 
-  .layout .head {
-    background-size: 100% 100%;
-    height: 98px;
-    width: 100%;
-    font-size: 50px;
-    font: bolder;
-    text-align: left;
-    padding-left: 3%;
-    line-height: 98px;
-    color: #000080;
-  }
 
-  .layout .select {
+  .layout .top {
+    height: auto;
+    width: 100%;
     position: absolute;
-    z-index: 102;
-    height: 36px;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08), 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-    margin: 0.3rem 0.3rem 0px 0.3rem;
-    width: 20%;
+    top: 0;
+    padding: 2%;
+    transition: all 0.5s;
+    z-index: 4;
+    background: #355BFA;
+    /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
   .layout .bottom {
-    height: 200px;
+    height: auto;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -135,245 +167,12 @@
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
-  .bottom.full {
-    transform: translateY(-897px);
-  }
-
-  .bottom-btn-top {
-    height: 79px;
-    border-bottom: 2px solid #ccc;
-    font-size: 30px;
-    line-height: 79px;
-    padding-left: 39px;
-    box-sizing: border-box;
-    font-weight: bold;
-    position: relative;
-    background: #fff;
-  }
-
-  .bottom-btn-title {
-    float: left;
-  }
-
-  .fengxian {
-    float: left;
-    margin-left: 20px;
-    font-size: 20px;
-    padding: 0 20px;
-    height: 34px;
-    line-height: 34px;
-    background: #97e290;
-    border-radius: 14.5px;
-    margin-top: 23px;
-  }
-
-
-
-  .bottom-center {
-    height: 182px;
-    transition: all 0.5s;
-    width: 100%;
-    padding-top: 1px;
-    border-bottom: 2px solid #ccc;
-    position: relative;
-  }
-
-  .number-list {
-    height: 78px;
-    margin-top: 33px;
-    position: relative;
-  }
-
-  .number-list>li.number-list-item {
-    height: 100%;
-    width: 118px;
-    font-size: 28px;
-    position: absolute;
-    left: 88px;
-    top: 0;
-    text-align: center;
-  }
-
-  .number-list>li.number-list-item:nth-child(2) {
-    left: 321px;
-  }
-
-  .number-list>li.number-list-item:nth-child(3) {
-    right: 80px;
-    left: auto;
-  }
-
-  .list-item-top.green {
-    color: #0f9854;
-  }
-
-  .list-item-top {
-    height: 28px;
-    margin-bottom: 14px;
-    font-size: 30px;
-    text-align: center;
-    color: #ff5357;
-  }
-
-  .list-item-bottom {
-    height: 26px;
-  }
-
-  .bottom-center-info {
-    height: 34px;
-    width: 659px;
-    position: absolute;
-    bottom: 21px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: pink;
-    border-radius: 17px;
-  }
-
-  .bottom-footer {
-    height: 71px;
-    text-align: center;
-    line-height: 71px;
-    color: #628dd1;
-    font-size: 18px;
-  }
 
   .map {
     /* height: calc(100% - 431px); */
     height: calc(100%);
     overflow: hidden;
     position: relative;
-  }
-
-  .out-list {
-    height: 967px;
-    background: #f4f4f4;
-    box-sizing: border-box;
-    padding-top: 18px;
-  }
-
-  .out-list .filter-list {
-    background: #fff;
-    height: 80px;
-    border: 1px solid #ccc;
-    border-left: 0;
-    border-right: 0;
-    padding-top: 18px;
-    padding-left: 41px;
-    box-sizing: border-box;
-  }
-
-  .filter-list-item {
-    width: 90px;
-    height: 41px;
-    background: #a4a4a4;
-    border-radius: 4px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    line-height: 41px;
-    float: left;
-    margin-right: 17px;
-  }
-
-  .filter-list-item.active {
-    background: #0049cc;
-  }
-
-  .out-list-body {
-    height: calc(100% - 134px);
-    margin: 34px auto 0;
-    width: 707px;
-    overflow: auto;
-  }
-
-  .out-list-body-ul {
-    width: 100%;
-  }
-
-  .out-list-body-ul>li.out-list-item {
-    height: 207px;
-    width: 100%;
-    border-radius: 9px;
-    background: #fff;
-    margin-bottom: 21px;
-    position: relative;
-    padding-left: 23px;
-    box-sizing: border-box;
-    padding-top: 18px;
-    padding-bottom: 23px;
-  }
-
-  .out-list-item .out-list-item-title {
-    height: 42px;
-    font-size: 30px;
-    line-height: 42px;
-  }
-
-  .out-list-item-p {
-    margin-top: 11px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 20px;
-    padding-left: 44px;
-    position: relative;
-  }
-
-  .out-list-item-text {
-    float: left;
-  }
-
-  .out-list-item-type {
-    width: 90px;
-    height: 41px;
-    background: #0049cc;
-    border-radius: 4px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    line-height: 41px;
-    float: left;
-    margin-left: 27px;
-  }
-
-  .center {
-    height: 178px;
-  }
-
-  .center .definite {
-    height: 60px;
-    margin-top: 16px;
-    font-size: 30px;
-    font-weight: 900;
-    margin-left: 44px;
-    color: #393a35;
-    letter-spacing: 2px;
-  }
-
-  .people {
-    height: 60px;
-    font-size: 30px;
-    color: #e75f5c;
-    margin-left: 5px;
-  }
-
-  .alert {
-    width: 540px;
-    border: 2px solid #112daf;
-    border-radius: 5px;
-    margin-left: 44px;
-    color: #3a3b36;
-    text-align: center;
-    line-height: 48px;
-    font-size: 20px;
-    letter-spacing: 5px;
-    padding-left: 4px;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-
-  .monad {
-    font-size: 16px;
   }
 
 
@@ -384,9 +183,8 @@
   }
 
   #row1 {
-    padding-top: 1.5em;
-    padding-left: 1.0em;
     text-align: center;
+    font-size: 0.9em;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
@@ -402,7 +200,91 @@
 
   #type {
     font-weight: bolder;
-    font-size: 1.0em;
-    text-align: center
+    font-size: 0.8em;
+    color: #fff;
+    padding-left: 1%;
+    padding-right: 2%;
+  }
+
+  #rowly_0 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    font-size:0.8em;
+    font-family:PingFang SC;
+    color:rgba(51,51,51,1);
+  }
+  
+  #lyname{
+    padding: 3%;
+    margin-top: 2%;
+    font-size:1.1em;
+    font-family:'PingFangSC';
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+  }
+  
+  #rowly_2{
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family:'微软雅黑';
+  }
+  #lycs {
+    font-size: 0.8em;
+    padding: 6px 20px;
+    margin: 0 10px;
+    margin-right: 3%;
+    display: inline-block;
+    border-radius: 4px;
+    background: #355BFA;
+    border: 1px solid #004acc;
+    color: #FFFFFF;
+  }
+  #lytl {
+    font-size: 0.8em;
+    padding: 6px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    background: #355BFA;
+    border: 1px solid #004acc;
+    color: #FFFFFF;
+  }
+  #rowly_4{
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom:0.1px solid #EEEEEE;
+  }
+  #rowly_31{
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  #rowly_32{
+    font-size: 0.9em;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-left: 1px solid gray;
+  }
+  #rowly_41{
+    font-weight: bold;
+    font-size: 0.9em;
+    width: 60%;
+    display:-moz-inline-box;
+    display:inline-block;
+  }
+  #icon0{
+    background: white;
+    color: #355BFA;
+    border-radius: 50%;     
+    -moz-border-radius: 50%;      
+    -webkit-border-radius: 50%;
   }
 </style>

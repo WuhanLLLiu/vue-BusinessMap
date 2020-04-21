@@ -13,7 +13,7 @@
     <div id = 'buildings0'>
       <img id='building' src="./../assets/building3.png" width="30%" @click="RouteZSZC"/>
       <img id='building' src="./../assets/building4.png" width="30%" @click="RouteZSTJ"/>
-      <img id='building' src="./../assets/building5.png" width="30%"/>
+      <img id='building' src="./../assets/building5.png" width="30%" @click="RouteJKCY"/>
     </div>
 
     <div class="bottom-footer">
@@ -67,6 +67,9 @@
       RouteZSZC(){
         this.$router.push({path:'/ZSZC'})
       },
+      RouteJKCY(){
+        this.$router.push({path:'/JKCY'})
+      }
     },
 
     mounted() {

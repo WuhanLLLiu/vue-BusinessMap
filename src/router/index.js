@@ -71,6 +71,35 @@ const router = new Router({
             meta: {
                 keepAlive: true,
                 title: "政策详情"
+            path: "/HYZ",
+            component: () => import("../views/HYZ"),
+            meta: {
+                keepAlive: true,
+                title: "汉阳造文创产业园"
+            }
+        },
+        {
+            path: "/HJK",
+            component: () => import("../views/HJK"),
+            meta: {
+                keepAlive: true,
+                title: "黄金口工业园"
+            }
+        },
+        {
+            path: "/HJ",
+            component: () => import("../views/HJ"),
+            meta: {
+                keepAlive: true,
+                title: "加华科技产业园"
+            }
+        },
+        {
+            path: "/JKCY",
+            component: () => import("../views/JKCY"),
+            meta: {
+                keepAlive: true,
+                title: "健康产业"
             }
         },
     ]
