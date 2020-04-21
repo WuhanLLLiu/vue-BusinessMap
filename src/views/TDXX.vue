@@ -65,6 +65,13 @@
         <el-divider class="el-divider1"></el-divider>
         
         <div id='Selfform'>
+         
+          <div class="nullimg" v-if="!viewArr[0]">
+            <img  src="./../assets/nulldata.png" width="80%">
+            <br/><br/>
+            <p>数据未获取，请重新选择...</p>
+          </div>
+
           <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index">
             <el-card class="box-card">
               <el-row id="row1">
@@ -483,10 +490,34 @@
     padding-top: 1%;
     padding-bottom: 3%;
   }
+
+
 </style>
 
 <style>
 .el-drawer.btt{
     overflow: scroll;
   }
+
+  .nullimg {
+        width: 50%;
+        height: auto;
+        max-width: 80%;
+        max-height: 80%;
+        border-radius:50% 50%; 
+        position: absolute!important;
+        left: 55%;
+        top: 45%;
+        transform: translateY(-50%,-50%);
+        -webkit-transform:translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        display: block;
+        width:395px;
+        font-size:30px;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(187,187,187,1);
+    }
 </style>
