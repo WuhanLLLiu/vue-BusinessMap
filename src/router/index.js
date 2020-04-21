@@ -49,6 +49,14 @@ const router = new Router({
                 title: "楼宇信息"
             }
         },
+        {
+            path: "/ZSZC",
+            component: () => import("../views/ZSZC"),
+            meta: {
+                keepAlive: true,
+                title: "招商政策"
+            }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
