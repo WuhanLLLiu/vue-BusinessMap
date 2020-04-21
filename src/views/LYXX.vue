@@ -104,11 +104,14 @@
       hide(){
         document.getElementById("bottomly").style.display="none";
       },
-      alertdialog(){
-        alert('未完全开放，功能仍在开发...')
-      },
       RouteHYZ(){
-         this.$router.push({path:'/HYZ'})
+        this.$router.push({path:'/HYZ'})
+      },
+      RouteHJK(){
+        this.$router.push({path:'/HJK'})
+      },
+      RouteHJ(){
+        this.$router.push({path:'/HJ'})
       }
     },
 

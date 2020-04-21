@@ -54,7 +54,23 @@ const router = new Router({
             component: () => import("../views/HYZ"),
             meta: {
                 keepAlive: true,
-                title: "楼宇信息"
+                title: "汉阳造文创产业园"
+            }
+        },
+        {
+            path: "/HJK",
+            component: () => import("../views/HJK"),
+            meta: {
+                keepAlive: true,
+                title: "黄金口工业园"
+            }
+        },
+        {
+            path: "/HJ",
+            component: () => import("../views/HJ"),
+            meta: {
+                keepAlive: true,
+                title: "华加科技产业园"
             }
         },
     ]
