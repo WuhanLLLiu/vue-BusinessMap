@@ -496,7 +496,7 @@
     padding-top: 1%;
     padding-bottom: 1%;
   }
-    #row_5{
+  #row_5{
     padding-left: 2%;
     padding-top: 1%;
     padding-bottom: 1%;
