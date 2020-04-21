@@ -71,6 +71,9 @@ const router = new Router({
             meta: {
                 keepAlive: true,
                 title: "政策详情"
+             }
+        },
+        {           
             path: "/HYZ",
             component: () => import("../views/HYZ"),
             meta: {
