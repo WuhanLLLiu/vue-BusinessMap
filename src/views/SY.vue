@@ -11,7 +11,7 @@
       <img id='building' src="./../assets/building2.png" width="30%" @click="RouteLY"/>
     </div>
     <div id = 'buildings0'>
-      <img id='building' src="./../assets/building3.png" width="30%"/>
+      <img id='building' src="./../assets/building3.png" width="30%" @click="RouteZSZC"/>
       <img id='building' src="./../assets/building4.png" width="30%" @click="RouteZSTJ"/>
       <img id='building' src="./../assets/building5.png" width="30%"/>
     </div>
@@ -63,7 +63,10 @@
       },
       RouteLY(){
         this.$router.push({path:'/LYXX'})
-      }
+      },
+      RouteZSZC(){
+        this.$router.push({path:'/ZSZC'})
+      },
     },
 
     mounted() {

@@ -57,6 +57,22 @@ const router = new Router({
                 title: "招商政策"
             }
         },
+        {
+            path: "/ZCXQ",
+            component: () => import("../views/ZCXQ"),
+            meta: {
+                keepAlive: true,
+                title: "政策详情"
+            }
+        },
+        {
+            path: "/ZCXQ2",
+            component: () => import("../views/ZCXQ2"),
+            meta: {
+                keepAlive: true,
+                title: "政策详情"
+            }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {

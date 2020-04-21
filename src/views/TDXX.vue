@@ -193,7 +193,6 @@
         console.log(that.viewArr)
       })
       this.$refs.webmap.HYparcel();
-
     }
   };
 </script>

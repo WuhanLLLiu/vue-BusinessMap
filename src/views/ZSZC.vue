@@ -1,28 +1,30 @@
 <template>
   <div id="ZSZC" class='layout'>
-    <el-row id='row1'>
-        <el-card :body-style="{ padding: '0px' }">
-            <div style="padding: 14px;">
-                <span class='title'>汉阳区促进楼宇经济发展奖励办法（试行）</span>
-                <div class="bottom clearfix">
-                    <span class="details">来源于：商务局    发布于：2020-4-21 11:28:28</span>
-                    <!--<time class="time">{{ currentDate }}</time>-->
-                    <el-button type="text" class="button"  @click="ZC()" >政策详情</el-button>
+    <el-row class='row'>
+        <el-button class="button"  @click='ZC()'>
+            <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                <div style="padding: 14px;">
+                    <span class='title'>汉阳区促进楼宇经济发展奖励办法（试行）</span>
+                    <div class="bottom clearfix">
+                        <span class="details">来源：汉阳区商务局 发布于：2020-4-21 11:28:28</span>
+                        <!--<time class="time">{{ currentDate }}</time>-->
+                    </div>
                 </div>
-            </div>
-        </el-card>
+            </el-card>
+        </el-button>
      </el-row>
-    <el-row id='row2'>
-        <el-card :body-style="{ padding: '0px' }">
-            <div style="padding: 14px;">
-                <span class="title">汉阳区大健康产业扶持政策</span>
-                <div class="bottom clearfix">
-                    <span class="details">来源于：商务局    发布于：2020-4-21 11:28:28</span>
-                    <!--<time class="time">{{ currentDate }}</time>-->
-                    <el-button type="text" class="button"  @click="ZC2()" >政策详情</el-button>
+    <el-row class='row'>
+        <el-button class="button"  @click='ZC2()'>
+            <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                <div style="padding: 14px;">
+                    <span class="title">汉阳区大健康产业扶持政策</span>
+                    <div class="bottom clearfix">
+                        <span class="details">来源：汉阳区商务局 发布于：2020-4-21 11:28:28</span>
+                        <!--<time class="time">{{ currentDate }}</time>-->
+                    </div>
                 </div>
-            </div>
-        </el-card>
+            </el-card>
+        </el-button>
      </el-row>
   </div>
 </template>
@@ -38,10 +40,10 @@
     },
     methods: {
       ZC(){
-
+        this.$router.push({path:'/ZCXQ'})
       },
       ZC2(){
-
+        this.$router.push({path:'/ZCXQ2'})
       },
     }
   }
@@ -49,29 +51,36 @@
 
 <!-- 限定局部有效的样式 -->
 <style scoped>
-  /*.time {
-    font-size: 13px;
-    color: #999;
-  }*/
   .details {
     font-size: 13px;
     color: #999;    
   }
+  .title {
+    font-size: 32px; 
+    font-weight:bold;
+    color: #333;
+    /*line-height: 20px;*/
+    /*padding-bottom: 20px;*/
+  }
+  .row {
+      margin:20px;
+  }
   .bottom {
-    margin-top: 13px;
+    margin-top: 30px;
     line-height: 12px;
   }
-
   .button {
     padding: 0;
     float: right;
+    border-style:none;
+    text-align: left;
+    width: 710px;
   }
 
   /*.image {
     width: 100%;
     display: block;
   }*/
-
   .clearfix:before,
   .clearfix:after {
       display: table;

@@ -1,0 +1,78 @@
+<template>
+  <div id="ZCXQ">
+    <div id="row">
+        <p id ='row1'>汉阳区促进楼宇经济发展奖励办法（试行）</p>
+        <p id ='row2'>来源：汉阳区商务局</p>
+    </div>
+    <el-divider class="el-divider1"></el-divider>
+    <div id='ZC'>
+      <p id='ZC1' v-html='html1'></p>
+    </div>
+  </div>
+</template>
+
+<script>
+  import Vue from 'vue';
+
+  export default {
+    data() {
+      return {
+        html1:"<p>nihao</p>",
+      };
+    },
+    mounted(){
+      this.load()
+    },
+    methods: {
+      load(){
+        // fetch('../assets/1.html')
+        //   .then((response)=>{
+        //     var h=response.text()
+        //     var a=Promise.resolve(h)
+        //     // console.log(a)
+        //     a.then(function(result){
+        //       console.log(typeof(result))
+        //       this.html1=result
+        //     })
+        //   })
+        fetch("http://121.196.60.135:1338/data/lyfczc")
+          .then(result => result.json())
+          .then(result => {
+            
+            this.html1=result.content
+          })
+      }
+    }
+  }
+</script>
+
+<!-- 限定局部有效的样式 -->
+<style scoped>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  #row{
+  padding: 4%;
+  }
+  #row1{
+    padding: 1%;
+    font-size:48px;
+    font-family:PingFang SC;
+    font-weight:900;
+    color:rgba(51,51,51,1);
+    line-height:64px;
+  }
+  #row2{
+    font-size:35px;
+    font-family:PingFang SC;
+    font-weight: lighter;
+    color:rgba(51,51,51,1);
+    opacity:0.5;
+  }
+  #ZC{
+    /*font-size: 50px;*/
+    margin: 45px;
+  }
+</style>
