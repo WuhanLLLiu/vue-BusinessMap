@@ -8,18 +8,9 @@
 
     <div class="top">
       <el-row id="row1">
-        <el-col :span='2'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/土地信息.png" width="25%" @click="alertdialog"/></li>
-            <li id='type'>汉阳造文化创意产业园</li>
-          </ul>
-        </el-col>
-        <el-col :span='2'>
-          <ul type="none">
-            <li id="img"><img src="./../assets/楼宇信息.png" width="25%" @click="alertdialog"/></li>
-            <li id='type'>华加科技产业园</li>
-          </ul>
-        </el-col>
+            <span id='type'>汉阳造文化创意产业园</span>
+            <span id='type'>华加科技产业园</span>
+            <span id='type'>黄金口工业园</span>
       </el-row>
     </div>
 
@@ -145,13 +136,14 @@
 
 
   .layout .top {
-    height: 200px;
+    height: auto;
     width: 100%;
     position: absolute;
     top: 0;
+    padding: 2%;
     transition: all 0.5s;
     z-index: 4;
-    background: #fff;
+    background: #355BFA;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
@@ -182,8 +174,6 @@
   }
 
   #row1 {
-    padding-top: 1.5em;
-    padding-left: 1.0em;
     text-align: center;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
@@ -200,8 +190,9 @@
 
   #type {
     font-weight: bolder;
-    font-size: 1.0em;
-    text-align: center
+    font-size: 0.8em;
+    text-align: center;
+    color: #fff;
   }
 
   #rowly_0 {

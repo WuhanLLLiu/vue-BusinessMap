@@ -24,7 +24,7 @@
     
     <div class="bottom" id="bottom0" style="display:none">
         <div id="row0"  @click="hide">
-          <span>返回土地信息列表</span>
+          <span>关闭土地信息列表</span>
         </div>
         <el-divider class="el-divider1"></el-divider>
         <div id='form'>
@@ -59,7 +59,7 @@
     <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%" >
       <div id='drawer-content'>
         <div id="row0"  @click="drawer = false">
-          <span>返回土地信息列表</span>
+          <span>关闭土地信息列表</span>
         </div>
         
         <el-divider class="el-divider1"></el-divider>
