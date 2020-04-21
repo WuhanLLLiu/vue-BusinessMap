@@ -70,7 +70,15 @@ const router = new Router({
             component: () => import("../views/HJ"),
             meta: {
                 keepAlive: true,
-                title: "华加科技产业园"
+                title: "加华科技产业园"
+            }
+        },
+        {
+            path: "/JKCY",
+            component: () => import("../views/JKCY"),
+            meta: {
+                keepAlive: true,
+                title: "健康产业"
             }
         },
     ]

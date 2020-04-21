@@ -1,7 +1,7 @@
 <template>
   <div id="HJ" class="layout">
     <div id="row">
-        <p id ='row1'>武汉华加科技产业园基本情况简介</p>
+        <p id ='row1'>武汉加华科技产业园基本情况简介</p>
         <p id ='row2'>来源：汉阳区商务局</p>
     </div>
 
