@@ -13,13 +13,13 @@
         <van-dropdown-menu
             :overlay = false>
             <van-dropdown-item v-model="value1" :options="option1" @change="func" />
-            <van-dropdown-item v-model="value2" :options="option2" @change="func"/>
-            <van-dropdown-item v-model="value3" :options="option3" @change="func"/>
+            <van-dropdown-item v-model="value2" :options="option2" @change="func" />
+            <van-dropdown-item v-model="value3" :options="option3" @change="func" />
         </van-dropdown-menu>
     </div>
 
     <div class="map">
-      <webmap ref="webmap"></webmap>
+      <webmap ref="webmap" @changeCard="updateCard"></webmap>
     </div>
     
     <div class="bottom" id="bottom0" style="display:none">
@@ -150,35 +150,14 @@
       hide(){
         document.getElementById("bottom0").style.display="none";
       },
-      RouteZSTJ(){
-        this.$router.push({path:'/ZSTJ'})
-      },
-      alertdialog(){
-        alert('未完全开放，功能仍在开发...')
-      },
-      func1(){  
-        var value1 = this.value1  
-        this.$refs.webmap.TDfilter1(value1);
-        this.value2 = 0
-        this.value3 = 0 
-      },  
-      func2(){  
-        var value2 = this.value2  
-        this.$refs.webmap.TDfilter2(value2);
-        this.value1 = 0
-        this.value3 = 0 
-      },  
-      func3(){  
-        var value3 = this.value3  
-        this.$refs.webmap.TDfilter3(value3);
-        this.value1 = 0
-        this.value2 = 0 
-      }, 
       func(){
         var value1 = this.value1  
         var value2 = this.value2  
         var value3 = this.value3  
         this.$refs.webmap.TDfilter(value1,value2,value3);
+      },
+      updateCard(value){
+        this.viewArr = value
       }
     },
 

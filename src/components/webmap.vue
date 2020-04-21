@@ -223,6 +223,7 @@
       },
       //根据属性筛选土地
       TDfilter(value1,value2,value3) {
+        var that = this
         var v1 = String(value1)
         var v2 = String(value2)
         var v3 = String(value3)
@@ -233,62 +234,91 @@
         if(v1 == '0'){
           if(v2 == '0'){
             if(v3 == '0'){
+                that.TDitem = []
                 Vue.mapInstance.getLayer('v1').filter(['!=', 'id', null])
                   .forEach(function (feature) {
                     feature.show();
+                    that.TDitem.push(feature.properties)
                 });
+                that.$emit('changeCard',that.TDitem) 
             }
             else{
+                that.TDitem = []
                  Vue.mapInstance.getLayer('v1').filter(['==', 'dev_degree', v3])
                   .forEach(function (feature) {
                     feature.show();
-                });             
+                    that.TDitem.push(feature.properties)
+                });     
+                that.$emit('changeCard',that.TDitem)        
             }
           }
           else{
             if(v3 == '0'){
+                that.TDitem = []
                  Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
                   .forEach(function (feature) {
                     feature.show();
+                    that.TDitem.push(feature.properties)
                 });   
+                that.$emit('changeCard',that.TDitem)  
             }
             else{
+                that.TDitem = []
                 Vue.mapInstance.getLayer('v1').filter(['==', 'use', v2])
                   .forEach(function (feature) {
-                    if(feature.properties.dev_degree == v3){feature.show();}
-                });   
+                    if(feature.properties.dev_degree == v3){
+                      feature.show();
+                      that.TDitem.push(feature.properties)
+                    }
+                });  
+                that.$emit('changeCard',that.TDitem) 
             }
           }
         }
         else{
           if(v2 == '0'){
             if(v3 == '0'){
+                 that.TDitem = []
                  Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
                   .forEach(function (feature) {
                     feature.show();
-                });          
+                    that.TDitem.push(feature.properties)
+                });  
+                that.$emit('changeCard',that.TDitem)         
             }
             else{
+                 that.TDitem = []
                  Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
                   .forEach(function (feature) {
-                    if(feature.properties.dev_degree == v3){feature.show();}
+                    if(feature.properties.dev_degree == v3){
+                      feature.show();
+                      that.TDitem.push(feature.properties)
+                    }
                 });   
+                that.$emit('changeCard',that.TDitem)  
             }
           }
           else{
             if(v3 == '0'){
+                 that.TDitem = []
                  Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
                   .forEach(function (feature) {
-                    if(feature.properties.use == v2){feature.show();}
-                });   
+                    if(feature.properties.use == v2){
+                      feature.show();
+                      that.TDitem.push(feature.properties)
+                    }
+                });  
+                that.$emit('changeCard',that.TDitem)  
             }
             else{
+                that.TDitem = []
                 Vue.mapInstance.getLayer('v1').filter(['==', 'street', v1])
                   .forEach(function (feature) {
                     if(feature.properties.use == v2)
                       if(feature.properties.dev_degree == v3)
-                        {feature.show();}
+                        {feature.show();that.TDitem.push(feature.properties);}
                 });   
+                that.$emit('changeCard',that.TDitem)
             }
           }
         }
