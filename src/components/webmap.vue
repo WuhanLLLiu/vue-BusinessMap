@@ -28,6 +28,7 @@
   import bar_Self from '../assets/bar.js'
   import tdxx from '../assets/tdxx.js'
   import lyxx from '../assets/lyxx.js'
+  // import QJ from "../assets/vtour/tour.html"
   //引入百度api,需要安装npm i vue-baidu-map --save
   // import BaiduMap from 'vue-baidu-map'
   // Vue.use(BaiduMap, {
@@ -763,7 +764,9 @@
              + '<B>停车位数量：</B>' + geometries[j].properties.parking_nu +'<br/><br/>'
              + '<B>租金（元/平米每月）：</B>' + geometries[j].properties.monthly_re +'<br/><br/>'
              + '<B>物业管理费（元/平米每月）：</B>' + geometries[j].properties.property_m + '<br/><br/>'
-             + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
+              + '<a href="http://139.129.7.130/vtour/tour.html" >查看照片</a>'+'</div>',
+            //  + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
+            //  + '<a href="http://139.129.7.130/demo/krpano.html" >查看照片</a>'+'</div>',          
             'autoCloseOn': 'click',
             // 'autoPan': true,
             // 'width': 430,
