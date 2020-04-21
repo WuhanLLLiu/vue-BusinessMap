@@ -2,7 +2,7 @@
   <div id="ZCXQ">
     <div id="row">
         <p id ='row1'>汉阳区促进楼宇经济发展奖励办法（试行）</p>
-        <p id ='row2'>来源：汉阳区商务局</p>
+        <p id ='row2'>来源：汉阳区商务局 发布时间：2020年4月</p>
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='ZC'>
