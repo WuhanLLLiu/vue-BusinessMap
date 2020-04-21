@@ -19,7 +19,7 @@ const router = new Router({
         },
         {
             path: "/SY",
-            component: () => import("../views/ShouYe"),
+            component: () => import("../views/SY"),
             meta: {
                 keepAlive: true,
                 title: "汉阳招商云地图"
@@ -38,7 +38,7 @@ const router = new Router({
             component: () => import("../views/TDXX"),
             meta: {
                 keepAlive: true,
-                title: "汉阳招商云地图"
+                title: "土地信息"
             }
         },
         {
@@ -46,25 +46,9 @@ const router = new Router({
             component: () => import("../views/LYXX"),
             meta: {
                 keepAlive: true,
-                title: "汉阳招商云地图"
+                title: "楼宇信息"
             }
         },
-        {
-            path: "/HBS",
-            component: () => import("../views/Hubei"),
-            meta: {
-                keepAlive: true,
-                title: "湖北省疫情图"
-            }
-        },
-        {
-            path: "/JXQ",
-            component: () => import("../views/JiangXia"),
-            meta: {
-                keepAlive: true,
-                title: "江夏区疫情图"
-            }
-        }
     ]
 });
 router.beforeEach((to, from, next) => {
