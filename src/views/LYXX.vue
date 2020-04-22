@@ -18,7 +18,7 @@
 
     <div class="bottom" id="bottomly" style="display:none">
         <div id="rowly_0"  @click="hide">
-          <span>关闭楼宇信息</span>
+          <p class="el-icon-arrow-down">关闭楼宇信息</p>
         </div>
         <el-divider class="el-divider1"></el-divider>
         <div id='form'>

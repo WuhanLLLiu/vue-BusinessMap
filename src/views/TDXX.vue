@@ -24,7 +24,7 @@
     
     <div class="bottom" id="bottom0" style="display:none">
         <div id="row0"  @click="hide">
-          <span>关闭土地信息列表</span>
+          <p class="el-icon-arrow-down">关闭土地信息列表</p>
         </div>
         <el-divider class="el-divider1"></el-divider>
         <div id='form'>
@@ -54,12 +54,15 @@
         </div>
     </div>
     
-    <div class="bottom-footer"  @click="drawer = true">土地信息列表</div>
+    <div class="bottom-footer"  @click="drawer = true">
+      <!-- <i  id="arrowup"></i> -->
+      <p class="el-icon-arrow-up">土地信息列表</p>
+    </div>
     
     <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%" >
       <div id='drawer-content'>
         <div id="row0"  @click="drawer = false">
-          <span>关闭土地信息列表</span>
+          <p class="el-icon-arrow-down">关闭土地信息列表</p>
         </div>
         
         <el-divider class="el-divider1"></el-divider>
@@ -494,7 +497,9 @@
     padding-top: 1%;
     padding-bottom: 3%;
   }
-
+  #arrowup{
+    padding-right: 2%;
+  }
 
 </style>
 
