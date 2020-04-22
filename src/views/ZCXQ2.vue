@@ -2,7 +2,7 @@
   <div id="ZCXQ">
     <div id="row">
         <p id ='row1'>汉阳区大健康产业扶持政策</p>
-        <p id ='row2'>来源：汉阳区商务局 发布时间：2020年4月</p>
+        <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='ZC'>
@@ -15,6 +15,7 @@
   import Vue from 'vue';
 
   export default {
+    name: "ZCXQ2",
     data() {
       return {
         html1:"",
@@ -37,8 +38,7 @@
         //   })
         fetch("http://121.196.60.135:1338/data/djkcyzc")
           .then(result => result.json())
-          .then(result => {
-            
+          .then(result => {           
             this.html1=result.content
           })
       }

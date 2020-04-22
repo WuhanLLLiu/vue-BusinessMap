@@ -5,7 +5,7 @@
             <van-tab title="健康产业规划">
             <div id="row">
                 <p id ='row1'>健康产业规划</p>
-                <p id ='row2'>来源：汉阳区商务局 发布时间：2019年3月</p>
+                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
             </div>
             <el-divider class="el-divider1"></el-divider>
             <div id='Selfform'>
@@ -35,10 +35,38 @@
             </div>
             </van-tab>
             <van-tab title="健康产业政策">
-
+            <div id="row">
+                <p id ='row1'>健康产业政策</p>
+                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
+            </div>
+            <el-divider class="el-divider1"></el-divider>
+            <div id='Selfform'>
+                <p id = 'title'>（一）强化组织领导保障</p>
+                <p>成立“汉阳区大健康产业发展领导小组”，由区政府主要负责同志为组长，区发改局、区科经局、区财政局（金融办）、区自然资源和规划局、区卫健局、区医保局、区社保处、区统计局等相关部门和各街道（管委会）负责人为成员，领导推进全区生命健康产业发展工作，落实省市工作任务。</p>
+                <br/>
+                <p id = 'title'>（二）加快人才系统建设</p>
+                <p>着力引进大健康产业高端人才和团队来我区进行成果转化。发挥汉阳职业教育优势，完善培养多类型人才培训体系，加强技术技能型人才培养，结合产业需求和特点，满足人才资源配套</p>
+                <br/>
+                <p id = 'title'>（三）加强财政金融服务</p>
+                <p>加大财政支持大健康产业发展资金投入力度，对接市级大健康产业基金，争取社会资本投资医疗大健康领域，与区战略性新兴产业发展引导基金互补，重点投向大健康领域优质项目。创新企业融资方式，积极支持符合条件的大健康产业企业通过挂牌上市、发行债券、资产证券化等股权、债权融资形式多渠道筹措发展资金</p>
+                <br/>
+                <p id = 'title'>（四）加快项目策划引进</p>
+                <p>围绕“一谷两区”空间布局，结合重点产业发展方向，以产业链招商模式，策划包装和引进一批新业态、新模式、高端健康产业项目，推进大健康服务业全产业链发展。</p>
+                <br/>
+                <p id = 'title'>（五）优化产业营商环境</p>
+                <p>完善大健康产业专项政策体系，研究制定出台促进产业发展的专项政策措施，加强大健康产品、服务和需求主体对接，创造有利于大健康产业发展的营商环境。</p>
+                <br/>
+            </div>
             </van-tab>
             <van-tab title="健康产业企业">
-
+            <div id="row">
+                <p id ='row1'>健康产业企业</p>
+                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
+            </div>
+            <el-divider class="el-divider1"></el-divider>
+            <div id='CYQY'>
+              <p id='QY' v-html='html1'></p>
+            </div>
             </van-tab>
         </van-tabs>
     </div>
@@ -57,6 +85,7 @@
     data() {
       return {
           active: 0,
+          html1:" ",
       };
     },
    
@@ -64,10 +93,18 @@
     },
 
     methods: {
+      load(){
+        fetch("http://121.196.60.135:1338/data/jkcyqy")
+          .then(result => result.json())
+          .then(result => {            
+            this.html1=result.content
+          })
+      }
     },
 
     mounted() {
       //增加统计图表
+      this.load()
     }
   };
 </script>
@@ -100,14 +137,15 @@
 #Selfform{
   margin-top: 3%;
   padding: 5%;
-  font-size:36px;
-  line-height:58px;
+  font-size:35px;
+  line-height:50px;
   font-family:PingFang SC;
 }
 #title{
-  font-size:41px;
+  font-size:35px;
   font-weight: bolder;
   font-family:PingFang SC;
+  color: #000;
 }
 #hj{
   display: inline-block;
@@ -118,6 +156,10 @@
     text-align: center;
     font-size:34px;
     font-weight:normal
+}
+#QY{
+    margin-top: 1%;
+    padding: 5%;
 }
 
 </style>
