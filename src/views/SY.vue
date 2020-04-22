@@ -320,7 +320,7 @@
   #buildings {
     text-align: center;
     position: absolute;
-    bottom: 30%;
+    bottom: 33%;
   }
   #buildings0 {
     text-align: center;

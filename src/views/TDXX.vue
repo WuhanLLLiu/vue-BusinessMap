@@ -221,41 +221,44 @@
     }
 
    .van-dropdown-menu {
-        font-size: 15px;
+        /* font-size: 15px; */
+        font-size: 0.9em;
         font: bolder;
-        height:30%;
-        background:#0080ff
+        height:20%;
+        background:#355BFA
    }
     .van-dropdown-menu >>>.van-hairline--top-bottom{
         margin: 0%;
         border: 0;
     }
     .van-dropdown-menu >>>.van-dropdown-menu__title{
-        font-size: 40px;
-        font-weight: bold;
+        /* font-size: 34px; */
+        font-size: 0.9em;
+        /* font-weight: bold; */
         font-family:"Microsoft YaHei";
         color:#fff;
    }
   .van-dropdown-menu >>> .van-dropdown-menu__title::after{
-     border:7px solid;
+     border:5px solid;
      right: -20px;
      border-color: transparent transparent currentColor currentColor;
    }
 
   .van-dropdown-menu >>> .van-dropdown-menu__item{
-        padding: 30px;
-        height:35px；
+        padding: 20px;
+        height: 20px；
   }
  .van-dropdown-menu >>> .van-ellipsis{
-      height: 45px;
+      height: 25px;
       padding-top: 10%;
   }
    .van-dropdown-menu >>> .van-dropdown-item__option{
-        font-size: 35px;
+        /* font-size: 35px; */
+        font-size: 0.9em;
         font-family:"Microsoft YaHei";
-        font-weight: 600;
-        margin-top: 8%;
-        margin-bottom: 8%;
+        /* font-weight: 600; */
+        margin-top: 5%;
+        margin-bottom: 5%;
         padding-left: 5%;
         padding-bottom: 20px;
    }
@@ -264,11 +267,12 @@
   }
 
   .bottom-footer {
-    height: 71px;
+    height: 60px;
     text-align: center;
-    line-height: 71px;
-    color: #628dd1;
-    font-size: 35px;
+    line-height: 60px;
+    color: #333333;
+    /* font-size: 35px; */
+    font-size: 0.9em;
     width: 100%;
     position: absolute;
     bottom: 0;
