@@ -57,6 +57,7 @@
               <span id="lywy">36</span>
           </el-row>
           <el-row id="rowly_4">
+              <i id = 'icon1' class="el-icon-picture"></i>
               <span id="rowly_41" @click="PICAlert">查看照片</span>
           </el-row>
         </div>
@@ -291,5 +292,11 @@
     border-radius: 50%;     
     -moz-border-radius: 50%;      
     -webkit-border-radius: 50%;
+  }
+    #icon1{
+    background: white;
+    color:goldenrod;
+    padding-right: 2%;
+
   }
 </style>

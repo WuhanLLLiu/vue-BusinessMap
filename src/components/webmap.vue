@@ -11,8 +11,8 @@
   import imgURL_loc from '../assets/marker.png'
   import imgURL_loc2 from '../assets/choosed.png'
 
-  import tdxx from '../assets/tdxx.js'
-  import lyxx from '../assets/lyxx.js'
+  // import tdxx from '../assets/tdxx.js'
+  // import lyxx from '../assets/lyxx.js'
   // import QJ from "../assets/vtour/tour.html"
   //引入百度api,需要安装npm i vue-baidu-map --save
   // import BaiduMap from 'vue-baidu-map'
@@ -83,143 +83,147 @@
       },
       //地块
       HYparcel(){
-        Vue.mapInstance.addLayer(new maptalks.VectorLayer('v1'))
-        var county = tdxx.tdxx[0]
-        const geometries = maptalks.GeoJSON.toGeometry(county);
-        for (var i = 0; i < geometries.length; i++) {
-          var a = geometries[i];
-          a._id = i
-        }
-        const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries);
-        //设置style
-        vectorLayer.setStyle([{
-            'symbol': {
-                'lineColor': '#2348E5',
-                'lineWidth': 4,
-                'polygonFill': '#355BFA',
-                'polygonOpacity': 0.6,
-                'markerFile': imgURL_loc,
-                'markerWidth': { stops: [[6, 0], [14, 30]] },
-                'markerHeight': { stops: [[6, 0], [14, 40]] }
-            }
-          }]);
-        // Vue.mapInstance.addLayer(vectorLayer);
-        Vue.mapInstance.getLayer('v1').bringToBack()
-       //信息框显示marker_self.
-        // for (var j = 0; j < geometries.length; j++) {
-        //   Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
-        //     'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
-        //      + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
-        //      + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
-        //      + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
-        //      + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
-        //      + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
-        //     'autoCloseOn': 'click',
-        //     // 'autoPan': true,
-        //     // 'width': 430,
-        //   });
-        // }
-        //click 事件
-        for (var j = 0; j < geometries.length; j++) {
-          Vue.mapInstance.getLayer('v1').getGeometryById(j).on('click', function (param) {
-            for (var a = 0; a < geometries.length; a++){
-              Vue.mapInstance.getLayer('v1').getGeometryById(a).updateSymbol({
-                'lineColor': '#2348E5',
-                'lineWidth': 4,
-                'polygonFill': '#355BFA',
-                'polygonOpacity': 0.6,
-                'markerFile': imgURL_loc,
-                'markerWidth': { stops: [[6, 0], [14, 30]] },
-                'markerHeight': { stops: [[6, 0], [14, 40]] }
-              })
-            }
- 
-            document.getElementById('bottom0').style.display="block";
-            document.getElementById('name').innerHTML = param.target.properties.name
-            document.getElementById('area').innerHTML = param.target.properties.area +'亩'
-            document.getElementById('proportion').innerHTML = '公建比  '+param.target.properties.proportion
-            document.getElementById('direction').innerHTML = param.target.properties.direction
-            document.getElementById('around').innerHTML = param.target.properties.around
-            document.getElementById('location').innerHTML = param.target.properties.location
-            param.target.updateSymbol({
-                  'lineColor': '#E52323',
+        fetch("http://121.196.60.135:1338/data/tdxx").then(result => result.json()).then(result => {
+          Vue.mapInstance.addLayer(new maptalks.VectorLayer('v1'))
+          var county = JSON.parse(result.content)
+          const geometries = maptalks.GeoJSON.toGeometry(county);
+          for (var i = 0; i < geometries.length; i++) {
+            var a = geometries[i];
+            a._id = i
+          }
+          const vectorLayer = Vue.mapInstance.getLayer('v1').addGeometry(geometries);
+          //设置style
+          vectorLayer.setStyle([{
+              'symbol': {
+                  'lineColor': '#2348E5',
                   'lineWidth': 4,
-                  'polygonFill': '#FA3535',
+                  'polygonFill': '#355BFA',
                   'polygonOpacity': 0.6,
-                  'markerFile': imgURL_loc2,
-                  'markerWidth': { stops: [[6, 0], [14, 40]] },
-                  'markerHeight': { stops: [[6, 0], [14, 54]] }
+                  'markerFile': imgURL_loc,
+                  'markerWidth': { stops: [[6, 0], [14, 30]] },
+                  'markerHeight': { stops: [[6, 0], [14, 40]] }
+              }
+            }]);
+          // Vue.mapInstance.addLayer(vectorLayer);
+          Vue.mapInstance.getLayer('v1').bringToBack()
+        //信息框显示marker_self.
+          // for (var j = 0; j < geometries.length; j++) {
+          //   Vue.mapInstance.getLayer('v1').getGeometryById(j).setInfoWindow({
+          //     'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+          //      + '<B>位置：</B>' + geometries[j].properties.location +'<br/><br/>'
+          //      + '<B>面积：</B>' + geometries[j].properties.area +'亩<br/><br/>'
+          //      + '<B>公建比：</B>' + geometries[j].properties.proportion +'<br/><br/>'
+          //      + '<B>招商方向：</B>' + geometries[j].properties.direction +'<br/><br/>'
+          //      + '<B>详细信息：</B>' + geometries[j].properties.around + '</div>',
+          //     'autoCloseOn': 'click',
+          //     // 'autoPan': true,
+          //     // 'width': 430,
+          //   });
+          // }
+          //click 事件
+          for (var j = 0; j < geometries.length; j++) {
+            Vue.mapInstance.getLayer('v1').getGeometryById(j).on('click', function (param) {
+              for (var a = 0; a < geometries.length; a++){
+                Vue.mapInstance.getLayer('v1').getGeometryById(a).updateSymbol({
+                  'lineColor': '#2348E5',
+                  'lineWidth': 4,
+                  'polygonFill': '#355BFA',
+                  'polygonOpacity': 0.6,
+                  'markerFile': imgURL_loc,
+                  'markerWidth': { stops: [[6, 0], [14, 30]] },
+                  'markerHeight': { stops: [[6, 0], [14, 40]] }
+                })
+              }
+  
+              document.getElementById('bottom0').style.display="block";
+              document.getElementById('name').innerHTML = param.target.properties.name
+              document.getElementById('area').innerHTML = param.target.properties.area +'亩'
+              document.getElementById('proportion').innerHTML = '公建比  '+param.target.properties.proportion
+              document.getElementById('direction').innerHTML = param.target.properties.direction
+              document.getElementById('around').innerHTML = param.target.properties.around
+              document.getElementById('location').innerHTML = param.target.properties.location
+              param.target.updateSymbol({
+                    'lineColor': '#E52323',
+                    'lineWidth': 4,
+                    'polygonFill': '#FA3535',
+                    'polygonOpacity': 0.6,
+                    'markerFile': imgURL_loc2,
+                    'markerWidth': { stops: [[6, 0], [14, 40]] },
+                    'markerHeight': { stops: [[6, 0], [14, 54]] }
+              })
             })
-          })
-        }
+          }
+        })
       },
       //楼宇
       HYbuildings(){
-        Vue.mapInstance.addLayer(new maptalks.VectorLayer('ly'))
-        var county = lyxx.lyxx[0]
-        const geometries = maptalks.GeoJSON.toGeometry(county);
-        for (var i = 0; i < geometries.length; i++) {
-          var a = geometries[i];
-          a._id = i
-        }
-        const vectorLayer = Vue.mapInstance.getLayer('ly').addGeometry(geometries);
-        //设置style
-        vectorLayer.setStyle([{
-            'symbol': {
-                'markerFile': imgURL_loc,
-                'markerWidth': { stops: [[6, 0], [14, 30]] },
-                'markerHeight': { stops: [[6, 0], [14, 40]] }
-            }
-          }]);
-        // Vue.mapInstance.addLayer(vectorLayer);
-        Vue.mapInstance.getLayer('ly').bringToBack()
-       //信息框显示marker_self.
-        // for (var j = 0; j < geometries.length; j++) {
-        //   Vue.mapInstance.getLayer('ly').getGeometryById(j).setInfoWindow({
-        //     'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
-        //      + '<B>位置：</B>' + geometries[j].properties.address +'<br/><br/>'
-        //      + '<B>层数：</B>' + geometries[j].properties.floor_num +'<br/><br/>'
-        //      + '<B>建筑体量（平米）：</B>' + geometries[j].properties.volume +'<br/><br/>'
-        //      + '<B>已入驻企业数量：</B>' + geometries[j].properties.settled_en +'<br/><br/>'
-        //      + '<B>客梯数量：</B>' + geometries[j].properties.passenger_ +'<br/><br/>'
-        //      + '<B>停车位数量：</B>' + geometries[j].properties.parking_nu +'<br/><br/>'
-        //      + '<B>租金（元/平米每月）：</B>' + geometries[j].properties.monthly_re +'<br/><br/>'
-        //      + '<B>物业管理费（元/平米每月）：</B>' + geometries[j].properties.property_m + '<br/><br/>'
-        //      + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
-        //     'autoCloseOn': 'click',
-        //     // 'autoPan': true,ly
-        //     // 'width': 430,
-        //   });
-        // }
-        //click 事件
-        for (var j = 0; j < geometries.length; j++) {
-          Vue.mapInstance.getLayer('ly').getGeometryById(j).on('click', function (param) {
-            for (var a = 0; a < geometries.length; a++){
-              Vue.mapInstance.getLayer('ly').getGeometryById(a).updateSymbol({
-                'markerFile': imgURL_loc,
-                'markerWidth': { stops: [[6, 0], [14, 30]] },
-                'markerHeight': { stops: [[6, 0], [14, 40]] }
-              })
-            }
- 
-            document.getElementById('bottomly').style.display="block";
-            document.getElementById('lyname').innerHTML = param.target.properties.name
-            document.getElementById('lylocation').innerHTML = param.target.properties.address 
-            document.getElementById('lycs').innerHTML = param.target.properties.floor_num
-            document.getElementById('lytl').innerHTML = param.target.properties.volume
-            document.getElementById('lyqy').innerHTML = param.target.properties.settled_en
-            document.getElementById('lykt').innerHTML = param.target.properties.passenger_
-            document.getElementById('lytc').innerHTML = param.target.properties.parking_nu
-            document.getElementById('lyzj').innerHTML = param.target.properties.monthly_re
-            document.getElementById('lywy').innerHTML = param.target.properties.property_m
+        fetch("http://121.196.60.135:1338/data/lyxx").then(result => result.json()).then(result => {
+          Vue.mapInstance.addLayer(new maptalks.VectorLayer('ly'))
+          var county = JSON.parse(result.content)
+          const geometries = maptalks.GeoJSON.toGeometry(county);
+          for (var i = 0; i < geometries.length; i++) {
+            var a = geometries[i];
+            a._id = i
+          }
+          const vectorLayer = Vue.mapInstance.getLayer('ly').addGeometry(geometries);
+          //设置style
+          vectorLayer.setStyle([{
+              'symbol': {
+                  'markerFile': imgURL_loc,
+                  'markerWidth': { stops: [[6, 0], [14, 30]] },
+                  'markerHeight': { stops: [[6, 0], [14, 40]] }
+              }
+            }]);
+          // Vue.mapInstance.addLayer(vectorLayer);
+          Vue.mapInstance.getLayer('ly').bringToBack()
+        //信息框显示marker_self.
+          // for (var j = 0; j < geometries.length; j++) {
+          //   Vue.mapInstance.getLayer('ly').getGeometryById(j).setInfoWindow({
+          //     'content': '<div style="font-size:14px;">' + '<B>' + geometries[j].properties.name +'</B>'+ '<br/><br/>'
+          //      + '<B>位置：</B>' + geometries[j].properties.address +'<br/><br/>'
+          //      + '<B>层数：</B>' + geometries[j].properties.floor_num +'<br/><br/>'
+          //      + '<B>建筑体量（平米）：</B>' + geometries[j].properties.volume +'<br/><br/>'
+          //      + '<B>已入驻企业数量：</B>' + geometries[j].properties.settled_en +'<br/><br/>'
+          //      + '<B>客梯数量：</B>' + geometries[j].properties.passenger_ +'<br/><br/>'
+          //      + '<B>停车位数量：</B>' + geometries[j].properties.parking_nu +'<br/><br/>'
+          //      + '<B>租金（元/平米每月）：</B>' + geometries[j].properties.monthly_re +'<br/><br/>'
+          //      + '<B>物业管理费（元/平米每月）：</B>' + geometries[j].properties.property_m + '<br/><br/>'
+          //      + '<a href="https://720yun.com/t/a472babuccs?scene_id=844024" >查看照片</a>'+'</div>',
+          //     'autoCloseOn': 'click',
+          //     // 'autoPan': true,ly
+          //     // 'width': 430,
+          //   });
+          // }
+          //click 事件
+          for (var j = 0; j < geometries.length; j++) {
+            Vue.mapInstance.getLayer('ly').getGeometryById(j).on('click', function (param) {
+              for (var a = 0; a < geometries.length; a++){
+                Vue.mapInstance.getLayer('ly').getGeometryById(a).updateSymbol({
+                  'markerFile': imgURL_loc,
+                  'markerWidth': { stops: [[6, 0], [14, 30]] },
+                  'markerHeight': { stops: [[6, 0], [14, 40]] }
+                })
+              }
+  
+              document.getElementById('bottomly').style.display="block";
+              document.getElementById('lyname').innerHTML = param.target.properties.name
+              document.getElementById('lylocation').innerHTML = param.target.properties.address 
+              document.getElementById('lycs').innerHTML = param.target.properties.floor_num
+              document.getElementById('lytl').innerHTML = param.target.properties.volume
+              document.getElementById('lyqy').innerHTML = param.target.properties.settled_en
+              document.getElementById('lykt').innerHTML = param.target.properties.passenger_
+              document.getElementById('lytc').innerHTML = param.target.properties.parking_nu
+              document.getElementById('lyzj').innerHTML = param.target.properties.monthly_re
+              document.getElementById('lywy').innerHTML = param.target.properties.property_m
 
-            param.target.updateSymbol({
-                'markerFile': imgURL_loc2,
-                'markerWidth': { stops: [[6, 0], [14, 40]] },
-                'markerHeight': { stops: [[6, 0], [14, 50]] }
+              param.target.updateSymbol({
+                  'markerFile': imgURL_loc2,
+                  'markerWidth': { stops: [[6, 0], [14, 40]] },
+                  'markerHeight': { stops: [[6, 0], [14, 50]] }
+              })
             })
-          })
-        }
+          }
+        })
       },
       //根据属性筛选土地
       TDfilter(value1,value2,value3) {
