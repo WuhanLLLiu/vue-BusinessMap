@@ -1,6 +1,5 @@
 <template>
-  <div id="HanKou" class="layout">
-    <!-- <div class="head">汉阳招商云地图</div> -->
+  <div id="LYXX" class="layout">
 
     <div class="map">
       <webmap ref="webmap"></webmap>
@@ -70,20 +69,14 @@
   import Vue from "vue";
   import * as maptalks from "maptalks";
   import "maptalks/dist/maptalks.css";
-  import echarts from 'echarts';
-  import Drawer from "./../components/Drawer";
   import webmap from "./../components/webmap";
-  import info from "./../components/info";
-  import Dialog from "./../components/Dialog";
+
 
   export default {
-    name: "HanKou",
+    name: "LYXX",
 
     components: {
-      Drawer: Drawer,
       webmap: webmap,
-      info: info,
-      Dialog: Dialog
     },
 
     data() {

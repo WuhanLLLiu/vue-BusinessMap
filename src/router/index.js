@@ -26,14 +26,6 @@ const router = new Router({
             }
         },
         {
-            path: "/HK",
-            component: () => import("../views/HanKou"),
-            meta: {
-                keepAlive: true,
-                title: "汉阳招商云地图"
-            }
-        },
-        {
             path: "/TDXX",
             component: () => import("../views/TDXX"),
             meta: {
