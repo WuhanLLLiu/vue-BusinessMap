@@ -10,8 +10,8 @@ const router = new Router({
             redirect: "/SY"
         },
         {
-            path:"/ZSTJ",
-            component: () => import("../views/ZSTJ"),
+            path:"/ZSTJ2",
+            component: () => import("../views/ZSTJ2"),
             meta: {
                 keepAlive: false,
                 title: "招商推介"

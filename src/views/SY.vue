@@ -56,7 +56,7 @@
 
     methods: {
       RouteZSTJ(){
-        this.$router.push({path:'/ZSTJ'})
+        this.$router.push({path:'/ZSTJ2'})
       },
       RouteDT(){
         this.$router.push({path:'/TDXX'})

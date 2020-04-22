@@ -51,7 +51,6 @@
                     require('./../assets/zstj/36.png'),
                     require('./../assets/zstj/37.png'),
                     require('./../assets/zstj/38.png'),
-                    require('./../assets/zstj/39.png')
                 ]
             }
         },
