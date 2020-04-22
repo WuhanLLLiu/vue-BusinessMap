@@ -62,7 +62,7 @@ const router = new Router({
             component: () => import("../views/ZCXQ"),
             meta: {
                 keepAlive: true,
-                title: "政策详情"
+                title: "汉阳区促进楼宇经济发展奖励办法（试行）"
             }
         },
         {
@@ -70,7 +70,7 @@ const router = new Router({
             component: () => import("../views/ZCXQ2"),
             meta: {
                 keepAlive: true,
-                title: "政策详情"
+                title: "汉阳区大健康产业扶持政策"
              }
         },
         {           
@@ -103,6 +103,14 @@ const router = new Router({
             meta: {
                 keepAlive: true,
                 title: "健康产业"
+            }
+        },
+        {
+            path: "/ZCXQ3",
+            component: () => import("../views/ZCXQ3"),
+            meta: {
+                keepAlive: true,
+                title: "阳政规[2019]1号营商留商奖励政策"
             }
         },
     ]
