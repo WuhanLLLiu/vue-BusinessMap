@@ -436,7 +436,7 @@
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
-    z-index: 4;
+    z-index: 5;
     background: #fff;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }

@@ -347,11 +347,24 @@
         //   'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
         //   'attribution': '&copy; <a target="_blank" href="https://map.gaode.com">Gaode</a>'
         // }));
+        //cartocdn
+        // Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
+        //   urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+        //   subdomains: ['a','b','c','d'],
+        //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+        // }));
+        //tdt
         Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
-          urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-          subdomains: ['a','b','c','d'],
+          urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
+          subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
           attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
         }));
+        // Vue.mapInstance.addLayer(new maptalks.TileLayer("base2", {
+        //   urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=cva_c&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
+        //   subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
+        //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+        // }));
+        // console.log(Vue.mapInstance)
       },
 
    },

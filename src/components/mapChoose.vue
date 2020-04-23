@@ -67,5 +67,11 @@
 
 </style>
 
-
+<style >
+  .element.style {
+    transform-origin: right center;
+    z-index: 4;
+    display: none;
+  }
+</style>
 
