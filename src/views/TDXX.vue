@@ -83,11 +83,12 @@
                 <span>{{item.name}}</span>
               </el-row>
               <el-row id="row2">
-                <span id="row3">面积 {{item.area}} 亩</span>
-                <span id="row3">公建比 {{item.proportion}}</span>
+                <span id="locimg"><img  src="./../assets/choosed.png" width="3%" style="padding-right:1%"/></span>
+                <span id="row4">{{item.location}}</span>
               </el-row>
               <el-row id="row2">
-                <span id="row4">{{item.location}}</span>
+                <span id="row3">面积 {{item.area}} 亩</span>
+                <span id="row3">公建比 {{item.proportion}}</span>
               </el-row>
             </el-card>
           </div>
@@ -328,7 +329,7 @@
     padding: 1%;
     padding-top: 3%;
     padding-bottom: 2%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: "微软雅黑";
     font: bolder;
     font-weight: bold;
@@ -352,18 +353,20 @@
     margin: 0 10px;
     display: inline-block;
     border-radius: 4px;
-    background: #cfe0ff;
+    background: white;
     border: 1px solid #004acc;
     color: #004acc;
   }
 
   #row4 {
-    font-size: 1.0em;
-    padding: 6px 20px;
-    margin: 0 10px;
+    font-size: 0.9em;
+    padding-left: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* margin: 0 10px; */
     font-family: "微软雅黑";
-    display: inline-block;
-    color: gray;
+    /* display: inline-block; */
+    color: #333333;
   }
   #row5 {
     font-size: 1.0em;
