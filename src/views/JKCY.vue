@@ -8,7 +8,7 @@
                 <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
             </div>
             <el-divider class="el-divider1"></el-divider>
-            <div id='Selfform'>
+            <!--<div id='Selfform'>
                 <p id = 'title'>一、发展目标</p>
                 <p>打造医药流通为主体，中医药、健康服务为特色，智能制造、健康金融为支撑的产业发展体系，构建以“龙阳湖健康谷”为中心，以东部四新生态新城“智慧医养服务区”和西部黄金口都市工业园“健康智能制造区”为双翼的“一谷两区”空间格局。</p>
                 <br/>
@@ -32,6 +32,9 @@
                 <img src="./../assets/jkzn.png" id='hj'/>
                 <p id="SM">上图健康智能制造区</p>
                 <br/>
+            </div>-->
+            <div id='JKCY0'>
+              <p id='GH' v-html='html1'></p>
             </div>
             </van-tab>
             <van-tab title="健康产业政策">
@@ -40,7 +43,7 @@
                 <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
             </div>
             <el-divider class="el-divider1"></el-divider>
-            <div id='Selfform'>
+            <!--<div id='Selfform'>
                 <p id = 'title'>（一）强化组织领导保障</p>
                 <p>成立“汉阳区大健康产业发展领导小组”，由区政府主要负责同志为组长，区发改局、区科经局、区财政局（金融办）、区自然资源和规划局、区卫健局、区医保局、区社保处、区统计局等相关部门和各街道（管委会）负责人为成员，领导推进全区生命健康产业发展工作，落实省市工作任务。</p>
                 <br/>
@@ -56,6 +59,9 @@
                 <p id = 'title'>（五）优化产业营商环境</p>
                 <p>完善大健康产业专项政策体系，研究制定出台促进产业发展的专项政策措施，加强大健康产品、服务和需求主体对接，创造有利于大健康产业发展的营商环境。</p>
                 <br/>
+            </div>-->
+            <div id='JKCY0'>
+              <p id='ZC' v-html='html2'></p>
             </div>
             </van-tab>
             <van-tab title="健康产业企业">
@@ -64,8 +70,8 @@
                 <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
             </div>
             <el-divider class="el-divider1"></el-divider>
-            <div id='CYQY'>
-              <p id='QY' v-html='html1'></p>
+            <div id='JKCY0'>
+              <p id='QY' v-html='html3'></p>
             </div>
             </van-tab>
         </van-tabs>
@@ -86,6 +92,8 @@
       return {
           active: 0,
           html1:" ",
+          html2:" ",
+          html3:" ",
       };
     },
    
@@ -93,18 +101,34 @@
     },
 
     methods: {
-      load(){
-        fetch("http://121.196.60.135:1338/data/jkcyqy")
+      load_GH(){
+        fetch("http://121.196.60.135:1338/data/jkcygh")
           .then(result => result.json())
           .then(result => {            
             this.html1=result.content
+          })
+      },
+      load_ZC(){
+        fetch("http://121.196.60.135:1338/data/jkcyzc")
+          .then(result => result.json())
+          .then(result => {            
+            this.html2=result.content
+          })
+      },
+      load_QY(){
+        fetch("http://121.196.60.135:1338/data/jkcyqy")
+          .then(result => result.json())
+          .then(result => {            
+            this.html3=result.content
           })
       }
     },
 
     mounted() {
       //增加统计图表
-      this.load()
+      this.load_GH(),
+      this.load_ZC(),
+      this.load_QY()
     }
   };
 </script>
@@ -157,9 +181,13 @@
     font-size:34px;
     font-weight:normal
 }
-#QY{
-    margin-top: 1%;
+/*#QY #GH #ZC{
+    margin-top: 3%;
     padding: 5%;
+}*/
+#JKCY0{
+    margin-top: 3%;
+    padding: 4%;
 }
 
 </style>

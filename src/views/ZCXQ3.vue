@@ -116,7 +116,7 @@
   }
 #Selfform{
   margin-top: 3%;
-  padding: 5%;
+  padding: 4%;
   font-size:35px;
   line-height:50px;
   font-family:PingFang SC;

@@ -71,8 +71,11 @@
     color:rgba(51,51,51,1);
     opacity:0.5;
   }
+  /*#ZC{
+    margin: 45px;  
+  }*/
   #ZC{
-    /*font-size: 50px;*/
-    margin: 45px;
+      margin-top: 3%;
+      padding: 4%;
   }
 </style>
