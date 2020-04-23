@@ -113,7 +113,7 @@
 
     .layout .logo {
             /*position: absolute;*/
-            top: 25%;
+            top: 20%;
             border-radius:50% 50%; 
     }
 
@@ -125,7 +125,7 @@
         border-radius:50% 50%; 
         position: absolute!important;
         left: 50%;
-        top: 23%;
+        top: 20%;
         transform: translateY(-50%,-50%);
         -webkit-transform:translate(-50%,-50%);
         -moz-transform: translate(-50%,-50%);
@@ -320,20 +320,15 @@
   #buildings {
     text-align: center;
     position: absolute;
-    bottom: 43%;
+    bottom: 41%;
   }
   #buildings0 {
     text-align: center;
     position: absolute;
-    bottom: 25%;
+    bottom: 23%;
   }
   #building {
     padding: 1.5%;
   }
-  #type {
-    font-weight: bolder;
-    font-size: 1.0em;
-    text-align: center;
-    color:white;
-  }
+
 </style>

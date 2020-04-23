@@ -259,8 +259,11 @@
    }
 
   .van-dropdown-menu >>> .van-dropdown-menu__item{
-        padding: 20px;
-        height: 20px；
+        padding: 25px;
+        height: 20px;
+        font-family:PingFang SC;
+        font-weight:light;
+        color:rgba(255,255,255,1);
   }
  .van-dropdown-menu >>> .van-ellipsis{
       height: 25px;
