@@ -4,15 +4,29 @@
     <div class="map">
       <webmap ref="webmap"></webmap>
     </div>
-
+  
+    <mapChoose></mapChoose>
+    
     <div class="top">
       <el-row id="row1">
-            <i id = 'icon0' class="el-icon-reading"></i>
-            <span id='type' @click="RouteHYZ">汉阳造文创产业园</span>
-            <i id = 'icon0' class="el-icon-office-building"></i>
-            <span id='type' @click="RouteHJ">加华科技产业园</span>
-            <i id = 'icon0' class="el-icon-school"></i>
-            <span id='type' @click="RouteHJK">黄金口工业园</span>
+          <el-col>
+            <ul type="none">
+                <li id="img"><img src="./../assets/创意园.png" width="33%" @click="RouteHYZ"/></li>
+                <li id='type' @click="RouteHYZ">汉阳造文创产业园</li>
+            </ul>
+          </el-col>
+          <el-col>
+            <ul type="none">
+                <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
+                <li id='type' @click="RouteHJ">加华科技产业园</li>
+            </ul>
+          </el-col>
+          <el-col>
+            <ul type="none">
+                <li id="img"><img src="./../assets/工业园.png" width="33%" @click="RouteHJK"/></li>
+                <li id='type' @click="RouteHJK">黄金口工业园</li>
+            </ul>
+          </el-col>
       </el-row>
     </div>
 
@@ -70,13 +84,14 @@
   import * as maptalks from "maptalks";
   import "maptalks/dist/maptalks.css";
   import webmap from "./../components/webmap";
-
+  import mapChoose from "./../components/mapChoose"
 
   export default {
     name: "LYXX",
 
     components: {
       webmap: webmap,
+      mapChoose:mapChoose
     },
 
     data() {
@@ -111,7 +126,13 @@
         this.$alert('照片正在收录，敬请期待！','提示', {
           confirmButtonText: '确定',
         });
-      }
+      },
+      hybird_map() {
+          this.$refs.webmap.hybird_map();
+      },
+      Vector_map() {
+          this.$refs.webmap.Vector_map();
+      },
     },
 
     mounted() {
@@ -145,13 +166,18 @@
 
   .layout .top {
     height: auto;
-    width: 100%;
+    width: 90%;
+    left:3%;
     position: absolute;
-    top: 0;
+    text-align: center;
+    top: 3%;
     padding: 2%;
     transition: all 0.5s;
     z-index: 4;
-    background: #355BFA;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    opacity:0.9;
+    border-radius:10px;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
@@ -161,7 +187,7 @@
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
-    z-index: 4;
+    z-index: 99;
     background: #fff;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
@@ -183,13 +209,13 @@
 
   #row1 {
     text-align: center;
-    font-size: 0.9em;
+    font-size: 1.0em;
+    padding: 2%;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
   .el-col {
-    border-radius: 4px;
-    width: 48%;
+    width: 33%;
     text-align: center
   }
 
@@ -198,9 +224,10 @@
   }
 
   #type {
-    font-weight: bolder;
-    font-size: 0.8em;
-    color: #fff;
+    font-size: 0.8em; 
+    font-family:Adobe Heiti Std;
+    font-weight:600;
+    color:rgba(34,34,34,1);
     padding-left: 1%;
     padding-right: 2%;
   }
@@ -290,6 +317,11 @@
     background: white;
     color:goldenrod;
     padding-right: 2%;
+  }
 
+  .element.style {
+    transform-origin: right center;
+    z-index: 4;
+    display: none;
   }
 </style>
