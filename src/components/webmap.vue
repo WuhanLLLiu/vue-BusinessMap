@@ -341,29 +341,12 @@
         Vue.mapInstance.removeLayer("base");
         const dpr = Vue.mapInstance.getDevicePixelRatio();
         const scaler = dpr > 1 ? 2 : 1;
-        //gaode
-        // Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
-        //   'urlTemplate': 'http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
-        //   'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        //   'attribution': '&copy; <a target="_blank" href="https://map.gaode.com">Gaode</a>'
-        // }));
-        //cartocdn
-        // Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
-        //   urlTemplate: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-        //   subdomains: ['a','b','c','d'],
-        //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
-        // }));
         //tdt
         Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
           urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
           subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
-          attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+          attribution: '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>'
         }));
-        // Vue.mapInstance.addLayer(new maptalks.TileLayer("base2", {
-        //   urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=cva_c&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
-        //   subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
-        //   attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
-        // }));
         // console.log(Vue.mapInstance)
       },
 
@@ -399,6 +382,11 @@
       Vue.mapInstance.setBaseLayer(new maptalks.TileLayer('base', {
           urlTemplate: 'http://121.196.60.135:1338/layer/google/{z}/{x}/{y}',
           attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+      }));
+      Vue.mapInstance.addLayer(new maptalks.TileLayer("base2", {
+        urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
+        subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
+        attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
       }));
     },
 
