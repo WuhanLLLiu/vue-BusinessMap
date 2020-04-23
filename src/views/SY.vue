@@ -320,12 +320,12 @@
   #buildings {
     text-align: center;
     position: absolute;
-    bottom: 33%;
+    bottom: 43%;
   }
   #buildings0 {
     text-align: center;
     position: absolute;
-    bottom: 15%;
+    bottom: 25%;
   }
   #building {
     padding: 1.5%;

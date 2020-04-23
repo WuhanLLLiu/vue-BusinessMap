@@ -542,4 +542,10 @@
         font-weight:bold;
         color:rgba(187,187,187,1);
     }
+
+    .element.style {
+      transform-origin: right center;
+      z-index: 4;
+      display: none;
+    }
 </style>

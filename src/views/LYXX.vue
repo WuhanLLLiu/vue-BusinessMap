@@ -11,19 +11,19 @@
       <el-row id="row1">
           <el-col>
             <ul type="none">
-                <li id="img"><img src="./../assets/土地信息.png" width="33%" @click="RouteHYZ"/></li>
+                <li id="img"><img src="./../assets/创意园.png" width="33%" @click="RouteHYZ"/></li>
                 <li id='type' @click="RouteHYZ">汉阳造文创产业园</li>
             </ul>
           </el-col>
           <el-col>
             <ul type="none">
-                <li id="img"><img src="./../assets/楼宇信息.png" width="33%" @click="RouteHJ"/></li>
+                <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
                 <li id='type' @click="RouteHJ">加华科技产业园</li>
             </ul>
           </el-col>
           <el-col>
             <ul type="none">
-                <li id="img"><img src="./../assets/招商推介.png" width="33%" @click="RouteHJK"/></li>
+                <li id="img"><img src="./../assets/工业园.png" width="33%" @click="RouteHJK"/></li>
                 <li id='type' @click="RouteHJK">黄金口工业园</li>
             </ul>
           </el-col>
@@ -187,7 +187,7 @@
     position: absolute;
     bottom: 0;
     transition: all 0.5s;
-    z-index: 4;
+    z-index: 99;
     background: #fff;
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
@@ -317,6 +317,11 @@
     background: white;
     color:goldenrod;
     padding-right: 2%;
+  }
 
+  .element.style {
+    transform-origin: right center;
+    z-index: 4;
+    display: none;
   }
 </style>
