@@ -327,6 +327,26 @@
           }
         }
       },     
+      //加载影像底图
+      hybird_map() {
+        Vue.mapInstance.removeLayer("base");
+        Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
+          urlTemplate: 'http://121.196.60.135:1338/layer/google/{z}/{x}/{y}',
+          attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+        }));
+      },
+
+      //加载矢量地图e
+      Vector_map() {
+        Vue.mapInstance.removeLayer("base");
+        const dpr = Vue.mapInstance.getDevicePixelRatio();
+        const scaler = dpr > 1 ? 2 : 1;
+        Vue.mapInstance.setBaseLayer(new maptalks.TileLayer("base", {
+          'urlTemplate': 'http://webrd02.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+          'subdomains': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+          'attribution': '&copy; <a target="_blank" href="https://map.gaode.com">Gaode</a>'
+        }));
+      },
 
    },
     //生命周期 - 创建完成（可以访问当前this实例）

@@ -22,6 +22,8 @@
       <webmap ref="webmap" @changeCard="updateCard"></webmap>
     </div>
     
+    <mapChoose></mapChoose>
+    
     <div class="bottom" id="bottom0" style="display:none">
         <div id="row0"  @click="hide">
           <p class="el-icon-arrow-down">关闭土地信息列表</p>
@@ -98,6 +100,7 @@
 <script>
   import Vue from "vue";
   import webmap from "./../components/webmap";
+  import mapChoose from "./../components/mapChoose"
 
 
   export default {
@@ -105,6 +108,7 @@
 
     components: {
       webmap: webmap,
+      mapChoose: mapChoose
     },
 
     data() {
@@ -168,7 +172,13 @@
       },
       updateCard(value){
         this.viewArr = value
-      }
+      },
+      hybird_map() {
+          this.$refs.webmap.hybird_map();
+      },
+      Vector_map() {
+          this.$refs.webmap.Vector_map();
+      },
     },
 
     mounted() {
