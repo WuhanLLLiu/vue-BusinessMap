@@ -7,13 +7,13 @@
     </div>
 
     <div id = 'buildings' >
-      <img id='building' src="./../assets/building1.png" width="30%" @click="RouteDT"/>
-      <img id='building' src="./../assets/building2.png" width="30%" @click="RouteLY"/>
+      <img id='building' src="./../assets/土地信息.png" width="30%" @click="RouteDT"/>
+      <img id='building' src="./../assets/楼宇信息.png" width="30%" @click="RouteLY"/>
     </div>
     <div id = 'buildings0'>
-      <img id='building' src="./../assets/building3.png" width="30%" @click="RouteZSZC"/>
-      <img id='building' src="./../assets/building4.png" width="30%" @click="RouteZSTJ"/>
-      <img id='building' src="./../assets/building5.png" width="30%" @click="RouteJKCY"/>
+      <img id='building' src="./../assets/招商政策.png" width="30%" @click="RouteZSZC"/>
+      <img id='building' src="./../assets/招商推介.png" width="30%" @click="RouteZSTJ"/>
+      <img id='building' src="./../assets/健康产业.png" width="30%" @click="RouteJKCY"/>
     </div>
 
     <div class="bottom-footer">
@@ -91,7 +91,7 @@
   
 
   .layout {
-    background: url(./../assets/bg.png) no-repeat center 0;
+    background: url(./../assets/bg2.png) no-repeat center 0;
     background-size:100% 100%;
     -moz-background-size:100% 100%;
     width: 100%;
