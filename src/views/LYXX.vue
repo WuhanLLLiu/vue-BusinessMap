@@ -72,6 +72,9 @@
           <el-row id="rowly_4">
               <i id = 'icon1' class="el-icon-picture"></i>
               <span id="rowly_41" @click="PICAlert">查看照片</span>
+                <img id = 'img1' src=""/>
+                <img id = 'img2' src=""/>
+                <img id = 'img3' src=""/>
           </el-row>
         </div>
     </div>
@@ -123,9 +126,7 @@
         this.$router.push({path:'/HJ'})
       },
       PICAlert() {
-        this.$alert('照片正在收录，敬请期待！','提示', {
-          confirmButtonText: '确定',
-        });
+        document.getElementById('bottomly').style.height ='80%';
       },
       hybird_map() {
           this.$refs.webmap.hybird_map();
@@ -181,7 +182,7 @@
     /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
   }
 
-  .layout .bottom {
+  #bottomly {
     height: auto;
     width: 100%;
     position: absolute;

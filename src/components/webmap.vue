@@ -206,6 +206,7 @@
               }
   
               document.getElementById('bottomly').style.display="block";
+              document.getElementById('bottomly').style.height="auto";
               document.getElementById('lyname').innerHTML = param.target.properties.name
               document.getElementById('lylocation').innerHTML = param.target.properties.address 
               document.getElementById('lycs').innerHTML = param.target.properties.floor_num
