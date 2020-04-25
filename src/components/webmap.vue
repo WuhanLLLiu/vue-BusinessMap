@@ -387,8 +387,8 @@
       Vue.mapInstance.addLayer(new maptalks.TileLayer("base2", {
         urlTemplate: 'http://{s}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298',
         subdomains: ['t0','t1','t2','t3','t4','t5','t6','t7'],
-        attribution: '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
       }));
+      Vue.mapInstance.setMaxZoom(18);
     },
 
     beforeCreate() {}, //生命周期 - 创建之前rk

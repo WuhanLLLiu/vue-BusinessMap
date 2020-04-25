@@ -15,12 +15,12 @@
                 <li id='type' @click="RouteHYZ">汉阳造文创产业园</li>
             </ul>
           </el-col>
-          <el-col>
+          <!-- <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
                 <li id='type' @click="RouteHJ">加华科技产业园</li>
             </ul>
-          </el-col>
+          </el-col> -->
           <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/工业园.png" width="33%" @click="RouteHJK"/></li>
@@ -216,7 +216,8 @@
   }
 
   .el-col {
-    width: 33%;
+    /* width: 33%; */
+    width: 50%;
     text-align: center
   }
 
