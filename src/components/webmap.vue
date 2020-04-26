@@ -29,7 +29,8 @@
     data() {
       //这里存放数据
       return {
-        TDitem:[]
+        TDitem:[],
+        LYid:0,
       };
     },
     //监听属性 类似于data概念
@@ -157,6 +158,7 @@
       },
       //楼宇
       HYbuildings(){
+        var that =this
         fetch("http://121.196.60.135:1338/data/lyxx").then(result => result.json()).then(result => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer('ly'))
           var county = JSON.parse(result.content)
@@ -207,6 +209,10 @@
   
               document.getElementById('bottomly').style.display="block";
               document.getElementById('bottomly').style.height="auto";
+              document.getElementById('img1').src = ""
+              document.getElementById('img2').src = ""
+              document.getElementById('img3').src = ""
+
               document.getElementById('lyname').innerHTML = param.target.properties.name
               document.getElementById('lylocation').innerHTML = param.target.properties.address 
               document.getElementById('lycs').innerHTML = param.target.properties.floor_num
@@ -216,6 +222,8 @@
               document.getElementById('lytc').innerHTML = param.target.properties.parking_nu
               document.getElementById('lyzj').innerHTML = param.target.properties.monthly_re
               document.getElementById('lywy').innerHTML = param.target.properties.property_m
+              that.LYid = param.target.properties.ID
+              that.$emit('changeLYid',that.LYid) 
 
               param.target.updateSymbol({
                   'markerFile': imgURL_loc2,
