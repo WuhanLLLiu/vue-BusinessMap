@@ -2,7 +2,7 @@
   <div id="LYXX" class="layout">
 
     <div class="map">
-      <webmap ref="webmap"></webmap>
+      <webmap ref="webmap" @changeLYid="updateLYid"></webmap>
     </div>
   
     <mapChoose></mapChoose>
@@ -15,12 +15,12 @@
                 <li id='type' @click="RouteHYZ">汉阳造文创产业园</li>
             </ul>
           </el-col>
-          <el-col>
+          <!-- <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
                 <li id='type' @click="RouteHJ">加华科技产业园</li>
             </ul>
-          </el-col>
+          </el-col> -->
           <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/工业园.png" width="33%" @click="RouteHJK"/></li>
@@ -69,12 +69,12 @@
               <span id="rowly_41">物业管理费（元/平方米每月）</span>
               <span id="lywy">36</span>
           </el-row>
-          <el-row id="rowly_4">
+          <el-row id="rowly_5" class="category">
               <i id = 'icon1' class="el-icon-picture"></i>
-              <span id="rowly_41" @click="PICAlert">查看照片</span>
-                <img id = 'img1' src=""/>
-                <img id = 'img2' src=""/>
-                <img id = 'img3' src=""/>
+              <span id="rowly_42" @click="PICAlert">查看照片</span>
+              <img id = 'img1' src="" class="pic" @click="funcReadImgInfo"/>
+              <img id = 'img2' src="" class="pic" @click="funcReadImgInfo"/>
+              <img id = 'img3' src="" class="pic" @click="funcReadImgInfo"/>
           </el-row>
         </div>
     </div>
@@ -105,10 +105,15 @@
           confirm: 17,
           new: 0
         },
+        fullscreen:false,
         centerDialogVisible: false,
         modalvisible:false,
         num: 0,
+        LYid: 0,
         viewArr: [],
+        img1:'',
+        img2:'',
+        img3:'',        
       };
     },
 
@@ -126,13 +131,80 @@
         this.$router.push({path:'/HJ'})
       },
       PICAlert() {
-        document.getElementById('bottomly').style.height ='80%';
+        var that = this
+        var url = "http://121.196.60.135:1338/bms/" + that.LYid
+        console.log(url)
+        fetch(url).then(result => result.json()).then(result =>{
+          if(result.status == 'ok'){
+            var county = JSON.parse(result.content)
+            if(county.images.length > 0){
+              document.getElementById('bottomly').style.height ='80%';
+              that.img1 = county.images[0]
+              that.img2 = county.images[1]
+              that.img3 = county.images[2]
+              if(county.images.length == 1){
+                document.getElementById('img1').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img1
+              }
+              else if(county.images.length == 2){
+                document.getElementById('img1').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img1
+                document.getElementById('img2').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img2
+              }
+              else if(county.images.length > 2 ){
+                document.getElementById('img1').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img1
+                document.getElementById('img2').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img2
+                document.getElementById('img3').src = "http://121.196.60.135/cdn/楼宇资料/"+that.LYid+"/"+that.img3
+              }
+            }
+            else{
+              that.$alert('照片正在收录，敬请期待！','提示', {
+                confirmButtonText: '确定',
+              });
+            }
+          }
+          else{
+              that.$alert('照片正在收录，敬请期待！','提示', {
+                confirmButtonText: '确定',
+              });
+          }
+        })
       },
+      // 点击查看大图
+      funcReadImgInfo:function(event){
+        console.log(event)
+        let element = document.getElementById(event.target.id);
+          if (this.fullscreen) {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitCancelFullScreen) {
+              document.webkitCancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            }
+          } else {
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if (element.webkitRequestFullScreen) {
+              element.webkitRequestFullScreen();
+            } else if (element.mozRequestFullScreen) {
+              element.mozRequestFullScreen();
+            } else if (element.msRequestFullscreen) {
+              // IE11
+              element.msRequestFullscreen();
+            }
+          }
+          this.fullscreen = !this.fullscreen;
+      },
+
       hybird_map() {
           this.$refs.webmap.hybird_map();
       },
       Vector_map() {
           this.$refs.webmap.Vector_map();
+      },
+      updateLYid(value){
+        this.LYid = value
       },
     },
 
@@ -216,7 +288,8 @@
   }
 
   .el-col {
-    width: 33%;
+    /* width: 33%; */
+    width: 50%;
     text-align: center
   }
 
@@ -283,6 +356,11 @@
     padding-bottom: 2%;
     border-bottom:0.1px solid #EEEEEE;
   }
+  #rowly_5{
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
   #rowly_31{
     font-size: 0.9em;
     font-weight: bold;
@@ -307,6 +385,14 @@
     display:-moz-inline-box;
     display:inline-block;
   }
+  #rowly_42{
+    font-weight: bold;
+    font-size: 0.9em;
+    width: 60%;
+    margin-right: 20%;
+    display:-moz-inline-box;
+    display:inline-block;
+  }
   #icon0{
     background: white;
     color: #355BFA;
@@ -314,12 +400,30 @@
     -moz-border-radius: 50%;      
     -webkit-border-radius: 50%;
   }
-    #icon1{
+  
+  #icon1{
     background: white;
     color:goldenrod;
     padding-right: 2%;
   }
-
+  #img1{
+    width:200px;
+    max-height:200px;
+    border-radius:20px;
+    padding: 2%;
+  }
+  #img2{
+    width:200px;
+    max-height:200px;
+    border-radius:20px;
+    padding: 2%;
+  }
+  #img3{
+    width:200px;
+    max-height:200px;
+    border-radius:20px;
+    padding: 2%;
+  }
   .element.style {
     transform-origin: right center;
     z-index: 4;
