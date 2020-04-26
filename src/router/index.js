@@ -105,6 +105,38 @@ const router = new Router({
                 title: "阳政规[2019]1号营商留商奖励政策"
             }
         },
+        {
+            path: "/JKCYQY",
+            component: () => import("../views/JKCYQY"),
+            meta: {
+                keepAlive: true,
+                title: "JKCYQY"
+            }
+        },
+        {
+            path: "/DH",
+            component: () => import("../views/DH"),
+            meta: {
+                keepAlive: true,
+                title: "大湖+样板湖中间成果"
+            }
+        },
+        {
+            path: "/LYH",
+            component: () => import("../views/LYH"),
+            meta: {
+                keepAlive: true,
+                title: "龙阳湖招商"
+            }
+        },
+        {
+            path: "/QCYD",
+            component: () => import("../views/QCYD"),
+            meta: {
+                keepAlive: true,
+                title: "武汉汽车运动文化特色小镇创建规划"
+            }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {

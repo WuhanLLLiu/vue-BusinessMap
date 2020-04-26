@@ -65,14 +65,56 @@
             </div>
             </van-tab>
             <van-tab title="健康产业企业">
-            <div id="row">
-                <p id ='row1'>健康产业企业</p>
-                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
-            </div>
-            <el-divider class="el-divider1"></el-divider>
-            <div id='JKCY0'>
-              <p id='QY' v-html='html3'></p>
-            </div>
+              <div id="ZDQY">
+                <el-row class='row'>
+                    <el-button class="button"  @click='JKCYQY()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class='title'>健康产业重点企业</span>
+                                <div class="bottom clearfix">
+                                    <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+                <el-row class='row'>
+                    <el-button class="button"  @click='DH()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class="title">汉阳区“大湖+”样板湖</span>
+                                <div class="bottom clearfix">
+                                    <span class="details">来源：汉阳区商务局 发布于：2019-3</span>
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+                <el-row class='row'>
+                    <el-button class="button"  @click='LYH()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class="title">龙阳湖健康谷招商手册</span>
+                                <div class="bottom clearfix">
+                                    <span class="details">来源：汉阳区商务局 发布于：2020-1</span>
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+                <el-row class='row'>
+                    <el-button class="button"  @click='QCYD()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class="title">武汉汽车运动文化特色小镇创建规划</span>
+                                <div class="bottom clearfix">
+                                    <span class="details">来源：武汉中沁景阳产业发展有限公司 发布于：2020-1</span>
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+              </div>           
             </van-tab>
         </van-tabs>
     </div>
@@ -93,7 +135,7 @@
           active: 0,
           html1:" ",
           html2:" ",
-          html3:" ",
+          // html3:" ",
       };
     },
    
@@ -115,20 +157,25 @@
             this.html2=result.content
           })
       },
-      load_QY(){
-        fetch("http://121.196.60.135:1338/data/jkcyqy")
-          .then(result => result.json())
-          .then(result => {            
-            this.html3=result.content
-          })
-      }
+      JKCYQY(){
+        this.$router.push({path:'/JKCYQY'})
+      },
+      DH(){
+        this.$router.push({path:'/DH'})
+      },
+      LYH(){
+        this.$router.push({path:'/LYH'})
+      },
+      QCYD(){
+        this.$router.push({path:'/QCYD'})
+      },
     },
 
     mounted() {
       //增加统计图表
       this.load_GH(),
-      this.load_ZC(),
-      this.load_QY()
+      this.load_ZC()
+      // this.load_QY()
     }
   };
 </script>
@@ -181,15 +228,44 @@
     font-size:34px;
     font-weight:normal
 }
-/*#QY #GH #ZC{
-    margin-top: 3%;
-    padding: 5%;
-}*/
 #JKCY0{
     margin-top: 3%;
     padding: 4%;
 }
-
+  .details {
+    font-size: 13px;
+    color: #999;    
+  }
+  .title {
+    font-size: 32px; 
+    font-weight:bold;
+    color: #333;
+    /*line-height: 20px;*/
+    /*padding-bottom: 20px;*/
+  }
+  .row {
+      margin:20px;
+  }
+  .bottom {
+    margin-top: 30px;
+    line-height: 12px;
+  }
+  .button {
+    padding: 0;
+    float: right;
+    border-style:none;
+    text-align: left;
+    width: 710px;
+  }
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  
+  .clearfix:after {
+      clear: both
+  }
 </style>
 
 <style>
