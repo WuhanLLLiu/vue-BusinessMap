@@ -9,6 +9,7 @@ import PDFJS from "pdfjs-dist";
 import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 PDFJS.GlobalWorkerOptions.workerSrc = "pdfjs-dist/build/pdf.worker.js";
+import Vue from 'vue';
 
 var container;
 export default {
@@ -16,14 +17,43 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+        fullscreenLoading: false
+    };
+  },
   mounted() {
-    this.$nextTick(() => {
-        let url =
-        "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-        this.getPDF(url);
-    });
+    // this.$nextTick(() => {
+    //     let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+    //     this.getPDF_1(url);
+    // });
+    Vue.Flag = 1;
+    let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+    this.getPDF_1(url);
   },
   methods: {
+    async getPDF_1(url){
+         if(Vue.Flag == 1){
+            const loading = this.$loading({
+               lock: true,
+               text: 'Loading',
+               spinner: 'el-icon-loading',
+               background: 'rgba(0, 0, 0, 0.7)'
+            });
+            this.$nextTick(() => {
+              // let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+              this.getPDF(url);
+            });
+            loading.close();
+            Vue.Flag += 1
+        }
+        else{
+            this.$nextTick(() => {
+              //let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+              this.getPDF(url);
+            });
+        }
+    },
     async getPDF(url) {
         let pdf = await PDFJS.getDocument(url)
         container = container || document.querySelector('#container')
