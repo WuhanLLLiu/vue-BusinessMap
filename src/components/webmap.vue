@@ -441,7 +441,7 @@ export default {
         new maptalks.TileLayer("base", {
           urlTemplate: "http://121.196.60.135:1338/layer/google/{z}/{x}/{y}",
           attribution:
-            '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+            '&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>contributors,&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>contributors'
         })
       );
     },

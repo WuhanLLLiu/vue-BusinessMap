@@ -563,13 +563,6 @@ body {
   border-right: 1px solid grey;
 }
 
-/* #location{
-    padding-left: 0%;
-    padding-right: 3%;
-    font-size: 1em;
-    display:block
-  } */
-
 #row_3 {
   padding-left: 2%;
   padding-top: 1%;

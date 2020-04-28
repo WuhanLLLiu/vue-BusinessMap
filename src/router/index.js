@@ -98,6 +98,14 @@ const router = new Router({
             }
         },
         {
+            path: "/ZDCY",
+            component: () => import("../views/ZDCY"),
+            meta: {
+                keepAlive: true,
+                title: "重点产业"
+            }
+        },
+        {
             path: "/ZCXQ3",
             component: () => import("../views/ZCXQ3"),
             meta: {
