@@ -79,13 +79,15 @@ export default {
         let canvas = document.createElement('canvas');
         pageDiv.appendChild(canvas);
         let context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
         
+        let CSS_UNITS = 96.0 / 72.0
+        canvas.height = viewport.height * CSS_UNITS
+        canvas.width = viewport.width * CSS_UNITS
         let renderContext = {
+            transform: [CSS_UNITS,0,0,CSS_UNITS,0,0],
             canvasContext: context,
             viewport: viewport
-        };
+        }
         
         await page.render(renderContext);
         // debugger

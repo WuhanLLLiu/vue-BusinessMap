@@ -35,17 +35,10 @@ export default {
   methods: {
     async getPDF_1(url){
          if(Vue.Flag == 1){
-            const loading = this.$loading({
-               lock: true,
-               text: 'Loading',
-               spinner: 'el-icon-loading',
-               background: 'rgba(0, 0, 0, 0.7)'
-            });
             this.$nextTick(() => {
               // let url ="http://121.196.60.135/cdn/武汉汽车运动文化特色小镇创建规划.pdf";
               this.getPDF(url);
             });
-            loading.close();
             Vue.Flag += 1
         }
         else{
@@ -56,8 +49,16 @@ export default {
         }
     },
     async getPDF(url) {
+        const loading = this.$loading({
+            lock: true,
+            text: 'Loading',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.7)'
+        });
         let pdf = await PDFJS.getDocument(url)
+        loading.close();
         container = container || document.querySelector('#container')
+
         for(let i = 0; i < pdf.numPages; i++) {
             try{
                 await this.rendPDF(pdf, i)
@@ -80,13 +81,14 @@ export default {
         let canvas = document.createElement('canvas');
         pageDiv.appendChild(canvas);
         let context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-        
+        let CSS_UNITS = 96.0 / 72.0
+        canvas.height = viewport.height * CSS_UNITS
+        canvas.width = viewport.width * CSS_UNITS
         let renderContext = {
+            transform: [CSS_UNITS,0,0,CSS_UNITS,0,0],
             canvasContext: context,
             viewport: viewport
-        };
+        }
         
         await page.render(renderContext);
         // debugger
@@ -106,7 +108,6 @@ export default {
         });
         
         textLayer.setTextContent(textContent);
-        
         textLayer.render();
 
     }
