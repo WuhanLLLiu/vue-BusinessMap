@@ -4,7 +4,7 @@
         <img id="img" src="./../assets/生命健康.png" @click="RouteJKCY"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/会展产业.png"/>
+        <img id="img" src="./../assets/会展产业.png" @click="RouteHZCY"/>
     </el-row>
     <el-row class="row">
         <img id="img" src="./../assets/路桥工程.png"/>
@@ -34,6 +34,9 @@ export default {
   methods: {
     RouteJKCY() {
       this.$router.push({ path: "/JKCY" });
+    },
+    RouteHZCY() {
+      this.$router.push({ path: "/HZCY" });
     },
   }
 };
