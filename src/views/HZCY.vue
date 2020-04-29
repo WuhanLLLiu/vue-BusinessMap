@@ -24,7 +24,7 @@
             </div>
             </van-tab>
             
-            <van-tab title="武汉国际博览中心">
+            <van-tab title="国际博览中心">
               <div id="ZDQY">
                 <iframe  src="http://www.wniecm.com/index.php?a=lists&catid=24.html"  width="100%"      :height="carouselHeight" frameborder='0' align='center' allowfullscreen='true'    allow="autoplay" > </iframe>
               </div>           
@@ -54,7 +54,7 @@
    
    beforeMount() {
 
-            this.carouselHeight = (window.innerHeight) + 'px';
+            this.carouselHeight = (window.innerHeight)*0.95 + 'px';
     },
 
     methods: {
