@@ -23,41 +23,22 @@ export default {
     };
   },
   mounted() {
-    // this.$nextTick(() => {
-    //     let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
-    //     this.getPDF_1(url);
-    // });
-    Vue.Flag = 1;
-    let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
-    this.getPDF_1(url);
+    this.$nextTick(() => {
+        let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
+        this.getPDF(url);
+    });
   },
   methods: {
-    async getPDF_1(url){
-         if(Vue.Flag == 1){
-            const loading = this.$loading({
-               lock: true,
-               text: 'Loading',
-               spinner: 'el-icon-loading',
-               background: 'rgba(0, 0, 0, 0.7)'
-            });
-            this.$nextTick(() => {
-              // let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
-              this.getPDF(url);
-            });
-            loading.close();
-            Vue.Flag += 1
-        }
-        else{
-            this.$nextTick(() => {
-              //let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
-              this.getPDF(url);
-            });
-        }
-    },
     async getPDF(url) {
+        const loading = this.$loading({
+            lock: true,
+            text: 'Loading',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.7)'
+        });
         let pdf = await PDFJS.getDocument(url)
+        loading.close();
         container = container || document.querySelector('#container')
-
         for(let i = 0; i < pdf.numPages; i++) {
             try{
                 await this.rendPDF(pdf, i)
