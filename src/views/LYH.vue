@@ -23,39 +23,24 @@ export default {
     };
   },
   mounted() {
-    // this.$nextTick(() => {
-    //     let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-    //     this.getPDF_1(url);
-    // });
-    Vue.Flag = 1;
-    let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-    this.getPDF_1(url);
+    this.$nextTick(() => {
+        let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+        this.getPDF(url);
+    });
+    // Vue.Flag = 1;
+    // let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+    // this.getPDF(url);
   },
   methods: {
-    async getPDF_1(url){
-         if(Vue.Flag == 1){
-            const loading = this.$loading({
-               lock: true,
-               text: 'Loading',
-               spinner: 'el-icon-loading',
-               background: 'rgba(0, 0, 0, 0.7)'
-            });
-            this.$nextTick(() => {
-              // let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-              this.getPDF(url);
-            });
-            loading.close();
-            Vue.Flag += 1
-        }
-        else{
-            this.$nextTick(() => {
-              //let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-              this.getPDF(url);
-            });
-        }
-    },
     async getPDF(url) {
+        const loading = this.$loading({
+            lock: true,
+            text: '文件较大，正在加载...',
+            spinner: 'el-icon-loading',
+            background: 'rgba(0, 0, 0, 0.7)'
+        });
         let pdf = await PDFJS.getDocument(url)
+        loading.close();
         container = container || document.querySelector('#container')
         for(let i = 0; i < pdf.numPages; i++) {
             try{
@@ -68,26 +53,34 @@ export default {
     async rendPDF(pdf, num) {
         let page = await pdf.getPage(num)
         // 设置展示比例
-        let scale = 0.35;
-        let viewport = page.getViewport(scale);
-
         let pageDiv = document.createElement('div');
         pageDiv.setAttribute('id', 'page-' + (page.pageIndex + 1));
         pageDiv.setAttribute('style', 'position: relative');
         container.appendChild(pageDiv);
-
         let canvas = document.createElement('canvas');
         pageDiv.appendChild(canvas);
         let context = canvas.getContext('2d');
-        
-        let CSS_UNITS = 96.0 / 72.0
-        canvas.height = viewport.height * CSS_UNITS
-        canvas.width = viewport.width * CSS_UNITS
+        let dpr = window.devicePixelRatio || 1;
+        let bsr =
+        context.webkitBackingStorePixelRatio ||
+        context.mozBackingStorePixelRatio ||
+        context.msBackingStorePixelRatio ||
+        context.oBackingStorePixelRatio ||
+        context.backingStorePixelRatio ||
+        1;
+        let ratio = dpr / bsr;
+        let viewport = page.getViewport(
+          screen.availWidth / page.getViewport(1).width
+        );
+        canvas.width = viewport.width * ratio;
+        canvas.height = viewport.height * ratio;
+        canvas.style.width = viewport.width + "px";
+        canvas.style.height = viewport.height + "px";
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
         let renderContext = {
-            transform: [CSS_UNITS,0,0,CSS_UNITS,0,0],
-            canvasContext: context,
-            viewport: viewport
-        }
+          canvasContext: context,
+          viewport: viewport
+        };
         
         await page.render(renderContext);
         // debugger
@@ -109,7 +102,6 @@ export default {
         textLayer.setTextContent(textContent);
         
         textLayer.render();
-
     }
   }
 };

@@ -8,24 +8,24 @@
                 <p id ='row2'>来源：汉阳商务局 发布时间：2020-3</p>
             </div>
             <el-divider class="el-divider1"></el-divider>
-            <div id='JKCY0'>
-              <p id='GH' v-html='html1'></p>
+            <div id='HZCY0'>
+              <p id='GS' v-html='html1'></p>
+            </div>
+            </van-tab>
+
+            <van-tab title="国博周边酒店">
+              <div id="row">
+                  <p id ='row1'>国博周边酒店</p>
+                  <p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>
+              </div>
+              <el-divider class="el-divider1"></el-divider>
+            <div id='HZCY0'>
+              <p id='JD' v-html='html2'></p>
             </div>
             </van-tab>
            
-            <van-tab title="国博周边酒店">
-            <div id="row">
-                <p id ='row1'>国博周边酒店</p>
-                <p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>
-            </div>
-            <el-divider class="el-divider1"></el-divider>
-            <div id='JKCY0'>
-              <p id='ZC' v-html='html2'></p>
-            </div>
-            </van-tab>
-            
             <van-tab title="武汉国际博览中心">
-              <div id="ZDQY">
+              <div id="HZCY0">
                 <iframe  src="http://www.wniecm.com/index.php?a=lists&catid=24.html"  width="100%"      :height="carouselHeight" frameborder='0' align='center' allowfullscreen='true'    allow="autoplay" > </iframe>
               </div>           
             </van-tab>
@@ -42,13 +42,14 @@
     components: {
 
     },
-
+    props: {
+      msg: String
+    },
     data() {
       return {
           active: 0,
           html1:" ",
           html2:" ",
-          // html3:" ",
       };
     },
    
@@ -58,27 +59,26 @@
     },
 
     methods: {
-      load_GH(){
+      load_GS(){
         fetch("http://121.196.60.135:1338/data/jkcygh")
           .then(result => result.json())
           .then(result => {            
             this.html1=result.content
           })
       },
-      load_ZC(){
-        fetch("http://121.196.60.135:1338/data/jkcyzc")
+      load_JD(){
+        fetch("http://121.196.60.135:1338/data/jkcygh")
           .then(result => result.json())
           .then(result => {            
             this.html2=result.content
           })
-      },
+      }
     },
 
     mounted() {
       //增加统计图表
-      this.load_GH(),
-      this.load_ZC()
-      // this.load_QY()
+      this.load_GS(),
+      this.load_JD()
     }
   };
 </script>
@@ -131,7 +131,7 @@
     font-size:34px;
     font-weight:normal
 }
-#JKCY0{
+#HZCY0{
     margin-top: 3%;
     padding: 4%;
 }
@@ -169,6 +169,7 @@
   .clearfix:after {
       clear: both
   }
+
 </style>
 
 <style>
