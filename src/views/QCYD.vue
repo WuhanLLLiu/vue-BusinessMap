@@ -27,9 +27,6 @@ export default {
         let url = "http://121.196.60.135/cdn/武汉汽车运动文化特色小镇创建规划.pdf";
         this.getPDF(url);
     });
-    // let url ="http://121.196.60.135/cdn/武汉汽车运动文化特色小镇创建规划.pdf";
-    // Vue.Flag = 1;
-    // this.getPDF(url);
   },
   methods: {
     // async getPDF(url) {
@@ -111,6 +108,7 @@ export default {
           canvasContext: context,
           viewport: viewport
         };
+
         await page.render(renderContext);
         // debugger
         let textContent = await page.getTextContent()

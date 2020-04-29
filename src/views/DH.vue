@@ -27,9 +27,6 @@ export default {
         let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
         this.getPDF(url);
     });
-    // Vue.Flag = 1;
-    // let url ="http://121.196.60.135/cdn/大湖样板湖中间成果.pdf";
-    // this.getPDF(url);
   },
   methods: {
     async getPDF(url) {
@@ -81,7 +78,7 @@ export default {
           canvasContext: context,
           viewport: viewport
         };
-        
+
         await page.render(renderContext);
         // debugger
         let textContent = await page.getTextContent()

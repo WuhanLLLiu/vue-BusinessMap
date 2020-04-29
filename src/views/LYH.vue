@@ -27,9 +27,6 @@ export default {
         let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
         this.getPDF(url);
     });
-    // Vue.Flag = 1;
-    // let url ="http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-    // this.getPDF(url);
   },
   methods: {
     async getPDF(url) {
