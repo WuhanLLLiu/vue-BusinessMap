@@ -1,7 +1,7 @@
 <template>
   <div id="WLCY">
     <div id="row">
-        <p id ='row1'>文旅产业的招商计划</p>
+        <p id ='row1'>文旅产业招商计划</p>
         <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>-->
     </div>
     <el-divider class="el-divider1"></el-divider>
