@@ -2,7 +2,7 @@
   <div id="ZCXQ3">
     <div id="row">
         <p id ='row1'>阳政规[2019]1号营商留商奖励政策</p>
-        <p id ='row2'>来源：武汉市汉阳区人民政府 发布时间：2019-3-30</p>
+        <!--<p id ='row2'>来源：武汉市汉阳区人民政府 发布时间：2019-3-30</p>-->
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='Selfform'>

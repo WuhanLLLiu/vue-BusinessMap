@@ -5,7 +5,7 @@
             <van-tab title="健康产业规划">
             <div id="row">
                 <p id ='row1'>健康产业规划</p>
-                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
+                <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>-->
             </div>
             <el-divider class="el-divider1"></el-divider>
             <!--<div id='Selfform'>
@@ -40,7 +40,7 @@
             <van-tab title="健康产业政策">
             <div id="row">
                 <p id ='row1'>健康产业政策</p>
-                <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>
+                <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>-->
             </div>
             <el-divider class="el-divider1"></el-divider>
             <!--<div id='Selfform'>
@@ -71,9 +71,21 @@
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class='title'>健康产业重点企业</span>
-                                <div class="bottom clearfix">
+                                <!--<div class="bottom clearfix">
                                     <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
-                                </div>
+                                </div>-->
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+                <el-row class='row'>
+                    <el-button class="button"  @click='JKCYZSQK()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class='title'>汉阳区大健康产业招商情况</span>
+                                <!--<div class="bottom clearfix">
+                                    <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
+                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
@@ -83,9 +95,9 @@
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">汉阳区“大湖+”样板湖</span>
-                                <div class="bottom clearfix">
+                                <!--<div class="bottom clearfix">
                                     <span class="details">来源：汉阳区商务局 发布于：2019-3</span>
-                                </div>
+                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
@@ -95,9 +107,9 @@
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">龙阳湖健康谷招商手册</span>
-                                <div class="bottom clearfix">
+                                <!--<div class="bottom clearfix">
                                     <span class="details">来源：汉阳区商务局 发布于：2020-1</span>
-                                </div>
+                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
@@ -107,9 +119,9 @@
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">武汉汽车运动文化特色小镇创建规划</span>
-                                <div class="bottom clearfix">
+                                <!--<div class="bottom clearfix">
                                     <span class="details">来源：武汉中沁景阳产业发展有限公司 发布于：2020-1</span>
-                                </div>
+                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
@@ -140,6 +152,8 @@
     },
    
    beforeMount() {
+      this.load_ZC()
+      this.load_GH()
     },
 
     methods: {
@@ -169,12 +183,15 @@
       QCYD(){
         this.$router.push({path:'/QCYD'})
       },
+      JKCYZSQK(){
+        this.$router.push({path:'/JKCYZSQK'})
+      }
     },
 
     mounted() {
-      //增加统计图表
-      this.load_GH(),
-      this.load_ZC()
+      //增加统计图表     
+    //   this.load_ZC()
+    //   this.load_GH()
       // this.load_QY()
     }
   };

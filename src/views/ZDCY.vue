@@ -13,10 +13,10 @@
         <img id="img" src="./../assets/汽车后市场.png"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/文化创意.png"/>
+        <img id="img" src="./../assets/文化创意.png" @click="RouteWLCY"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/金融产业.png"/>
+        <img id="img" src="./../assets/金融产业.png" @click="RouteJRCY"/>
     </el-row>
   </div>
 </template>
@@ -37,6 +37,12 @@ export default {
     },
     RouteHZCY() {
       this.$router.push({ path: "/HZCY" });
+    },
+    RouteWLCY() {
+      this.$router.push({ path: "/WLCY" });
+    },
+    RouteJRCY() {
+      this.$router.push({ path: "/JRCY" });
     },
   }
 };

@@ -1,12 +1,12 @@
 <template>
-  <div id="JKCYQY">
+  <div id="JKCYZSQK">
     <div id="row">
-        <p id ='row1'>健康企业重点产业</p>
+        <p id ='row1'>汉阳区大健康产业招商情况</p>
         <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>-->
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='JKCY0'>
-        <p id='QY' v-html='html3'></p>
+        <p id='ZSQK' v-html='html3'></p>
     </div>
   </div>
 </template>
@@ -15,18 +15,18 @@
   import Vue from 'vue';
 
   export default {
-    name: "JKCYQY",
+    name: "JKCYZSQK",
     data() {
       return {
         html3:"",
       };
     },
     mounted(){
-      this.load_QY()
+      this.load_ZSQK()
     },
     methods: {
-      load_QY(){
-        fetch("http://121.196.60.135:1338/data/jkcyqy")
+      load_ZSQK(){
+        fetch("http://121.196.60.135:1338/data/hyqdjkcyzsqk")
           .then(result => result.json())
           .then(result => {            
             this.html3=result.content

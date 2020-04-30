@@ -5,7 +5,7 @@
             <van-tab title="2019会展情况">
             <div id="row">
                 <p id ='row1'>2019会展举办情况</p>
-                <p id ='row2'>来源：汉阳商务局 发布时间：2020-3</p>
+                <!--<p id ='row2'>来源：汉阳商务局 发布时间：2020-3</p>-->
             </div>
             <el-divider class="el-divider1"></el-divider>
             <div id='HZCY0'>
@@ -16,7 +16,7 @@
             <van-tab title="国博周边酒店">
               <div id="row">
                   <p id ='row1'>国博周边酒店</p>
-                  <p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>
+                  <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>-->
               </div>
               <el-divider class="el-divider1"></el-divider>
             <div id='HZCY0'>
@@ -54,8 +54,9 @@
     },
    
    beforeMount() {
-
             this.carouselHeight = (window.innerHeight)*0.95 + 'px';
+            this.load_GS(),
+            this.load_JD()
     },
 
     methods: {
@@ -77,8 +78,8 @@
 
     mounted() {
       //增加统计图表
-      this.load_GS(),
-      this.load_JD()
+      // this.load_GS(),
+      // this.load_JD()
     }
   };
 </script>

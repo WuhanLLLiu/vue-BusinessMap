@@ -5,10 +5,9 @@
             <el-card :body-style="{ margin:'5px',padding: '0px' }">
                 <div style="padding: 14px;">
                     <span class='title'>汉阳区促进楼宇经济发展奖励办法（试行）</span>
-                    <div class="bottom clearfix">
+                    <!--<div class="bottom clearfix">
                         <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
-                        <!--<time class="time">{{ currentDate }}</time>-->
-                    </div>
+                    </div>-->
                 </div>
             </el-card>
         </el-button>
@@ -18,10 +17,9 @@
             <el-card :body-style="{ margin:'5px',padding: '0px' }">
                 <div style="padding: 14px;">
                     <span class="title">汉阳区大健康产业扶持政策</span>
-                    <div class="bottom clearfix">
+                    <!--<div class="bottom clearfix">
                         <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
-                        <!--<time class="time">{{ currentDate }}</time>-->
-                    </div>
+                    </div>-->
                 </div>
             </el-card>
         </el-button>
@@ -31,10 +29,9 @@
             <el-card :body-style="{ margin:'5px',padding: '0px' }">
                 <div style="padding: 14px;">
                     <span class="title">阳政规[2019]1号营商留商奖励政策</span>
-                    <div class="bottom clearfix">
+                    <!--<div class="bottom clearfix">
                         <span class="details">来源：武汉市汉阳区人民政府 发布于：2019-3-30</span>
-                        <!--<time class="time">{{ currentDate }}</time>-->
-                    </div>
+                    </div>-->
                 </div>
             </el-card>
         </el-button>

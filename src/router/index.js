@@ -153,6 +153,30 @@ const router = new Router({
                 title: "武汉汽车运动文化特色小镇创建规划"
             }
         },
+        {
+            path: "/JKCYZSQK",
+            component: () => import("../views/JKCYZSQK"),
+            meta: {
+                keepAlive: true,
+                title: "汉阳区大健康产业招商情况"
+            }
+        },
+        {
+            path: "/WLCY",
+            component: () => import("../views/WLCY"),
+            meta: {
+                keepAlive: true,
+                title: "文旅产业的招商计划"
+            }
+        },
+        {
+            path: "/JRCY",
+            component: () => import("../views/JRCY"),
+            meta: {
+                keepAlive: true,
+                title: "金融产业2020年区《政府工作报告》确定的主要目标任务"
+            }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
