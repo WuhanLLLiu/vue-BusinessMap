@@ -161,9 +161,10 @@ export default {
       ],
       option3: [
         { text: "开发程度", value: 0 },
-        { text: "已进入挂牌程序", value: 1 },
-        { text: "已办储备证", value: 2 },
-        { text: "已到征收收尾阶段", value: 3 }
+        { text: "城中村用地", value: 1 },
+        { text: "已进入挂牌程序", value: 2 },
+        { text: "已办储备证", value: 3 },
+        { text: "已到征收收尾阶段", value: 4 }
       ]
     };
   },
