@@ -32,6 +32,7 @@ export default {
       TDitem: [],
       LYid: 0,
       TDid: 0,
+      imglist:[],
     };
   },
   //监听属性 类似于data概念
@@ -114,7 +115,7 @@ export default {
             {
               symbol: {
                 lineColor: "#2348E5",
-                lineWidth: 4,
+                lineWidth: 2,
                 polygonFill: "#355BFA",
                 polygonOpacity: 0.6,
                 markerFile: imgURL_loc,
@@ -275,9 +276,10 @@ export default {
 
                 document.getElementById("bottomly").style.display = "block";
                 document.getElementById("bottomly").style.height = "auto";
-                document.getElementById("img1").src = "";
-                document.getElementById("img2").src = "";
-                document.getElementById("img3").src = "";
+                that.$emit("changeimgList", that.imglist);
+                // document.getElementById("img1").src = "";
+                // document.getElementById("img2").src = "";
+                // document.getElementById("img3").src = "";
 
                 document.getElementById("lyname").innerHTML =
                   param.target.properties.name;
@@ -299,6 +301,7 @@ export default {
                   param.target.properties.property_m;
                 that.LYid = param.target.properties.ID;
                 that.$emit("changeLYid", that.LYid);
+                
 
                 param.target.updateSymbol({
                   markerFile: imgURL_loc2,
