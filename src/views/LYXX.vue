@@ -1,7 +1,7 @@
 <template>
   <div id="LYXX" class="layout">
     <div class="map">
-      <webmap ref="webmap" @changeLYid="updateLYid"></webmap>
+      <webmap ref="webmap" @changeLYid="updateLYid" @changeimgList="updateimgList"></webmap>
     </div>
 
     <mapChoose></mapChoose>
@@ -77,9 +77,10 @@
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
-          <img id="img1" src class="pic" @click="funcReadImgInfo" />
-          <img id="img2" src class="pic" @click="funcReadImgInfo" />
-          <img id="img3" src class="pic" @click="funcReadImgInfo" />
+          <!-- <img id="img1" src='' class="pic"  />
+          <img id="img2" src='' class="pic"  />
+          <img id="img3" src='' class="pic"  />-->
+          <vue-preview :slides="imglist" class="imgPrev"></vue-preview>
         </el-row>
       </div>
     </div>
@@ -117,7 +118,8 @@ export default {
       viewArr: [],
       img1: "",
       img2: "",
-      img3: ""
+      img3: "",
+      imglist: []
     };
   },
 
@@ -137,50 +139,66 @@ export default {
     PICAlert() {
       var that = this;
       var url = "http://121.196.60.135:1338/bms/" + that.LYid;
-      console.log(url);
+      that.imglist = [];
       fetch(url)
         .then(result => result.json())
         .then(result => {
           if (result.status == "ok") {
             var county = JSON.parse(result.content);
             if (county.images.length > 0) {
-              document.getElementById("bottomly").style.height = "80%";
+              for (var i = 0; i < county.images.length; i++) {
+                var arr = {};
+                arr.w = 700;
+                arr.h = 700;
+                arr.src =
+                  "http://121.196.60.135/cdn/楼宇资料/" +
+                  that.LYid +
+                  "/" +
+                  county.images[i];
+                arr.msrc =
+                  "http://121.196.60.135/cdn/楼宇资料/" +
+                  that.LYid +
+                  "/" +
+                  county.images[i];
+                that.imglist.push(arr);
+              }
+              console.log(that.imglist);
               that.img1 = county.images[0];
               that.img2 = county.images[1];
               that.img3 = county.images[2];
               if (county.images.length == 1) {
-                document.getElementById("img1").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img1;
+                // document.getElementById("img1").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img1;
               } else if (county.images.length == 2) {
-                document.getElementById("img1").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img1;
-                document.getElementById("img2").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img2;
+                // document.getElementById("img1").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img1;
+                // document.getElementById("img2").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img2;
               } else if (county.images.length > 2) {
-                document.getElementById("img1").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img1;
-                document.getElementById("img2").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img2;
-                document.getElementById("img3").src =
-                  "http://121.196.60.135/cdn/楼宇资料/" +
-                  that.LYid +
-                  "/" +
-                  that.img3;
+                // document.getElementById("img1").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img1;
+                // document.getElementById("img2").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img2;
+                // document.getElementById("img3").src =
+                //   "http://121.196.60.135/cdn/楼宇资料/" +
+                //   that.LYid +
+                //   "/" +
+                //   that.img3;
               }
             } else {
               that.$alert("照片正在收录，敬请期待！", "提示", {
@@ -194,34 +212,6 @@ export default {
           }
         });
     },
-    // 点击查看大图
-    funcReadImgInfo: function(event) {
-      console.log(event);
-      let element = document.getElementById(event.target.id);
-      if (this.fullscreen) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } else {
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.webkitRequestFullScreen) {
-          element.webkitRequestFullScreen();
-        } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
-        } else if (element.msRequestFullscreen) {
-          // IE11
-          element.msRequestFullscreen();
-        }
-      }
-      this.fullscreen = !this.fullscreen;
-    },
 
     hybird_map() {
       this.$refs.webmap.hybird_map();
@@ -231,6 +221,9 @@ export default {
     },
     updateLYid(value) {
       this.LYid = value;
+    },
+    updateimgList(value) {
+      this.imglist = value;
     }
   },
 
@@ -451,5 +444,21 @@ body {
   transform-origin: right center;
   z-index: 4;
   display: none;
+}
+</style>
+
+<style>
+.imgPrev figure {
+  float: left;
+  width: 30%;
+  height: calc(30vw - 0px);
+  margin: 1.5%;
+}
+
+.imgPrev figure img {
+  width: 200px;
+  max-height: 200px;
+  border-radius: 20px;
+  padding: 2%;
 }
 </style>

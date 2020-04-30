@@ -29,36 +29,6 @@ export default {
     });
   },
   methods: {
-    // async getPDF(url) {
-    //      if(Vue.Flag == 1){
-    //         const loading = this.$loading({
-    //            lock: true,
-    //            text: 'Loading',
-    //            spinner: 'el-icon-loading',
-    //            background: 'rgba(0, 0, 0, 0.7)'
-    //         });
-    //         let pdf = await PDFJS.getDocument(url)
-    //         // let pdf = await PDFJS.getDocument(url)
-    //         container = container || document.querySelector('#container')
-
-    //         for(let i = 0; i < 3; i++) {
-    //             try{
-    //                 await this.rendPDF(pdf, i)
-    //             } catch(e) {
-    //                 // console.error(e)
-    //             }
-    //         }
-    //         loading.close();
-    //         for(let i = 3; i < pdf.numPages; i++) {
-    //             try{
-    //                 await this.rendPDF(pdf, i)
-    //             } catch(e) {
-    //                 // console.error(e)
-    //             }
-    //         }
-    //         // Vue.Flag += 1
-    //     }
-    // },
     async getPDF(url) {
         const loading = this.$loading({
             lock: true,

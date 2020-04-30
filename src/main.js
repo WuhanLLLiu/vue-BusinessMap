@@ -13,6 +13,17 @@ import BaiduMap from 'vue-baidu-map'
 import Mint from 'mint-ui';
 import Vant from 'vant'
 import 'vant/lib/index.css';
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview, {
+    mainClass: 'pswp--minimal--dark',
+    barsSize: { top: 0, bottom: 0 },
+    captionEl: false,
+    fullscreenEl: false,
+    shareEl: false,
+    bgOpacity: 0.85,
+    tapToClose: true,
+    tapToToggleControls: false
+});
 
 Vue.use(Vant)
 Vue.use(Mint);
@@ -23,7 +34,7 @@ Vue.use(BaiduMap, {
 })
 
 Vue.config.productionTip = false
- 
+
 Vue.prototype.$store = store
 Vue.prototype.mapInstance = {};
 Vue.prototype.features = {};
@@ -33,7 +44,6 @@ Vue.prototype.Flag = 0;
 Vue.prototype.Address = '';
 Vue.prototype.Result = {};
 Vue.prototype.marker_Self = [];
-Vue.prototype.lyxx = [];
 
 
 const app = new Vue({

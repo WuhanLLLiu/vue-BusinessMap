@@ -2,7 +2,7 @@
   <div id="HYZ" class="layout">
     <div id="row">
         <p id ='row1'>武汉汉阳造文化创意产业园区简介</p>
-        <p id ='row2'>来源：汉阳区商务局</p>
+        <!-- <p id ='row2'>来源：汉阳区商务局</p> -->
     </div>
 
     <el-divider class="el-divider1"></el-divider>
