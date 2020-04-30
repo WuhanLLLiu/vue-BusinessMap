@@ -99,7 +99,6 @@ export default {
         textLayer.setTextContent(textContent);
         
         textLayer.render();
-
     }
   }
 };

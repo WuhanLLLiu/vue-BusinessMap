@@ -78,6 +78,7 @@ export default {
           canvasContext: context,
           viewport: viewport
         };
+
         await page.render(renderContext);
         // debugger
         let textContent = await page.getTextContent()
@@ -98,7 +99,6 @@ export default {
         textLayer.setTextContent(textContent);
         
         textLayer.render();
-
     }
   }
 };
