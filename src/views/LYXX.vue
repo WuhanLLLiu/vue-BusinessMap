@@ -79,10 +79,9 @@
           <span id="rowly_42" @click="PICAlert">查看照片</span>
           <!-- <img id="img1" src='' class="pic"  />
           <img id="img2" src='' class="pic"  />
-          <img id="img3" src='' class="pic"  /> -->
+          <img id="img3" src='' class="pic"  />-->
           <vue-preview :slides="imglist" class="imgPrev"></vue-preview>
         </el-row>
-
       </div>
     </div>
   </div>
@@ -120,7 +119,7 @@ export default {
       img1: "",
       img2: "",
       img3: "",
-      imglist:[],
+      imglist: []
     };
   },
 
@@ -140,22 +139,30 @@ export default {
     PICAlert() {
       var that = this;
       var url = "http://121.196.60.135:1338/bms/" + that.LYid;
-      that.imglist=[];
+      that.imglist = [];
       fetch(url)
         .then(result => result.json())
         .then(result => {
           if (result.status == "ok") {
             var county = JSON.parse(result.content);
             if (county.images.length > 0) {
-              for(var i = 0; i<county.images.length; i++){
-                var arr={}
-                arr.w=700;
-                arr.h=700;
-                arr.src =  "http://121.196.60.135/cdn/楼宇资料/" + that.LYid +"/" +county.images[i];
-                arr.msrc =  "http://121.196.60.135/cdn/楼宇资料/" + that.LYid +"/" +county.images[i];
-                that.imglist.push(arr)
+              for (var i = 0; i < county.images.length; i++) {
+                var arr = {};
+                arr.w = 700;
+                arr.h = 700;
+                arr.src =
+                  "http://121.196.60.135/cdn/楼宇资料/" +
+                  that.LYid +
+                  "/" +
+                  county.images[i];
+                arr.msrc =
+                  "http://121.196.60.135/cdn/楼宇资料/" +
+                  that.LYid +
+                  "/" +
+                  county.images[i];
+                that.imglist.push(arr);
               }
-              console.log(that.imglist)
+              console.log(that.imglist);
               that.img1 = county.images[0];
               that.img2 = county.images[1];
               that.img3 = county.images[2];
@@ -438,24 +445,20 @@ body {
   z-index: 4;
   display: none;
 }
-
 </style>
 
 <style>
-
 .imgPrev figure {
   float: left;
   width: 30%;
-  height:calc(30vw - 0px);
+  height: calc(30vw - 0px);
   margin: 1.5%;
 }
- 
+
 .imgPrev figure img {
   width: 200px;
   max-height: 200px;
   border-radius: 20px;
   padding: 2%;
 }
-
-
 </style>

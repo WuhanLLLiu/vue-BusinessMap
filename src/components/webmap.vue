@@ -14,11 +14,6 @@ import imgURL_loc2 from "../assets/choosed.png";
 // import tdxx from '../assets/tdxx.js'
 // import lyxx from '../assets/lyxx.js'
 // import QJ from "../assets/vtour/tour.html"
-//引入百度api,需要安装npm i vue-baidu-map --save
-// import BaiduMap from 'vue-baidu-map'
-// Vue.use(BaiduMap, {
-//   ak: 'ZhHamcsfqBewPZERHpGAvzBZZqQ643tN'  //这个地方是官方提供的ak密钥
-// })
 
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
@@ -32,7 +27,7 @@ export default {
       TDitem: [],
       LYid: 0,
       TDid: 0,
-      imglist:[],
+      imglist: []
     };
   },
   //监听属性 类似于data概念
@@ -301,7 +296,6 @@ export default {
                   param.target.properties.property_m;
                 that.LYid = param.target.properties.ID;
                 that.$emit("changeLYid", that.LYid);
-                
 
                 param.target.updateSymbol({
                   markerFile: imgURL_loc2,
