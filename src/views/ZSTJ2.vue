@@ -2,7 +2,7 @@
   <div id="ZSTJ2" class="layout">
     <div id="row">
       <p id="row1">武汉汉阳招商资源推介</p>
-      <p id="row2">来源：汉阳区商务局</p>
+      <!-- <p id="row2">来源：汉阳区商务局</p> -->
     </div>
 
     <el-divider class="el-divider1"></el-divider>

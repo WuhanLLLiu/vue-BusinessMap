@@ -6,7 +6,7 @@
                 <div style="padding: 14px;">
                     <span class='title'>汉阳区促进楼宇经济发展奖励办法（试行）</span>
                     <div class="bottom clearfix">
-                        <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
+                        <!-- <span class="details">来源：汉阳发展改革局 发布于：2019-3</span> -->
                         <!--<time class="time">{{ currentDate }}</time>-->
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                 <div style="padding: 14px;">
                     <span class="title">汉阳区大健康产业扶持政策</span>
                     <div class="bottom clearfix">
-                        <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
+                        <!-- <span class="details">来源：汉阳发展改革局 发布于：2019-3</span> -->
                         <!--<time class="time">{{ currentDate }}</time>-->
                     </div>
                 </div>
