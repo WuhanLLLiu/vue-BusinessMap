@@ -60,14 +60,14 @@
 
     methods: {
       load_GS(){
-        fetch("http://121.196.60.135:1338/data/jkcygh")
+        fetch("http://121.196.60.135:1338/data/2019nhzqkgs")
           .then(result => result.json())
           .then(result => {            
             this.html1=result.content
           })
       },
       load_JD(){
-        fetch("http://121.196.60.135:1338/data/jkcygh")
+        fetch("http://121.196.60.135:1338/data/gbfjjdqk")
           .then(result => result.json())
           .then(result => {            
             this.html2=result.content
