@@ -1,8 +1,8 @@
 <template>
   <div id="SY" class="layout">
-    <div class="logo">
+    <!-- <div class="logo">
       <img id="logo" src="./../assets/LOGO2.gif" width="50%" />
-    </div>
+    </div> -->
 
     <div id="buildings">
       <img id="building" src="./../assets/土地信息.png" width="30%" @click="RouteDT" />
@@ -14,7 +14,9 @@
       <img id="building" src="./../assets/重点产业.png" width="30%" @click="RouteZDCY" />
     </div>
 
-    <div class="bottom-footer">版权所有©汉阳区商务局 技术支持:武汉大学测绘学院</div>
+    <div class="bottom-footer">
+      版权所有©汉阳区商务局&nbsp;&nbsp;&nbsp;技术支持:武汉大学测绘学院
+    </div>
   </div>
 </template>
 
@@ -82,7 +84,7 @@ body {
 }
 
 .layout {
-  background: url(./../assets/bg2.png) no-repeat center 0;
+  background: url(./../assets/汉阳-00.png) no-repeat center 0;
   background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   width: 100%;
@@ -108,7 +110,7 @@ body {
   border-radius: 50% 50%;
 }
 
-#logo {
+/* #logo {
   width: 50%;
   height: auto;
   max-width: 80%;
@@ -123,7 +125,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   display: block;
-}
+} */
 
 .layout .select {
   position: absolute;
@@ -232,6 +234,7 @@ body {
   transition: all 0.5s;
   z-index: 4;
   opacity: 100%;
+  text-shadow:5px 2px 10px #000
 }
 
 .map {
@@ -307,12 +310,12 @@ body {
 #buildings {
   text-align: center;
   position: absolute;
-  bottom: 41%;
+  bottom: 35%;
 }
 #buildings0 {
   text-align: center;
   position: absolute;
-  bottom: 23%;
+  bottom: 20%;
 }
 #building {
   padding: 1.5%;
