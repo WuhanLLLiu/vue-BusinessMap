@@ -193,6 +193,22 @@ const router = new Router({
                 title: "汉阳区现代公共文化服务体系建设三年行动计划"
             }
         },
+        {
+            path: "/WHCYSC",
+            component: () => import("../views/WHCYSC"),
+            meta: {
+                keepAlive: true,
+                title: "文化创意市场"
+            }
+        }, 
+        {
+            path: "/LQGC",
+            component: () => import("../views/LQGC"),
+            meta: {
+                keepAlive: true,
+                title: "设计类企业"
+            }
+        },     
     ]
 });
 router.beforeEach((to, from, next) => {

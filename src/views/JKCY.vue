@@ -153,7 +153,7 @@
    
    beforeMount() {
       this.load_ZC()
-      this.load_GH()
+    //   this.load_GH()
     },
 
     methods: {
@@ -191,7 +191,7 @@
     mounted() {
       //增加统计图表     
     //   this.load_ZC()
-    //   this.load_GH()
+      this.load_GH()
       // this.load_QY()
     }
   };

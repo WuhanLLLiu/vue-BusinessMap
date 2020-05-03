@@ -7,13 +7,13 @@
         <img id="img" src="./../assets/会展产业.png" @click="RouteHZCY"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/路桥工程.png"/>
+        <img id="img" src="./../assets/路桥工程.png" @click="RouteLQGC"/>
     </el-row>
     <el-row class="row">
         <img id="img" src="./../assets/汽车后市场.png"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/文化创意.png" @click="RouteWLCY"/>
+        <img id="img" src="./../assets/文化创意.png" @click="RouteWHCYSC"/>
     </el-row>
     <el-row class="row">
         <img id="img" src="./../assets/金融产业.png" @click="RouteJRCY"/>
@@ -38,11 +38,14 @@ export default {
     RouteHZCY() {
       this.$router.push({ path: "/HZCY" });
     },
-    RouteWLCY() {
-      this.$router.push({ path: "/WLCY" });
+    RouteWHCYSC() {
+      this.$router.push({ path: "/WHCYSC" });
     },
     RouteJRCY() {
       this.$router.push({ path: "/JRCY" });
+    },
+    RouteLQGC() {
+      this.$router.push({ path: "/LQGC" });
     },
   }
 };
