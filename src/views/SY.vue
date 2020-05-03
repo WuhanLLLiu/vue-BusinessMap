@@ -1,8 +1,8 @@
 <template>
   <div id="SY" class="layout">
-    <!-- <div class="logo">
-      <img id="logo" src="./../assets/LOGO2.gif" width="50%" />
-    </div> -->
+    <div class="logo">
+      <img id="logo" src="./../assets/logo.png" width="40%" />
+    </div>
 
     <div id="buildings">
       <img id="building" src="./../assets/土地信息.png" width="30%" @click="RouteDT" />
@@ -107,25 +107,25 @@ body {
 .layout .logo {
   /*position: absolute;*/
   top: 20%;
-  border-radius: 50% 50%;
+  /* border-radius: 50% 50%; */
 }
 
-/* #logo {
-  width: 50%;
+#logo {
+  width: 100%;
   height: auto;
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 50% 50%;
+  max-width: 100%;
+  max-height: 100%;
+  /* border-radius: 50% 50%; */
   position: absolute !important;
   left: 50%;
-  top: 20%;
+  top: 25%;
   transform: translateY(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   display: block;
-} */
+}
 
 .layout .select {
   position: absolute;
