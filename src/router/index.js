@@ -126,7 +126,7 @@ const router = new Router({
             component: () => import("../views/JKCYQY"),
             meta: {
                 keepAlive: true,
-                title: "JKCYQY"
+                title: "健康产业重点企业"
             }
         },
         {
@@ -175,6 +175,22 @@ const router = new Router({
             meta: {
                 keepAlive: true,
                 title: "金融产业2020年区《政府工作报告》确定的主要目标任务"
+            }
+        },
+        {
+            path: "/WHCY2",
+            component: () => import("../views/WHCY2"),
+            meta: {
+                keepAlive: true,
+                title: "关于支持小微企业进入规模服务企业的意见"
+            }
+        },
+        {
+            path: "/WHCY3",
+            component: () => import("../views/WHCY3"),
+            meta: {
+                keepAlive: true,
+                title: "汉阳区现代公共文化服务体系建设三年行动计划"
             }
         },
     ]

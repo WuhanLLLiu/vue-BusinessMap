@@ -14,14 +14,31 @@
             </van-tab>
 
             <van-tab title="国博周边酒店">
-              <div id="row">
+              <!-- <div id="row">
                   <p id ='row1'>国博周边酒店</p>
-                  <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>-->
+                  <p id ='row2'>来源：汉阳发展改革局 发布时间：2020-3</p>
               </div>
-              <el-divider class="el-divider1"></el-divider>
-            <div id='HZCY0'>
-              <p id='JD' v-html='html2'></p>
-            </div>
+              <el-divider class="el-divider1"></el-divider> -->
+            <!-- <div id='HZCY0'> -->
+              <!-- <p id='JD' v-html='html2'></p> -->
+              <div id='Selfform'>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00001.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00002.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00003.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00004.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00005.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00006.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00007.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00008.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00009.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00010.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00011.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00012.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00013.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00014.jpeg" id='hj'/>
+                  <img src="http://121.196.60.135/cdn/%E4%BC%9A%E5%B1%95%E5%9B%BD%E5%8D%9A/IMG_00015.jpeg" id='hj'/>
+              </div>
+            <!-- </div> -->
             </van-tab>
                      
             <van-tab title="国际博览中心">
@@ -55,8 +72,8 @@
    
    beforeMount() {
             this.carouselHeight = (window.innerHeight)*0.95 + 'px';
-            this.load_GS(),
-            this.load_JD()
+            this.load_GS()
+            // this.load_JD()
     },
 
     methods: {

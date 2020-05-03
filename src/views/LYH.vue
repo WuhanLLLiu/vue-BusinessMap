@@ -1,6 +1,28 @@
 <template>
   <div class="LYH">
-    <div id="container"></div>
+    <!-- <div id="container"></div> -->
+    <div id='Selfform'>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%961.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%962.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%963.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%964.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%965.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%966.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%967.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%968.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%969.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9610.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9611.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9612.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9613.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9614.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9615.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9616.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9617.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9618.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9619.png" id='hj'/>
+        <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9620.png" id='hj'/>
+    </div>
   </div>
 </template>
 
@@ -23,10 +45,10 @@ export default {
     };
   },
   mounted() {
-    this.$nextTick(() => {
-        let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
-        this.getPDF(url);
-    });
+    // this.$nextTick(() => {
+    //     let url = "http://121.196.60.135/cdn/%E9%BE%99%E9%98%B3%E6%B9%96%E6%8B%9B%E5%95%8602.pdf";
+    //     this.getPDF(url);
+    // });
   },
   methods: {
     async getPDF(url) {
@@ -119,5 +141,17 @@ li {
 }
 a {
   color: #42b983;
+}
+#hj{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+#Selfform{
+  margin-top: 3%;
+  padding: 5%;
+  font-size:36px;
+  line-height:58px;
+  font-family:PingFang SC;
 }
 </style>
