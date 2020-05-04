@@ -10,7 +10,7 @@
         <img id="img" src="./../assets/路桥工程.png" @click="RouteLQGC"/>
     </el-row>
     <el-row class="row">
-        <img id="img" src="./../assets/汽车后市场.png"/>
+        <img id="img" src="./../assets/汽车后市场.png" @click="RouteQCHSC"/>
     </el-row>
     <el-row class="row">
         <img id="img" src="./../assets/文化创意.png" @click="RouteWHCYSC"/>
@@ -46,6 +46,9 @@ export default {
     },
     RouteLQGC() {
       this.$router.push({ path: "/LQGC" });
+    },
+    RouteQCHSC() {
+      this.$router.push({ path: "/QCHSC" });
     },
   }
 };

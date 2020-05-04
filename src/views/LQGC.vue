@@ -1,11 +1,16 @@
 <template>
   <div id="LQGC">
-    <div id="row">
-        <p id ='row1'>设计类企业</p>
-        <!--<p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p>-->
-    </div>
-    <el-divider class="el-divider1"></el-divider>
-    <div id='LQGC0'>
+    <van-tabs v-model="active" background="#355BFA" color="white">
+        <van-tab title="发展现状">
+        </van-tab>
+        <van-tab title="发展规划">
+        </van-tab>         
+        <van-tab title="相关政策">         
+        </van-tab>
+        <van-tab title="新汉阳造">         
+        </van-tab>
+    </van-tabs>
+    <!-- <div id='LQGC0'>
         <img src="http://121.196.60.135/cdn/%E8%AE%BE%E8%AE%A1%E7%B1%BB%E4%BC%81%E4%B8%9A/%E5%9F%8E%E5%BB%BA%E8%AE%BE%E8%AE%A1%E9%99%A2.png" id='hj'/>
         <P style="text-align: center;">城建设计院</P>
         <img src="http://121.196.60.135/cdn/设计类企业/地质工程勘察院.png" id='hj'/>
@@ -22,7 +27,7 @@
         <P style="text-align: center;">中铁大桥局集团</P>
         <img src="http://121.196.60.135/cdn/设计类企业/中铁大桥勘测设计院集团有限公司.png" id='hj'/>
         <P style="text-align: center;">中铁大桥勘测设计院集团有限公司</P>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -75,5 +80,18 @@
   display: inline-block;
   height: auto;
   max-width: 100%;
+}
+</style>
+<style>
+.van-tabs--line .van-tabs__wrap{
+    height: 80px;
+}
+.van-tab__text {
+    position: relative;
+    color: #fff;
+    font-size: 34px;
+}
+.van-tab{
+    padding-top: 2%;
 }
 </style>

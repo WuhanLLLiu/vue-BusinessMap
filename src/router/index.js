@@ -217,6 +217,14 @@ const router = new Router({
                 title: "欢迎辞"
             }
         }, 
+        {
+            path: "/QCHSC",
+            component: () => import("../views/QCHSC"),
+            meta: {
+                keepAlive: true,
+                title: "汽车后市场"
+            }
+        }, 
     ]
 });
 router.beforeEach((to, from, next) => {

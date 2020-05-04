@@ -1,20 +1,11 @@
 <template>
-  <div id="JRCY">
+  <div id="QCHSC">
     <van-tabs v-model="active" background="#355BFA" color="white">
-        <van-tab title="产业概况">
+        <van-tab title="市场情况">
         </van-tab>
-        <van-tab title="企业动态">
+        <van-tab title="招商计划与政策">
         </van-tab>         
-        <van-tab title="产品介绍">
-        </van-tab>   
     </van-tabs>
-    <!-- <div id="row">
-        <p id ='row1'>金融产业2020年区《政府工作报告》确定的主要目标任务</p>
-    </div>
-    <el-divider class="el-divider1"></el-divider>
-    <div id='JRCY0'>
-        <p id='JR' v-html='html3'></p>
-    </div> -->
   </div>
 </template>
 
@@ -22,23 +13,14 @@
   import Vue from 'vue';
 
   export default {
-    name: "JRCY",
+    name: "QCHSC",
     data() {
       return {
-        html3:"",
       };
     },
     mounted(){
-      // this.load_JRCY()
     },
     methods: {
-      load_JRCY(){
-        fetch("http://121.196.60.135:1338/data/jrcy2020nqzfgzbgqddzymbrw")
-          .then(result => result.json())
-          .then(result => {            
-            this.html3=result.content
-          })
-      },
     }
   }
 </script>
@@ -68,10 +50,15 @@
     color:rgba(51,51,51,1);
     opacity:0.5;
   }
- #JRCY0{
+ #LQGC0{
     margin-top: 3%;
     padding: 4%;
  }
+ #hj{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
 </style>
 <style>
 .van-tabs--line .van-tabs__wrap{
