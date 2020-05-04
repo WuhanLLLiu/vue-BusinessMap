@@ -225,6 +225,14 @@ const router = new Router({
                 title: "汽车后市场"
             }
         }, 
+        {
+            path: "/JZTJKC",
+            component: () => import("../views/JZTJKC"),
+            meta: {
+                keepAlive: true,
+                title: "九州通健康城"
+            }
+        }, 
     ]
 });
 router.beforeEach((to, from, next) => {
