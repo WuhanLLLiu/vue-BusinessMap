@@ -55,9 +55,9 @@
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
-          <img id="imgdk1" src class="pic" @click="funcReadImgInfo" />
-          <img id="imgdk2" src class="pic" @click="funcReadImgInfo" />
-          <img id="imgdk3" src class="pic" @click="funcReadImgInfo" />
+          <img id="imgdk1" src class="pic"  />
+          <img id="imgdk2" src class="pic" />
+          <img id="imgdk3" src class="pic"  />
         </el-row>
       </div>
     </div>
@@ -246,34 +246,6 @@ export default {
             });
           }
         });
-    },
-    // 点击查看大图
-    funcReadImgInfo: function(event) {
-      console.log(event);
-      let element = document.getElementById(event.target.id);
-      if (this.fullscreen) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } else {
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.webkitRequestFullScreen) {
-          element.webkitRequestFullScreen();
-        } else if (element.mozRequestFullScreen) {
-          element.mozRequestFullScreen();
-        } else if (element.msRequestFullscreen) {
-          // IE11
-          element.msRequestFullscreen();
-        }
-      }
-      this.fullscreen = !this.fullscreen;
     },
     hybird_map() {
       this.$refs.webmap.hybird_map();

@@ -84,6 +84,47 @@
         </el-row>
       </div>
     </div>
+
+    <div class="bottom-footer" @click="drawer = true">
+      <p class="el-icon-arrow-up">楼宇信息列表</p>
+    </div>
+
+    <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%">
+      <div id="drawer-content">
+        <div id="row0" @click="drawer = false">
+          <p class="el-icon-arrow-down">关闭楼宇信息列表</p>
+        </div>
+
+        <el-divider class="el-divider1"></el-divider>
+
+        <div id="Selfform">
+          <div class="nullimg" v-if="!viewArr[0]">
+            <img src="./../assets/nulldata.png" width="80%" />
+            <br />
+            <br />
+            <p>数据未获取，请重新选择...</p>
+          </div>
+
+          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index">
+            <el-card class="box-card">
+              <el-row id="row6">
+                <span>{{item.name}}</span>
+              </el-row>
+              <el-row id="row2">
+                <span id="locimg">
+                  <img src="./../assets/choosed.png" width="3%" style="padding-right:1%" />
+                </span>
+                <span id="row4">{{item.address}}</span>
+              </el-row>
+              <el-row id="row2">
+                <span id="row3">建筑体量 {{item.volume}} 平方米</span>
+                <span id="row3">楼层数 {{item.floor_num}}</span>
+              </el-row>
+            </el-card>
+          </div>
+        </div>
+      </div>
+    </el-drawer>
   </div>
 </template>
 
@@ -116,6 +157,7 @@ export default {
       num: 0,
       LYid: 0,
       viewArr: [],
+      drawer: false,
       img1: "",
       img2: "",
       img3: "",
@@ -228,6 +270,15 @@ export default {
   },
 
   mounted() {
+    fetch("http://121.196.60.135:1338/data/lyxx")
+      .then(result => result.json())
+      .then(result => {
+        var that = this;
+        var tdxx = JSON.parse(result.content);
+        for (var i = 0; i < tdxx.features.length; i++) {
+          that.viewArr.push(tdxx.features[i].properties);
+        }
+      });
     this.$refs.webmap.HYbuildings();
   }
 };
@@ -302,11 +353,69 @@ body {
   padding: 2%;
   /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
 }
+#row2 {
+  opacity: 100%;
+  width: 100%;
+  left: 1%;
+  display: table;
+  padding: 1%;
+  font-family: "黑体";
+  font: bolder;
+  padding-bottom: 2%;
+  font-size: 1em;
+}
+
+#row3 {
+  font-size: 0.9em;
+  padding: 6px 20px;
+  margin: 0 10px;
+  display: inline-block;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid #004acc;
+  color: #004acc;
+}
+
+#row4 {
+  font-size: 0.9em;
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  /* margin: 0 10px; */
+  font-family: "微软雅黑";
+  /* display: inline-block; */
+  color: #333333;
+}
+#row5 {
+  font-size: 1em;
+  display: inline-block;
+  font-family: "微软雅黑";
+}
+#row6 {
+  opacity: 100%;
+  width: 100%;
+  left: 1%;
+  padding: 1%;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  font-size: 1.1em;
+  font-family: "微软雅黑";
+  font: bolder;
+  font-weight: bold;
+}
 
 .el-col {
   /* width: 33%; */
   width: 50%;
   text-align: center;
+}
+
+.el-card {
+  width: 90%;
+  left: 5em;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-left: 5%;
 }
 
 #img {
@@ -445,9 +554,38 @@ body {
   z-index: 4;
   display: none;
 }
+
+.bottom-footer {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #333333;
+  /* font-size: 35px; */
+  font-size: 0.9em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.5s;
+  z-index: 3;
+  background: #fff;
+}
+
+#row0 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  font-size: 0.8em;
+  font-family: PingFang SC;
+  color: rgba(51, 51, 51, 1);
+}
+
 </style>
 
 <style>
+.el-drawer.btt {
+  overflow: scroll;
+}
+
 .imgPrev figure {
   float: left;
   width: 30%;

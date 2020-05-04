@@ -209,6 +209,14 @@ const router = new Router({
                 title: "设计类企业"
             }
         },     
+        {
+            path: "/HYC",
+            component: () => import("../views/HYC"),
+            meta: {
+                keepAlive: true,
+                title: "欢迎辞"
+            }
+        }, 
     ]
 });
 router.beforeEach((to, from, next) => {
