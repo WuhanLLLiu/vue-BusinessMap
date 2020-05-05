@@ -215,7 +215,7 @@ const router = new Router({
             component: () => import("../views/LQGC"),
             meta: {
                 keepAlive: true,
-                title: "设计类企业"
+                title: "路桥工程设计"
             }
         },     
         {
