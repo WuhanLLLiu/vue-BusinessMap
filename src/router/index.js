@@ -275,6 +275,14 @@ const router = new Router({
         //         title: "汉阳区大健康产业扶持政策"
         //     }
         // },
+        {
+            path: "/ZCXQ4",
+            component: () => import("../views/ZCXQ4"),
+            meta: {
+                keepAlive: true,
+                title: "人才政策"
+             }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {

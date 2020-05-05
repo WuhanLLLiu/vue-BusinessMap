@@ -28,7 +28,10 @@
              <p id='ZC' v-html='html3'></p>
           </div>     
         </van-tab>
-        <van-tab title="新汉阳造">         
+        <van-tab title="新汉阳造">  
+          <div id="HZCY0">
+            <iframe src="https://www.bilibili.com/video/BV1ua4y1i7UB" scrolling="yes" width="100%"  :height="carouselHeight" frameborder='0' align='center' allowfullscreen='true'   allow="autoplay"> </iframe>
+          </div>        
         </van-tab>
     </van-tabs>
     <!-- <div id='LQGC0'>
@@ -66,6 +69,7 @@
       };
     },
    beforeMount() {
+      this.carouselHeight = (window.innerHeight)*0.95 + 'px';
       this.load_XZ()
       this.load_GH()    
       this.load_ZC()

@@ -36,6 +36,18 @@
             </el-card>
         </el-button>
      </el-row>
+    <el-row class='row'>
+        <el-button class="button"  @click='ZC4()'>
+            <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                <div style="padding: 14px;">
+                    <span class="title">人才政策</span>
+                    <!--<div class="bottom clearfix">
+                        <span class="details">来源：武汉市汉阳区人民政府 发布于：2019-3-30</span>
+                    </div>-->
+                </div>
+            </el-card>
+        </el-button>
+     </el-row>
   </div>
 </template>
 
@@ -58,6 +70,9 @@
       },
       ZC3(){
         this.$router.push({path:'/ZCXQ3'})
+      },
+      ZC4(){
+        this.$router.push({path:'/ZCXQ4'})
       },
     }
   }
