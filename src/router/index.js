@@ -91,6 +91,7 @@ const router = new Router({
         },
         {
             path: "/JKCY",
+            name:'JKCY',
             component: () => import("../views/JKCY"),
             meta: {
                 keepAlive: true,
@@ -233,6 +234,15 @@ const router = new Router({
                 title: "九州通健康城"
             }
         }, 
+        // {
+        //     name:'djkcyzc',
+        //     path: "/djkcyzc",
+        //     component: () => import("../views/test"),
+        //     meta: {
+        //         keepAlive: true,
+        //         title: "汉阳区大健康产业扶持政策"
+        //     }
+        // },
     ]
 });
 router.beforeEach((to, from, next) => {

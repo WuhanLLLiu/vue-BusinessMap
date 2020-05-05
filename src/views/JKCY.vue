@@ -28,6 +28,8 @@
               </div>
             </van-tab>
             <van-tab title="健康产业政策">
+            <!--<van-tab title="健康产业政策" to="/djkcyzc">-->
+              <!--<router-view></router-view>-->
               <div id="row">
                   <p id ='row1'>汉阳区大健康产业扶持政策</p>
               </div>
