@@ -11,6 +11,9 @@ import "maptalks/dist/maptalks.css";
 import imgURL_loc from "../assets/marker.png";
 import imgURL_loc2 from "../assets/choosed.png";
 
+import imgURL_loc_area from "../assets/marker_area.png";
+import imgURL_loc2_area from "../assets/choosed_area.png";
+
 // import tdxx from '../assets/tdxx.js'
 // import lyxx from '../assets/lyxx.js'
 // import QJ from "../assets/vtour/tour.html"
@@ -113,7 +116,7 @@ export default {
                 lineWidth: 2,
                 polygonFill: "#355BFA",
                 polygonOpacity: 0.6,
-                markerFile: imgURL_loc,
+                markerFile: imgURL_loc_area,
                 markerWidth: {
                   stops: [
                     [6, 0],
@@ -145,7 +148,7 @@ export default {
                       lineWidth: 4,
                       polygonFill: "#355BFA",
                       polygonOpacity: 0.6,
-                      markerFile: imgURL_loc,
+                      markerFile: imgURL_loc_area,
                       markerWidth: {
                         stops: [
                           [6, 0],
@@ -187,7 +190,7 @@ export default {
                   lineWidth: 4,
                   polygonFill: "#FA3535",
                   polygonOpacity: 0.6,
-                  markerFile: imgURL_loc2,
+                  markerFile: imgURL_loc2_area,
                   markerWidth: {
                     stops: [
                       [6, 0],
@@ -468,8 +471,8 @@ export default {
     //构建map
     var image = new Image();
     Vue.mapInstance = new maptalks.Map("WebMap", {
-      center: [114.210649, 30.540374],
-      zoom: 14
+      center: [114.190649, 30.570374],
+      zoom: 15
     });
 
     // Vue.mapInstance.setBaseLayer(
