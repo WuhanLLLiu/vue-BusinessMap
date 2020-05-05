@@ -16,6 +16,7 @@
     name: "QCHSC",
     data() {
       return {
+        active:0
       };
     },
     mounted(){

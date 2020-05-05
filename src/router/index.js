@@ -233,6 +233,30 @@ const router = new Router({
                 title: "九州通健康城"
             }
         }, 
+        {
+            path: "/JRCP",
+            component: () => import("../views/JRCP"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
+        {
+            path: "/JRCP2",
+            component: () => import("../views/JRCP2"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
+        {
+            path: "/JRCP3",
+            component: () => import("../views/JRCP3"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
     ]
 });
 router.beforeEach((to, from, next) => {
