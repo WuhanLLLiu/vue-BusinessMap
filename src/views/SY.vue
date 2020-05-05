@@ -4,7 +4,7 @@
       <img id="logo" src="./../assets/logo.png" width="40%" />
     </div>
 
-    <img src="./../assets/新手引导.png" width="8%" id='icon1'/>
+    <img src="./../assets/新手引导.png" width="8%" id='icon1' @click="RouteFWZY"/>
     <img src="./../assets/欢迎页.png" width="8%" id="icon2" @click="RouteHYC"/>
 
     <div id="buildings">
@@ -69,7 +69,10 @@ export default {
     },
     RouteHYC() {
       this.$router.push({ path: "/HYC" });
-    }
+    },
+    RouteFWZY() {
+      this.$router.push({ path: "/FWZY" });
+    },
   },
 
   mounted() {

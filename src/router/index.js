@@ -283,6 +283,14 @@ const router = new Router({
                 title: "人才政策"
              }
         },
+        {
+            path: "/FWZY",
+            component: () => import("../views/FWZY"),
+            meta: {
+                keepAlive: true,
+                title: "服务指引"
+             }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
