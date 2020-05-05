@@ -2,7 +2,7 @@
   <div id="WHCYSC" class='layout'>
     <van-tabs v-model="active" background="#355BFA" color="white">
         <van-tab title="产业规划">
-          <el-row class='row'>
+          <!-- <el-row class='row'>
             <el-button class="button"  @click='ZC3()'>
                 <el-card :body-style="{ margin:'5px',padding: '0px' }">
                     <div style="padding: 14px 4px 14px 4px;">
@@ -10,7 +10,19 @@
                     </div>
                 </el-card>
             </el-button>
-          </el-row>
+          </el-row> -->
+        <div id='Selfform'>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00001.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00002.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00003.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00004.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00005.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00006.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00007.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00008.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00009.jpg" id='hj'/>
+            <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00010.jpg" id='hj'/>
+        </div>
         </van-tab>
         <van-tab title="相关政策">         
           <el-row class='row'>
@@ -31,6 +43,24 @@
                   </el-card>
               </el-button>
           </el-row>
+          <el-row class='row'>
+              <el-button class="button"  @click='ZC3()'>
+                  <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                      <div style="padding: 14px 4px 14px 4px;">
+                          <span class="title">汉阳区文化产业政策</span>
+                      </div>
+                  </el-card>
+              </el-button>
+          </el-row>
+          <el-row class='row'>
+              <el-button class="button"  @click='ZC4()'>
+                  <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                      <div style="padding: 14px 4px 14px 4px;">
+                          <span class="title">汉阳区大力推进创新创业促进产业发展等政策</span>
+                      </div>
+                  </el-card>
+              </el-button>
+          </el-row>
         </van-tab>
     </van-tabs>
   </div>
@@ -44,6 +74,7 @@
     data() {
       return {
         // currentDate: new Date()
+        active:0
       };
     },
     methods: {
@@ -55,6 +86,9 @@
       },
       ZC3(){
         this.$router.push({path:'/WHCY3'})
+      },
+      ZC4(){
+        this.$router.push({path:'/WHCY4'})
       },
     }
   }
@@ -101,6 +135,18 @@
   .clearfix:after {
       clear: both
   }
+  #Selfform{
+  margin-top: 3%;
+  padding: 5%;
+  font-size:36px;
+  line-height:58px;
+  font-family:PingFang SC;
+}
+#hj{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
 </style>
 <style>
 .van-tabs--line .van-tabs__wrap{

@@ -191,7 +191,15 @@ const router = new Router({
             component: () => import("../views/WHCY3"),
             meta: {
                 keepAlive: true,
-                title: "汉阳区现代公共文化服务体系建设三年行动计划"
+                title: "文创产业政策"
+            }
+        },
+        {
+            path: "/WHCY4",
+            component: () => import("../views/WHCY4"),
+            meta: {
+                keepAlive: true,
+                title: "文创产业政策"
             }
         },
         {
@@ -232,6 +240,30 @@ const router = new Router({
             meta: {
                 keepAlive: true,
                 title: "九州通健康城"
+            }
+        }, 
+        {
+            path: "/JRCP",
+            component: () => import("../views/JRCP"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
+        {
+            path: "/JRCP2",
+            component: () => import("../views/JRCP2"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
+        {
+            path: "/JRCP3",
+            component: () => import("../views/JRCP3"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
             }
         }, 
         // {
