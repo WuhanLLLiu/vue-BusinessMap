@@ -190,7 +190,15 @@ const router = new Router({
             component: () => import("../views/WHCY3"),
             meta: {
                 keepAlive: true,
-                title: "汉阳区现代公共文化服务体系建设三年行动计划"
+                title: "文创产业政策"
+            }
+        },
+        {
+            path: "/WHCY4",
+            component: () => import("../views/WHCY4"),
+            meta: {
+                keepAlive: true,
+                title: "文创产业政策"
             }
         },
         {

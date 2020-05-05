@@ -87,6 +87,9 @@
       ZC3(){
         this.$router.push({path:'/WHCY3'})
       },
+      ZC4(){
+        this.$router.push({path:'/WHCY4'})
+      },
     }
   }
 </script>

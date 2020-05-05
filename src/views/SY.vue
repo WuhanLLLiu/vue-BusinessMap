@@ -3,8 +3,10 @@
     <div class="logo">
       <img id="logo" src="./../assets/logo.png" width="40%" />
     </div>
-    <i class="el-icon-info" id='icon1'></i>
-    <i class="el-icon-s-promotion" id="icon2" @click="RouteHYC"></i>
+
+    <img src="./../assets/新手引导.png" width="8%" id='icon1'/>
+    <img src="./../assets/欢迎页.png" width="8%" id="icon2" @click="RouteHYC"/>
+
     <div id="buildings">
       <img id="building" src="./../assets/土地信息.png" width="30%" @click="RouteDT" />
       <img id="building" src="./../assets/楼宇信息.png" width="30%" @click="RouteLY" />
@@ -328,11 +330,11 @@ body {
   background-color:transparent;
   color: white;
   padding-right: 2%;
-  font-size: 2em;
+  /* font-size: 2em; */
   /* border-radius: 50% 50%; */
   position: absolute !important;
   right: 10%;
-  /* top: 30%; */
+  top: 1%;
   /* transform: translateY(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -344,13 +346,12 @@ body {
   background-color:transparent;
   color: white;
   padding-right: 2%;
-  font-size: 2em;
+  /* font-size: 2em; */
   right: 0%;
   /* left: 3%; */
   /* border-radius: 50% 50%; */
   position: absolute !important;
-  /* right: 3%;
-  top: 20%; */
+  top: 1%;
   /* transform: translateY(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);

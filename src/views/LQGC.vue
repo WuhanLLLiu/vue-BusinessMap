@@ -38,6 +38,7 @@
     name: "LQGC",
     data() {
       return {
+        active:0
       };
     },
     mounted(){
