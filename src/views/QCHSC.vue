@@ -2,22 +2,33 @@
   <div id="QCHSC">
     <van-tabs v-model="active" background="#355BFA" color="white">
       <van-tab title="市场情况">
-        <div id="row">
+        <!--<div id="row">
           <p id='row1'>汉阳区汽车后市场情况</p>
         </div>
         <el-divider class="el-divider1"></el-divider>
         <div id='QCHSC0'>
           <p id='ZC' v-html='html1'></p>
-        </div>
+        </div>-->
+          <div id='QCHSC0'>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_01.png" id='hj'/>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_02.png" id='hj'/>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_03.png" id='hj'/>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_04.png" id='hj'/>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_05.png" id='hj'/>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场产业招商计划和措施/hanyangquqichehoushichangchanyezhaoshangjihuahecuoshi_06.png" id='hj'/>
+          </div>
       </van-tab>
       <van-tab title="招商计划与政策">
-        <div id="row">
+        <!--<div id="row">
           <p id='row1'>汉阳区汽车后市场产业招商计划和措施</p>
         </div>
         <el-divider class="el-divider1"></el-divider>
         <div id='QCHSC0'>
           <p id='ZC' v-html='html2'></p>
-        </div>
+        </div>-->
+          <div id='QCHSC0'>
+              <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场情况.jpg" id='hj'/>
+          </div>
       </van-tab>
     </van-tabs>
   </div>
@@ -37,8 +48,8 @@
 
     },
     mounted() {
-      this.load_SCQK()
-      this.load_JHZC()
+      // this.load_SCQK()
+      // this.load_JHZC()
     },
     methods: {
       load_SCQK() {
