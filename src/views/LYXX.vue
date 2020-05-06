@@ -27,7 +27,7 @@
             <li id="img">
               <img src="./../assets/工业园.png" width="33%" @click="RouteHJK" />
             </li>
-            <li id="type" @click="RouteHJK">黄金口工业园</li>
+            <li id="type" @click="RouteHJK">黄金口都市工业园</li>
           </ul>
         </el-col>
       </el-row>

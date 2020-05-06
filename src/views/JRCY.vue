@@ -50,6 +50,15 @@
                   </el-card>
               </el-button>
           </el-row>
+          <el-row class='row'>
+              <el-button class="button"  @click='CP4()'>
+                  <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                      <div style="padding: 14px 4px 14px 4px;">
+                          <span class="title">人保财险汉阳支公司助力复工复产惠企政策</span>
+                      </div>
+                  </el-card>
+              </el-button>
+          </el-row>
         </van-tab>   
     </van-tabs>
   </div>
@@ -85,6 +94,9 @@
       },
       CP3(){
         this.$router.push({path:'/JRCP3'})
+      },
+      CP4(){
+        this.$router.push({path:'/JRCP4'})
       },
     }
   }
