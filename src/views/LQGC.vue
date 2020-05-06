@@ -65,7 +65,8 @@
         active:0,
         html1:'',
         html2:'',
-        html3:''
+        html3:'',
+        urls:["http://121.196.60.135:1338/data/hyqgcsjcyfzxz","http://121.196.60.135:1338/data/hyqgcsjcyfzgh","http://121.196.60.135:1338/data/gcsjjzlqyxgzc"]
       };
     },
    beforeMount() {
@@ -75,6 +76,14 @@
       this.load_ZC()
     },
     mounted(){
+      // var that = this
+      // Promise.all(that.urls.map(url =>
+      //     fetch(url).then(resp => resp.text())
+      // )).then(texts => {
+      //   that.html1= JSON.parse(texts[0]).content
+      //   that.html2= JSON.parse(texts[1]).content
+      //   that.html3= JSON.parse(texts[2]).content
+      // })
     },
     methods: {
       load_XZ(){
@@ -97,7 +106,7 @@
           .then(result => {            
             this.html3=result.content
           })
-      }
+      },
     }
   }
 </script>
