@@ -14,15 +14,11 @@
             <img src="http://121.196.60.135/cdn/%E9%87%91%E8%9E%8D%E4%BA%A7%E4%B8%9A/%E6%B1%89%E9%98%B3%E5%8C%BA%E9%87%91%E8%9E%8D%E4%BA%A7%E4%B8%9A%E5%8F%91%E5%B1%95%E6%83%85%E5%86%B5/img9.png" id='hj'/>     
         </div>
         </van-tab>
-        <van-tab title="发展规划">
-          <!-- <div id="row">
-            <p id ='row1'>金融产业2020年区《政府工作报告》确定的主要目标任务</p>
-          </div>
-          <el-divider class="el-divider1"></el-divider> -->
+        <!-- <van-tab title="发展规划">
           <div id='JRCY0'>
               <p id='JR' v-html='html3'></p>
           </div>
-        </van-tab>  
+        </van-tab>   -->
         <van-tab title="企业动态">
               <img src="http://121.196.60.135/cdn/%E9%87%91%E8%9E%8D%E4%BA%A7%E4%B8%9A/%E6%94%BF%E9%93%B6%E4%BC%81%E5%AF%B9%E6%8E%A5%E4%BC%9A/%E6%94%BF%E9%93%B6%E4%BC%81%E5%AF%B9%E6%8E%A5%E4%BC%9A_01.png" id='hj'/>
         </van-tab>         
