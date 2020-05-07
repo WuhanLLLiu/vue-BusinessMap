@@ -268,7 +268,7 @@ const router = new Router({
         }, 
         {
             path: "/JRCP4",
-            component: () => import("../views/JRCP3"),
+            component: () => import("../views/JRCP4"),
             meta: {
                 keepAlive: true,
                 title: "金融产品"
