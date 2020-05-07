@@ -2,31 +2,44 @@
   <div id="LQGC">
     <van-tabs v-model="active" background="#355BFA" color="white">
         <van-tab title="发展现状">
-          <div id="row">
+          <!--<div id="row">
              <p id ='row1'>汉阳区工程设计产业发展现状</p>
           </div>
           <el-divider class="el-divider1"></el-divider>
           <div id='LQGC0'>
              <p id='ZC' v-html='html1'></p>
-          </div>
+          </div>-->
+          <div id='LQGC0'>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_01.jpg" id='hj'/>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_02.jpg" id='hj'/>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_03.jpg" id='hj'/>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_04.jpg" id='hj'/>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_05.jpg" id='hj'/>
+          </div>           
         </van-tab>
         <van-tab title="发展规划">
-          <div id="row">
+          <!--<div id="row">
              <p id ='row1'>汉阳区工程设计产业发展规划</p>
           </div>
           <el-divider class="el-divider1"></el-divider>
           <div id='LQGC0'>
              <p id='ZC' v-html='html2'></p>
-          </div>
+          </div>-->
+          <div id='LQGC0'>
+              <img src="http://121.196.60.135/cdn/路桥工程/工程设计建造类企业相关政策.jpg" id='hj'/>
+          </div> 
         </van-tab>         
         <van-tab title="相关政策">   
-          <div id="row">
+          <!--<div id="row">
              <p id ='row1'>工程设计建造类企业相关政策</p>
           </div>
           <el-divider class="el-divider1"></el-divider>
           <div id='LQGC0'>
              <p id='ZC' v-html='html3'></p>
-          </div>     
+          </div>     -->
+          <div id='LQGC0'>
+              <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展现状.jpg" id='hj'/>
+          </div>
         </van-tab>
         <van-tab title="新汉阳造">  
           <div id="HZCY0">
@@ -71,9 +84,9 @@
     },
    beforeMount() {
       this.carouselHeight = (window.innerHeight)*0.95 + 'px';
-      this.load_XZ()
-      this.load_GH()    
-      this.load_ZC()
+      // this.load_XZ()
+      // this.load_GH()    
+      // this.load_ZC()
     },
     mounted(){
       // var that = this
