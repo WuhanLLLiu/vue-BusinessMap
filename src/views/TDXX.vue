@@ -82,7 +82,7 @@
             <p>数据未获取，请重新选择...</p>
           </div>
 
-          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index">
+          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index" @click="TDChoose(item.Id)">
             <el-card class="box-card">
               <el-row id="row1">
                 <span>{{item.name}}</span>
@@ -252,6 +252,10 @@ export default {
     },
     Vector_map() {
       this.$refs.webmap.Vector_map();
+    },
+    TDChoose(id){
+      this.$refs.webmap.TDchoose(id);
+      this.drawer = false
     }
   },
 

@@ -105,7 +105,7 @@
             <p>数据未获取，请重新选择...</p>
           </div>
 
-          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index">
+          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index" @click="LYChoose(item.id)">
             <el-card class="box-card">
               <el-row id="row6">
                 <span>{{item.name}}</span>
@@ -266,6 +266,10 @@ export default {
     },
     updateimgList(value) {
       this.imglist = value;
+    },
+    LYChoose(id){
+      this.$refs.webmap.LYchoose(id);
+      this.drawer = false
     }
   },
 
