@@ -274,6 +274,14 @@ const router = new Router({
                 title: "金融产品"
             }
         }, 
+        {
+            path: "/JRCP5",
+            component: () => import("../views/JRCP5"),
+            meta: {
+                keepAlive: true,
+                title: "金融产品"
+            }
+        }, 
         // {
         //     name:'djkcyzc',
         //     path: "/djkcyzc",

@@ -59,6 +59,15 @@
                   </el-card>
               </el-button>
           </el-row>
+          <el-row class='row'>
+              <el-button class="button"  @click='CP5()'>
+                  <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                      <div style="padding: 14px 4px 14px 4px;">
+                          <span class="title">中信银行综合服务产品介绍</span>
+                      </div>
+                  </el-card>
+              </el-button>
+          </el-row>
         </van-tab>   
     </van-tabs>
   </div>
@@ -97,6 +106,9 @@
       },
       CP4(){
         this.$router.push({path:'/JRCP4'})
+      },
+      CP5(){
+        this.$router.push({path:'/JRCP5'})
       },
     }
   }
