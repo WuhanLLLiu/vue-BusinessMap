@@ -40,18 +40,15 @@
             </van-tab>
             <van-tab title="健康产业企业">
               <div id="ZDQY">
-                <el-row class='row'>
+                <!-- <el-row class='row'>
                     <el-button class="button"  @click='JKCYZSQK()'>
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class='title'>汉阳区大健康产业招商情况</span>
-                                <!--<div class="bottom clearfix">
-                                    <span class="details">来源：汉阳发展改革局 发布于：2019-3</span>
-                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
-                </el-row>
+                </el-row> -->
                 <el-row class='row'>
                     <el-button class="button"  @click='DH()'>
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
@@ -76,18 +73,18 @@
                         </el-card>
                     </el-button>
                 </el-row>
-                <el-row class='row'>
+                <!-- <el-row class='row'>
                     <el-button class="button"  @click='JZTJKC()'>
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">九州通健康城</span>
-                                <!--<div class="bottom clearfix">
+                                <div class="bottom clearfix">
                                     <span class="details">来源：汉阳区商务局 发布于：2020-1</span>
-                                </div>-->
+                                </div>
                             </div>
                         </el-card>
                     </el-button>
-                </el-row>
+                </el-row> -->
               </div>           
             </van-tab>
         </van-tabs>
