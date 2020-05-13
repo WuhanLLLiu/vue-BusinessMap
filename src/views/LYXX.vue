@@ -181,6 +181,7 @@ export default {
     PICAlert() {
       var that = this;
       var url = "http://121.196.60.135:1338/bms/" + that.LYid;
+      console.log(url)
       that.imglist = [];
       fetch(url)
         .then(result => result.json())

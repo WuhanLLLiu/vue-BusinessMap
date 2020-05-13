@@ -297,7 +297,7 @@ export default {
                   param.target.properties.monthly_re;
                 document.getElementById("lywy").innerHTML =
                   param.target.properties.property_m;
-                that.LYid = param.target.properties.ID;
+                that.LYid = param.target.properties.id;
                 that.$emit("changeLYid", that.LYid);
 
                 param.target.updateSymbol({
@@ -521,7 +521,7 @@ export default {
             feature.properties.monthly_re;
           document.getElementById("lywy").innerHTML =
             feature.properties.property_m;
-          that.LYid = feature.properties.ID;
+          that.LYid = feature.properties.id;
           that.$emit("changeLYid", that.LYid);
       })
     },
