@@ -593,7 +593,141 @@ export default {
           that.TDid = feature.properties.Id;
           that.$emit("changeTDid", that.TDid);
       })
-    }
+    },
+    //搜索楼宇
+    LYsearch(val){s
+      var that = this
+      Vue.mapInstance.getLayer("ly").filter(["!=", "id", null])
+      .forEach(function(feature) {
+        feature.updateSymbol({
+          markerFile: imgURL_loc,
+          markerWidth: {
+            stops: [
+              [6, 0],
+              [14, 30]
+            ]
+          },
+          markerHeight: {
+            stops: [
+              [6, 0],
+              [14, 40]
+            ]
+          }
+        });
+      });
+
+      Vue.mapInstance.getLayer("ly").filter(["==", "name", val]).forEach(function(feature){
+          feature.updateSymbol({
+            markerFile: imgURL_loc2,
+            markerWidth: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            },
+            markerHeight: {
+              stops: [
+                [6, 0],
+                [14, 50]
+              ]
+            }
+          });
+          Vue.mapInstance.setCenter(feature.getCoordinates())
+          document.getElementById("bottomly").style.display = "block";
+          document.getElementById("bottomly").style.height = "auto";
+          that.$emit("changeimgList", that.imglist);
+          document.getElementById("lyname").innerHTML =
+            feature.properties.name;
+          document.getElementById("lylocation").innerHTML =
+            feature.properties.address;
+          document.getElementById("lycs").innerHTML =
+            feature.properties.floor_num;
+          document.getElementById("lytl").innerHTML =
+            feature.properties.volume;
+          document.getElementById("lyqy").innerHTML =
+            feature.properties.settled_en;
+          document.getElementById("lykt").innerHTML =
+            feature.properties.passenger_;
+          document.getElementById("lytc").innerHTML =
+            feature.properties.parking_nu;
+          document.getElementById("lyzj").innerHTML =
+            feature.properties.monthly_re;
+          document.getElementById("lywy").innerHTML =
+            feature.properties.property_m;
+          that.LYid = feature.properties.id;
+          that.$emit("changeLYid", that.LYid);
+      })
+    },
+    //搜索土地
+    TDsearch(val){
+      var that = this;
+      Vue.mapInstance.getLayer("v1").filter(["!=", "Id", null])
+      .forEach(function(feature) {
+          feature.updateSymbol({
+            lineColor: "#2348E5",
+            lineWidth: 4,
+            polygonFill: "#355BFA",
+            polygonOpacity: 0.6,
+            markerFile: imgURL_loc_area,
+            markerWidth: {
+              stops: [
+                [6, 0],
+                [14, 30]
+              ]
+            },
+            markerHeight: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            }
+          });
+      });
+      
+      Vue.mapInstance.getLayer("v1").filter(["==", "name", val]).forEach(function(feature){
+          feature.updateSymbol({
+              lineColor: "#E52323",
+              lineWidth: 4,
+              polygonFill: "#FA3535",
+              polygonOpacity: 0.6,
+              markerFile: imgURL_loc2_area,
+              markerWidth: {
+                stops: [
+                  [6, 0],
+                  [14, 40]
+                ]
+              },
+              markerHeight: {
+                stops: [
+                  [6, 0],
+                  [14, 54]
+                ]
+              }
+          });
+          Vue.mapInstance.setCenter(feature.getLastCoordinate())
+          document.getElementById("bottom0").style.display = "block";
+          document.getElementById("bottom0").style.height = "auto";
+          document.getElementById("imgdk1").src = "";
+          document.getElementById("imgdk2").src = "";
+          document.getElementById("imgdk3").src = "";
+
+          document.getElementById("name").innerHTML =
+            feature.properties.name;
+          document.getElementById("area").innerHTML =
+            feature.properties.area + "亩";
+          document.getElementById("proportion").innerHTML =
+            "公建比  " + feature.properties.proportion;
+          document.getElementById("direction").innerHTML =
+            feature.properties.direction;
+          document.getElementById("around").innerHTML =
+            feature.properties.around;
+          document.getElementById("location").innerHTML =
+            feature.properties.location;
+          that.TDid = feature.properties.Id;
+          that.$emit("changeTDid", that.TDid);
+      })
+    },
+    
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},

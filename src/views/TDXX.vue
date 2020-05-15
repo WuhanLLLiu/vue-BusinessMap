@@ -1,13 +1,13 @@
 <template>
   <div id="TDXX" class="layout">
-    <!-- <div>
-        <van-nav-bar 
-        title="土地信息" 
-        left-text="返回"   
-        left-arrow 
-        @click-left="onClickLeft" 
-        />
-    </div>-->
+
+    <div class='top0'>
+        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft"> 
+          <template #title>
+            <van-search v-model="searchtext" placeholder="请输入搜索关键词" @search="onSearch" />
+          </template>
+        </van-nav-bar>
+    </div>
 
     <div class="dropmenu">
       <van-dropdown-menu :overlay="false">
@@ -135,7 +135,7 @@ export default {
       img1: "",
       img2: "",
       img3: "",
-
+      searchtext:'',
       value1: 0,
       value2: 0,
       value3: 0,
@@ -256,6 +256,10 @@ export default {
     TDChoose(id){
       this.$refs.webmap.TDchoose(id);
       this.drawer = false
+    },
+    onSearch(val){
+      console.log(val)
+      this.$refs.webmap.TDsearch(val);
     }
   },
 
@@ -290,27 +294,6 @@ body {
   height: 100%;
   position: relative;
   overflow: hidden;
-}
-.van-nav-bar {
-  background-size: 100% 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  color: #000080;
-  height: 98px;
-}
-.van-nav-bar >>> .van-nav-bar__left {
-  font-size: 50px;
-}
-.van-nav-bar >>> .van-nav-bar__left >>> .i {
-  font-size: 50px;
-}
-.van-nav-bar >>> .van-nav-bar__title {
-  padding-top: 25px;
-  font-size: 50px;
-  font: bolder;
-  /* color: #000080; */
 }
 
 .van-dropdown-menu {
@@ -628,6 +611,22 @@ body {
   display: -moz-inline-box;
   display: inline-block;
 }
+
+.layout .top0 {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  transition: all 0.5s;
+  z-index: 4;
+}
+
+.layout .dropmenu{
+  top: 4%;
+  position: absolute;
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 4;
+}
 </style>
 
 <style>
@@ -661,5 +660,40 @@ body {
   transform-origin: right center;
   z-index: 4;
   display: none;
+}
+
+.van-icon-arrow-left::before {
+    content: "\F008";
+    color: black;
+    font-size: 30px;
+}
+
+.van-nav-bar__text{
+  font-size:28px;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:36px;
+}
+
+.van-nav-bar{
+  height: 60px;
+}
+
+.van-nav-bar__title{
+  height: 45px;
+  padding: 2%;
+}
+.van-field__left-icon {
+  font-size: 30px;
+}
+.van-field__control {
+  font-size: 22px;
+}
+
+.van-icon-search::before {
+    content: "\F0AF";
+    font-size: 30px;
+    color: black;
 }
 </style>

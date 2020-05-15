@@ -6,6 +6,14 @@
 
     <mapChoose></mapChoose>
 
+    <div class='top0'>
+        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft"  @click-right="onClickRight"> 
+          <template #title>
+            <van-search v-model="searchtext" placeholder="请输入搜索关键词" @search="onSearch" />
+          </template>
+        </van-nav-bar>
+    </div>
+
     <div class="top">
       <el-row id="row1">
         <el-col>
@@ -161,11 +169,18 @@ export default {
       img1: "",
       img2: "",
       img3: "",
-      imglist: []
+      imglist: [],
+      searchtext:''
     };
   },
 
   methods: {
+    onClickLeft() {
+      history.back();
+    },
+    onClickRight(){
+      console.log('search')
+    },
     hide() {
       document.getElementById("bottomly").style.display = "none";
     },
@@ -271,6 +286,10 @@ export default {
     LYChoose(id){
       this.$refs.webmap.LYchoose(id);
       this.drawer = false
+    },
+    onSearch(val){
+      console.log(val)
+      this.$refs.webmap.LYsearch(val);
     }
   },
 
@@ -317,7 +336,7 @@ body {
   left: 3%;
   position: absolute;
   text-align: center;
-  top: 3%;
+  top: 5%;
   padding: 2%;
   transition: all 0.5s;
   z-index: 4;
@@ -326,6 +345,14 @@ body {
   opacity: 0.9;
   border-radius: 10px;
   /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
+}
+
+.layout .top0 {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  transition: all 0.5s;
+  z-index: 4;
 }
 
 #bottomly {
@@ -604,4 +631,63 @@ body {
   border-radius: 20px;
   padding: 2%;
 }
+
+.van-icon-arrow-left::before {
+    content: "\F008";
+    color: black;
+    font-size: 30px;
+}
+
+.van-nav-bar__text{
+  font-size:28px;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:36px;
+}
+
+.van-nav-bar{
+  height: 60px;
+}
+
+.van-nav-bar__title{
+  height: 45px;
+  padding: 2%;
+}
+.van-field__left-icon {
+  font-size: 30px;
+}
+.van-field__control {
+  font-size: 22px;
+}
+
+.van-icon-search::before {
+    content: "\F0AF";
+    font-size: 30px;
+    color: black;
+}
+
+.nullimg {
+  width: 50%;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 50% 50%;
+  position: absolute !important;
+  left: 55%;
+  top: 45%;
+  transform: translateY(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  display: block;
+  width: 395px;
+  font-size: 30px;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(187, 187, 187, 1);
+}
+
 </style>
+
