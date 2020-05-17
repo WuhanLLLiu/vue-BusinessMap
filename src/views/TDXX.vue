@@ -2,14 +2,7 @@
   <div id="TDXX" class="layout">
 
     <div class='top0'>
-        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft"> 
-          <template #title>
-            <van-search v-model="searchtext" placeholder="请输入搜索关键词" @search="onSearch" />
-          </template>
-        </van-nav-bar>
-    </div>
-
-    <div class="dropmenu">
+      <van-search v-model="searchtext" background="#355bfa" shape="round" placeholder="请输入搜索关键词" @search="onSearch" />
       <van-dropdown-menu :overlay="false">
         <van-dropdown-item v-model="value1" :options="option1" @change="func" />
         <van-dropdown-item v-model="value2" :options="option2" @change="func" />
@@ -618,15 +611,9 @@ body {
   top: 0%;
   transition: all 0.5s;
   z-index: 4;
+  background: #355bfa;
 }
 
-.layout .dropmenu{
-  top: 4%;
-  position: absolute;
-  width: 100%;
-  transition: all 0.5s;
-  z-index: 4;
-}
 </style>
 
 <style>
@@ -668,22 +655,6 @@ body {
     font-size: 30px;
 }
 
-.van-nav-bar__text{
-  font-size:28px;
-  font-family:PingFang SC;
-  font-weight:400;
-  color:rgba(51,51,51,1);
-  line-height:36px;
-}
-
-.van-nav-bar{
-  height: 60px;
-}
-
-.van-nav-bar__title{
-  height: 45px;
-  padding: 2%;
-}
 .van-field__left-icon {
   font-size: 30px;
 }
@@ -693,7 +664,23 @@ body {
 
 .van-icon-search::before {
     content: "\F0AF";
-    font-size: 30px;
+    font-size: 40px;
     color: black;
+}
+
+.van-search{
+  padding: 2%;
+}
+
+.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
+    border-width: 0px 0;
+}
+
+.van-cell {
+    line-height: 50px;
+}
+
+input[type="search" i] {
+  font-size: 30px;
 }
 </style>

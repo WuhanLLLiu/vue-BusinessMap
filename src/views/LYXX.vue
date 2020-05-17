@@ -7,11 +7,12 @@
     <mapChoose></mapChoose>
 
     <div class='top0'>
-        <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft"  @click-right="onClickRight"> 
-          <template #title>
-            <van-search v-model="searchtext" placeholder="请输入搜索关键词" @search="onSearch" />
-          </template>
-        </van-nav-bar>
+      <van-search v-model="searchtext" background="#355bfa" shape="round" placeholder="请输入搜索关键词" @search="onSearch" />
+      <van-dropdown-menu :overlay="false">
+        <van-dropdown-item v-model="value1" :options="option1" @change="func" />
+        <van-dropdown-item v-model="value2" :options="option2" @change="func" />
+        <van-dropdown-item v-model="value3" :options="option3" @change="func" />
+      </van-dropdown-menu>
     </div>
 
     <div class="top">
@@ -170,11 +171,47 @@ export default {
       img2: "",
       img3: "",
       imglist: [],
-      searchtext:''
+      searchtext:'',
+      value1: 0,
+      value2: 0,
+      value3: 0,
+      option1: [
+        { text: "街道", value: 0 },
+        { text: "江堤街", value: 1 },
+        { text: "永丰街", value: 2 },
+        { text: "洲头街", value: 3 },
+        { text: "建桥街", value: 4 },
+        { text: "四新街", value: 5 },
+        { text: "晴川街", value: 6 },
+        { text: "五里墩街", value: 7 },
+        { text: "琴断口街", value: 8 }
+      ],
+      option2: [
+        { text: "用地类型", value: 0 },
+        { text: "城中村", value: 1 },
+        { text: "混合用地", value: 2 },
+        { text: "商服用地", value: 3 },
+        { text: "居住用地", value: 4 },
+        { text: "工业用地", value: 5 },
+        { text: "医疗用地", value: 6 }
+      ],
+      option3: [
+        { text: "开发程度", value: 0 },
+        { text: "城中村用地", value: 1 },
+        { text: "已进入挂牌程序", value: 2 },
+        { text: "已办储备证", value: 3 },
+        { text: "已到征收收尾阶段", value: 4 }
+      ]
     };
   },
 
   methods: {
+    func() {
+      var value1 = this.value1;
+      var value2 = this.value2;
+      var value3 = this.value3;
+      // this.$refs.webmap.TDfilter(value1, value2, value3);
+    },
     onClickLeft() {
       history.back();
     },
@@ -336,7 +373,7 @@ body {
   left: 3%;
   position: absolute;
   text-align: center;
-  top: 5%;
+  top: 15%;
   padding: 2%;
   transition: all 0.5s;
   z-index: 4;
@@ -611,6 +648,54 @@ body {
   color: rgba(51, 51, 51, 1);
 }
 
+.van-dropdown-menu {
+  /* font-size: 15px; */
+  font-size: 0.9em;
+  font: bolder;
+  height: 20%;
+  background: #355bfa;
+}
+.van-dropdown-menu >>> .van-hairline--top-bottom {
+  margin: 0%;
+  border: 0;
+}
+.van-dropdown-menu >>> .van-dropdown-menu__title {
+  /* font-size: 34px; */
+  font-size: 0.9em;
+  /* font-weight: bold; */
+  font-family: "Microsoft YaHei";
+  color: #fff;
+}
+.van-dropdown-menu >>> .van-dropdown-menu__title::after {
+  border: 5px solid;
+  right: -20px;
+  border-color: transparent transparent currentColor currentColor;
+}
+
+.van-dropdown-menu >>> .van-dropdown-menu__item {
+  padding: 25px;
+  height: 20px;
+  font-family: PingFang SC;
+  font-weight: light;
+  color: rgba(255, 255, 255, 1);
+}
+.van-dropdown-menu >>> .van-ellipsis {
+  height: 25px;
+  padding-top: 10%;
+}
+.van-dropdown-menu >>> .van-dropdown-item__option {
+  /* font-size: 35px; */
+  font-size: 0.9em;
+  font-family: "Microsoft YaHei";
+  /* font-weight: 600; */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-left: 5%;
+  padding-bottom: 20px;
+}
+.van-dropdown-menu >>> .van-dropdown-item__option:not(:last-child)::after {
+  border-bottom: 8px solid #ebedf0;
+}
 </style>
 
 <style>
@@ -638,22 +723,6 @@ body {
     font-size: 30px;
 }
 
-.van-nav-bar__text{
-  font-size:28px;
-  font-family:PingFang SC;
-  font-weight:400;
-  color:rgba(51,51,51,1);
-  line-height:36px;
-}
-
-.van-nav-bar{
-  height: 60px;
-}
-
-.van-nav-bar__title{
-  height: 45px;
-  padding: 2%;
-}
 .van-field__left-icon {
   font-size: 30px;
 }
@@ -663,8 +732,24 @@ body {
 
 .van-icon-search::before {
     content: "\F0AF";
-    font-size: 30px;
+    font-size: 40px;
     color: black;
+}
+
+.van-search{
+  padding: 2%;
+}
+
+.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
+    border-width: 0px 0;
+}
+
+.van-cell {
+    line-height: 50px;
+}
+
+input[type="search" i] {
+  font-size: 30px;
 }
 
 .nullimg {
