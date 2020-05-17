@@ -8,16 +8,16 @@
     <el-divider class="el-divider1"></el-divider>
 
     <div id="Selfform">
-      <img src="./../assets/zstj/IMG_00001.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00002.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00003.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00004.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00005.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00006.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00007.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00008.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00009.jpeg" id="hj" />
-	  <img src="./../assets/zstj/IMG_00010.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00001.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00002.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00003.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00004.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00005.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00006.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00007.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00008.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00009.jpeg" id="hj" />
+        <img src="./../assets/zstj/IMG_00010.jpeg" id="hj" />
     </div>
   </div>
 </template>

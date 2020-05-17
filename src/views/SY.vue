@@ -13,7 +13,7 @@
     </div>
     <div id="buildings0">
       <img id="building" src="./../assets/招商政策.png" width="30%" @click="RouteZSZC" />
-      <img id="building" src="./../assets/招商指南.png" width="30%" @click="RouteZSTJ" />
+      <img id="building" src="./../assets/招商推介.png" width="30%" @click="RouteZSTJ" />
       <img id="building" src="./../assets/重点产业.png" width="30%" @click="RouteZDCY" />
     </div>
 
