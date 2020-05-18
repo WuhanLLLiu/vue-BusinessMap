@@ -28,6 +28,7 @@ export default {
     //这里存放数据
     return {
       TDitem: [],
+      LYitem: [],
       LYid: 0,
       TDid: 0,
       imglist: []
@@ -323,7 +324,7 @@ export default {
     TDfilter(value1, value2, value3) {
       var that = this;
       var v1 = String(value1);
-      var v2 = String(value2);
+      var v2 = value2;
       var v3 = String(value3);
       Vue.mapInstance
         .getLayer("v1")
@@ -347,7 +348,7 @@ export default {
             that.TDitem = [];
             Vue.mapInstance
               .getLayer("v1")
-              .filter(["==", "dev_degree", v3])
+              .filter(["==", "use", v3])
               .forEach(function(feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
@@ -359,7 +360,7 @@ export default {
             that.TDitem = [];
             Vue.mapInstance
               .getLayer("v1")
-              .filter(["==", "use", v2])
+              .filter(["==", "area1", v2])
               .forEach(function(feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
@@ -369,9 +370,9 @@ export default {
             that.TDitem = [];
             Vue.mapInstance
               .getLayer("v1")
-              .filter(["==", "use", v2])
+              .filter(["==", "area1", v2])
               .forEach(function(feature) {
-                if (feature.properties.dev_degree == v3) {
+                if (feature.properties.use == v3) {
                   feature.show();
                   that.TDitem.push(feature.properties);
                 }
@@ -397,7 +398,7 @@ export default {
               .getLayer("v1")
               .filter(["==", "street", v1])
               .forEach(function(feature) {
-                if (feature.properties.dev_degree == v3) {
+                if (feature.properties.use == v3) {
                   feature.show();
                   that.TDitem.push(feature.properties);
                 }
@@ -411,7 +412,7 @@ export default {
               .getLayer("v1")
               .filter(["==", "street", v1])
               .forEach(function(feature) {
-                if (feature.properties.use == v2) {
+                if (feature.properties.area1 == v2) {
                   feature.show();
                   that.TDitem.push(feature.properties);
                 }
@@ -423,13 +424,128 @@ export default {
               .getLayer("v1")
               .filter(["==", "street", v1])
               .forEach(function(feature) {
-                if (feature.properties.use == v2)
-                  if (feature.properties.dev_degree == v3) {
+                if (feature.properties.area1 == v2)
+                  if (feature.properties.use == v3) {
                     feature.show();
                     that.TDitem.push(feature.properties);
                   }
               });
             that.$emit("changeCard", that.TDitem);
+          }
+        }
+      }
+    },
+    //根据属性筛选楼宇
+    LYfilter(value1, value2, value3) {
+      var that = this;
+      var v1 = value1;
+      var v2 = value2;
+      var v3 = value3;
+      Vue.mapInstance
+        .getLayer("ly")
+        .filter(["!=", "id", null])
+        .forEach(function(feature) {
+          feature.hide();
+        });
+      if (v1 == "0") {
+        if (v2 == "0") {
+          if (v3 == "0") {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["!=", "id", null])
+              .forEach(function(feature) {
+                feature.show();
+                that.LYitem.push(feature.properties);
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          } else {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "vacant1", v3])
+              .forEach(function(feature) {
+                feature.show();
+                that.LYitem.push(feature.properties);
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          }
+        } else {
+          if (v3 == "0") {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "volume1", v2])
+              .forEach(function(feature) {
+                feature.show();
+                that.LYitem.push(feature.properties);
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          } else {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "volume1", v2])
+              .forEach(function(feature) {
+                if (feature.properties.vacant1 == v3) {
+                  feature.show();
+                  that.LYitem.push(feature.properties);
+                }
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          }
+        }
+      } else {
+        if (v2 == "0") {
+          if (v3 == "0") {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "street1", v1])
+              .forEach(function(feature) {
+                feature.show();
+                that.LYitem.push(feature.properties);
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          } else {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "street1", v1])
+              .forEach(function(feature) {
+                if (feature.properties.vacant1 == v3) {
+                  feature.show();
+                  that.LYitem.push(feature.properties);
+                }
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          }
+        } else {
+          if (v3 == "0") {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "street1", v1])
+              .forEach(function(feature) {
+                if (feature.properties.volume1 == v2) {
+                  feature.show();
+                  that.LYitem.push(feature.properties);
+                }
+              });
+            that.$emit("changeLYCard", that.LYitem);
+          } else {
+            that.LYitem = [];
+            Vue.mapInstance
+              .getLayer("ly")
+              .filter(["==", "street1", v1])
+              .forEach(function(feature) {
+                if (feature.properties.volume1 == v2)
+                  if (feature.properties.vacant1 == v3) {
+                    feature.show();
+                    that.LYitem.push(feature.properties);
+                  }
+              });
+            that.$emit("changeLYCard", that.LYitem);
           }
         }
       }
@@ -595,7 +711,7 @@ export default {
       })
     },
     //搜索楼宇
-    LYsearch(val){s
+    LYsearch(val){
       var that = this
       Vue.mapInstance.getLayer("ly").filter(["!=", "id", null])
       .forEach(function(feature) {

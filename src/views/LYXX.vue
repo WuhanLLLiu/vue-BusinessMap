@@ -1,7 +1,7 @@
 <template>
   <div id="LYXX" class="layout">
     <div class="map">
-      <webmap ref="webmap" @changeLYid="updateLYid" @changeimgList="updateimgList"></webmap>
+      <webmap ref="webmap" @changeLYid="updateLYid" @changeimgList="updateimgList" @changeLYCard="updateCard"></webmap>
     </div>
 
     <mapChoose></mapChoose>
@@ -184,23 +184,25 @@ export default {
         { text: "四新街", value: 5 },
         { text: "晴川街", value: 6 },
         { text: "五里墩街", value: 7 },
-        { text: "琴断口街", value: 8 }
+        { text: "琴断口街", value: 8 },
+        { text: "江汉二桥街", value: 9 }
       ],
       option2: [
-        { text: "用地类型", value: 0 },
-        { text: "城中村", value: 1 },
-        { text: "混合用地", value: 2 },
-        { text: "商服用地", value: 3 },
-        { text: "居住用地", value: 4 },
-        { text: "工业用地", value: 5 },
-        { text: "医疗用地", value: 6 }
+        { text: "建筑体量", value: 0 },
+        { text: "小于20000平米", value: 1 },
+        { text: "20000-30000平米", value: 2 },
+        { text: "30000-40000平米", value: 3 },
+        { text: "40000-50000平米", value: 4 },
+        { text: "50000-100000平米", value: 5 },
+        { text: "100000平米以上", value: 6 }
       ],
       option3: [
-        { text: "开发程度", value: 0 },
-        { text: "城中村用地", value: 1 },
-        { text: "已进入挂牌程序", value: 2 },
-        { text: "已办储备证", value: 3 },
-        { text: "已到征收收尾阶段", value: 4 }
+        { text: "空置面积", value: 0 },
+        { text: "小于1000平米", value: 1 },
+        { text: "1000-5000平米", value: 2 },
+        { text: "5000-10000平米", value: 3 },
+        { text: "10000-50000平米", value: 4 },
+        { text: "50000平米以上", value: 5 },
       ]
     };
   },
@@ -210,13 +212,16 @@ export default {
       var value1 = this.value1;
       var value2 = this.value2;
       var value3 = this.value3;
-      // this.$refs.webmap.TDfilter(value1, value2, value3);
+      this.$refs.webmap.LYfilter(value1, value2, value3);
     },
     onClickLeft() {
       history.back();
     },
     onClickRight(){
       console.log('search')
+    },
+    updateCard(value) {
+      this.viewArr = value;
     },
     hide() {
       document.getElementById("bottomly").style.display = "none";
@@ -376,7 +381,7 @@ body {
   top: 15%;
   padding: 2%;
   transition: all 0.5s;
-  z-index: 4;
+  z-index: 3;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   opacity: 0.9;

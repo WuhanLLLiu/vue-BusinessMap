@@ -144,6 +144,13 @@ export default {
         { text: "琴断口街", value: 8 }
       ],
       option2: [
+        { text: "面积", value: 0 },
+        { text: "小于50亩", value: 1 },
+        { text: "50-100亩", value: 2 },
+        { text: "100-200亩", value: 3 },
+        { text: "大于200亩", value: 4 },
+      ],
+      option3: [
         { text: "用地类型", value: 0 },
         { text: "城中村", value: 1 },
         { text: "混合用地", value: 2 },
@@ -151,13 +158,6 @@ export default {
         { text: "居住用地", value: 4 },
         { text: "工业用地", value: 5 },
         { text: "医疗用地", value: 6 }
-      ],
-      option3: [
-        { text: "开发程度", value: 0 },
-        { text: "城中村用地", value: 1 },
-        { text: "已进入挂牌程序", value: 2 },
-        { text: "已办储备证", value: 3 },
-        { text: "已到征收收尾阶段", value: 4 }
       ]
     };
   },
