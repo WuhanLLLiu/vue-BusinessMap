@@ -1,8 +1,13 @@
 <template>
   <div id="TDXX" class="layout">
-
-    <div class='top0'>
-      <van-search v-model="searchtext" background="#355bfa" shape="round" placeholder="请输入搜索关键词" @search="onSearch" />
+    <div class="top0">
+      <van-search
+        v-model="searchtext"
+        background="#355bfa"
+        shape="round"
+        placeholder="请输入搜索关键词"
+        @search="onSearch"
+      />
       <van-dropdown-menu :overlay="false">
         <van-dropdown-item v-model="value1" :options="option1" @change="func" />
         <van-dropdown-item v-model="value2" :options="option2" @change="func" />
@@ -48,9 +53,9 @@
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
-          <img id="imgdk1" src class="pic"  />
+          <img id="imgdk1" src class="pic" />
           <img id="imgdk2" src class="pic" />
-          <img id="imgdk3" src class="pic"  />
+          <img id="imgdk3" src class="pic" />
         </el-row>
       </div>
     </div>
@@ -75,7 +80,12 @@
             <p>数据未获取，请重新选择...</p>
           </div>
 
-          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index" @click="TDChoose(item.Id)">
+          <div
+            class="meg"
+            v-for="(item,index) in viewArr"
+            v-bind:key="index"
+            @click="TDChoose(item.Id)"
+          >
             <el-card class="box-card">
               <el-row id="row1">
                 <span>{{item.name}}</span>
@@ -128,7 +138,7 @@ export default {
       img1: "",
       img2: "",
       img3: "",
-      searchtext:'',
+      searchtext: "",
       value1: 0,
       value2: 0,
       value3: 0,
@@ -148,7 +158,7 @@ export default {
         { text: "小于50亩", value: 1 },
         { text: "50-100亩", value: 2 },
         { text: "100-200亩", value: 3 },
-        { text: "大于200亩", value: 4 },
+        { text: "大于200亩", value: 4 }
       ],
       option3: [
         { text: "用地类型", value: 0 },
@@ -246,12 +256,12 @@ export default {
     Vector_map() {
       this.$refs.webmap.Vector_map();
     },
-    TDChoose(id){
+    TDChoose(id) {
       this.$refs.webmap.TDchoose(id);
-      this.drawer = false
+      this.drawer = false;
     },
-    onSearch(val){
-      console.log(val)
+    onSearch(val) {
+      console.log(val);
       this.$refs.webmap.TDsearch(val);
     }
   },
@@ -613,7 +623,6 @@ body {
   z-index: 4;
   background: #355bfa;
 }
-
 </style>
 
 <style>
@@ -650,9 +659,9 @@ body {
 }
 
 .van-icon-arrow-left::before {
-    content: "\F008";
-    color: black;
-    font-size: 30px;
+  content: "\F008";
+  color: black;
+  font-size: 30px;
 }
 
 .van-field__left-icon {
@@ -663,21 +672,22 @@ body {
 }
 
 .van-icon-search::before {
-    content: "\F0AF";
-    font-size: 40px;
-    color: black;
+  content: "\F0AF";
+  font-size: 40px;
+  color: black;
 }
 
-.van-search{
+.van-search {
   padding: 2%;
 }
 
-.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
-    border-width: 0px 0;
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after {
+  border-width: 0px 0;
 }
 
 .van-cell {
-    line-height: 50px;
+  line-height: 50px;
 }
 
 input[type="search" i] {

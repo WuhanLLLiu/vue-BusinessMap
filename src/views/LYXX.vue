@@ -1,13 +1,24 @@
 <template>
   <div id="LYXX" class="layout">
     <div class="map">
-      <webmap ref="webmap" @changeLYid="updateLYid" @changeimgList="updateimgList" @changeLYCard="updateCard"></webmap>
+      <webmap
+        ref="webmap"
+        @changeLYid="updateLYid"
+        @changeimgList="updateimgList"
+        @changeLYCard="updateCard"
+      ></webmap>
     </div>
 
     <mapChoose></mapChoose>
 
-    <div class='top0'>
-      <van-search v-model="searchtext" background="#355bfa" shape="round" placeholder="请输入搜索关键词" @search="onSearch" />
+    <div class="top0">
+      <van-search
+        v-model="searchtext"
+        background="#355bfa"
+        shape="round"
+        placeholder="请输入搜索关键词"
+        @search="onSearch"
+      />
       <van-dropdown-menu :overlay="false">
         <van-dropdown-item v-model="value1" :options="option1" @change="func" />
         <van-dropdown-item v-model="value2" :options="option2" @change="func" />
@@ -114,7 +125,12 @@
             <p>数据未获取，请重新选择...</p>
           </div>
 
-          <div class="meg" v-for="(item,index) in viewArr" v-bind:key="index" @click="LYChoose(item.id)">
+          <div
+            class="meg"
+            v-for="(item,index) in viewArr"
+            v-bind:key="index"
+            @click="LYChoose(item.id)"
+          >
             <el-card class="box-card">
               <el-row id="row6">
                 <span>{{item.name}}</span>
@@ -171,7 +187,7 @@ export default {
       img2: "",
       img3: "",
       imglist: [],
-      searchtext:'',
+      searchtext: "",
       value1: 0,
       value2: 0,
       value3: 0,
@@ -202,7 +218,7 @@ export default {
         { text: "1000-5000平米", value: 2 },
         { text: "5000-10000平米", value: 3 },
         { text: "10000-50000平米", value: 4 },
-        { text: "50000平米以上", value: 5 },
+        { text: "50000平米以上", value: 5 }
       ]
     };
   },
@@ -217,8 +233,8 @@ export default {
     onClickLeft() {
       history.back();
     },
-    onClickRight(){
-      console.log('search')
+    onClickRight() {
+      console.log("search");
     },
     updateCard(value) {
       this.viewArr = value;
@@ -238,7 +254,7 @@ export default {
     PICAlert() {
       var that = this;
       var url = "http://121.196.60.135:1338/bms/" + that.LYid;
-      console.log(url)
+      console.log(url);
       that.imglist = [];
       fetch(url)
         .then(result => result.json())
@@ -325,12 +341,12 @@ export default {
     updateimgList(value) {
       this.imglist = value;
     },
-    LYChoose(id){
+    LYChoose(id) {
       this.$refs.webmap.LYchoose(id);
-      this.drawer = false
+      this.drawer = false;
     },
-    onSearch(val){
-      console.log(val)
+    onSearch(val) {
+      console.log(val);
       this.$refs.webmap.LYsearch(val);
     }
   },
@@ -723,9 +739,9 @@ body {
 }
 
 .van-icon-arrow-left::before {
-    content: "\F008";
-    color: black;
-    font-size: 30px;
+  content: "\F008";
+  color: black;
+  font-size: 30px;
 }
 
 .van-field__left-icon {
@@ -736,21 +752,22 @@ body {
 }
 
 .van-icon-search::before {
-    content: "\F0AF";
-    font-size: 40px;
-    color: black;
+  content: "\F0AF";
+  font-size: 40px;
+  color: black;
 }
 
-.van-search{
+.van-search {
   padding: 2%;
 }
 
-.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
-    border-width: 0px 0;
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after {
+  border-width: 0px 0;
 }
 
 .van-cell {
-    line-height: 50px;
+  line-height: 50px;
 }
 
 input[type="search" i] {
@@ -778,6 +795,5 @@ input[type="search" i] {
   font-weight: bold;
   color: rgba(187, 187, 187, 1);
 }
-
 </style>
 
