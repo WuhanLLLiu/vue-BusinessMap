@@ -7,7 +7,7 @@
     <el-divider class="el-divider1"></el-divider> -->
 
     <div id='Selfform'>
-         <img src="./../assets/服务指引.png" id='hj'/>
+      <img src="../assets/服务指引.png" id='hj'/>
     </div>
   </div>
 </template>
