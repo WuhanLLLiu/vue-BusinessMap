@@ -7,7 +7,12 @@
         shape="round"
         placeholder="请输入搜索关键词"
         @search="onSearch"
-      />
+        left-icon = none
+      >
+        <template #right-icon>
+          <van-icon name="search" @click="onSearch2"/>
+        </template>
+      </van-search>
       <van-dropdown-menu :overlay="false">
         <van-dropdown-item v-model="value1" :options="option1" @change="func" />
         <van-dropdown-item v-model="value2" :options="option2" @change="func" />
@@ -263,6 +268,10 @@ export default {
     onSearch(val) {
       console.log(val);
       this.$refs.webmap.TDsearch(val);
+    },
+    onSearch2(){
+      var that =this
+      this.$refs.webmap.TDsearch(that.searchtext);
     }
   },
 
