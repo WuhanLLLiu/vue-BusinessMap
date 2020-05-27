@@ -1,6 +1,6 @@
 <template>
   <div id="GMZXQJ" class="layout">
-    <iframe src ="https://720yun.com/t/61vkswfwzp7?scene_id=46816719" scrolling='yes' height='449px'  width='306px'>
+    <iframe src ="https://720yun.com/t/61vkswfwzp7?scene_id=46816719" scrolling='yes' height='449px' id='qj'>
     <p>Your browser does not support iframes.</p>
     </iframe>
   </div>
@@ -37,4 +37,8 @@
     padding: 0;
     list-style: none;
   }
+#qj{
+  /*height: auto; */
+  max-width: 100%;
+}
 </style>
