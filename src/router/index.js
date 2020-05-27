@@ -307,6 +307,14 @@ const router = new Router({
                 title: "服务指引"
              }
         },
+        {
+            path: "/GMZXQJ",
+            component: () => import("../views/GMZXQJ"),
+            meta: {
+                keepAlive: true,
+                title: "光明中心"
+             }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
