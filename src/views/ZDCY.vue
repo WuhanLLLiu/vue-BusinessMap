@@ -18,6 +18,11 @@
     <el-row class="row">
         <img id="img" src="./../assets/金融产业.png" @click="RouteJRCY"/>
     </el-row>
+    <el-row class="row">
+      <a href="http://hyrd.yeee.me/weixin/news/yryt">        
+        <img id="img" src="./../assets/重点企业.png" />
+      </a>
+    </el-row>
   </div>
 </template>
 
