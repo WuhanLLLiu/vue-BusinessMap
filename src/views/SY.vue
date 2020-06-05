@@ -10,7 +10,7 @@
         </el-header>
         <el-main>
             <el-row type="flex" justify="center" class="logo">
-                <el-col :span="28">
+                <el-col :span="24">
                     <el-image style="width: 100%; height: 100%" :src="logo" fit="fill"></el-image>
                 </el-col>
             </el-row>
@@ -174,7 +174,7 @@
         color: white;
         text-shadow: 5px 2px 10px #000;
         /* 垂直居中 */
-        /* align-items: center;  */
+        align-items: center; 
     }
 
     .bg {
