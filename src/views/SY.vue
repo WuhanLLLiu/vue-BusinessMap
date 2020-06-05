@@ -1,12 +1,11 @@
 <template>
   <div id="SY" class="layout">
-
     <div class="logo">
       <img id="logo" src="./../assets/logo.png" width="40%" />
     </div>
 
-    <img src="./../assets/新手引导.png" width="8%" id='icon1' @click="RouteFWZY"/>
-    <img src="./../assets/欢迎页.png" width="8%" id="icon2" @click="RouteHYC"/>
+    <img src="./../assets/新手引导.png" width="8%" id="icon1" @click="RouteFWZY" />
+    <img src="./../assets/欢迎页.png" width="8%" id="icon2" @click="RouteHYC" />
 
     <div id="buildings">
       <img id="building" src="./../assets/土地信息.png" width="30%" @click="RouteDT" />
@@ -18,14 +17,11 @@
       <img id="building" src="./../assets/重点产业.png" width="30%" @click="RouteZDCY" />
     </div>
 
-    <div class="bottom-footer">
-      版权所有©汉阳区商务局&nbsp;&nbsp;&nbsp;技术支持:武汉大学测绘学院
-    </div>
+    <div class="bottom-footer">版权所有©汉阳区商务局&nbsp;&nbsp;&nbsp;技术支持:武汉大学测绘学院</div>
   </div>
 </template>
 
 <script>
-
 import Vue from "vue";
 
 // 微信分享拦截，转用SDK指定分享信息
@@ -78,33 +74,32 @@ export default {
     },
     RouteFWZY() {
       this.$router.push({ path: "/FWZY" });
-    },
+    }
   },
 
   mounted() {
-//     //增加统计图表
-//     //增加微信分享页面信息
-//     wx.config({    
-// 　　  debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。　　
-// 　　  appId: '', // 必填，公众号的唯一标    
-// 　　  timestamp: , // 必填，生成签名的时间戳
-// 　　  nonceStr: '', // 必填，生成签名的随机串
-// 　　  signature: '',// 必填，签名
-// 　　  jsApiList: [] // 必填，需要使用的JS接口列表
-//     });
-//     wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-// 		    wx.updateAppMessageShareData({ 
-// 		　　　　title: '', // 分享标题
-// 		　　　　desc: '', // 分享描述
-// 		　　　　link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-// 		　　　　imgUrl: '', // 分享图标
-// 		       success: function () {          
-//               // 设置成功
-//               }
-//       });
-//     });
-  }
-
+  //增加统计图表
+  //增加微信分享页面信息
+  // wx.config({
+  //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+  //   appId: '', // 必填，公众号的唯一标
+  //   timestamp: , // 必填，生成签名的时间戳
+  //   nonceStr: '', // 必填，生成签名的随机串
+  //   signature: '',// 必填，签名
+  //   jsApiList: [] // 必填，需要使用的JS接口列表
+  // });
+  // wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+  //   wx.updateAppMessageShareData({
+  //   title: '', // 分享标题
+  //   desc: '', // 分享描述
+  //   link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+  //   imgUrl: '', // 分享图标
+  //   success: function () {
+  //     // 设置成功
+  //   }
+  //   });
+  // });
+}
 };
 </script>
 
@@ -270,7 +265,7 @@ body {
   transition: all 0.5s;
   z-index: 4;
   opacity: 100%;
-  text-shadow:5px 2px 10px #000
+  text-shadow: 5px 2px 10px #000;
 }
 
 .map {
@@ -356,8 +351,8 @@ body {
 #building {
   padding: 1.5%;
 }
-#icon1{
-  background-color:transparent;
+#icon1 {
+  background-color: transparent;
   color: white;
   padding-right: 2%;
   /* font-size: 2em; */
@@ -372,8 +367,8 @@ body {
   -o-transform: translate(-50%, -50%); */
   display: block;
 }
-#icon2{
-  background-color:transparent;
+#icon2 {
+  background-color: transparent;
   color: white;
   padding-right: 2%;
   /* font-size: 2em; */
