@@ -13,7 +13,7 @@ const router = new Router({
             path:"/ZSTJ2",
             component: () => import("../views/ZSTJ2"),
             meta: {
-                keepAlive: false,
+                keepAlive: true,
                 title: "招商推介"
             }
         },
@@ -29,7 +29,7 @@ const router = new Router({
             path: "/TDXX",
             component: () => import("../views/TDXX"),
             meta: {
-                keepAlive: false,
+                keepAlive: true,
                 title: "土地信息"
             }
         },
@@ -37,7 +37,7 @@ const router = new Router({
             path: "/LYXX",
             component: () => import("../views/LYXX"),
             meta: {
-                keepAlive: false,
+                keepAlive: true,
                 title: "楼宇信息"
             }
         },

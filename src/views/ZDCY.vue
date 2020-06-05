@@ -113,39 +113,3 @@
         }
     };
 </script>
-
-<!-- 限定局部有效的样式 -->
-<style scoped="scoped">
-    .details {
-        font-size: 13px;
-        color: #999;
-    }
-    .title {
-        font-size: 32px;
-        font-weight: bold;
-        color: #333;
-        /*line-height: 20px;*/
-        /*padding-bottom: 20px;*/
-    }
-    .bottom {
-        margin-top: 30px;
-        line-height: 12px;
-    }
-    #img {
-        display: inline-block;
-        height: auto;
-        max-width: 100%;
-    }
-    .row {
-        padding: 3% 4% 2%;
-    }
-    .clearfix:after,
-    .clearfix:before {
-        display: table;
-        content: "";
-    }
-
-    .clearfix:after {
-        clear: both;
-    }
-</style>
