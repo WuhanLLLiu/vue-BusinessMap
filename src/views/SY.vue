@@ -2,10 +2,20 @@
     <el-container direction='vertical' class="bg">
         <el-header type="flex" justify="end">
             <el-col :span="3">
-                <el-image style="width:30px; height:34px" :src="images[5]" fit="fill" @click="RouteFWZY"></el-image>
+                <el-image
+                    style="width:28px; height:32px"
+                    :src="images[5]"
+                    fit="fill"
+                    @click="RouteFWZY"></el-image>
+                <span>服务指引</span>
             </el-col>
             <el-col :span="3">
-                <el-image style="width:30px; height:34px" :src="images[6]" fit="fill" @click="RouteHYC"></el-image>
+                <el-image
+                    style="width:28px; height:32px"
+                    :src="images[6]"
+                    fit="fill"
+                    @click="RouteHYC"></el-image>
+                <span>欢迎辞</span>
             </el-col>
         </el-header>
         <el-main>
@@ -55,7 +65,10 @@
             </el-row>
         </el-main>
         <el-footer class="text">
-            {{footerText}}
+            <span style="padding-right:15px;">{{copyrightText}}
+            </span>
+            <span>{{supportText}}
+            </span>
         </el-footer>
     </el-container>
 </template>
@@ -75,10 +88,10 @@
             return {
                 logo: 'http://www.hyzsydt.top/cdn/ui/logo.png',
                 images: [
-                    'http://www.hyzsydt.top/cdn/ui/土地信息.png', 
-                    'http://www.hyzsydt.top/cdn/ui/楼宇信息.png', 
-                    'http://www.hyzsydt.top/cdn/ui/招商政策.png', 
-                    'http://www.hyzsydt.top/cdn/ui/招商推介.png', 
+                    'http://www.hyzsydt.top/cdn/ui/土地信息.png',
+                    'http://www.hyzsydt.top/cdn/ui/楼宇信息.png',
+                    'http://www.hyzsydt.top/cdn/ui/招商政策.png',
+                    'http://www.hyzsydt.top/cdn/ui/招商推介.png',
                     'http://www.hyzsydt.top/cdn/ui/重点产业.png',
                     'http://www.hyzsydt.top/cdn/ui/新手引导.png',
                     'http://www.hyzsydt.top/cdn/ui/欢迎页.png'
@@ -89,7 +102,8 @@
                     confirm: 17,
                     new: 0
                 },
-                footerText: '版权所有©汉阳区商务局   技术支持:武汉大学测绘学院',
+                copyrightText: '版权所有©汉阳区商务局',
+                supportText: '技术支持:武汉大学测绘学院',
                 outerVisible: false,
                 innerVisible_0: false,
                 innerVisible_1: false,
@@ -148,13 +162,24 @@
         overflow: hidden;
     }
 
-    .el-header{
-      float: right;
-      padding: 2vw;
-      display: flex;
-      justify-content: end;
-      text-align: center;
-      flex-direction: row-reverse;
+    .el-header {
+        float: right;
+        padding: 2vw;
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        flex-direction: row-reverse;
+    }
+
+    .el-header span {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 3vw;
+        color: white;
+        text-shadow: 5px 2px 10px #000;
+        /* 垂直居中 */
+        align-items: center;
     }
 
     .el-main {
@@ -169,12 +194,12 @@
     .text {
         display: flex;
         justify-content: center;
-        text-align: center;
+        text-align: left;
         font-size: 3.6vw;
         color: white;
         text-shadow: 5px 2px 10px #000;
         /* 垂直居中 */
-        align-items: center; 
+        align-items: center;
     }
 
     .bg {
