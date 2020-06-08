@@ -1,88 +1,72 @@
 <template>
-  <div id="ZSTJ2" class="layout">
-    <div id="row">
-      <p id="row1">武汉汉阳招商资源指南</p>
-      <!-- <p id="row2">来源：汉阳区商务局</p> -->
-    </div>
-
-    <el-divider class="el-divider1"></el-divider>
-
-    <div id="Selfform">
-        <img src="./../assets/zstj/IMG_00001.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00002.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00003.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00004.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00005.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00006.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00007.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00008.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00009.jpeg" id="hj" />
-        <img src="./../assets/zstj/IMG_00010.jpeg" id="hj" />
-    </div>
-  </div>
+    <van-tabs v-model="active" background="#355BFA" color="white">
+        <van-tab title="产业概况">
+            <img src="./../assets/zstj/IMG_00001.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00002.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00003.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00004.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00005.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00006.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00007.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00008.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00009.jpeg" id="hj"/>
+            <img src="./../assets/zstj/IMG_00010.jpeg" id="hj"/>
+        </van-tab>
+        <van-tab title="重点企业">
+            <iframe
+                src="http://hyrd.yeee.me/weixin/news/yryt"
+                width="100%"
+                :height="carouselHeight"
+                frameborder='0'
+                align='center'
+                allowfullscreen='true'
+                allow="autoplay"></iframe>
+        </van-tab>
+    </van-tabs>
 </template>
 
 <script>
-import Vue from "vue";
-export default {
-  name: "ZSTJ2",
+    import Vue from "vue";
+    export default {
+        name: "ZSTJ2",
 
-  components: {},
+        components: {},
 
-  data() {
-    return {};
-  },
+        data() {
+            return {active: 0};
+        },
 
-  beforeMount() {},
+        beforeMount() {
+            this.carouselHeight = (window.innerHeight) * 0.95 + 'px';
+        },
 
-  methods: {},
+        methods: {},
 
-  mounted() {
-    //增加统计图表
-  }
-};
+        mounted() {
+            //增加统计图表
+        }
+    };
 </script>
 
-<style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-#row {
-  padding: 4%;
-}
-#row1 {
-  padding: 1%;
-  font-size: 48px;
-  font-family: PingFang SC;
-  font-weight: 900;
-  color: rgba(51, 51, 51, 1);
-  line-height: 64px;
-}
+<style scoped="scoped">
+    #hj {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+    }
+</style>
 
-#row2 {
-  font-size: 35px;
-  font-family: PingFang SC;
-  font-weight: lighter;
-  color: rgba(51, 51, 51, 1);
-  opacity: 0.5;
-}
-#Selfform {
-  margin-top: 3%;
-  padding: 5%;
-  font-size: 36px;
-  line-height: 58px;
-  font-family: PingFang SC;
-}
-#title {
-  font-size: 41px;
-  font-weight: bolder;
-  font-family: PingFang SC;
-}
-#hj {
-  display: inline-block;
-  height: auto;
-  max-width: 100%;
-}
+<style>
+    .van-tabs--line .van-tabs__wrap {
+        height: 80px;
+    }
+    .van-tab__text {
+        position: relative;
+        color: #fff;
+        font-size: 34px;
+        align-items: center;
+    }
+    .van-tab {
+        padding-top: 2%;
+    }
 </style>

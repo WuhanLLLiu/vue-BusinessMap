@@ -175,7 +175,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        font-size: 3vw;
+        font-size: 2.8vw;
         color: white;
         text-shadow: 5px 2px 10px #000;
         /* 垂直居中 */
