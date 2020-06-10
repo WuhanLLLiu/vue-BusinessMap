@@ -14,7 +14,7 @@
         </van-tab>
         <van-tab title="重点企业">
             <iframe
-                src="http://hyrd.yeee.me/weixin/news/yryt"
+                src="http://hyrdwx.hanyang.gov.cn/weixin/news/yryq"
                 width="100%"
                 :height="carouselHeight"
                 frameborder='0'
