@@ -66,6 +66,8 @@
     color: #333;
     text-align: center;
     line-height: 120px;
+    font-size: 4vmin;
+    font-family: "PingFang SC", Arial, sans-serif;
   }
 
   p {
