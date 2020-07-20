@@ -298,6 +298,10 @@ export default {
                   param.target.properties.monthly_re;
                 document.getElementById("lywy").innerHTML =
                   param.target.properties.property_m;
+                document.getElementById("lcmj").innerHTML =
+                  param.target.properties.Standard_f;
+                document.getElementById("kzmj").innerHTML =
+                  param.target.properties.vacant_are;                
                 that.LYid = param.target.properties.id;
                 that.$emit("changeLYid", that.LYid);
 

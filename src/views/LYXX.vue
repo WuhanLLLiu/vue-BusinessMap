@@ -100,6 +100,14 @@
           <span id="rowly_41">物业管理费（元/平方米每月）</span>
           <span id="lywy">36</span>
         </el-row>
+        <el-row id="rowly_4">
+          <span id="rowly_41">标准层面积（平方米）</span>
+          <span id="lcmj">1512.08</span>
+        </el-row>
+        <el-row id="rowly_4">
+          <span id="rowly_41">空置面积（平方米）</span>
+          <span id="kzmj">9000</span>
+        </el-row>
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
