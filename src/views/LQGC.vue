@@ -1,7 +1,7 @@
 <template>
   <div id="LQGC">
     <van-tabs v-model="active" background="#355BFA" color="white">
-        <van-tab title="发展现状">
+        <van-tab title="发展规划">
           <!--<div id="row">
              <p id ='row1'>汉阳区工程设计产业发展现状</p>
           </div>
@@ -17,7 +17,7 @@
               <img src="http://121.196.60.135/cdn/路桥工程/汉阳区工程设计产业发展规划/汉阳区工程设计产业发展规划_05.jpg" id='hj'/>
           </div>           
         </van-tab>
-        <van-tab title="发展规划">
+        <van-tab title="相关政策">
           <!--<div id="row">
              <p id ='row1'>汉阳区工程设计产业发展规划</p>
           </div>
@@ -29,7 +29,7 @@
               <img src="http://121.196.60.135/cdn/路桥工程/工程设计建造类企业相关政策.jpg" id='hj'/>
           </div> 
         </van-tab>         
-        <van-tab title="相关政策">   
+        <van-tab title="发展现状">   
           <!--<div id="row">
              <p id ='row1'>工程设计建造类企业相关政策</p>
           </div>
