@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="bottom-footer" @click="drawer = true">
+    <div class="bottom-footer" @click="drawer = true;gettd" >
       <p class="el-icon-arrow-up">土地信息列表</p>
     </div>
 
@@ -272,20 +272,23 @@ export default {
     onSearch2(){
       var that =this
       this.$refs.webmap.TDsearch(that.searchtext);
+    },
+    gettd(){
+      fetch("http://121.196.60.135:1338/data/tdxx")
+        .then(result => result.json())
+        .then(result => {
+          var that = this;
+          var tdxx = JSON.parse(result.content);
+          for (var i = 0; i < tdxx.features.length; i++) {
+            that.viewArr.push(tdxx.features[i].properties);
+          }
+        });
+      this.$refs.webmap.HYparcel();
     }
   },
 
   mounted() {
-    fetch("http://121.196.60.135:1338/data/tdxx")
-      .then(result => result.json())
-      .then(result => {
-        var that = this;
-        var tdxx = JSON.parse(result.content);
-        for (var i = 0; i < tdxx.features.length; i++) {
-          that.viewArr.push(tdxx.features[i].properties);
-        }
-      });
-    this.$refs.webmap.HYparcel();
+    this.gettd()
   }
 };
 </script>
