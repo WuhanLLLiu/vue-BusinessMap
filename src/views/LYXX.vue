@@ -467,7 +467,7 @@ body {
   /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
 }
 #row2 {
-  opacity: 100%;
+  /*opacity: 100%;*/
   width: 100%;
   left: 1%;
   display: table;
@@ -505,7 +505,7 @@ body {
   font-family: "微软雅黑";
 }
 #row6 {
-  opacity: 100%;
+  /*opacity: 100%*/
   width: 100%;
   left: 1%;
   padding: 1%;

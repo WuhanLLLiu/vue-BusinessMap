@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="bottom-footer" @click="drawer = true;gettd" >
+    <div class="bottom-footer" @click="drawer = true" >
       <p class="el-icon-arrow-up">土地信息列表</p>
     </div>
 
@@ -402,7 +402,7 @@ body {
 }
 
 #row1 {
-  opacity: 100%;
+  /*opacity: 100%;*/
   width: 100%;
   left: 1%;
   padding: 1%;
@@ -415,7 +415,7 @@ body {
 }
 
 #row2 {
-  opacity: 100%;
+  /*opacity: 100%;*/
   width: 100%;
   left: 1%;
   display: table;
