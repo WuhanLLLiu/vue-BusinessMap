@@ -722,6 +722,7 @@ body {
   font-family: PingFang SC;
   font-weight: light;
   color: rgba(255, 255, 255, 1);
+  background: #355bfa;
 }
 .van-dropdown-menu >>> .van-ellipsis {
   height: 25px;
