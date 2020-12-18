@@ -156,7 +156,8 @@ export default {
         { text: "四新街", value: 5 },
         { text: "晴川街", value: 6 },
         { text: "五里墩街", value: 7 },
-        { text: "琴断口街", value: 8 }
+        { text: "琴断口街", value: 8 },
+        { text: "龙阳街", value: 9 }
       ],
       option2: [
         { text: "面积", value: 0 },
@@ -172,7 +173,8 @@ export default {
         { text: "商服用地", value: 3 },
         { text: "居住用地", value: 4 },
         { text: "工业用地", value: 5 },
-        { text: "医疗用地", value: 6 }
+        { text: "医疗用地", value: 6 },
+        { text: "国有划拨用地", value: 7 }
       ]
     };
   },

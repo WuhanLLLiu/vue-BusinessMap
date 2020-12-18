@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "vue-coronavirus",
   "version": "0.0.1",
   "description": "> A Vue.js-Based Project",
