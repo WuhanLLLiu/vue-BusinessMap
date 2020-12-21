@@ -6,6 +6,9 @@
         @changeLYid="updateLYid"
         @changeimgList="updateimgList"
         @changeLYCard="updateCard"
+        @RouteHYZ="RouteHYZ"
+        @RouteHJK="RouteHJK"
+        @RouteLYH="RouteLYH"
       ></webmap>
     </div>
 
@@ -32,7 +35,7 @@
       </van-dropdown-menu>
     </div>
 
-    <div class="top">
+    <!-- <div class="top">
       <el-row id="row1">
         <el-col>
           <ul type="none">
@@ -41,14 +44,14 @@
             </li>
             <li id="type" @click="RouteHYZ">汉阳造文创产业园</li>
           </ul>
-        </el-col>
+        </el-col> -->
         <!-- <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
                 <li id='type' @click="RouteHJ">加华科技产业园</li>
             </ul>
         </el-col>-->
-        <el-col>
+        <!-- <el-col>
           <ul type="none">
             <li id="img">
               <img src="./../assets/工业园.png" width="33%" @click="RouteHJK" />
@@ -57,7 +60,7 @@
           </ul>
         </el-col>
       </el-row>
-    </div>
+    </div> -->
 
     <div class="bottom" id="bottomly" style="display:none">
       <div id="rowly_0" @click="hide">
@@ -265,6 +268,9 @@ export default {
     RouteHJ() {
       this.$router.push({ path: "/HJ" });
     },
+    RouteLYH(){
+      this.$router.push({ path:'/LYH' });
+    },
     PICAlert() {
       var that = this;
       if(that.LYid==46){
@@ -385,6 +391,7 @@ export default {
         }
       });
     this.$refs.webmap.HYbuildings();
+    this.$refs.webmap.HYCYY();//加载产业园
   }
 };
 </script>

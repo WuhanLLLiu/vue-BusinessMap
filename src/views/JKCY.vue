@@ -38,7 +38,7 @@
                 <p id='ZC' v-html='html2'></p>
               </div>
             </van-tab>
-            <van-tab title="健康产业企业">
+            <van-tab title="考察路线">
               <div id="ZDQY">
                 <!-- <el-row class='row'>
                     <el-button class="button"  @click='JKCYZSQK()'>

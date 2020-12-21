@@ -14,6 +14,10 @@ import imgURL_loc2 from "../assets/choosed.png";
 import imgURL_loc_area from "../assets/marker_area.png";
 import imgURL_loc2_area from "../assets/choosed_area.png";
 
+import imgURL_CYY1 from "../assets/汉阳造文化创意产业园.png";
+import imgURL_CYY2 from "../assets/黄金口工业园.png";
+import imgURL_CYY3 from "../assets/龙阳湖健康谷.png";
+
 // import tdxx from '../assets/tdxx.js'
 // import lyxx from '../assets/lyxx.js'
 // import QJ from "../assets/vtour/tour.html"
@@ -323,6 +327,91 @@ export default {
               });
           }
         });
+    },
+    //加载产业园
+    HYCYY(){
+      var that = this;
+      //汉阳造产业园
+      var point = new maptalks.Marker(
+        [114.26291, 30.55939],
+        {
+          id: 1,
+          symbol : {
+            markerFile: imgURL_CYY1,
+            markerWidth: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            },
+            markerHeight: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            }
+          }
+        }
+      );
+      //黄金口工业园
+      var point2 = new maptalks.Marker(
+        [114.15710, 30.58371],
+        {
+          id: 2,
+          symbol : {
+            markerFile: imgURL_CYY2,
+            markerWidth: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            },
+            markerHeight: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            }
+          }
+        }
+      );
+      //龙阳湖健康谷
+      var point3 = new maptalks.Marker(
+        [114.19250, 30.55256],
+        {
+          id: 3,
+          symbol : {
+            markerFile: imgURL_CYY3,
+            markerWidth: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            },
+            markerHeight: {
+              stops: [
+                [6, 0],
+                [14, 40]
+              ]
+            }
+          }
+        }
+      );
+
+      new maptalks.VectorLayer('CYY').addTo(Vue.mapInstance);
+      point.addTo(Vue.mapInstance.getLayer("CYY"))
+      point2.addTo(Vue.mapInstance.getLayer("CYY"))
+      point3.addTo(Vue.mapInstance.getLayer("CYY"))
+      console.log(Vue.mapInstance)
+      Vue.mapInstance.getLayer("CYY").getGeometryById(1).on("click", function(param) {
+        that.$emit('RouteHYZ')
+      });
+      Vue.mapInstance.getLayer("CYY").getGeometryById(2).on("click", function(param) {
+        that.$emit('RouteHJK')
+      });
+      Vue.mapInstance.getLayer("CYY").getGeometryById(3).on("click", function(param) {
+        that.$emit('RouteLYH')
+      });
     },
     //根据属性筛选土地
     TDfilter(value1, value2, value3) {

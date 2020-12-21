@@ -1,7 +1,11 @@
 <template>
   <el-container>
     <el-header>
-      欢迎辞
+      <!-- <el-image
+          style="width:28px; height:32px"
+          :src="images[5]"
+          fit="fill"
+      ></el-image> -->
     </el-header>
     <el-main>
       <p>
