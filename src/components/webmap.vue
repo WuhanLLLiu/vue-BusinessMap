@@ -883,6 +883,19 @@ export default {
             feature.properties.monthly_re;
           document.getElementById("lywy").innerHTML =
             feature.properties.property_m;
+          document.getElementById("lcmj").innerHTML =
+            feature.properties.Standard_f;
+          document.getElementById("kzmj").innerHTML =
+            feature.properties.vacant_are;       
+              
+          var qj_url = feature.properties.qj_url    
+          if(qj_url == ''){
+            document.getElementById("jj").innerHTML = "街景照片正在收录，敬请期待!";
+          }
+          else{
+            document.getElementById("jj").innerHTML = "<a href=\"" + feature.properties.qj_url + "\">查看街景照片</a>";
+          }
+          
           that.LYid = feature.properties.id;
           that.$emit("changeLYid", that.LYid);
         });
