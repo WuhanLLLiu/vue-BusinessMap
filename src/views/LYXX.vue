@@ -111,6 +111,9 @@
           <span id="rowly_41">空置面积（平方米）</span>
           <span id="kzmj">9000</span>
         </el-row>
+        <el-row id="rowly_4">
+          <span id="jj"></span>
+        </el-row>
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
@@ -624,6 +627,14 @@ body {
   border-left: 1px solid gray;
 }
 #rowly_41 {
+  font-weight: bold;
+  font-size: 0.9em;
+  width: 60%;
+  display: -moz-inline-box;
+  display: inline-block;
+}
+#jj {
+  color: #000;
   font-weight: bold;
   font-size: 0.9em;
   width: 60%;

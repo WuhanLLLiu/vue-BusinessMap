@@ -22,6 +22,7 @@
         <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9618.png" id='hj'/>
         <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9619.png" id='hj'/>
         <img src="http://121.196.60.135/cdn/%E5%A4%A7%E5%81%A5%E5%BA%B7%E4%BA%A7%E4%B8%9A/%E9%BE%99%E9%98%B3%E6%B9%96/%E9%BE%99%E9%98%B3%E6%B9%9620.png" id='hj'/>
+        <a class="JJZP" href="http://121.196.60.135/cdn/scene/jkg/vtour/tour.html">查看街景照片</a>
     </div>
   </div>
 </template>
@@ -140,7 +141,13 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  /* color: #42b983; */
+  color: black;
+  font-size:36px;
+  font-weight: 700;
+  line-height:58px;
+  font-family:PingFang SC;
+  
 }
 #hj{
   display: inline-block;
@@ -154,4 +161,5 @@ a {
   line-height:58px;
   font-family:PingFang SC;
 }
+
 </style>

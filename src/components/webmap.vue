@@ -104,6 +104,7 @@ export default {
         .then(result => result.json())
         .then(result => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("v1"));
+          console.log(result.content)
           var county = JSON.parse(result.content);
           const geometries = maptalks.GeoJSON.toGeometry(county);
           for (var i = 0; i < geometries.length; i++) {
@@ -305,8 +306,17 @@ export default {
                 document.getElementById("lcmj").innerHTML =
                   param.target.properties.Standard_f;
                 document.getElementById("kzmj").innerHTML =
-                  param.target.properties.vacant_are;                
-                that.LYid = param.target.properties.id;
+                  param.target.properties.vacant_are;       
+                    
+                var qj_url = param.target.properties.qj_url    
+                if(qj_url == ''){
+                  document.getElementById("jj").innerHTML = "街景照片正在收录，敬请期待!";
+                }
+                else{
+                  document.getElementById("jj").innerHTML = "<a href=\"" + param.target.properties.qj_url + "\">查看街景照片</a>";
+                }
+
+                that.LYid = param.target.properties.id;              
                 that.$emit("changeLYid", that.LYid);
 
                 param.target.updateSymbol({

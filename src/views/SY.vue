@@ -166,7 +166,7 @@
         float: right;
         padding: 2vw;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         text-align: center;
         flex-direction: row-reverse;
     }
