@@ -1,11 +1,10 @@
 <template>
   <el-container>
-    <el-header>
+    <el-header class="bg">
       <!-- <el-image
-          style="width:28px; height:32px"
-          :src="images[5]"
-          fit="fill"
-      ></el-image> -->
+          style="width:100%; height:100%"
+          src="http://121.196.60.135/img/pic-欢迎辞.png"
+          fit="scale-down"></el-image> -->
     </el-header>
     <el-main>
       <p>
@@ -72,6 +71,9 @@
     line-height: 120px;
     font-size: 4vmin;
     font-family: "PingFang SC", Arial, sans-serif;
+    display: flex;
+    background-size: 100% 100%;
+    background-image: url("http://121.196.60.135/img/pic-欢迎辞.png");
   }
 
   p {
