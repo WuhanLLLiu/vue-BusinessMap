@@ -350,13 +350,13 @@ export default {
           markerWidth: {
             stops: [
               [6, 0],
-              [14, 40],
+              [14, 35],
             ],
           },
           markerHeight: {
             stops: [
               [6, 0],
-              [14, 40],
+              [14, 35],
             ],
           },
         },
