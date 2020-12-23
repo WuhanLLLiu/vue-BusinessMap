@@ -42,62 +42,60 @@
 </template>
 
 <script>
-  import Vue from "vue";
-  export default {
-    name: "HYC",
+import Vue from "vue";
+export default {
+  name: "HYC",
 
-    components: {
+  components: {},
 
-    },
+  data() {
+    return {};
+  },
 
-    data() {
-      return {};
-    },
+  beforeMount() {},
 
-    beforeMount() {},
+  methods: {},
 
-    methods: {},
-
-    mounted() {
-      //增加统计图表
-    }
-  };
+  mounted() {
+    //增加统计图表
+  },
+};
 </script>
 
 <style scoped>
-  .el-header {
-    color: #333;
-    text-align: center;
-    line-height: 120px;
-    font-size: 4vmin;
-    font-family: "PingFang SC", Arial, sans-serif;
-    display: flex;
-    background-size: 100% 100%;
-    background-image: url("http://121.196.60.135/img/pic-欢迎辞.png");
-  }
+.el-header {
+  color: #333;
+  text-align: center;
+  line-height: 120px;
+  font-size: 4vmin;
+  font-family: "PingFang SC", Arial, sans-serif;
+  display: flex;
+  background-size: 100% 100%;
+  background-image: url("http://121.196.60.135/img/pic-欢迎辞.png");
+}
 
-  p {
-    text-indent: 2em;
-    line-height: 150%;
-    margin: 1vmin;
-    font-family: "PingFang SC", Arial, sans-serif;
-    font-size: 4vmin;
-  }
+p {
+  text-indent: 2em;
+  line-height: 150%;
+  margin: 1vmin;
+  font-family: "PingFang SC", Arial, sans-serif;
+  font-size: 4vmin;
+}
 
-  .el-footer {
-    margin-bottom: 2vmin;
-  }
+.el-footer {
+  margin-bottom: 2vmin;
+}
 
-  .el-footer .el-col{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.el-footer .el-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .el-footer span {
-    font-size: 4vmin;
-    font-family: "PingFang SC", Arial, sans-serif;
-    text-align: left;
-    line-height: 8vmin;
-  }
+.el-footer span {
+  font-size: 4vmin;
+  font-family: "PingFang SC", Arial, sans-serif;
+  text-align: left;
+  line-height: 8vmin;
+}
 </style>

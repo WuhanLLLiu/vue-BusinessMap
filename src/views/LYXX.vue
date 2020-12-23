@@ -21,10 +21,10 @@
         shape="round"
         placeholder="请输入搜索关键词"
         @search="onSearch"
-        left-icon = none
+        left-icon="none"
       >
         <template #right-icon>
-          <van-icon name="search" @click="onSearch2"/>
+          <van-icon name="search" @click="onSearch2" />
         </template>
       </van-search>
 
@@ -45,13 +45,13 @@
             <li id="type" @click="RouteHYZ">汉阳造文创产业园</li>
           </ul>
         </el-col> -->
-        <!-- <el-col>
+    <!-- <el-col>
             <ul type="none">
                 <li id="img"><img src="./../assets/产业园.png" width="33%" @click="RouteHJ"/></li>
                 <li id='type' @click="RouteHJ">加华科技产业园</li>
             </ul>
         </el-col>-->
-        <!-- <el-col>
+    <!-- <el-col>
           <ul type="none">
             <li id="img">
               <img src="./../assets/工业园.png" width="33%" @click="RouteHJK" />
@@ -62,7 +62,7 @@
       </el-row>
     </div> -->
 
-    <div class="bottom" id="bottomly" style="display:none">
+    <div class="bottom" id="bottomly" style="display: none">
       <div id="rowly_0" @click="hide">
         <p class="el-icon-arrow-down">关闭楼宇信息</p>
       </div>
@@ -73,7 +73,11 @@
         </el-row>
         <el-row id="rowly_2">
           <span id="lylocimg">
-            <img src="./../assets/choosed.png" width="3%" style="padding-right:2%" />
+            <img
+              src="./../assets/choosed.png"
+              width="3%"
+              style="padding-right: 2%"
+            />
           </span>
           <span id="lylocation">国博以北，西邻鹦鹉大道，东临晴川</span>
         </el-row>
@@ -129,7 +133,12 @@
       <p class="el-icon-arrow-up">楼宇信息列表</p>
     </div>
 
-    <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%">
+    <el-drawer
+      direction="btt"
+      :visible.sync="drawer"
+      :with-header="false"
+      size="90%"
+    >
       <div id="drawer-content">
         <div id="row0" @click="drawer = false">
           <p class="el-icon-arrow-down">关闭楼宇信息列表</p>
@@ -147,23 +156,27 @@
 
           <div
             class="meg"
-            v-for="(item,index) in viewArr"
+            v-for="(item, index) in viewArr"
             v-bind:key="index"
             @click="LYChoose(item.id)"
           >
             <el-card class="box-card">
               <el-row id="row6">
-                <span>{{item.name}}</span>
+                <span>{{ item.name }}</span>
               </el-row>
               <el-row id="row2">
                 <span id="locimg">
-                  <img src="./../assets/choosed.png" width="3%" style="padding-right:1%" />
+                  <img
+                    src="./../assets/choosed.png"
+                    width="3%"
+                    style="padding-right: 1%"
+                  />
                 </span>
-                <span id="row4">{{item.address}}</span>
+                <span id="row4">{{ item.address }}</span>
               </el-row>
               <el-row id="row2">
-                <span id="row3">建筑体量 {{item.volume}} 平方米</span>
-                <span id="row3">楼层数 {{item.floor_num}}</span>
+                <span id="row3">建筑体量 {{ item.volume }} 平方米</span>
+                <span id="row3">楼层数 {{ item.floor_num }}</span>
               </el-row>
             </el-card>
           </div>
@@ -185,7 +198,7 @@ export default {
 
   components: {
     webmap: webmap,
-    mapChoose: mapChoose
+    mapChoose: mapChoose,
   },
 
   data() {
@@ -194,7 +207,7 @@ export default {
       totalData: {
         cure: 16,
         confirm: 17,
-        new: 0
+        new: 0,
       },
       fullscreen: false,
       centerDialogVisible: false,
@@ -221,7 +234,7 @@ export default {
         { text: "晴川街", value: 6 },
         { text: "五里墩街", value: 7 },
         { text: "琴断口街", value: 8 },
-        { text: "江汉二桥街", value: 9 }
+        { text: "江汉二桥街", value: 9 },
       ],
       option2: [
         { text: "建筑体量", value: 0 },
@@ -230,7 +243,7 @@ export default {
         { text: "30000-40000平米", value: 3 },
         { text: "40000-50000平米", value: 4 },
         { text: "50000-100000平米", value: 5 },
-        { text: "100000平米以上", value: 6 }
+        { text: "100000平米以上", value: 6 },
       ],
       option3: [
         { text: "空置面积", value: 0 },
@@ -238,8 +251,8 @@ export default {
         { text: "1000-5000平米", value: 2 },
         { text: "5000-10000平米", value: 3 },
         { text: "10000-50000平米", value: 4 },
-        { text: "50000平米以上", value: 5 }
-      ]
+        { text: "50000平米以上", value: 5 },
+      ],
     };
   },
 
@@ -271,21 +284,21 @@ export default {
     RouteHJ() {
       this.$router.push({ path: "/HJ" });
     },
-    RouteLYH(){
-      this.$router.push({ path:'/LYH' });
+    RouteLYH() {
+      this.$router.push({ path: "/LYH" });
     },
     PICAlert() {
       var that = this;
-      if(that.LYid==46){
-        this.$router.push({path:'/GMZXQJ'});
+      if (that.LYid == 46) {
+        this.$router.push({ path: "/GMZXQJ" });
       }
-      if(that.LYid!=46){
+      if (that.LYid != 46) {
         var url = "http://121.196.60.135:1338/bms/" + that.LYid;
         console.log(url);
         that.imglist = [];
         fetch(url)
-          .then(result => result.json())
-          .then(result => {
+          .then((result) => result.json())
+          .then((result) => {
             if (result.status == "ok") {
               var county = JSON.parse(result.content);
               if (county.images.length > 0) {
@@ -345,16 +358,16 @@ export default {
                 }
               } else {
                 that.$alert("照片正在收录，敬请期待！", "提示", {
-                  confirmButtonText: "确定"
+                  confirmButtonText: "确定",
                 });
               }
             } else {
               that.$alert("照片正在收录，敬请期待！", "提示", {
-                confirmButtonText: "确定"
+                confirmButtonText: "确定",
               });
             }
           });
-      };
+      }
     },
 
     hybird_map() {
@@ -377,16 +390,16 @@ export default {
       console.log(val);
       this.$refs.webmap.LYsearch(val);
     },
-    onSearch2(){
-      var that =this
+    onSearch2() {
+      var that = this;
       this.$refs.webmap.LYsearch(that.searchtext);
-    }
+    },
   },
 
   mounted() {
     fetch("http://121.196.60.135:1338/data/lyxx")
-      .then(result => result.json())
-      .then(result => {
+      .then((result) => result.json())
+      .then((result) => {
         var that = this;
         var tdxx = JSON.parse(result.content);
         for (var i = 0; i < tdxx.features.length; i++) {
@@ -394,8 +407,8 @@ export default {
         }
       });
     this.$refs.webmap.HYbuildings();
-    this.$refs.webmap.HYCYY();//加载产业园
-  }
+    this.$refs.webmap.HYCYY(); //加载产业园
+  },
 };
 </script>
 

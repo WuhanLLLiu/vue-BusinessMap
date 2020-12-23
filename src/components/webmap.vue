@@ -34,7 +34,7 @@ export default {
       LYitem: [],
       LYid: 0,
       TDid: 0,
-      imglist: []
+      imglist: [],
     };
   },
   //监听属性 类似于data概念
@@ -47,15 +47,15 @@ export default {
     buildings() {
       var threeLayer = new ThreeLayer("t", {
         forceRenderOnMoving: true,
-        forceRenderOnRotating: true
+        forceRenderOnRotating: true,
       });
       var material = new THREE.MeshBasicMaterial({
-        color: "white"
+        color: "white",
       });
       var highlightmaterial = new THREE.MeshBasicMaterial({
-        color: "yellow"
+        color: "yellow",
       });
-      threeLayer.prepareToDraw = function(gl, scene, camera) {
+      threeLayer.prepareToDraw = function (gl, scene, camera) {
         var light = new THREE.DirectionalLight(0xffffff);
         light.position.set(0, -10, 10).normalize();
         scene.add(light);
@@ -65,7 +65,7 @@ export default {
             {
               height: 1000 * bar_Self.bar_Self[i].height,
               radius: 150,
-              topColor: "white"
+              topColor: "white",
             },
             material
           );
@@ -73,7 +73,7 @@ export default {
           bar.setToolTip(bar_Self.bar_Self[i].name, {
             showTimeout: 0,
             eventsPropagation: true,
-            dx: 10
+            dx: 10,
           });
           //infowindow test
           bar.setInfoWindow({
@@ -88,7 +88,7 @@ export default {
             title: bar_Self.bar_Self[i].name + "</div>",
             animationDuration: 0,
             // autoOpenOn: false,
-            autoCloseOn: "click"
+            autoCloseOn: "click",
           });
           threeLayer.addMesh(bar);
           threeLayer.config("animation", true);
@@ -100,8 +100,8 @@ export default {
     HYparcel() {
       var that = this;
       fetch("http://121.196.60.135:1338/data/tdxx")
-        .then(result => result.json())
-        .then(result => {
+        .then((result) => result.json())
+        .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("v1"));
           var county = JSON.parse(result.content);
           const geometries = maptalks.GeoJSON.toGeometry(county);
@@ -124,17 +124,17 @@ export default {
                 markerWidth: {
                   stops: [
                     [6, 0],
-                    [14, 30]
-                  ]
+                    [14, 30],
+                  ],
                 },
                 markerHeight: {
                   stops: [
                     [6, 0],
-                    [14, 40]
-                  ]
-                }
-              }
-            }
+                    [14, 40],
+                  ],
+                },
+              },
+            },
           ]);
           Vue.mapInstance.getLayer("v1").bringToBack();
           //click 事件
@@ -142,7 +142,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .getGeometryById(j)
-              .on("click", function(param) {
+              .on("click", function (param) {
                 for (var a = 0; a < geometries.length; a++) {
                   Vue.mapInstance
                     .getLayer("v1")
@@ -156,15 +156,15 @@ export default {
                       markerWidth: {
                         stops: [
                           [6, 0],
-                          [14, 30]
-                        ]
+                          [14, 30],
+                        ],
                       },
                       markerHeight: {
                         stops: [
                           [6, 0],
-                          [14, 40]
-                        ]
-                      }
+                          [14, 40],
+                        ],
+                      },
                     });
                 }
 
@@ -198,15 +198,15 @@ export default {
                   markerWidth: {
                     stops: [
                       [6, 0],
-                      [14, 40]
-                    ]
+                      [14, 40],
+                    ],
                   },
                   markerHeight: {
                     stops: [
                       [6, 0],
-                      [14, 54]
-                    ]
-                  }
+                      [14, 54],
+                    ],
+                  },
                 });
               });
           }
@@ -216,8 +216,8 @@ export default {
     HYbuildings() {
       var that = this;
       fetch("http://121.196.60.135:1338/data/lyxx")
-        .then(result => result.json())
-        .then(result => {
+        .then((result) => result.json())
+        .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("ly"));
           var county = JSON.parse(result.content);
           const geometries = maptalks.GeoJSON.toGeometry(county);
@@ -236,17 +236,17 @@ export default {
                 markerWidth: {
                   stops: [
                     [6, 0],
-                    [14, 30]
-                  ]
+                    [14, 30],
+                  ],
                 },
                 markerHeight: {
                   stops: [
                     [6, 0],
-                    [14, 40]
-                  ]
-                }
-              }
-            }
+                    [14, 40],
+                  ],
+                },
+              },
+            },
           ]);
           Vue.mapInstance.getLayer("ly").bringToBack();
           //click 事件
@@ -254,7 +254,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .getGeometryById(j)
-              .on("click", function(param) {
+              .on("click", function (param) {
                 for (var a = 0; a < geometries.length; a++) {
                   Vue.mapInstance
                     .getLayer("ly")
@@ -264,15 +264,15 @@ export default {
                       markerWidth: {
                         stops: [
                           [6, 0],
-                          [14, 30]
-                        ]
+                          [14, 30],
+                        ],
                       },
                       markerHeight: {
                         stops: [
                           [6, 0],
-                          [14, 40]
-                        ]
-                      }
+                          [14, 40],
+                        ],
+                      },
                     });
                 }
 
@@ -304,17 +304,20 @@ export default {
                 document.getElementById("lcmj").innerHTML =
                   param.target.properties.Standard_f;
                 document.getElementById("kzmj").innerHTML =
-                  param.target.properties.vacant_are;       
-                    
-                var qj_url = param.target.properties.qj_url    
-                if(qj_url == ''){
-                  document.getElementById("jj").innerHTML = "街景照片正在收录，敬请期待!";
-                }
-                else{
-                  document.getElementById("jj").innerHTML = "<a href=\"" + param.target.properties.qj_url + "\">查看街景照片</a>";
+                  param.target.properties.vacant_are;
+
+                var qj_url = param.target.properties.qj_url;
+                if (qj_url == "") {
+                  document.getElementById("jj").innerHTML =
+                    "街景照片正在收录，敬请期待!";
+                } else {
+                  document.getElementById("jj").innerHTML =
+                    '<a href="' +
+                    param.target.properties.qj_url +
+                    '">查看街景照片</a>';
                 }
 
-                that.LYid = param.target.properties.id;              
+                that.LYid = param.target.properties.id;
                 that.$emit("changeLYid", that.LYid);
 
                 param.target.updateSymbol({
@@ -322,104 +325,104 @@ export default {
                   markerWidth: {
                     stops: [
                       [6, 0],
-                      [14, 40]
-                    ]
+                      [14, 40],
+                    ],
                   },
                   markerHeight: {
                     stops: [
                       [6, 0],
-                      [14, 50]
-                    ]
-                  }
+                      [14, 50],
+                    ],
+                  },
                 });
               });
           }
         });
     },
     //加载产业园
-    HYCYY(){
+    HYCYY() {
       var that = this;
       //汉阳造产业园
-      var point = new maptalks.Marker(
-        [114.26291, 30.55939],
-        {
-          id: 1,
-          symbol : {
-            markerFile: imgURL_CYY1,
-            markerWidth: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            },
-            markerHeight: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            }
-          }
-        }
-      );
+      var point = new maptalks.Marker([114.26291, 30.55939], {
+        id: 1,
+        symbol: {
+          markerFile: imgURL_CYY1,
+          markerWidth: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+          markerHeight: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+        },
+      });
       //黄金口工业园
-      var point2 = new maptalks.Marker(
-        [114.15710, 30.58371],
-        {
-          id: 2,
-          symbol : {
-            markerFile: imgURL_CYY2,
-            markerWidth: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            },
-            markerHeight: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            }
-          }
-        }
-      );
+      var point2 = new maptalks.Marker([114.1571, 30.58371], {
+        id: 2,
+        symbol: {
+          markerFile: imgURL_CYY2,
+          markerWidth: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+          markerHeight: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+        },
+      });
       //龙阳湖健康谷
-      var point3 = new maptalks.Marker(
-        [114.19250, 30.55256],
-        {
-          id: 3,
-          symbol : {
-            markerFile: imgURL_CYY3,
-            markerWidth: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            },
-            markerHeight: {
-              stops: [
-                [6, 0],
-                [14, 40]
-              ]
-            }
-          }
-        }
-      );
+      var point3 = new maptalks.Marker([114.1925, 30.55256], {
+        id: 3,
+        symbol: {
+          markerFile: imgURL_CYY3,
+          markerWidth: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+          markerHeight: {
+            stops: [
+              [6, 0],
+              [14, 40],
+            ],
+          },
+        },
+      });
 
-      new maptalks.VectorLayer('CYY').addTo(Vue.mapInstance);
-      point.addTo(Vue.mapInstance.getLayer("CYY"))
-      point2.addTo(Vue.mapInstance.getLayer("CYY"))
-      point3.addTo(Vue.mapInstance.getLayer("CYY"))
-      console.log(Vue.mapInstance)
-      Vue.mapInstance.getLayer("CYY").getGeometryById(1).on("click", function(param) {
-        that.$emit('RouteHYZ')
-      });
-      Vue.mapInstance.getLayer("CYY").getGeometryById(2).on("click", function(param) {
-        that.$emit('RouteHJK')
-      });
-      Vue.mapInstance.getLayer("CYY").getGeometryById(3).on("click", function(param) {
-        that.$emit('RouteLYH')
-      });
+      new maptalks.VectorLayer("CYY").addTo(Vue.mapInstance);
+      point.addTo(Vue.mapInstance.getLayer("CYY"));
+      point2.addTo(Vue.mapInstance.getLayer("CYY"));
+      point3.addTo(Vue.mapInstance.getLayer("CYY"));
+      console.log(Vue.mapInstance);
+      Vue.mapInstance
+        .getLayer("CYY")
+        .getGeometryById(1)
+        .on("click", function (param) {
+          that.$emit("RouteHYZ");
+        });
+      Vue.mapInstance
+        .getLayer("CYY")
+        .getGeometryById(2)
+        .on("click", function (param) {
+          that.$emit("RouteHJK");
+        });
+      Vue.mapInstance
+        .getLayer("CYY")
+        .getGeometryById(3)
+        .on("click", function (param) {
+          that.$emit("RouteLYH");
+        });
     },
     //根据属性筛选土地
     TDfilter(value1, value2, value3) {
@@ -430,7 +433,7 @@ export default {
       Vue.mapInstance
         .getLayer("v1")
         .filter(["!=", "id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.hide();
         });
       if (v1 == "0") {
@@ -440,7 +443,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["!=", "id", null])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
               });
@@ -450,7 +453,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "use", v3])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
               });
@@ -462,7 +465,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "area1", v2])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
               });
@@ -472,7 +475,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "area1", v2])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.use == v3) {
                   feature.show();
                   that.TDitem.push(feature.properties);
@@ -488,7 +491,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "street", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.TDitem.push(feature.properties);
               });
@@ -498,7 +501,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "street", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.use == v3) {
                   feature.show();
                   that.TDitem.push(feature.properties);
@@ -512,7 +515,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "street", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.area1 == v2) {
                   feature.show();
                   that.TDitem.push(feature.properties);
@@ -524,7 +527,7 @@ export default {
             Vue.mapInstance
               .getLayer("v1")
               .filter(["==", "street", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.area1 == v2)
                   if (feature.properties.use == v3) {
                     feature.show();
@@ -545,7 +548,7 @@ export default {
       Vue.mapInstance
         .getLayer("ly")
         .filter(["!=", "id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.hide();
         });
       if (v1 == "0") {
@@ -555,7 +558,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["!=", "id", null])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.LYitem.push(feature.properties);
               });
@@ -565,7 +568,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "vacant1", v3])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.LYitem.push(feature.properties);
               });
@@ -577,7 +580,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "volume1", v2])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.LYitem.push(feature.properties);
               });
@@ -587,7 +590,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "volume1", v2])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.vacant1 == v3) {
                   feature.show();
                   that.LYitem.push(feature.properties);
@@ -603,7 +606,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "street1", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 feature.show();
                 that.LYitem.push(feature.properties);
               });
@@ -613,7 +616,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "street1", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.vacant1 == v3) {
                   feature.show();
                   that.LYitem.push(feature.properties);
@@ -627,7 +630,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "street1", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.volume1 == v2) {
                   feature.show();
                   that.LYitem.push(feature.properties);
@@ -639,7 +642,7 @@ export default {
             Vue.mapInstance
               .getLayer("ly")
               .filter(["==", "street1", v1])
-              .forEach(function(feature) {
+              .forEach(function (feature) {
                 if (feature.properties.volume1 == v2)
                   if (feature.properties.vacant1 == v3) {
                     feature.show();
@@ -658,7 +661,7 @@ export default {
         new maptalks.TileLayer("base", {
           urlTemplate: "http://121.196.60.135:1338/layer/google/{z}/{x}/{y}",
           attribution:
-            '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+            '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
         })
       );
     },
@@ -674,7 +677,7 @@ export default {
             "http://{s}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298",
           subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"],
           attribution:
-            '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+            '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
         })
       );
       // console.log(Vue.mapInstance)
@@ -685,41 +688,41 @@ export default {
       Vue.mapInstance
         .getLayer("ly")
         .filter(["!=", "id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             markerFile: imgURL_loc,
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 30]
-              ]
+                [14, 30],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
-            }
+                [14, 40],
+              ],
+            },
           });
         });
       Vue.mapInstance
         .getLayer("ly")
         .filter(["==", "id", id])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             markerFile: imgURL_loc2,
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
+                [14, 40],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 50]
-              ]
-            }
+                [14, 50],
+              ],
+            },
           });
           Vue.mapInstance.setCenter(feature.getCoordinates());
           document.getElementById("bottomly").style.display = "block";
@@ -751,7 +754,7 @@ export default {
       Vue.mapInstance
         .getLayer("v1")
         .filter(["!=", "Id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             lineColor: "#2348E5",
             lineWidth: 4,
@@ -761,22 +764,22 @@ export default {
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 30]
-              ]
+                [14, 30],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
-            }
+                [14, 40],
+              ],
+            },
           });
         });
 
       Vue.mapInstance
         .getLayer("v1")
         .filter(["==", "Id", id])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             lineColor: "#E52323",
             lineWidth: 4,
@@ -786,15 +789,15 @@ export default {
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
+                [14, 40],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 54]
-              ]
-            }
+                [14, 54],
+              ],
+            },
           });
           Vue.mapInstance.setCenter(feature.getLastCoordinate());
           document.getElementById("bottom0").style.display = "block";
@@ -824,42 +827,42 @@ export default {
       Vue.mapInstance
         .getLayer("ly")
         .filter(["!=", "id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             markerFile: imgURL_loc,
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 30]
-              ]
+                [14, 30],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
-            }
+                [14, 40],
+              ],
+            },
           });
         });
 
       Vue.mapInstance
         .getLayer("ly")
         .filter(["==", "name", val])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             markerFile: imgURL_loc2,
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
+                [14, 40],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 50]
-              ]
-            }
+                [14, 50],
+              ],
+            },
           });
           Vue.mapInstance.setCenter(feature.getCoordinates());
           document.getElementById("bottomly").style.display = "block";
@@ -884,16 +887,17 @@ export default {
           document.getElementById("lcmj").innerHTML =
             feature.properties.Standard_f;
           document.getElementById("kzmj").innerHTML =
-            feature.properties.vacant_are;       
-              
-          var qj_url = feature.properties.qj_url    
-          if(qj_url == ''){
-            document.getElementById("jj").innerHTML = "街景照片正在收录，敬请期待!";
+            feature.properties.vacant_are;
+
+          var qj_url = feature.properties.qj_url;
+          if (qj_url == "") {
+            document.getElementById("jj").innerHTML =
+              "街景照片正在收录，敬请期待!";
+          } else {
+            document.getElementById("jj").innerHTML =
+              '<a href="' + feature.properties.qj_url + '">查看街景照片</a>';
           }
-          else{
-            document.getElementById("jj").innerHTML = "<a href=\"" + feature.properties.qj_url + "\">查看街景照片</a>";
-          }
-          
+
           that.LYid = feature.properties.id;
           that.$emit("changeLYid", that.LYid);
         });
@@ -904,7 +908,7 @@ export default {
       Vue.mapInstance
         .getLayer("v1")
         .filter(["!=", "Id", null])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             lineColor: "#2348E5",
             lineWidth: 4,
@@ -914,22 +918,22 @@ export default {
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 30]
-              ]
+                [14, 30],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
-            }
+                [14, 40],
+              ],
+            },
           });
         });
 
       Vue.mapInstance
         .getLayer("v1")
         .filter(["==", "name", val])
-        .forEach(function(feature) {
+        .forEach(function (feature) {
           feature.updateSymbol({
             lineColor: "#E52323",
             lineWidth: 4,
@@ -939,15 +943,15 @@ export default {
             markerWidth: {
               stops: [
                 [6, 0],
-                [14, 40]
-              ]
+                [14, 40],
+              ],
             },
             markerHeight: {
               stops: [
                 [6, 0],
-                [14, 54]
-              ]
-            }
+                [14, 54],
+              ],
+            },
           });
           Vue.mapInstance.setCenter(feature.getLastCoordinate());
           document.getElementById("bottom0").style.display = "block";
@@ -970,7 +974,7 @@ export default {
           that.TDid = feature.properties.Id;
           that.$emit("changeTDid", that.TDid);
         });
-    }
+    },
   },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {},
@@ -980,7 +984,7 @@ export default {
     var image = new Image();
     Vue.mapInstance = new maptalks.Map("WebMap", {
       center: [114.190649, 30.570374],
-      zoom: 15
+      zoom: 15,
     });
 
     // Vue.mapInstance.setBaseLayer(
@@ -996,14 +1000,14 @@ export default {
           "http://{s}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298",
         subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"],
         attribution:
-          '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>'
+          '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
       })
     );
     Vue.mapInstance.addLayer(
       new maptalks.TileLayer("base2", {
         urlTemplate:
           "http://{s}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298",
-        subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
+        subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"],
       })
     );
     Vue.mapInstance.setMaxZoom(18);
@@ -1015,7 +1019,7 @@ export default {
   updated() {}, //生命周期 - 更新之后
   beforeDestroy() {}, //生命周期 - 销毁之前
   destroyed() {}, //生命周期 - 销毁完成
-  activated() {} //如果页面有keep-alive缓存功能，这个函数会触发
+  activated() {}, //如果页面有keep-alive缓存功能，这个函数会触发
 };
 </script>
 

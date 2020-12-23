@@ -49,114 +49,118 @@
         </el-button>
      </el-row>
   </div> -->
-    <el-container>
-        <el-main>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/营商留商奖励政策.png"
-                        fit="scale-down"
-                        @click="ZC3()"></el-image>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/人才政策.png"
-                        fit="scale-down"
-                        @click="ZC4()"></el-image>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/大健康产业扶持政策.png"
-                        fit="scale-down"
-                        @click="ZC2()"></el-image>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/促进楼宇经济发展奖励办法.png"
-                        fit="scale-down"
-                        @click='ZC()'></el-image>
-                </el-col>
-            </el-row>
-        </el-main>
-    </el-container>
+  <el-container>
+    <el-main>
+      <el-row>
+        <el-col :span="24">
+          <el-image
+            style="width: 100%; height: 100%"
+            src="http://121.196.60.135/img/营商留商奖励政策.png"
+            fit="scale-down"
+            @click="ZC3()"
+          ></el-image>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <el-image
+            style="width: 100%; height: 100%"
+            src="http://121.196.60.135/img/人才政策.png"
+            fit="scale-down"
+            @click="ZC4()"
+          ></el-image>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <el-image
+            style="width: 100%; height: 100%"
+            src="http://121.196.60.135/img/大健康产业扶持政策.png"
+            fit="scale-down"
+            @click="ZC2()"
+          ></el-image>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <el-image
+            style="width: 100%; height: 100%"
+            src="http://121.196.60.135/img/促进楼宇经济发展奖励办法.png"
+            fit="scale-down"
+            @click="ZC()"
+          ></el-image>
+        </el-col>
+      </el-row>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-  import Vue from 'vue';
+import Vue from "vue";
 
-  export default {
-    name: "ZSZC",
-    data() {
-      return {
-        // currentDate: new Date()
-      };
+export default {
+  name: "ZSZC",
+  data() {
+    return {
+      // currentDate: new Date()
+    };
+  },
+  methods: {
+    ZC() {
+      this.$router.push({ path: "/ZCXQ" });
     },
-    methods: {
-      ZC(){
-        this.$router.push({path:'/ZCXQ'})
-      },
-      ZC2(){
-        this.$router.push({path:'/ZCXQ2'})
-      },
-      ZC3(){
-        this.$router.push({path:'/ZCXQ3'})
-      },
-      ZC4(){
-        this.$router.push({path:'/ZCXQ4'})
-      },
-    }
-  }
+    ZC2() {
+      this.$router.push({ path: "/ZCXQ2" });
+    },
+    ZC3() {
+      this.$router.push({ path: "/ZCXQ3" });
+    },
+    ZC4() {
+      this.$router.push({ path: "/ZCXQ4" });
+    },
+  },
+};
 </script>
 
 <!-- 限定局部有效的样式 -->
 <style scoped>
-  .details {
-    font-size: 13px;
-    color: #999;    
-  }
-  .title {
-    font-size: 32px; 
-    font-weight:bold;
-    color: #333;
-    /*line-height: 20px;*/
-    /*padding-bottom: 20px;*/
-  }
-  .row {
-      margin:20px;
-  }
-  .bottom {
-    margin-top: 30px;
-    line-height: 12px;
-  }
-  .button {
-    padding: 0;
-    float: right;
-    border-style:none;
-    text-align: left;
-    width: 710px;
-  }
+.details {
+  font-size: 13px;
+  color: #999;
+}
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  /*line-height: 20px;*/
+  /*padding-bottom: 20px;*/
+}
+.row {
+  margin: 20px;
+}
+.bottom {
+  margin-top: 30px;
+  line-height: 12px;
+}
+.button {
+  padding: 0;
+  float: right;
+  border-style: none;
+  text-align: left;
+  width: 710px;
+}
 
-  /*.image {
+/*.image {
     width: 100%;
     display: block;
   }*/
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: "";
-  }
-  
-  .clearfix:after {
-      clear: both
-  }
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
 </style>

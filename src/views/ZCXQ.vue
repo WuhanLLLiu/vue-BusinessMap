@@ -26,16 +26,6 @@
     },
     methods: {
       load(){
-        // fetch('../assets/1.html')
-        //   .then((response)=>{
-        //     var h=response.text()
-        //     var a=Promise.resolve(h)
-        //     // console.log(a)
-        //     a.then(function(result){
-        //       console.log(typeof(result))
-        //       this.html1=result
-        //     })
-        //   })
         fetch("http://121.196.60.135:1338/data/lyfczc")
           .then(result => result.json())
           .then(result => {           
