@@ -55,6 +55,15 @@
                         @click="RouteJRCY"></el-image>
                 </el-col>
             </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-image
+                        style="width:100%; height:100%"
+                        src="http://121.196.60.135/img/数字经济产业.png"
+                        fit="scale-down"
+                        @click="RouteSZJJ"></el-image>
+                </el-col>
+            </el-row>
         </el-main>
     </el-container>
 </template>
@@ -99,6 +108,12 @@
                 this
                     .$router
                     .push({path: "/QCHSC"});
+            },
+            RouteSZJJ() {
+                console.log("SZJJ")
+                // this
+                //     .$router
+                //     .push({path: "/SZJJ"});
             }
         }
     };

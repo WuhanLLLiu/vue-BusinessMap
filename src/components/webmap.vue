@@ -20,7 +20,6 @@ import imgURL_CYY3 from "../assets/龙阳湖健康谷.png";
 
 // import tdxx from '../assets/tdxx.js'
 // import lyxx from '../assets/lyxx.js'
-// import QJ from "../assets/vtour/tour.html"
 
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
@@ -104,7 +103,6 @@ export default {
         .then(result => result.json())
         .then(result => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("v1"));
-          console.log(result.content)
           var county = JSON.parse(result.content);
           const geometries = maptalks.GeoJSON.toGeometry(county);
           for (var i = 0; i < geometries.length; i++) {

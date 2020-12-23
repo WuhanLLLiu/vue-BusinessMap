@@ -201,5 +201,6 @@
 }
 .van-tab{
     padding-top: 2%;
+    line-height: 150%
 }
 </style>

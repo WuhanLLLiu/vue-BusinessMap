@@ -30,7 +30,7 @@
               <img src="http://121.196.60.135/cdn/汽车后市场/汉阳区汽车后市场情况.jpg" id='hj'/>
           </div>
       </van-tab>
-      <van-tab title="武汉汽车运动文化特色小镇创建规划">
+      <van-tab title="汽车文化小镇">
           <div id='QCHSC0'>
               <img src="http://121.196.60.135/cdn/武汉汽车运动文化特色小镇创建规划/IMG_00001.jpeg" id='hj'/>
               <img src="http://121.196.60.135/cdn/武汉汽车运动文化特色小镇创建规划/IMG_00002.jpeg" id='hj'/>
@@ -191,5 +191,6 @@
 
   .van-tab {
     padding-top: 2%;
+    line-height: 150%
   }
 </style>

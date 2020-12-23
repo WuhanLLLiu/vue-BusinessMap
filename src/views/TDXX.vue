@@ -168,7 +168,7 @@ export default {
       ],
       option3: [
         { text: "用地类型", value: 0 },
-        { text: "城中村", value: 1 },
+        { text: "城中村产业用地", value: 1 },
         { text: "混合用地", value: 2 },
         { text: "商服用地", value: 3 },
         { text: "居住用地", value: 4 },

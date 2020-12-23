@@ -55,9 +55,18 @@
                 <el-col :span="24">
                     <el-image
                         style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/促进楼宇经济发展奖励办法.png"
+                        src="http://121.196.60.135/img/营商留商奖励政策.png"
                         fit="scale-down"
-                        @click='ZC()'></el-image>
+                        @click="ZC3()"></el-image>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-image
+                        style="width:100%; height:100%"
+                        src="http://121.196.60.135/img/人才政策.png"
+                        fit="scale-down"
+                        @click="ZC4()"></el-image>
                 </el-col>
             </el-row>
             <el-row>
@@ -73,18 +82,9 @@
                 <el-col :span="24">
                     <el-image
                         style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/营商留商奖励政策.png"
+                        src="http://121.196.60.135/img/促进楼宇经济发展奖励办法.png"
                         fit="scale-down"
-                        @click="ZC3()"></el-image>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/人才政策.png"
-                        fit="scale-down"
-                        @click="ZC4()"></el-image>
+                        @click='ZC()'></el-image>
                 </el-col>
             </el-row>
         </el-main>
