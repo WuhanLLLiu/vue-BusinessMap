@@ -110,10 +110,9 @@
                     .push({path: "/QCHSC"});
             },
             RouteSZJJ() {
-                console.log("SZJJ")
-                // this
-                //     .$router
-                //     .push({path: "/SZJJ"});
+                this
+                    .$router
+                    .push({path: "/SZJJ"});
             }
         }
     };

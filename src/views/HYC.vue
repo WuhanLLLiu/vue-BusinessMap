@@ -24,7 +24,7 @@
         习近平总书记高度重视湖北武汉疫后重振，中央支持湖北武汉一揽子政策正在加速落地，到汉阳投资兴业，正当其时、恰逢其势。我们坚信，阳光总在风雨后。真心期盼、真诚邀请各方有识之士关注汉阳、投资汉阳，与我们共同谱写汉阳高质量发展新篇章。
       </p>
     </el-main>
-    <el-footer>
+    <!-- <el-footer>
       <el-row>
         <el-col :span="16">
           <span>
@@ -37,7 +37,7 @@
           </el-image>
         </el-col>
       </el-row>
-    </el-footer>
+    </el-footer> -->
   </el-container>
 </template>
 

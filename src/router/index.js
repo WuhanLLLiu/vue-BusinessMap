@@ -315,6 +315,14 @@ const router = new Router({
                 title: "光明中心"
              }
         },
+        {
+            path: "/SZJJ",
+            component: () => import("../views/SZJJ"),
+            meta: {
+                keepAlive: true,
+                title: "数字经济"
+             }
+        },
     ]
 });
 router.beforeEach((to, from, next) => {
