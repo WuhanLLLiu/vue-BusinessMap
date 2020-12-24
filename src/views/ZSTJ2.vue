@@ -12,15 +12,54 @@
             <img src="./../assets/zstj/IMG_00009.jpeg" id="hj"/>
             <img src="./../assets/zstj/IMG_00010.jpeg" id="hj"/>
         </van-tab>
-        <van-tab title="重点企业">
-            <iframe
-                src="http://hyrdwx.hanyang.gov.cn/weixin/news/yryq"
-                width="100%"
-                :height="carouselHeight"
-                frameborder='0'
-                align='center'
-                allowfullscreen='true'
-                allow="autoplay"></iframe>
+        <van-tab title="龙阳湖论健">
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_01.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_02.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_03.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_04.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_05.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_06.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_07.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_08.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_09.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_10.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_11.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_12.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_13.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_14.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_15.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_16.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_17.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_18.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_19.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_20.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_21.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_22.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_23.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_24.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_25.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_26.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_27.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_28.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_29.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_30.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_31.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_32.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_33.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_34.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_35.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_36.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_37.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_38.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_39.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_40.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_41.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_42.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_43.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_44.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_45.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_46.png" id='hj'/>
+            <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_47.png" id='hj'/>
         </van-tab>
     </van-tabs>
 </template>
