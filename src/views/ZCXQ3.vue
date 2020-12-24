@@ -1,7 +1,7 @@
 <template>
   <div id="ZCXQ3">
     <div id="row">
-        <div id ='row1'>阳政规1号营商留商奖励政策</div>
+        <div id ='row1'>营商留商奖励政策</div>
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='Selfform'>

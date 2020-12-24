@@ -119,7 +119,7 @@ const router = new Router({
         component: () => import("../views/ZCXQ3"),
         meta: {
             keepAlive: true,
-            title: "阳政规[2019]1号营商留商奖励政策"
+            title: "营商留商奖励政策"
         }
     },
     {

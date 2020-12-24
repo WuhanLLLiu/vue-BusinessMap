@@ -1,18 +1,6 @@
 <template>
-    <van-tabs v-model="active" background="#355BFA" color="white">
-        <van-tab title="产业概况">
-            <img src="./../assets/zstj/IMG_00001.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00002.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00003.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00004.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00005.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00006.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00007.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00008.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00009.jpeg" id="hj"/>
-            <img src="./../assets/zstj/IMG_00010.jpeg" id="hj"/>
-        </van-tab>
-        <van-tab title="龙阳湖论健">
+    <div class="LYH">
+        <div id='Selfform'>
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_01.png" id='hj'/>
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_02.png" id='hj'/>
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_03.png" id='hj'/>
@@ -60,8 +48,8 @@
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_45.png" id='hj'/>
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_46.png" id='hj'/>
             <img src="http://121.196.60.135/cdn/招商推介/【20.11.11】龙阳湖论健PPT/【20.11.11】龙阳湖论健PPT_47.png" id='hj'/>
-        </van-tab>
-    </van-tabs>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -92,6 +80,14 @@
         display: inline-block;
         height: auto;
         max-width: 100%;
+    }
+
+    #Selfform{
+    margin-top: 3%;
+    padding: 5%;
+    font-size:36px;
+    line-height:58px;
+    font-family:PingFang SC;
     }
 </style>
 
