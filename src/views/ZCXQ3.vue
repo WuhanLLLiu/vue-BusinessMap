@@ -1,8 +1,7 @@
 <template>
   <div id="ZCXQ3">
     <div id="row">
-        <p id ='row1'>阳政规1号营商留商奖励政策</p>
-        <!-- <p id ='row2'>来源：武汉市汉阳区人民政府 发布时间：2019-3-30</p> -->
+        <div id ='row1'>阳政规1号营商留商奖励政策</div>
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='Selfform'>
@@ -126,5 +125,9 @@
   font-weight: bolder;
   font-family:PingFang SC;
   color: #000;
+}
+
+p {
+  text-indent:2em
 }
 </style>

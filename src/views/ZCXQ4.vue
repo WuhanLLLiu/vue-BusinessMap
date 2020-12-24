@@ -2,7 +2,6 @@
   <div id="ZCXQ">
     <div id="row">
         <p id ='row1'>人才政策</p>
-        <!-- <p id ='row2'>来源：汉阳发展改革局 发布时间：2019-3</p> -->
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='ZC'>
