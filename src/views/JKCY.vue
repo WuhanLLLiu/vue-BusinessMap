@@ -49,14 +49,11 @@
                         </el-card>
                     </el-button>
                 </el-row> -->
-                <el-row class='row'>
+                <!-- <el-row class='row'>
                     <el-button class="button"  @click='DH()'>
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">汉阳区“大湖+”样板湖</span>
-                                <!--<div class="bottom clearfix">
-                                    <span class="details">来源：汉阳区商务局 发布于：2019-3</span>
-                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
@@ -66,13 +63,10 @@
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
                             <div style="padding: 14px;">
                                 <span class="title">龙阳湖健康谷招商手册</span>
-                                <!--<div class="bottom clearfix">
-                                    <span class="details">来源：汉阳区商务局 发布于：2020-1</span>
-                                </div>-->
                             </div>
                         </el-card>
                     </el-button>
-                </el-row>
+                </el-row> -->
                 <!-- <el-row class='row'>
                     <el-button class="button"  @click='JZTJKC()'>
                         <el-card :body-style="{ margin:'5px',padding: '0px' }">
@@ -85,6 +79,24 @@
                         </el-card>
                     </el-button>
                 </el-row> -->
+                <el-row class='row'>
+                    <el-button class="button"  @click='KCXL1()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class="title">考察线路一</span>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
+                <el-row class='row'>
+                    <el-button class="button"  @click='KCXL2()'>
+                        <el-card :body-style="{ margin:'5px',padding: '0px' }">
+                            <div style="padding: 14px;">
+                                <span class="title">考察线路二</span>
+                            </div>
+                        </el-card>
+                    </el-button>
+                </el-row>
               </div>           
             </van-tab>
         </van-tabs>
@@ -147,14 +159,16 @@
       },
       JZTJKC(){
         this.$router.push({path:'/JZTJKC'})
+      },
+      KCXL1(){
+        this.$router.push({path:'/KCXL'})
+      },
+      KCXL2(){
+        this.$router.push({path:'/KCXL2'})
       }
     },
 
     mounted() {
-      //增加统计图表     
-    //   this.load_ZC()
-      // this.load_GH()
-      // this.load_QY()
     }
   };
 </script>

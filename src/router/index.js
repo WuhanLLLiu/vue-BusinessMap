@@ -323,6 +323,22 @@ const router = new Router({
             title: "数字经济"
         }
     },
+    {
+        path: "/KCXL",
+        component: () => import("../views/KCXL"),
+        meta: {
+            keepAlive: true,
+            title: "考察线路"
+        }
+    },
+    {
+        path: "/KCXL2",
+        component: () => import("../views/KCXL2"),
+        meta: {
+            keepAlive: true,
+            title: "考察线路"
+        }
+    },
     ]
 });
 router.beforeEach((to, from, next) => {

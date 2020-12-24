@@ -1,6 +1,18 @@
 <template>
+
+    <van-tabs v-model="active" background="#355BFA" color="white">
+        <van-tab title="重点产业">
     <el-container>
         <el-main>
+            <el-row>
+                <el-col :span="24">
+                    <el-image
+                        style="width:100%; height:100%"
+                        src="http://121.196.60.135/img/数字经济产业.png"
+                        fit="scale-down"
+                        @click="RouteSZJJ"></el-image>
+                </el-col>
+            </el-row>
             <el-row>
                 <el-col :span="24">
                     <el-image
@@ -55,17 +67,20 @@
                         @click="RouteJRCY"></el-image>
                 </el-col>
             </el-row>
-            <el-row>
-                <el-col :span="24">
-                    <el-image
-                        style="width:100%; height:100%"
-                        src="http://121.196.60.135/img/数字经济产业.png"
-                        fit="scale-down"
-                        @click="RouteSZJJ"></el-image>
-                </el-col>
-            </el-row>
         </el-main>
     </el-container>
+        </van-tab>
+        <van-tab title="重点企业">
+            <iframe
+                src="http://hyrdwx.hanyang.gov.cn/weixin/news/yryq"
+                width="100%"
+                :height="carouselHeight"
+                frameborder='0'
+                align='center'
+                allowfullscreen='true'
+                allow="autoplay"></iframe>
+        </van-tab>
+    </van-tabs>
 </template>
 
 <script>
@@ -73,11 +88,18 @@
 
     export default {
         name: "ZDCY",
+        
         data() {
             return {
                 // currentDate: new Date()
+                 active: 0
             };
         },
+
+        beforeMount() {
+            this.carouselHeight = (window.innerHeight) * 0.95 + 'px';
+        },
+        
         methods: {
             RouteJKCY() {
                 this
@@ -117,3 +139,20 @@
         }
     };
 </script>
+
+
+<style>
+    .van-tabs--line .van-tabs__wrap {
+        height: 80px;
+    }
+    .van-tab__text {
+        position: relative;
+        color: #fff;
+        font-size: 34px;
+        align-items: center;
+    }
+    .van-tab {
+        padding-top: 2%;
+        line-height: 150%
+    }
+</style>
