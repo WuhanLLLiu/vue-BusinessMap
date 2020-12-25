@@ -1,7 +1,7 @@
 <template>
   <div id="ZCXQ">
     <div id="row">
-        <p id ='row1'>人才政策</p>
+        <p id ='row1' style="text-align:center;">人才政策</p>
     </div>
     <el-divider class="el-divider1"></el-divider>
     <div id='ZC'>

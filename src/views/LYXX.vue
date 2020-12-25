@@ -290,10 +290,10 @@ export default {
     },
     PICAlert() {
       var that = this;
-      if (that.LYid == 46) {
-        this.$router.push({ path: "/GMZXQJ" });
-      }
-      if (that.LYid != 46) {
+      // if (that.LYid == 46) {
+      //   this.$router.push({ path: "/GMZXQJ" });
+      // }
+      // if (that.LYid != 46) {
         var url = "http://121.196.60.135:1338/bms/" + that.LYid;
         console.log(url);
         that.imglist = [];
@@ -323,40 +323,6 @@ export default {
                 that.img1 = county.images[0];
                 that.img2 = county.images[1];
                 that.img3 = county.images[2];
-                if (county.images.length == 1) {
-                  // document.getElementById("img1").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img1;
-                } else if (county.images.length == 2) {
-                  // document.getElementById("img1").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img1;
-                  // document.getElementById("img2").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img2;
-                } else if (county.images.length > 2) {
-                  // document.getElementById("img1").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img1;
-                  // document.getElementById("img2").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img2;
-                  // document.getElementById("img3").src =
-                  //   "http://121.196.60.135/cdn/楼宇资料/" +
-                  //   that.LYid +
-                  //   "/" +
-                  //   that.img3;
-                }
               } else {
                 that.$alert("照片正在收录，敬请期待！", "提示", {
                   confirmButtonText: "确定",
@@ -368,7 +334,7 @@ export default {
               });
             }
           });
-      }
+      // }
     },
 
     hybird_map() {

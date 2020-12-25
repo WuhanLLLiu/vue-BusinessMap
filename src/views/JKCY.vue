@@ -31,7 +31,7 @@
             <!--<van-tab title="健康产业政策" to="/djkcyzc">-->
               <!--<router-view></router-view>-->
               <div id="row">
-                  <p id ='row1'>汉阳区大健康产业扶持政策</p>
+                  <p id ='row1' style="text-align:center;">汉阳区大健康产业扶持政策</p>
               </div>
               <el-divider class="el-divider1"></el-divider>
               <div id='JKCY0'>
