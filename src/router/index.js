@@ -308,14 +308,6 @@ const router = new Router({
         }
     },
     {
-        path: "/GMZXQJ",
-        component: () => import("../views/GMZXQJ"),
-        meta: {
-            keepAlive: true,
-            title: "光明中心"
-        }
-    },
-    {
         path: "/SZJJ",
         component: () => import("../views/SZJJ"),
         meta: {

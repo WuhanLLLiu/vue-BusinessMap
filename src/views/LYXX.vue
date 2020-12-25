@@ -121,9 +121,6 @@
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>
-          <!-- <img id="img1" src='' class="pic"  />
-          <img id="img2" src='' class="pic"  />
-          <img id="img3" src='' class="pic"  />-->
           <vue-preview :slides="imglist" class="imgPrev"></vue-preview>
         </el-row>
       </div>
