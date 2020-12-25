@@ -137,7 +137,8 @@
       direction="btt"
       :visible.sync="drawer"
       :with-header="false"
-      size="90%"
+      :modal="false"
+      size="75%"
     >
       <div id="drawer-content">
         <div id="row0" @click="drawer = false">
@@ -467,6 +468,8 @@ body {
   transition: all 0.5s;
   z-index: 99;
   background: #fff;
+  overflow: scroll;
+  max-height:75%
   /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
 }
 

@@ -69,7 +69,7 @@
       <p class="el-icon-arrow-up">土地信息列表</p>
     </div>
 
-    <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="90%">
+    <el-drawer direction="btt" :visible.sync="drawer" :with-header="false" size="75%" :modal="false">
       <div id="drawer-content">
         <div id="row0" @click="drawer = false">
           <p class="el-icon-arrow-down">关闭土地信息列表</p>
@@ -520,6 +520,8 @@ body {
   transition: all 0.5s;
   z-index: 5;
   background: #fff;
+  overflow: scroll;
+  max-height:60%
   /* box-shadow: 0 0 5vmax 50vmax rgba(0,0,0,.5); */
 }
 
