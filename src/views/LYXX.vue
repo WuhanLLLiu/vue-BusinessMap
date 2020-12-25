@@ -290,10 +290,6 @@ export default {
     },
     PICAlert() {
       var that = this;
-      // if (that.LYid == 46) {
-      //   this.$router.push({ path: "/GMZXQJ" });
-      // }
-      // if (that.LYid != 46) {
         var url = "http://121.196.60.135:1338/bms/" + that.LYid;
         console.log(url);
         that.imglist = [];
@@ -334,7 +330,6 @@ export default {
               });
             }
           });
-      // }
     },
 
     hybird_map() {
