@@ -109,9 +109,11 @@ export default {
             var a = geometries[i];
             a._id = i;
           }
+
           const vectorLayer = Vue.mapInstance
             .getLayer("v1")
             .addGeometry(geometries);
+
           //设置style
           vectorLayer.setStyle([
             {
@@ -136,7 +138,34 @@ export default {
               },
             },
           ]);
+          //摘牌地块为灰色
+          for (var m = 0; m < geometries.length; m++) {
+            var b = geometries[m];
+            if( b.properties.name.search("已摘牌") != -1){
+              b.updateSymbol({
+                lineColor: "grey",
+                lineWidth: 4,
+                polygonFill: "grey",
+                polygonOpacity: 0.6,
+                markerFile: imgURL_loc_area,
+                markerWidth: {
+                  stops: [
+                    [6, 0],
+                    [14, 30],
+                  ],
+                },
+                markerHeight: {
+                  stops: [
+                    [6, 0],
+                    [14, 40],
+                  ],
+                },
+              });
+            }
+          }
+
           Vue.mapInstance.getLayer("v1").bringToBack();
+
           //click 事件
           for (var j = 0; j < geometries.length; j++) {
             Vue.mapInstance
@@ -144,6 +173,7 @@ export default {
               .getGeometryById(j)
               .on("click", function (param) {
                 for (var a = 0; a < geometries.length; a++) {
+                  var c = geometries[a];
                   Vue.mapInstance
                     .getLayer("v1")
                     .getGeometryById(a)
@@ -166,6 +196,28 @@ export default {
                         ],
                       },
                     });
+                    //摘牌地块为灰色
+                    if( c.properties.name.search("已摘牌") != -1){
+                        c.updateSymbol({
+                          lineColor: "grey",
+                          lineWidth: 4,
+                          polygonFill: "grey",
+                          polygonOpacity: 0.6,
+                          markerFile: imgURL_loc_area,
+                          markerWidth: {
+                            stops: [
+                              [6, 0],
+                              [14, 30],
+                            ],
+                          },
+                          markerHeight: {
+                            stops: [
+                              [6, 0],
+                              [14, 40],
+                            ],
+                          },
+                        });
+                    }
                 }
 
                 document.getElementById("bottom0").style.display = "block";
