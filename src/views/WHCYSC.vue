@@ -1,16 +1,7 @@
 <template>
   <div id="WHCYSC" class='layout'>
-    <van-tabs v-model="active" background="#355BFA" color="white">
-        <van-tab title="产业规划">
-          <!-- <el-row class='row'>
-            <el-button class="button"  @click='ZC3()'>
-                <el-card :body-style="{ margin:'5px',padding: '0px' }">
-                    <div style="padding: 14px 4px 14px 4px;">
-                        <span class="title">汉阳区现代公共文化服务体系建设三年行动计划</span>
-                    </div>
-                </el-card>
-            </el-button>
-          </el-row> -->
+    <!-- <van-tabs v-model="active" background="#355BFA" color="white"> -->
+        <!-- <van-tab title="产业规划">
         <div id='Selfform'>
             <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00001.jpg" id='hj'/>
             <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00002.jpg" id='hj'/>
@@ -23,8 +14,8 @@
             <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00009.jpg" id='hj'/>
             <img src="http://121.196.60.135/cdn/%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F/%E6%B1%89%E9%98%B3%E5%8C%BA%E7%8E%B0%E4%BB%A3%E5%85%AC%E5%85%B1%E6%96%87%E5%8C%96%E6%9C%8D%E5%8A%A1%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E4%B8%89%E5%B9%B4%E8%A1%8C%E5%8A%A8%E8%AE%A1%E5%88%92/IMG_00010.jpg" id='hj'/>
         </div>
-        </van-tab>
-        <van-tab title="相关政策">         
+        </van-tab> -->
+        <!-- <van-tab title="相关政策">          -->
           <el-row class='row'>
               <el-button class="button"  @click='ZC()'>
                   <el-card :body-style="{ margin:'5px',padding: '0px' }">
@@ -61,8 +52,8 @@
                   </el-card>
               </el-button>
           </el-row>
-        </van-tab>
-    </van-tabs>
+        <!-- </van-tab>
+    </van-tabs> -->
   </div>
 </template>
 
@@ -141,12 +132,12 @@
   font-size:36px;
   line-height:58px;
   font-family:PingFang SC;
-}
-#hj{
-  display: inline-block;
-  height: auto;
-  max-width: 100%;
-}
+  }
+  #hj{
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+  }
 </style>
 <style>
 .van-tabs--line .van-tabs__wrap{
