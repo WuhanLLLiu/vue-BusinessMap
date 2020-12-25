@@ -275,6 +275,7 @@ export default {
       var that =this
       this.$refs.webmap.TDsearch(that.searchtext);
     },
+    
     gettd(){
       fetch("http://121.196.60.135:1338/data/tdxx")
         .then(result => result.json())
@@ -291,7 +292,11 @@ export default {
 
   mounted() {
     this.gettd()
-  }
+  },
+
+  activated() {
+    this.gettd()
+  }, 
 };
 </script>
 

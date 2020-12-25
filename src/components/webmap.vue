@@ -456,7 +456,7 @@ export default {
       point.addTo(Vue.mapInstance.getLayer("CYY"));
       point2.addTo(Vue.mapInstance.getLayer("CYY"));
       point3.addTo(Vue.mapInstance.getLayer("CYY"));
-      console.log(Vue.mapInstance);
+
       Vue.mapInstance
         .getLayer("CYY")
         .getGeometryById(1)
@@ -803,6 +803,7 @@ export default {
     //获取土地
     TDchoose(id) {
       var that = this;
+      console.log(Vue.mapInstance)
       Vue.mapInstance
         .getLayer("v1")
         .filter(["!=", "Id", null])
@@ -832,6 +833,7 @@ export default {
         .getLayer("v1")
         .filter(["==", "Id", id])
         .forEach(function (feature) {
+          console.log(feature)
           feature.updateSymbol({
             lineColor: "#E52323",
             lineWidth: 4,
@@ -871,6 +873,8 @@ export default {
             feature.properties.location;
           that.TDid = feature.properties.Id;
           that.$emit("changeTDid", that.TDid);
+
+          console.log(feature)
         });
     },
     //搜索楼宇

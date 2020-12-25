@@ -349,25 +349,36 @@ export default {
       console.log(val);
       this.$refs.webmap.LYsearch(val);
     },
+    
     onSearch2() {
       var that = this;
       this.$refs.webmap.LYsearch(that.searchtext);
     },
+    
+    getly(){
+      fetch("http://121.196.60.135:1338/data/lyxx")
+        .then((result) => result.json())
+        .then((result) => {
+          var that = this;
+          var tdxx = JSON.parse(result.content);
+          for (var i = 0; i < tdxx.features.length; i++) {
+            that.viewArr.push(tdxx.features[i].properties);
+          }
+        });
+      this.$refs.webmap.HYbuildings();
+      this.$refs.webmap.HYCYY(); //加载产业园
+    }
   },
 
+  
+
   mounted() {
-    fetch("http://121.196.60.135:1338/data/lyxx")
-      .then((result) => result.json())
-      .then((result) => {
-        var that = this;
-        var tdxx = JSON.parse(result.content);
-        for (var i = 0; i < tdxx.features.length; i++) {
-          that.viewArr.push(tdxx.features[i].properties);
-        }
-      });
-    this.$refs.webmap.HYbuildings();
-    this.$refs.webmap.HYCYY(); //加载产业园
+    this.getly()
   },
+
+  activated() {
+    this.getly()
+  }, 
 };
 </script>
 
