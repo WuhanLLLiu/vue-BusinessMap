@@ -277,11 +277,11 @@ export default {
     },
     
     gettd(){
-      fetch("http://121.196.60.135:1338/data/tdxx")
+      fetch("http://121.196.60.135:1338/bms/geoprovider/TDXX")
         .then(result => result.json())
         .then(result => {
           var that = this;
-          var tdxx = JSON.parse(result.content);
+          var tdxx = JSON.parse(JSON.parse(result.content));
           for (var i = 0; i < tdxx.features.length; i++) {
             that.viewArr.push(tdxx.features[i].properties);
           }

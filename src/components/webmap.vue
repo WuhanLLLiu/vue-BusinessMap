@@ -99,7 +99,8 @@ export default {
     //地块
     HYparcel() {
       var that = this;
-      fetch("http://121.196.60.135:1338/data/tdxx")
+            
+      fetch("http://121.196.60.135:1338/bms/geoprovider/TDXX")
         .then((result) => result.json())
         .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("v1"));
@@ -267,7 +268,7 @@ export default {
     //楼宇
     HYbuildings() {
       var that = this;
-      fetch("http://121.196.60.135:1338/data/lyxx")
+      fetch("http://121.196.60.135:1338/bms/geoprovider/LYXX")
         .then((result) => result.json())
         .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("ly"));
