@@ -100,7 +100,7 @@ export default {
     HYparcel() {
       var that = this;
             
-      fetch("http://121.196.60.135:1338/bms/geoprovider/TDXX")
+      fetch("http://121.196.60.135:1337/bms/geoprovider/TDXX")
         .then((result) => result.json())
         .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("v1"));
@@ -139,6 +139,7 @@ export default {
               },
             },
           ]);
+
           //摘牌地块为灰色
           for (var m = 0; m < geometries.length; m++) {
             var b = geometries[m];
@@ -268,7 +269,7 @@ export default {
     //楼宇
     HYbuildings() {
       var that = this;
-      fetch("http://121.196.60.135:1338/bms/geoprovider/LYXX")
+      fetch("http://121.196.60.135:1337/bms/geoprovider/LYXX")
         .then((result) => result.json())
         .then((result) => {
           Vue.mapInstance.addLayer(new maptalks.VectorLayer("ly"));
@@ -302,7 +303,8 @@ export default {
             },
           ]);
           Vue.mapInstance.getLayer("ly").bringToBack();
-          //click 事件
+         
+         //click 事件
           for (var j = 0; j < geometries.length; j++) {
             Vue.mapInstance
               .getLayer("ly")
@@ -712,7 +714,7 @@ export default {
       Vue.mapInstance.removeLayer("base");
       Vue.mapInstance.setBaseLayer(
         new maptalks.TileLayer("base", {
-          urlTemplate: "http://121.196.60.135:1338/bms/tmslayer/{z}/{x}/{y}",
+          urlTemplate: "http://121.196.60.135:1337/bms/tmslayer/{z}/{x}/{y}",
           attribution:
             '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
         })

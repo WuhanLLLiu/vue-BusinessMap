@@ -356,7 +356,7 @@ export default {
     },
     
     getly(){
-      fetch("http://121.196.60.135:1338/bms/geoprovider/LYXX")
+      fetch("http://121.196.60.135:1337/bms/geoprovider/LYXX")
         .then((result) => result.json())
         .then((result) => {
           var that = this;

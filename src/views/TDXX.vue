@@ -277,7 +277,7 @@ export default {
     },
     
     gettd(){
-      fetch("http://121.196.60.135:1338/bms/geoprovider/TDXX")
+      fetch("http://121.196.60.135:1337/bms/geoprovider/TDXX")
         .then(result => result.json())
         .then(result => {
           var that = this;
