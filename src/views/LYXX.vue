@@ -88,19 +88,19 @@
           <span id="lytl">公建比 5：5</span>
         </el-row>
         <el-row id="rowly_4">
-          <span id="rowly_41">已入住企业数量</span>
-          <span id="lyqy">36</span>
+          <span id="rowly_41">建设用途</span>
+          <span id="lykt">36</span>
         </el-row>
         <el-row id="rowly_4">
-          <span id="rowly_41">客梯数量</span>
-          <span id="lykt">36</span>
+          <span id="rowly_41">入驻率</span>
+          <span id="lyqy">36</span>
         </el-row>
         <el-row id="rowly_4">
           <span id="rowly_41">停车位数量</span>
           <span id="lytc">36</span>
         </el-row>
         <el-row id="rowly_4">
-          <span id="rowly_41">租金（元/平方米每月）</span>
+          <span id="rowly_41">平均租金（元/平方米每月）</span>
           <span id="lyzj">36</span>
         </el-row>
         <el-row id="rowly_4">
@@ -233,6 +233,7 @@ export default {
         { text: "五里墩街", value: 7 },
         { text: "琴断口街", value: 8 },
         { text: "江汉二桥街", value: 9 },
+        { text: "鹦鹉街街道", value: 10 },
       ],
       option2: [
         { text: "建筑体量", value: 0 },
@@ -364,6 +365,7 @@ export default {
           for (var i = 0; i < tdxx.features.length; i++) {
             that.viewArr.push(tdxx.features[i].properties);
           }
+          console.log(that.viewArr)
         });
       this.$refs.webmap.HYbuildings();
       this.$refs.webmap.HYCYY(); //加载产业园
