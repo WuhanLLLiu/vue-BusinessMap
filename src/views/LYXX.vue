@@ -234,6 +234,7 @@ export default {
         { text: "琴断口街", value: 8 },
         { text: "江汉二桥街", value: 9 },
         { text: "鹦鹉街街道", value: 10 },
+        { text: "龙阳街", value: 11 },
       ],
       option2: [
         { text: "建筑体量", value: 0 },

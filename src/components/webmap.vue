@@ -349,7 +349,7 @@ export default {
                 document.getElementById("lyqy").innerHTML =
                   param.target.properties.settled_en;
                 document.getElementById("lykt").innerHTML =
-                  param.target.properties.passenger_;
+                  param.target.properties.use;
                 document.getElementById("lytc").innerHTML =
                   param.target.properties.parking_nu;
                 document.getElementById("lyzj").innerHTML =
@@ -792,7 +792,7 @@ export default {
           document.getElementById("lyqy").innerHTML =
             feature.properties.settled_en;
           document.getElementById("lykt").innerHTML =
-            feature.properties.passenger_;
+            feature.properties.use;
           document.getElementById("lytc").innerHTML =
             feature.properties.parking_nu;
           document.getElementById("lyzj").innerHTML =
@@ -936,7 +936,7 @@ export default {
           document.getElementById("lyqy").innerHTML =
             feature.properties.settled_en;
           document.getElementById("lykt").innerHTML =
-            feature.properties.passenger_;
+            feature.properties.use;
           document.getElementById("lytc").innerHTML =
             feature.properties.parking_nu;
           document.getElementById("lyzj").innerHTML =
