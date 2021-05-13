@@ -92,6 +92,10 @@
           <span id="lykt">36</span>
         </el-row>
         <el-row id="rowly_4">
+          <span id="rowly_41">产权</span>
+          <span id="lycq">36</span>
+        </el-row>
+        <el-row id="rowly_4">
           <span id="rowly_41">入驻率</span>
           <span id="lyqy">36</span>
         </el-row>
@@ -115,9 +119,9 @@
           <span id="rowly_41">空置面积（平方米）</span>
           <span id="kzmj">9000</span>
         </el-row>
-        <el-row id="rowly_4">
+        <!-- <el-row id="rowly_4">
           <span id="jj"></span>
-        </el-row>
+        </el-row> -->
         <el-row id="rowly_5" class="category">
           <i id="icon1" class="el-icon-picture"></i>
           <span id="rowly_42" @click="PICAlert">查看照片</span>

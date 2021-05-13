@@ -350,6 +350,8 @@ export default {
                   param.target.properties.settled_en;
                 document.getElementById("lykt").innerHTML =
                   param.target.properties.use;
+                document.getElementById("lycq").innerHTML =
+                  param.target.properties.chanquan;
                 document.getElementById("lytc").innerHTML =
                   param.target.properties.parking_nu;
                 document.getElementById("lyzj").innerHTML =
@@ -361,16 +363,16 @@ export default {
                 document.getElementById("kzmj").innerHTML =
                   param.target.properties.vacant_are;
 
-                var qj_url = param.target.properties.qj_url;
-                if (qj_url == "") {
-                  document.getElementById("jj").innerHTML =
-                    "街景照片正在收录，敬请期待!";
-                } else {
-                  document.getElementById("jj").innerHTML =
-                    '<a href="' +
-                    param.target.properties.qj_url +
-                    '">查看街景照片</a>';
-                }
+                // var qj_url = param.target.properties.qj_url;
+                // if (qj_url == "") {
+                //   document.getElementById("jj").innerHTML =
+                //     "街景照片正在收录，敬请期待!";
+                // } else {
+                //   document.getElementById("jj").innerHTML =
+                //     '<a href="' +
+                //     param.target.properties.qj_url +
+                //     '">查看街景照片</a>';
+                // }
 
                 that.LYid = param.target.properties.id;
                 that.$emit("changeLYid", that.LYid);
@@ -793,6 +795,8 @@ export default {
             feature.properties.settled_en;
           document.getElementById("lykt").innerHTML =
             feature.properties.use;
+          document.getElementById("lycq").innerHTML =
+            feature.properties.chanquan;
           document.getElementById("lytc").innerHTML =
             feature.properties.parking_nu;
           document.getElementById("lyzj").innerHTML =
@@ -937,6 +941,8 @@ export default {
             feature.properties.settled_en;
           document.getElementById("lykt").innerHTML =
             feature.properties.use;
+          document.getElementById("lycq").innerHTML =
+            feature.properties.chanquan;
           document.getElementById("lytc").innerHTML =
             feature.properties.parking_nu;
           document.getElementById("lyzj").innerHTML =
@@ -948,14 +954,14 @@ export default {
           document.getElementById("kzmj").innerHTML =
             feature.properties.vacant_are;
 
-          var qj_url = feature.properties.qj_url;
-          if (qj_url == "") {
-            document.getElementById("jj").innerHTML =
-              "街景照片正在收录，敬请期待!";
-          } else {
-            document.getElementById("jj").innerHTML =
-              '<a href="' + feature.properties.qj_url + '">查看街景照片</a>';
-          }
+          // var qj_url = feature.properties.qj_url;
+          // if (qj_url == "") {
+          //   document.getElementById("jj").innerHTML =
+          //     "街景照片正在收录，敬请期待!";
+          // } else {
+          //   document.getElementById("jj").innerHTML =
+          //     '<a href="' + feature.properties.qj_url + '">查看街景照片</a>';
+          // }
 
           that.LYid = feature.properties.id;
           that.$emit("changeLYid", that.LYid);
