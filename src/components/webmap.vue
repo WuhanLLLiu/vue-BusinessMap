@@ -803,6 +803,10 @@ export default {
             feature.properties.monthly_re;
           document.getElementById("lywy").innerHTML =
             feature.properties.property_m;
+          document.getElementById("lcmj").innerHTML =
+            feature.properties.Standard_f;
+          document.getElementById("kzmj").innerHTML =
+            feature.properties.vacant_are;
           that.LYid = feature.properties.id;
           that.$emit("changeLYid", that.LYid);
         });
