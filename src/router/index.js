@@ -300,6 +300,14 @@ const router = new Router({
         }
     },
     {
+        path: "/ZCXQ5",
+        component: () => import("../views/ZCXQ5"),
+        meta: {
+            keepAlive: true,
+            title: "武汉基金产业基地“黄金十条”政策"
+        }
+    },
+    {
         path: "/FWZY",
         component: () => import("../views/FWZY"),
         meta: {

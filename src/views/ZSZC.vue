@@ -91,6 +91,17 @@
           ></el-image>
         </el-col>
       </el-row>
+      <el-row>
+        <el-col :span="24">
+        <img src='./../assets/基金产业.png' style="width: 100%; height: 100%" @click="ZC5()"/>
+          <!-- <el-image
+            style="width: 100%; height: 100%"
+            src= imgs
+            fit="scale-down"
+            @click="ZC5()"
+          ></el-image> -->
+        </el-col>
+      </el-row>
     </el-main>
   </el-container>
 </template>
@@ -103,6 +114,7 @@ export default {
   data() {
     return {
       // currentDate: new Date()
+      imgs:'./../assets/基金产业.png',
     };
   },
   methods: {
@@ -117,6 +129,9 @@ export default {
     },
     ZC4() {
       this.$router.push({ path: "/ZCXQ4" });
+    },
+    ZC5() {
+      this.$router.push({ path: "/ZCXQ5" });
     },
   },
 };
