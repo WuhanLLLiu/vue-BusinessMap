@@ -1,0 +1,46 @@
+.van-tabs--line .van-tabs__wrap {
+    height: 80px;
+}
+
+.van-tab__text {
+    position: relative;
+    color: #fff;
+    font-size: 34px;
+    align-items: center;
+}
+
+.van-tab {
+    padding-top: 2%;
+    line-height: 150%
+}
+
+@media screen and (min-width: 960px) and (orientation: landscape) {
+    .bg::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-image: url("./../assets/汉阳-00.png");
+        filter: blur(5px);
+        z-index: -1;
+    }
+
+    .van-tabs>>>.van-tabs__nav {
+        background: transparent !important;
+    }
+
+    .van-tabs>>>.van-tab__text {
+        color: #fff;
+    }
+
+    .van-tabs >>> .van-tab--active .van-tab__text {
+        text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
+
+    .van-tabs >>> .van-tabs__wrap {
+        border-bottom: 1px dotted rgba(255,255,255,0.2);
+    }
+
+}

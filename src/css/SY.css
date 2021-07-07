@@ -1,0 +1,153 @@
+body {
+    overflow: hidden;
+}
+
+.el-header {
+    float: right;
+    padding: 2vw;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: row-reverse;
+}
+
+.el-header span {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.8vw;
+    color: white;
+    text-shadow: 5px 2px 10px #000;
+    /* 垂直居中 */
+    align-items: center;
+}
+
+.el-main {
+    padding: 0;
+}
+
+.el-main .el-col {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    font-size: 3.6vw;
+    color: white;
+    text-shadow: 5px 2px 10px #000;
+    /* 垂直居中 */
+    align-items: center;
+}
+
+.bg {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    background-image: url("./../assets/汉阳-00.png");
+}
+
+.el-header .el-image {
+    width: 10vw; 
+}
+
+.el-main .el-row:nth-child(1n+2) .el-image{
+    width: 24vw;
+}
+
+/*媒体查询屏幕宽度>=960px && 屏幕宽度>屏幕高度的设备*/
+@media screen and (min-width: 960px) and (orientation: landscape) { 
+    body {
+        overflow: hidden;
+    }
+
+    .el-header {
+        float: right;
+        padding: 1vw;
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: row-reverse;
+    }
+    
+    .el-header span {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.2vw;
+        color: white;
+        text-shadow: 5px 2px 10px #000;
+        /* 垂直居中 */
+        align-items: center;
+    }
+    
+    .el-main {
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .el-main .el-col {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        font-size: 3.6vw;
+        padding: 3vw;
+        color: white;
+        text-shadow: 5px 2px 10px #000;
+        /* 垂直居中 */
+        align-items: center;
+    }
+    
+    .bg {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-image: url("./../assets/汉阳-00.png");
+    }
+
+    .el-header .el-col {
+        width: 10%; 
+    }
+
+    .el-header .el-image {
+        width: 28px; 
+        height: 32px;
+    }
+
+    .logo>.el-col>.el-image {
+        width: 50%;
+        /* box-shadow: 0px 0px 50px 10px rgba(241, 242, 243, 0.2); */
+        /* filter: drop-shadow(0px 0px 50px rgb(23, 32, 112)) invert(0%); */
+    }
+
+    .logo>.el-col>.el-image>>>img {
+        content: url("./../assets/logo_pc.png");
+    }
+
+    .el-main .el-row:nth-child(1n+2){
+        position: relative;
+        top: -140px;
+    }
+    
+    .el-main .el-row:nth-child(2) .el-col {
+        width: 30%;
+    }
+
+    .el-main .el-row:nth-child(3) .el-col {
+        width: 20%;
+    }
+
+    .el-main .el-row:nth-child(1n+2) .el-image{
+        width: 100px; 
+        height: 110px;
+    }
+}

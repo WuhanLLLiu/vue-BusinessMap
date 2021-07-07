@@ -1,0 +1,56 @@
+.details {
+    font-size: 13px;
+    color: #999;
+  }
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    /*line-height: 20px;*/
+    /*padding-bottom: 20px;*/
+  }
+  .row {
+    margin: 20px;
+  }
+  .bottom {
+    margin-top: 30px;
+    line-height: 12px;
+  }
+  .button {
+    padding: 0;
+    float: right;
+    border-style: none;
+    text-align: left;
+    width: 710px;
+  }
+  
+  /*.image {
+      width: 100%;
+      display: block;
+    }*/
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  
+  .clearfix:after {
+    clear: both;
+  }
+
+  @media screen and (min-width: 960px) and (orientation: landscape) {
+      .bg::before {
+        content: "";
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-image: url("./../assets/汉阳-00.png");
+        filter: blur(5px);
+        z-index: -1;
+      }
+
+      .el-main .el-row:last-child img{
+        object-fit: scale-down;
+      }
+  }

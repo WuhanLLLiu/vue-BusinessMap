@@ -20,7 +20,7 @@
     "maptalks.three": "^0.10.1",
     "minimist": ">=1.2.5",
     "mint-ui": "^2.2.13",
-    "pdfjs-dist": "^2.3.200",
+    "pdfjs-dist": "^2.8.335",
     "three": "^0.115.0",
     "vant": "^2.6.0",
     "vue": "^2.6.11",

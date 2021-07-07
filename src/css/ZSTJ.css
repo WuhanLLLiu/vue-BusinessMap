@@ -1,0 +1,192 @@
+.hj {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
+#Selfform {
+    margin-top: 3%;
+    padding: 5%;
+    font-size: 36px;
+    line-height: 58px;
+    font-family: PingFang SC;
+}
+
+.van-tabs--line .van-tabs__wrap {
+    height: 80px;
+}
+
+.van-tab__text {
+    position: relative;
+    color: #fff;
+    font-size: 34px;
+    align-items: center;
+}
+
+.van-tab {
+    padding-top: 2%;
+    line-height: 150%
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+@media screen and (min-width: 960px) and (orientation: landscape) {
+
+    *{
+        margin: 0;
+        padding: 0;
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+      }
+
+      *:before,
+      *:after{
+          box-sizing: border-box;
+      }
+
+    .LYH, #bg {
+        height: 100%;
+        width: 100%;
+    }
+
+    #bg{
+        content: "";
+        position: fixed;
+        background-size: 100% 100%;
+        background-image: url("./../assets/汉阳-00.png");
+        filter: blur(5px);
+        z-index: -1;
+    }
+
+    /*轮播图效果实现*/
+    #container {
+        margin: 0 auto;
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+        perspective: 4000px;
+        overflow: hidden;
+        /* perspective-origin: center; */
+    }
+
+    #Selfform {
+        width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    transform-style: preserve-3d;
+        transform-origin: 50% 0;
+	    animation: rotation 120s infinite linear;
+    }
+
+    #Selfform:hover{
+        animation-play-state: paused;
+    }
+    
+    #Selfform figure {
+        display: block;
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        left: calc(50% - 100px);
+        top: 40px;
+        overflow: hidden;
+        border: solid 1px rgba(255, 255, 255, 0.9);
+    }
+
+    #Selfform figure:nth-child(1){transform: rotateY(0deg) translateY(0px) translateZ(700px);}
+    #Selfform figure:nth-child(2){transform: rotateY(18deg) translateY(12px) translateZ(700px);}
+    #Selfform figure:nth-child(3){transform: rotateY(36deg) translateY(24px) translateZ(700px);}
+    #Selfform figure:nth-child(4){transform: rotateY(54deg) translateY(48px) translateZ(700px);}
+    #Selfform figure:nth-child(5){transform: rotateY(72deg) translateY(60px) translateZ(700px);}
+    #Selfform figure:nth-child(6){transform: rotateY(90deg) translateY(72px) translateZ(700px);}
+    #Selfform figure:nth-child(7){transform: rotateY(108deg) translateY(84px) translateZ(700px);}
+    #Selfform figure:nth-child(8){transform: rotateY(126deg) translateY(96px) translateZ(700px);}
+    #Selfform figure:nth-child(9){transform: rotateY(144deg) translateY(108px) translateZ(700px);}
+    #Selfform figure:nth-child(10){transform: rotateY(162deg) translateY(120px) translateZ(700px);}
+    #Selfform figure:nth-child(11){transform: rotateY(180deg) translateY(132px) translateZ(700px);}
+    #Selfform figure:nth-child(12){transform: rotateY(198deg) translateY(144px) translateZ(700px);}
+    #Selfform figure:nth-child(13){transform: rotateY(216deg) translateY(156px) translateZ(700px);}
+    #Selfform figure:nth-child(14){transform: rotateY(234deg) translateY(168px) translateZ(700px);}
+    #Selfform figure:nth-child(15){transform: rotateY(252deg) translateY(180px) translateZ(700px);}
+    #Selfform figure:nth-child(16){transform: rotateY(270deg) translateY(192px) translateZ(700px);}
+    #Selfform figure:nth-child(17){transform: rotateY(288deg) translateY(204px) translateZ(700px);}
+    #Selfform figure:nth-child(18){transform: rotateY(306deg) translateY(216px) translateZ(700px);}
+    #Selfform figure:nth-child(19){transform: rotateY(324deg) translateY(228px) translateZ(700px);}
+    #Selfform figure:nth-child(20){transform: rotateY(342deg) translateY(240px) translateZ(700px);}
+    #Selfform figure:nth-child(21){transform: rotateY(0deg) translateY(252px) translateZ(700px);}
+    #Selfform figure:nth-child(22){transform: rotateY(18deg) translateY(264px) translateZ(700px);}
+    #Selfform figure:nth-child(23){transform: rotateY(36deg) translateY(276px) translateZ(700px);}
+    #Selfform figure:nth-child(24){transform: rotateY(54deg) translateY(288px) translateZ(700px);}
+    #Selfform figure:nth-child(25){transform: rotateY(72deg) translateY(300px) translateZ(700px);}
+    #Selfform figure:nth-child(26){transform: rotateY(90deg) translateY(312px) translateZ(700px);}
+    #Selfform figure:nth-child(27){transform: rotateY(108deg) translateY(324px) translateZ(700px);}
+    #Selfform figure:nth-child(28){transform: rotateY(126deg)  translateY(336px) translateZ(700px);}
+    #Selfform figure:nth-child(29){transform: rotateY(144deg)  translateY(348px) translateZ(700px);}
+    #Selfform figure:nth-child(30){transform:  rotateY(162deg) translateY(360px) translateZ(700px);}
+    #Selfform figure:nth-child(31){transform:  rotateY(180deg) translateY(372px) translateZ(700px);}
+    #Selfform figure:nth-child(32){transform:  rotateY(198deg) translateY(384px) translateZ(700px);}
+    #Selfform figure:nth-child(33){transform:  rotateY(216deg) translateY(396px) translateZ(700px);}
+    #Selfform figure:nth-child(34){transform:  rotateY(234deg) translateY(408px) translateZ(700px);}
+    #Selfform figure:nth-child(35){transform:  rotateY(252deg) translateY(420px) translateZ(700px);}
+    #Selfform figure:nth-child(36){transform:  rotateY(270deg) translateY(432px) translateZ(700px);}
+    #Selfform figure:nth-child(37){transform:  rotateY(288deg) translateY(444px) translateZ(700px);}
+    #Selfform figure:nth-child(38){transform:  rotateY(306deg) translateY(456px) translateZ(700px);}
+    #Selfform figure:nth-child(39){transform:  rotateY(324deg) translateY(468px) translateZ(700px);}
+    #Selfform figure:nth-child(40){transform:  rotateY(342deg) translateY(480px) translateZ(700px);}
+    #Selfform figure:nth-child(41){transform:  rotateY(360deg) translateY(492px) translateZ(700px);}
+    #Selfform figure:nth-child(42){transform:  rotateY(18deg) translateY(504px) translateZ(700px);}
+    #Selfform figure:nth-child(43){transform: rotateY(36deg) translateY(516px) translateZ(700px);}
+
+    .hj {
+	    cursor: pointer;
+	    transition: all .5s ease;
+    }
+
+    #exhibition {
+        position: absolute;
+        height: 400px;
+        width: 800px;
+        top: calc(50% - 200px);
+        left: calc(50% - 400px);
+        z-index: 2;
+        opacity: 0;
+        display: none;
+    }
+
+    #exhibition img {
+        float: right;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .hj:hover {
+        transform: scale(1.2,1.2);
+    }
+
+    @keyframes rotation{
+        from{
+            transform: rotateY(0deg);
+        }
+        to{
+            transform: rotateY(360deg);
+        }
+    }
+}
+
+/*关闭点击图片效果对于移动端的影响*/
+@media screen and (max-width: 960px) and (orientation: portrait) {
+    #container {
+        filter: none !important;
+    }
+    
+    #exhibition {
+        display: none !important;
+    }
+}
