@@ -19,6 +19,12 @@
         padding: 0;
         height: 100%;
         width: 100%;
-        overflow: auto;
+        /* overflow: auto; */
+    }
+
+    /*修改图层控件显示文本样式*/
+    li#type {
+        font-size: unset !important;
+        line-height: unset !important;
     }
 </style>

@@ -138,8 +138,7 @@
     height: auto;
     max-width: 100%;
   }
-</style>
-<style>
+  
 .van-tabs--line .van-tabs__wrap{
     height: 80px;
 }

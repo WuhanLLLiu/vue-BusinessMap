@@ -49,7 +49,7 @@
         </el-button>
      </el-row>
   </div> -->
-  <el-container>
+  <el-container class="bg">
     <el-main>
       <el-row>
         <el-col :span="24">
@@ -138,44 +138,5 @@ export default {
 </script>
 
 <!-- 限定局部有效的样式 -->
-<style scoped>
-.details {
-  font-size: 13px;
-  color: #999;
-}
-.title {
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
-  /*line-height: 20px;*/
-  /*padding-bottom: 20px;*/
-}
-.row {
-  margin: 20px;
-}
-.bottom {
-  margin-top: 30px;
-  line-height: 12px;
-}
-.button {
-  padding: 0;
-  float: right;
-  border-style: none;
-  text-align: left;
-  width: 710px;
-}
-
-/*.image {
-    width: 100%;
-    display: block;
-  }*/
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-
-.clearfix:after {
-  clear: both;
-}
+<style scoped src="../css/ZSZC.css">
 </style>

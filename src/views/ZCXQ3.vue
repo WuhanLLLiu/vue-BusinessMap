@@ -89,45 +89,6 @@
 </script>
 
 <!-- 限定局部有效的样式 -->
-<style scoped>
-  * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  #row{
-  padding: 4%;
-  }
-  #row1{
-    padding: 1%;
-    font-size:48px;
-    font-family:PingFang SC;
-    font-weight:900;
-    color:rgba(51,51,51,1);
-    line-height:64px;
-  }
-  #row2{
-    font-size:35px;
-    font-family:PingFang SC;
-    font-weight: lighter;
-    color:rgba(51,51,51,1);
-    opacity:0.5;
-  }
-#Selfform{
-  margin-top: 3%;
-  padding: 4%;
-  font-size:35px;
-  line-height:50px;
-  font-family:PingFang SC;
-}
-#title{
-  font-size:35px;
-  font-weight: bolder;
-  font-family:PingFang SC;
-  color: #000;
-}
+<style scoped src="../css/ZCXQ3.css">
 
-p {
-  text-indent:2em
-}
 </style>

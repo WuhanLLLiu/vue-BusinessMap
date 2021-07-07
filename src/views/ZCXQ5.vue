@@ -65,35 +65,5 @@
 </script>
 
 <!-- 限定局部有效的样式 -->
-<style scoped>
-  * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  #row{
-  padding: 4%;
-  }
-  #row1{
-    padding: 1%;
-    font-size:48px;
-    font-family:PingFang SC;
-    font-weight:900;
-    color:rgba(51,51,51,1);
-    line-height:64px;
-  }
-  #row2{
-    font-size:35px;
-    font-family:PingFang SC;
-    font-weight: lighter;
-    color:rgba(51,51,51,1);
-    opacity:0.5;
-  }
-  /*#ZC{
-    margin: 45px;  
-  }*/
-  #ZC{
-      margin-top: 3%;
-      padding: 4%;
-  }
+<style scoped src="../css/ZCXQ5.css">
 </style>
