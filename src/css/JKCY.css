@@ -155,4 +155,26 @@
         color: rgba(51, 51, 51, 1);
         line-height: 48px;
     }
+
+    #ZC>>>.Section0 p span {
+        font-size: 18px !important;
+        font-family: monospace !important;
+    }
+
+    #ZDQY {
+        text-align: center;
+    }
+
+    .el-button {
+        width: 80%;
+        float: none;
+    }
+
+    .el-card { 
+        background-image: linear-gradient(to right, rgba(141, 228, 235, 0.5), rgba(155, 228, 224, 0.5)),
+        url('../assets/route.png');
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
 }

@@ -66,7 +66,13 @@ p {
         line-height: 24px;
         font-family: PingFang SC;
     }
-    
+
+    p {
+        text-indent: 2em;
+        font-size: 18px;
+        font-family: monospace; /*fantasy, cursive*/
+    }
+
     #title {
         font-size: 35px;
         font-weight: bolder;
@@ -74,9 +80,6 @@ p {
         color: #000;
         margin-top: 2vh;
         margin-bottom: 2vh;
-    }
-
-    p {
-        text-indent: 2em
+        margin-left: -2vw;
     }
 }

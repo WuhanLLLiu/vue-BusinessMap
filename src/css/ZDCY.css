@@ -1,5 +1,5 @@
-.van-tabs--line .van-tabs__wrap {
-    height: 80px;
+.van-tabs >>> .van-tabs__wrap {
+    height: 6vh;
 }
 
 .van-tab__text {
@@ -9,8 +9,9 @@
     align-items: center;
 }
 
-.van-tab {
+.van-tabs >>> .van-tab {
     padding-top: 2%;
+    font-size: 4vw;
     line-height: 150%
 }
 
@@ -35,12 +36,26 @@
         color: #fff;
     }
 
-    .van-tabs >>> .van-tab--active .van-tab__text {
-        text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    .van-tabs>>>.van-tab--active .van-tab__text {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
 
-    .van-tabs >>> .van-tabs__wrap {
-        border-bottom: 1px dotted rgba(255,255,255,0.2);
+    .van-tabs>>>.van-tabs__wrap {
+        height: 5.86667vw;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+    }
+
+    .van-tabs >>> .van-tab {
+        font-size: 1.86667vw;
+    }
+
+    .el-row .el-col {
+        text-align: center;
+    }
+
+    .el-image {
+        width: 80% !important;
+        height: 80% !important;
     }
 
 }

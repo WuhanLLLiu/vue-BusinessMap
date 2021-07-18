@@ -85,10 +85,14 @@
         text-shadow: 0 0 10px rgba(255,255,255,0.8);
     }
 
+    #JRCY {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
     #Selfform {
         margin-top: 0%;
         padding: 0%;
-        text-align: center;
     }
 
     #Selfform img
@@ -103,5 +107,18 @@
         font-weight: 900;
         color: rgba(51, 51, 51, 1);
         line-height: 48px;
+    }
+
+    .el-button {
+      width: 100%;
+      float: none;
+    }
+
+    .el-card { 
+        background-image: linear-gradient(to right, rgba(141, 228, 235, 0.5), rgba(155, 228, 224, 0.5)),
+        url('../assets/intro.svg');
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }

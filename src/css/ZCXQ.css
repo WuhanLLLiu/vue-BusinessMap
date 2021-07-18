@@ -1,48 +1,58 @@
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  #row{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#row {
   padding: 4%;
+}
+
+#row1 {
+  padding: 1%;
+  font-size: 48px;
+  font-family: PingFang SC;
+  font-weight: 900;
+  color: rgba(51, 51, 51, 1);
+  line-height: 64px;
+}
+
+#row2 {
+  font-size: 35px;
+  font-family: PingFang SC;
+  font-weight: lighter;
+  color: rgba(51, 51, 51, 1);
+  opacity: 0.5;
+}
+
+#ZC {
+  margin-top: 3%;
+  padding: 4%;
+}
+
+@media screen and (min-width: 960px) and (orientation: landscape) {
+  #row {
+    padding: 2%;
+    text-align: center;
   }
-  #row1{
+
+  #ZC {
+    margin-top: 0%;
+    padding: 3%;
+  }
+
+  #row1 {
     padding: 1%;
-    font-size:48px;
-    font-family:PingFang SC;
-    font-weight:900;
-    color:rgba(51,51,51,1);
-    line-height:64px;
-  }
-  #row2{
-    font-size:35px;
-    font-family:PingFang SC;
-    font-weight: lighter;
-    color:rgba(51,51,51,1);
-    opacity:0.5;
-  }
-  #ZC{
-      margin-top: 3%;
-      padding: 4%;
+    font-size: 48px;
+    font-family: PingFang SC;
+    font-weight: 900;
+    color: rgba(51, 51, 51, 1);
+    line-height: 48px;
   }
 
-  @media screen and (min-width: 960px) and (orientation: landscape) {
-    #row {
-        padding: 2%;
-        text-align: center;
-    }
-
-    #ZC {
-        margin-top: 0%;
-        padding: 3%;
-    }
-
-    #row1 {
-        padding: 1%;
-        font-size: 48px;
-        font-family: PingFang SC;
-        font-weight: 900;
-        color: rgba(51, 51, 51, 1);
-        line-height: 48px;
-    }
+  #ZC1>>>.Section0 p span {
+    font-size: 18px !important;
+    font-family: monospace !important;
+    line-height: 200% !important;
+  }
 }

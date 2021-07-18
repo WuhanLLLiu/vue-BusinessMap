@@ -150,4 +150,8 @@ body {
         width: 100px; 
         height: 110px;
     }
+
+    .el-footer span {
+        font-size: 32px;
+    }
 }

@@ -50,6 +50,15 @@
         z-index: -1;
       }
 
+      .el-row .el-col {
+        text-align: center;
+      }
+      
+      .el-image {
+        width: 80% !important;
+        height: 80% !important;
+      }
+
       .el-main .el-row:last-child img{
         object-fit: scale-down;
       }
