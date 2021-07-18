@@ -716,7 +716,9 @@ export default {
       Vue.mapInstance.removeLayer("base");
       Vue.mapInstance.setBaseLayer(
         new maptalks.TileLayer("base", {
-          urlTemplate: "http://121.196.60.135:1337/bms/tmslayer/{z}/{x}/{y}",
+          // urlTemplate: "http://121.196.60.135:1338/bms/tmslayer/{z}/{x}/{y}",
+          urlTemplate: "http://{s}.tianditu.gov.cn/DataServer?T=img_w&x={x}&y={y}&l={z}&tk=d0c3c3be64e0042982f3d4a94cb15298",
+          subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"],
           attribution:
             '&copy; <a href="https://map.tianditu.gov.cn//">天地图</a>,&copy; <a href="http://osm.org">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/">CARTO</a>',
         })
