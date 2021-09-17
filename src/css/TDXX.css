@@ -568,6 +568,7 @@ input[type="search"i] {
     /*修改上拉抽屉高度*/
     #TDXX>>>.el-drawer {
         height: 60% !important;
+        overflow: scroll;
     }
 
     #Selfform>>>.el-card__body {

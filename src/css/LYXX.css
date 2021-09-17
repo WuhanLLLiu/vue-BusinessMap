@@ -571,6 +571,7 @@
     /*修改上拉抽屉高度*/
     #LYXX>>>.el-drawer {
         height: 60% !important;
+        overflow: scroll;
     }
 
     #Selfform>>>.el-card__body {
