@@ -369,6 +369,11 @@ body {
     overflow: scroll;
 }
 
+#TDXX>>>.el-drawer {
+    height: 60% !important;
+    overflow: scroll;
+}
+
 .nullimg {
     width: 50%;
     height: auto;

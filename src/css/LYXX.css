@@ -363,6 +363,11 @@
   .el-drawer.btt {
     overflow: scroll;
   }
+
+  #LYXX>>>.el-drawer {
+    height: 60% !important;
+    overflow: scroll;
+  }
   
   .imgPrev figure {
     float: left;
