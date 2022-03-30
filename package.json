@@ -18,7 +18,7 @@
     "maptalks.heatmap": "^0.6.1",
     "maptalks.markercluster": "^0.8.3",
     "maptalks.three": "^0.10.1",
-    "minimist": ">=1.2.5",
+    "minimist": ">=1.2.6",
     "mint-ui": "^2.2.13",
     "pdfjs-dist": "^2.8.335",
     "three": "^0.115.0",
